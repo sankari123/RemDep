@@ -577,6 +577,7 @@ $("#input1").keypress(function(){
 		
 $(document).ready(function(){
 		$("#artist").click(function(){
+			activePg=2;
 	//	  $('#arSrch').show();	 
 		$("#arSrch").html("");
 		  $('#main').hide();
@@ -740,10 +741,10 @@ function onDeviceReady(){
 	checkConnection();
 	  var exitApp = false, intval = setInterval(function (){exitApp = false;}, 1000);
 document.addEventListener("backbutton", function() {
-        if ($.mobile.activePage.attr('id') == "home") {
-            navigator.app.exitApp();
+        if (activePg==2) {
+            navigator.app.backHistory(); 
         } else {
-            navigator.app.backHistory();
+           navigator.app.exitApp();
         }
     }, false);
 }	 
@@ -1349,7 +1350,7 @@ document.getElementById('lst_mnu').innerHTML=im_htm+"</table>" ;
 function login()
 {
 //alert('in');
- 
+ activePg=2;
 	//alert('in loop');
 	document.getElementById("backmenu").style.display="block";
 	document.getElementById("backmenu").style.visibility="true";
@@ -1386,7 +1387,7 @@ document.getElementById("tab").style.visibility="false";
 function backSt() 
 	{
 		backbtn=1;
-		 
+		  activePg=2;
 		
 		 $('#category').show();
 		 $('#main').show();
@@ -1553,6 +1554,7 @@ function forgot_pass()
 	
 	{
 //	alert('in'); 
+		 activePg=2;
 	navigator.notification.prompt(
             'Enter mail ID',  // message
             onPrompt,                  // callback to invoke
@@ -1615,7 +1617,7 @@ function archive()
     doneButtonLabel: "Done",
     cancelButtonLabel: "Cancel"
 };	
-
+ activePg=2;
 // Show the picker
 window.plugins.listpicker.showPicker(config, 
     function(item) { 
@@ -1715,7 +1717,7 @@ function ven_det(v)
 //	$("#dl_btn1").slideToggle("slow");
 	k=0;
 	//venue=String(latR[1]);
-	
+	 activePg=2;
 	
 	v=v.replace(/_/g, " ");
 	//alert(v);
@@ -1882,7 +1884,7 @@ var calEvtDetails1=[];
 function eventList(eVal)
 {
 //alert('eval'+eVal);
-
+ activePg=2;
 document.getElementById("xPort").style.display="block";
 document.getElementById("xPort").style.visibility="true";
 	document.getElementById("xPort1").style.display="block";
