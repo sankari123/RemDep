@@ -743,8 +743,7 @@ function onDeviceReady(){
 	document.addEventListener("backbutton", function() {
 		
         if (activePg==2) {
-           history.go(-1);
-navigator.app.backHistory();
+        window.history.back();
    
         } else {
 		 e.preventDefault(); 
