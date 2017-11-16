@@ -603,7 +603,8 @@ $(document).ready(function(){
               //alert(wordlist);
 
 			pop('searchmenu');
-			
+			var activePage = $.mobile.activePage.attr("id");
+alert(activePage);
 				 monkeyPatchAutocomplete();
 
           $("#input1").autocomplete({
