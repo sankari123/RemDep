@@ -739,9 +739,18 @@ function onDeviceReady(){
 	document.getElementById("defaultOpen").click();
 	checkConnection();
 	   
-document.addEventListener("backbutton", function (e) {
-        e.preventDefault(); 
-	navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");    }, false );
+	
+	document.addEventListener("backbutton", function() {
+		 e.preventDefault(); 
+        if (activePg==2) {
+            history.go(-1);
+    navigator.app.backHistory();
+        } else {
+           navigator.app.exitApp();
+        }
+    }, false);
+	
+
 }	 
 function checkConnection() {
      var networkState = navigator.connection.type;
