@@ -603,8 +603,9 @@ $(document).ready(function(){
               //alert(wordlist);
 
 			pop('searchmenu');
-			var activePage = $.mobile.activePage.attr("id");
-alert(activePage);
+			if ($(event.target).is("#backmenu")) {
+      alert("worky");
+}
 				 monkeyPatchAutocomplete();
 
           $("#input1").autocomplete({
