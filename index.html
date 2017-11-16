@@ -741,12 +741,13 @@ function onDeviceReady(){
 	   
 	
 	document.addEventListener("backbutton", function() {
-		 e.preventDefault(); 
+		
         if (activePg==2) {
            history.go(-1);
 navigator.app.backHistory();
    
         } else {
+		 e.preventDefault(); 
            navigator.app.exitApp();
         }
     }, false);
