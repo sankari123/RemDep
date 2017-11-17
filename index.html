@@ -745,7 +745,7 @@ function onDeviceReady(){
 function onBackKeyDown() {
    
    if (activePg==2) {
-      
+      e.preventDefault(); 
         history.go(-1);     navigator.app.backhistory();
         } else {
 		 
