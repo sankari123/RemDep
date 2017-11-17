@@ -749,18 +749,36 @@ function onDeviceReady(){
  
 function backButtonHandler(e )
    {
-if($('#xPort1').is(':visible'))  
+if( activePg==5)  
       {
-         // Code to exit app
+        venueBack(); // Code to exit app
          navigator.app.backHistory(); 
+	      
       }
+	   else if( activePg==2)
+	   {
+	   categoryBack();
+	   }
       else
       {
         // Code to navigate to the history action
         navigator.app.exitApp();
       }
 }
- 	 
+ 
+		
+		function venueBack()
+		{
+		venueFilter();
+		
+		}
+		
+		function categoryBack()
+		{
+		category();
+		
+		}
+		
 function checkConnection() {
      var networkState = navigator.connection.type;
      if(navigator.connection.type == Connection.NONE) {        
@@ -1736,7 +1754,7 @@ function ven_det(v)
 //	$("#dl_btn1").slideToggle("slow");
 	k=0;
 	//venue=String(latR[1]);
-	 activePg=2;
+	 activePg=5;
 	
 	v=v.replace(/_/g, " ");
 	//alert(v);
