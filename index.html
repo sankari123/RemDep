@@ -752,12 +752,12 @@ function backButtonHandler(e )
 if($('#xPort1').is(':visible'))  
       {
          // Code to exit app
-         navigator.app.exitApp();
+         navigator.app.backHistory(); 
       }
       else
       {
         // Code to navigate to the history action
-         navigator.app.backHistory();
+        navigator.app.exitApp();
       }
 }
  	 
