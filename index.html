@@ -746,11 +746,11 @@ function onBackKeyDown() {
    
    if (activePg==2) {
       e.preventDefault(); 
-        history.go(-1);     navigator.app.backhistory();
+        history.go(-1);      navigator.app.backHistory();
         } else {
 		 
 		e.preventDefault(); 
-           navigator.app.exitApp();
+          navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music Fest", "Yes,No"); 
         }
 }
 	
