@@ -1180,7 +1180,7 @@ var ajaxResponse;
 var arr_store;
   function ajaxFunction()
 {
- window.plugins.spinnerDialog.hide();
+
 	if(connSel=='Y')
 	{	
 	var xhr = new XMLHttpRequest();
@@ -1229,7 +1229,10 @@ var venue_arr = new Array();
 function procVal(pVar)
 {
 //multiArr=[];
-	 
+	 if (pVar!='')
+	 {
+	  window.plugins.spinnerDialog.hide();
+	 }
 	//alert('Ajax Resp'+pVar);
 	locArr = pVar;
 	//document.getElementById('rest1').value=pVar;
