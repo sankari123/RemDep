@@ -743,12 +743,14 @@ function onDeviceReady(){
 	document.addEventListener("backbutton", onBackKeyDown, false);
 }
 function onBackKeyDown() {
-    alert("hello");
-   if (activePg==2) {
-        window.history.back();
    
+   if (activePg==2) {
+      
+    alert("hello2");
+	    navigator.app.backHistory();
         } else {
-		 e.preventDefault(); 
+		  alert("hello");
+		e.preventDefault(); 
            navigator.app.exitApp();
         }
 }
