@@ -739,13 +739,27 @@ function onDeviceReady(){
 	//document.getElementById("defaultOpen").click();
 	document.getElementById("defaultOpen").click();
 	checkConnection();
-	document.addEventListener("backbutton", function (e) {
-        e.preventDefault(); 
-	navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music Fest", "Yes,No");    }, false );
+	document.addEventListener("backbutton", backButtonHandler, false);
+	//document.addEventListener("backbutton", function (e) {
+       // e.preventDefault(); 
+		
+	//navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music Fest", "Yes,No");    }, false );
 }
 	
  
-
+function backButtonHandler(e )
+   {
+if($('#xPort1').is(':visible'))  
+      {
+         // Code to exit app
+         navigator.app.exitApp();
+      }
+      else
+      {
+        // Code to navigate to the history action
+         navigator.app.backHistory();
+      }
+}
  	 
 function checkConnection() {
      var networkState = navigator.connection.type;
