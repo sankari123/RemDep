@@ -752,7 +752,7 @@ function backButtonHandler(e )
 if( activePg==5)  
       {
         venueBack(); // Code to exit app
-         navigator.app.backHistory(); 
+       //  navigator.app.backHistory(); 
 	      
       }
 	   else if( activePg==2)
@@ -762,7 +762,7 @@ if( activePg==5)
       else
       {
         // Code to navigate to the history action
-        navigator.app.exitApp();
+      navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");    }, false );
       }
 }
  
