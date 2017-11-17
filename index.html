@@ -4,8 +4,8 @@
 <title>Madras Music & Miscellany</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<!--<script type="text/javascript" src="cordova.js"></script>-->
-	<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+	 
 <link class="jsbin" href="css/jquery-ui.css" rel="stylesheet" type="text/css"></link>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
@@ -740,20 +740,22 @@ function onDeviceReady(){
 	document.getElementById("defaultOpen").click();
 	checkConnection();
 	   
-	
-	document.addEventListener("backbutton", function() {
-		
-        if (activePg==2) {
+	document.addEventListener("backbutton", onBackKeyDown, false);
+}
+function onBackKeyDown() {
+    alert("hello");
+   if (activePg==2) {
         window.history.back();
    
         } else {
 		 e.preventDefault(); 
            navigator.app.exitApp();
         }
-    }, false);
+}
 	
+ 
 
-}	 
+ 	 
 function checkConnection() {
      var networkState = navigator.connection.type;
      if(navigator.connection.type == Connection.NONE) {        
