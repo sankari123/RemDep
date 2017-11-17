@@ -1284,6 +1284,7 @@ function procVal(pVar)
 	function venueFilter()
 	{
 		active_page=1;
+		activePg=1;
 		var j;
 		//checkConnection();
 		// $("#lst_mnu").slideToggle("slow");
@@ -1429,6 +1430,7 @@ function backSt()
 
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
+	 activePg=1;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
@@ -1467,7 +1469,7 @@ function category()
  
 		$('#category').show('slide', 400);
 		$('#xPort').hide();
-	 
+	  activePg=1;
 		document.getElementById("xPort").style.visibility="false";
 		//document.getElementById("category").style.display="block";
 		//document.getElementById("category").style.visibility="true";
@@ -1689,6 +1691,7 @@ function calClick()
 	{
 		//alert('optsel'+optSel);
 		optSel=2;
+		 activePg=1;
 		active_page=1;
 		$('#calendar').show('slide', 400);
 		// $("#calendar").slideToggle("slow");
@@ -2121,7 +2124,8 @@ function procValArc(pVar)
 
 function displayArchive()
 {
- 
+ 	 
+  activePg=2;
 document.getElementById("backmenu").style.display="block";
 document.getElementById("backmenu").style.visibility="true";
 document.getElementById("main").style.visibility="false";
