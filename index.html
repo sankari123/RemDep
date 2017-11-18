@@ -509,22 +509,25 @@ margin: 0 auto;
   
     
 }	
-
+.nav1
+	    {
+	    display:none; 
+	    }
     </style>
 	<script>
  var directionsService = new google.maps.DirectionsService();
  
-	$(document).ready(function() {
-		if(newUse==true)
-		{
-                $('.nav').slideAndSwipe();
-		}
-		else
-			
-		{
-		  $('#nav1').slideAndSwipe();
-		}
-            });
+	//$(document).ready(function() {
+	//	if(newUsr==true)
+	//	{
+        //        $('.nav').slideAndSwipe();
+	//	}
+	//	else
+	//		
+	//	{
+	//	  $('#nav1').slideAndSwipe();
+	//	}
+       //     });
 
 
 
@@ -741,6 +744,15 @@ function init() {
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
 	 check();
+	if(newUsr==true)
+		{
+                $('.nav').slideAndSwipe();
+		}
+		else
+			
+		{
+		  $('.nav1').slideAndSwipe();
+		}
 	document.getElementById("dl_btn").style.display="none";
 	document.getElementById("dl_btn").style.visibility="false";
 	//document.getElementById("defaultOpen").click();
@@ -2289,7 +2301,7 @@ LaunchReview.launch(appId, function(){
        
         </nav>
 	
-	<div id='nav1' class="nav">
+	<div id='nav1' class="nav1">
                     
           <ul>
 		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
