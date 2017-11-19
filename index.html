@@ -558,8 +558,8 @@ margin: 0 auto;
 		//s=false;
 		//newUsr
 		check();
-		alert(window.localStorage.getItem("nam"));
-				if(newUsr==1)
+		//alert(window.localStorage.getItem("nam"));
+				if(newUsr==2)
 				{
                $('nav[role="sub"]').slideAndSwipe();
 				}
@@ -782,9 +782,7 @@ var newUsr;
  
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
-	 check();
-	
-	document.getElementById("dl_btn").style.display="none";
+	 document.getElementById("dl_btn").style.display="none";
 	document.getElementById("dl_btn").style.visibility="false";
 	//document.getElementById("defaultOpen").click();
 	document.getElementById("defaultOpen").click();
@@ -1587,6 +1585,7 @@ function category()
 function store(un,pd) {
     window.localStorage.setItem('nam', un);
     window.localStorage.setItem('pw', pd);
+	alert(window.localStorage.getItem('pw'));
 }
  
 function check() {
