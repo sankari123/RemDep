@@ -1587,12 +1587,13 @@ function check() {
     // stored data from the register-form
     var storedName = window.localStorage["nam"];
     var storedPw = window.localStorage["pw"];
-
+alert(storedName);
+	alert(storedPw);
       // check if stored data from register-form is equal to data from login form
     if(storedName !== '' && storedPw !== '') {
-        $('nav[role="sub"]').slideAndSwipe();
-    }else {
          $('nav[role="main"]').slideAndSwipe();
+    }else {
+           $('nav[role="sub"]').slideAndSwipe();
     }
 	 
 }		
