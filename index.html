@@ -558,7 +558,7 @@ margin: 0 auto;
 		//s=false;
 		//newUsr
 		check();
-				if(newUsr==false)
+				if(newUsr==1)
 				{
                $('nav[role="sub"]').slideAndSwipe();
 				}
@@ -1588,7 +1588,7 @@ function store(un,pd) {
     window.localStorage.setItem('nam', un);
     window.localStorage.setItem('pw', pd);
 }
-var newUsr=false;
+ 
 function check() {
 
     // stored data from the register-form
@@ -1597,9 +1597,9 @@ function check() {
 
       // check if stored data from register-form is equal to data from login form
     if(storedName !== '' && storedPw !== '') {
-        newUsr=false;
+        newUsr=1;
     }else {
-        newUsr=true;
+        newUsr=2;
     }
 	alert(storedName);
 	alert(storedPw);
