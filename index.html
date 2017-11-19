@@ -88,20 +88,20 @@ margin: 0 auto;
 	   
 
 
-	.nav ul {
+	 nav[role="main"] ul {
           margin: 0;
 	  color:#cfddfa;
           padding: 2%;
           list-style: none;
 		  
       }
-      .nav ul li {
+     nav[role="main"] ul li {
           margin: 0;
 	    color: white;  
 	      text-align: center; 
 		  
       }
-      .nav ul li a {
+      nav[role="main"] ul li a {
           padding: 15px 20px;
           font-size: 13px;
           font-weight: 100;
@@ -116,10 +116,42 @@ margin: 0 auto;
           -o-transition:  background 0.3s ease-in-out;
           transition:  background 0.3s ease-in-out;
       } 	
-      .nav ul li:hover a {
+      nav[role="main"] ul li:hover a {
           background: #3b6f8a;
       }
-	  
+
+
+	  nav[role="sub"] ul {
+          margin: 0;
+	      color:#cfddfa;
+          padding: 2%;
+          list-style: none;
+		  
+      }
+      nav[role="sub"]  ul li {
+          margin: 0;
+	    color: white;  
+	      text-align: center; 
+		  
+      }
+      nav[role="sub"]  ul li a {
+           padding: 15px 20px;
+          font-size: 13px;
+          font-weight: 100;
+          color: white;
+          text-decoration: none;
+          display: block;
+          border-bottom: 1px solid #3b6f8a;
+			   
+          -webkit-transition:  background 0.3s ease-in-out;
+          -moz-transition:  background 0.3s ease-in-out;
+          -ms-transition:  background 0.3s ease-in-out;
+          -o-transition:  background 0.3s ease-in-out;
+          transition:  background 0.3s ease-in-out;
+      } 	
+      nav[role="sub"] 	 ul li:hover a {
+          background: red;
+      }
 	  
 		
 		body, html {
@@ -131,37 +163,7 @@ margin: 0 auto;
 }
 	    
 	    
-	    .nav1 ul {
-          margin: 0;
-	  color:#cfddfa;
-          padding: 2%;
-          list-style: none;
-		  
-      }
-      .nav1 ul li {
-          margin: 0;
-	    color: white;  
-	      text-align: center; 
-		  
-      }
-      .nav1 ul li a {
-          padding: 15px 20px;
-          font-size: 13px;
-          font-weight: 100;
-          color: white;
-          text-decoration: none;
-          display: block;
-          border-bottom: 1px solid #3b6f8a;
-			   
-          -webkit-transition:  background 0.3s ease-in-out;
-          -moz-transition:  background 0.3s ease-in-out;
-          -ms-transition:  background 0.3s ease-in-out;
-          -o-transition:  background 0.3s ease-in-out;
-          transition:  background 0.3s ease-in-out;
-      } 	
-      .nav1 ul li:hover a {
-          background: #3b6f8a;
-      }
+	   
 	  
 	    
 .btn24
@@ -552,18 +554,19 @@ margin: 0 auto;
 	<script>
  var directionsService = new google.maps.DirectionsService();
  
-	//$(document).ready(function() {
-	//	if(newUsr==true)
-	//	{
-        //        $('.nav').slideAndSwipe();
-	//	}
-	//	else
-	//		
-	//	{
-	//	  $('#nav1').slideAndSwipe();
-	//	}
-       //     });
-
+	$(document).ready(function() {
+		//s=false;
+		//newUsr
+				if(newUsr==false)
+				{
+               $('nav[role="sub"]').slideAndSwipe();
+				}
+				else
+				{
+				 
+				  $('nav[role="main"]').slideAndSwipe();
+				}
+            });
 
 
 	var active_page;
@@ -774,20 +777,12 @@ function init() {
     	document.addEventListener("deviceready", onDeviceReady, false);
 	
 }
-
+var newUsr;
  
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
 	 check();
-	if(newUsr==true)
-		{
-                $('.nav').slideAndSwipe();
-		}
-		else
-			
-		{
-		  $('.nav1').slideAndSwipe();
-		}
+	
 	document.getElementById("dl_btn").style.display="none";
 	document.getElementById("dl_btn").style.visibility="false";
 	//document.getElementById("defaultOpen").click();
@@ -2321,7 +2316,7 @@ LaunchReview.launch(appId, function(){
  
 
 <body style="background-color: transparent;" onload='init();'> 
-<nav class="nav">
+<nav role='main' class="nav">
                     
           <ul>
 		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
@@ -2331,12 +2326,12 @@ LaunchReview.launch(appId, function(){
 		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
               
                   <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMM</a>
-		    <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login/Signup</a>
+		    <li> <a id="myLink" href="#" onclick="profile();" class="ssm-toggle-nav">Login/Register</a>
           </ul>
        
         </nav>
-	
-	<div id='nav1' class="nav1">
+
+		<nav role='sub' class="nav">
                     
           <ul>
 		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
@@ -2346,11 +2341,10 @@ LaunchReview.launch(appId, function(){
 		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
               
                   <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMM</a>
-		    <li> <a id="myLink" href="#" onclick="profile();" class="ssm-toggle-nav">Profile</a>
+		    <li> <a id="myLink" href="#" onclick="profile();" class="ssm-toggle-nav">Sivasankari</a>
           </ul>
        
-        </div>
-	
+        </nav>
          <div id=main >
             <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor=#0c9db7><tr height='70px' style='color:#ffffff'><td style='vertical-align: middle;' >&nbsp;&nbsp;
          <a href="#" class="ssm-toggle-nav"  style='text-decoration: none;  font-size: 15px;color: white;'  title="open nav">&#9776;</a></td><td  align='center'><font size=3 color='#ffffff'><b>Madras Music & Miscellany</b></font></td><td><button id='artist' class='btn2'><img src='search.png' style='border:none; outline: none; width :25px; height:25px;vertical-align:middle'></button>&nbsp;</td></tr></table>
