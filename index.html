@@ -1600,13 +1600,15 @@ function check() {
     }else {
         newUsr=true;
     }
+	alert(storedName);
+	alert(storedPw);
 }		
 function ajaxCall(n) {
 	 var msg1;
 	 opt1=n;
 	 x=document.getElementById('usrname').value;
 	 y=document.getElementById('usrpwd').value;
-	  alert(x +'in');
+	 // alert(x +'in');
 	 if(x!='' && y!='')
 	 {
 	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
