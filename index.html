@@ -558,16 +558,20 @@ margin: 0 auto;
 		//s=false;
 		//newUsr
 		//check();
-		if(window.localStorage["nam"] != undefined && window.localStorage["pw"] != undefined) 
-{
-  if(window.localStorage["nam"] != "" && window.localStorage["pw"] != ""){                   
+		
+		 var u_name=localStorage.getItem("nam");
+    		var u_pwd=localStorage.getItem("pw");
+		
+		 
+ 
+  if(u_name != "" && u_pwd != ""){                   
          $('nav[role="main"]').slideAndSwipe();     
   }  
 	else
 	{
 	$('nav[role="sub"]').slideAndSwipe();
 	}
-}
+ 
 		 
             });
 
@@ -790,16 +794,7 @@ function onDeviceReady(){
 	document.getElementById("defaultOpen").click();
 	
 	
-	var storedName = window.localStorage["nam"];
-    	var storedPw = window.localStorage["pw"];
-		alert(storedName);
-			alert(storedPw);
-      // check if stored data from register-form is equal to data from login form
-    	if(storedName !== '' && storedPw !== '') {
-        	 $('nav[role="main"]').slideAndSwipe();
-  	  }else {
-           $('nav[role="sub"]').slideAndSwipe();
-  	  }
+	
 	
 	checkConnection();
 	document.addEventListener("backbutton", backButtonHandler, false);
@@ -1600,8 +1595,8 @@ function category()
 function store(un,pd) {
     window.localStorage.setItem('nam', un);
     window.localStorage.setItem('pw', pd);
-window.localStorage["nam"] =un;
-window.localStorage["pw"] = pd;
+//window.localStorage["nam"] =un;
+//window.localStorage["pw"] = pd;
 	//alert(window.localStorage.getItem('pw'));
 }
  
@@ -1639,7 +1634,7 @@ function ajaxCall(n) {
 	 else
 	 {
 		 store(x,y);
-		 check();
+		// check();
 	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
