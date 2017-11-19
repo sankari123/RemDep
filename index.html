@@ -558,15 +558,7 @@ margin: 0 auto;
 		//s=false;
 		//newUsr
 		check();
-		 alert(window.localStorage.getItem("nam"));
-				if(newUsr==2)
-				{
-               $('nav[role="sub"]').slideAndSwipe();
-				}
-				else
-				{
-			  $('nav[role="main"]').slideAndSwipe();
-				}
+		 
             });
 
 
@@ -1585,23 +1577,24 @@ function category()
 function store(un,pd) {
     window.localStorage.setItem('nam', un);
     window.localStorage.setItem('pw', pd);
-	alert(window.localStorage.getItem('pw'));
+window.localStorage["nam"] =un;
+window.localStorage["pw"] = pd;
+	//alert(window.localStorage.getItem('pw'));
 }
  
 function check() {
 
     // stored data from the register-form
-    var storedName = window.localStorage.getItem('nam');
-    var storedPw = window.localStorage.getItem('pw');
+    var storedName = window.localStorage["nam"];
+    var storedPw = window.localStorage["pw"];
 
       // check if stored data from register-form is equal to data from login form
     if(storedName !== '' && storedPw !== '') {
-        newUsr=1;
+        $('nav[role="sub"]').slideAndSwipe();
     }else {
-        newUsr=2;
+         $('nav[role="main"]').slideAndSwipe();
     }
-	alert(storedName);
-	alert(storedPw);
+	 
 }		
 function ajaxCall(n) {
 	 var msg1;
