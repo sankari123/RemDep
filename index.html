@@ -557,7 +557,17 @@ margin: 0 auto;
 	$(document).ready(function() {
 		//s=false;
 		//newUsr
-		check();
+		//check();
+		if(window.localStorage["nam"] != undefined && window.localStorage["pw"] != undefined) 
+{
+  if(window.localStorage["nam"] != "" && window.localStorage["pw"] != ""){                   
+         $('nav[role="main"]').slideAndSwipe();     
+  }  
+	else
+	{
+	$('nav[role="sub"]').slideAndSwipe();
+	}
+}
 		 
             });
 
@@ -778,6 +788,19 @@ function onDeviceReady(){
 	document.getElementById("dl_btn").style.visibility="false";
 	//document.getElementById("defaultOpen").click();
 	document.getElementById("defaultOpen").click();
+	
+	
+	var storedName = window.localStorage["nam"];
+    	var storedPw = window.localStorage["pw"];
+		alert(storedName);
+			alert(storedPw);
+      // check if stored data from register-form is equal to data from login form
+    	if(storedName !== '' && storedPw !== '') {
+        	 $('nav[role="main"]').slideAndSwipe();
+  	  }else {
+           $('nav[role="sub"]').slideAndSwipe();
+  	  }
+	
 	checkConnection();
 	document.addEventListener("backbutton", backButtonHandler, false);
 	//document.addEventListener("backbutton", function (e) {
