@@ -559,13 +559,13 @@ margin: 0 auto;
 		//newUsr
 		//check();
 		
-		 var u_name=window.localStorage.getItem("nam");
-    		var u_pwd=window.localStorage.getItem("pw");
+		 var u_name=window.localStorage.getItem("key");
+    		//var u_pwd=window.localStorage.getItem("pw");
 	//	 window.localStorage.setItem("key", "value");
     //    var keyname = window.localStorage.key(i);
 		 
  
-  if(u_name != "" && u_pwd != ""){                   
+  if(u_name != ""){                   
          $('nav[role="main"]').slideAndSwipe();     
   }  
 	else
@@ -1594,8 +1594,8 @@ function category()
 		
 }
 function store(un,pd) {
-    window.localStorage.setItem('nam', un);
-    window.localStorage.setItem('pw', pd);
+    window.localStorage.setItem('key', un);
+  //  window.localStorage.setItem('pw', pd);
 //window.localStorage["nam"] =un;
 //window.localStorage["pw"] = pd;
 	//alert(window.localStorage.getItem('pw'));
