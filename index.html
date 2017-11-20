@@ -558,7 +558,7 @@ margin: 0 auto;
 		//s=false;
 		//newUsr
 		//check();
-		
+		 
 	 u_name=window.localStorage.getItem("key");
 		//var u_name = window.localStorage.nam;
 		alert(u_name);
@@ -796,7 +796,7 @@ function onDeviceReady(){
 	//document.getElementById("defaultOpen").click();
 	document.getElementById("defaultOpen").click();
 	
-	
+	var keyName = window.localStorage.key(0);
 	
 	
 	checkConnection();
@@ -1598,9 +1598,9 @@ function category()
 function store(un,pd) {
 //    window.localStorage.setItem('key', un);
 	 
-    window.localStorage.setItem('key', un);
-
-
+   // window.localStorage.setItem('key', un);
+alert(un);
+ window.localStorage.setItem("key", un);
  
 	//window.localStorage.key = un;
   //  window.localStorage.setItem('pw', pd);
