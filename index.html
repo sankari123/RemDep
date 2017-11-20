@@ -559,7 +559,8 @@ margin: 0 auto;
 		//newUsr
 		//check();
 		
-		 var u_name=window.localStorage.getItem("key");
+		// var u_name=window.localStorage.getItem("key");
+		var u_name = window.localStorage.nam;
 		alert(u_name);
     		//var u_pwd=window.localStorage.getItem("pw");
 	//	 window.localStorage.setItem("key", "value");
@@ -1595,7 +1596,8 @@ function category()
 		
 }
 function store(un,pd) {
-    window.localStorage.setItem('key', un);
+//    window.localStorage.setItem('key', un);
+	window.localStorage.nam = un;
   //  window.localStorage.setItem('pw', pd);
 //window.localStorage["nam"] =un;
 //window.localStorage["pw"] = pd;
