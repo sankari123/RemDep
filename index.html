@@ -553,13 +553,13 @@ margin: 0 auto;
     </style>
 	<script>
  var directionsService = new google.maps.DirectionsService();
- 
+ var u_name;
 	$(document).ready(function() {
 		//s=false;
 		//newUsr
 		//check();
 		
-		var u_name=window.localStorage.getItem("key");
+	 u_name=window.localStorage.getItem("key");
 		//var u_name = window.localStorage.nam;
 		alert(u_name);
     		//var u_pwd=window.localStorage.getItem("pw");
@@ -1597,9 +1597,8 @@ function category()
 }
 function store(un,pd) {
 //    window.localStorage.setItem('key', un);
-	 if(window.localStorage.getItem('key')==null){
-    //set alert to true value
-    window.localStorage.setItem('key',un);
+	 
+    window.localStorage.setItem('key', un);
 
 
     }
