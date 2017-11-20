@@ -54,7 +54,7 @@
 	<gap:plugin name="cordova-launch-review" source="npm" />
   	<plugin name="cordova-pdf-generator" source="npm" />
 	<plugin name="cordova-plugin-keyboard" source="npm" />
-	<plugin name="cordova-plugin-persist-localstorage" source="npm" />
+	<plugin name="cordova-plugin-nativestorage" source="npm" />
   
   <icon src="icon.png" />
   <icon src="icon.png" gap:platform="android" gap:qualifier="ldpi"/>
