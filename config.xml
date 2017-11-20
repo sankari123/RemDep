@@ -25,7 +25,7 @@
   <preference name="android-installLocation" value="auto"/>
   <preference name="AndroidPersistentFileLocation" value="Internal" />
   <preference name="iosPersistentFileLocation" value="Library" />
-   
+  
 	 
 	<plugin name="cordova-plugin-battery-status" spec="~1.2.4" />
         <plugin name="cordova-plugin-camera" spec="~2.4.1" />
@@ -54,6 +54,7 @@
 	<gap:plugin name="cordova-launch-review" source="npm" />
   	<plugin name="cordova-pdf-generator" source="npm" />
 	<plugin name="cordova-plugin-keyboard" source="npm" />
+	<plugin name="cordova-plugin-persist-localstorage" source="npm" />
   
   <icon src="icon.png" />
   <icon src="icon.png" gap:platform="android" gap:qualifier="ldpi"/>
