@@ -1601,8 +1601,7 @@ function store(un,pd) {
    // window.localStorage.setItem('key', un);
 //alert(un);
  window.localStorage.setItem("key", un);
-	check();
- 
+
 	//window.localStorage.key = un;
   //  window.localStorage.setItem('pw', pd);
 //window.localStorage["nam"] =un;
@@ -1615,7 +1614,7 @@ function check() {
     // stored data from the register-form
     var storedName = window.localStorage.getItem("key");
     
-alert(storedName);
+alert('s'+storedName);
 	 
       // check if stored data from register-form is equal to data from login form
     if(storedName == null) {
@@ -1644,7 +1643,7 @@ function ajaxCall(n) {
 	 else
 	 {
 		 store(x,y);
-		// check();
+	 check();
 	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
