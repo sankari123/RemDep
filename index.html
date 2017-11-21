@@ -1590,7 +1590,7 @@ function category()
 		 
 		
 }
-function store(un,pd) {
+function storeLocal(un,pd) {
 //    window.localStorage.setItem('key', un);
 	 
   window.localStorage.setItem('key', un);
@@ -1604,6 +1604,74 @@ function store(un,pd) {
 	//alert(window.localStorage.getItem('pw'));
 }
  
+		
+function store(un,pd)
+		{
+	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSLocal, fail);	
+		
+		}
+		
+
+function gotFSLocal(fileSystem) {
+	//alert(fileSystem.root.fullPath);
+    //    window.rootFS = fileSystem.root;
+        fileSystem.root.getFile("login.txt", null, gotFileEntryLocal, fail);
+		
+	
+    }	
+
+function gotFileEntryLocal(fileEntry) {
+        fileEntry.file(gotFileLocal, fail);
+    }
+		
+function gotFileLocal(file){
+      readDataUrlLocal(file);
+        readAsTextLocal(file);
+    }
+		
+		
+		 function readDataUrlLocal(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as data URL");
+            console.log(evt.target.result);
+        };
+        reader.readAsDataURLLocal(file);
+    }
+	
+	function readAsTextLocal(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as text");
+            console.log(evt.target.result);
+	   alert(evt.target.result);
+	    document.getElementById('storge').value=evt.target.result;	
+	 
+	//	 ajaxFunction();
+        };
+        reader.readAsTextLocal(file);
+  }	
+function fail(evt) {
+        console.log(evt.target.error.code);
+    }
+
+function gotFSLocal(fileSystem) {
+        fileSystem.root.getFile("events.txt", {create: true, exclusive: false}, gotFileEntryLocalWrite, fail);
+}
+		
+function gotFileEntryLocalWrite(fileEntry) {
+        fileEntry.createWriter(WriteTextLocal, fail);
+    }			
+	
+function WriteTextLocal(writer) {
+      writer.onwriteend = function(evt){ // Fired when end write.
+        console.log("End write text in file");
+
+    };
+writer.write(document.getElementById('usrname').value;
+}
+		
+		
 function check() {
 
     // stored data from the register-form
@@ -1637,8 +1705,8 @@ function ajaxCall(n) {
 	 }
 	 else
 	 {
-	 	 store(x,y);
-	  check();
+	 //	 store(x,y);
+	//  check();
 	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -1656,14 +1724,10 @@ function ajaxCall(n) {
 	      { 
 	      msg1="Thanks for logging in...";
 	      }
-	       window.localStorage.setItem("key", "value");
-       		 var keyname = window.localStorage.key(i);
-       	 // keyname is now equal to "key"
-        var value = window.localStorage.getItem("key");
-        // value is now equal to "value"
-        window.localStorage.removeItem("key");
-        window.localStorage.setItem("key2", "value2");
-        window.localStorage.clear();
+	       
+      
+        window.localStorage.setItem("key", x);
+      
 	       navigator.notification.alert(  msg1,   alertDismissed,  'Login',   'OK'  );
     }
     }
@@ -2540,6 +2604,7 @@ LaunchReview.launch(appId, function(){
       </div>
 
  <textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
+<textarea id="storge" class="hideDontTakeUpSpace"  rows=1 cols=2 readonly></textarea> 
 </body>
 </html>
 
