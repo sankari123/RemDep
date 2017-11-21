@@ -1612,7 +1612,7 @@ cordova.plugins.SecureLocalStorage.setItem("key" , un);
 function check() {
 
     // stored data from the register-form
-    var storedName = window.localStorage.getItem("key");
+//    var storedName = window.localStorage.getItem("key");
        var storedName =cordova.plugins.SecureLocalStorage.getItem("key")
 alert('s'+storedName);
 	 
