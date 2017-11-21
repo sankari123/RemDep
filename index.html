@@ -1606,8 +1606,8 @@ cordova.plugins.SecureLocalStorage.setItem("key" , un);
 function check() {
 
     // stored data from the register-form
-//    var storedName = window.localStorage.getItem("key");
-       var storedName =cordova.plugins.SecureLocalStorage.getItem("key")
+ //    var storedName = window.localStorage.getItem("key");
+   var storedName =cordova.plugins.SecureLocalStorage.getItem("key")
 alert('s'+storedName);
 	 
       // check if stored data from register-form is equal to data from login form
@@ -1637,7 +1637,7 @@ function ajaxCall(n) {
 	 else
 	 {
 		 store(x,y);
-	 check();
+	// check();
 	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
