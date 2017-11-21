@@ -1706,7 +1706,7 @@ function ajaxCall(n) {
 	 else
 	 {
 	 //	 store(x,y);
-	//  check();
+	
 	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -1727,7 +1727,7 @@ function ajaxCall(n) {
 	       
       
         window.localStorage.setItem("key", x);
-      
+     check();
 	       navigator.notification.alert(  msg1,   alertDismissed,  'Login',   'OK'  );
     }
     }
