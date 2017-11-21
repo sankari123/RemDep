@@ -1984,7 +1984,7 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 		
 			favAddStr+=eDat+"%"+eNam+"^";
 	//alert(favAddStr);
-	 //	window.localStorage.setItem('favShows',favAddStr);
+ 	window.localStorage.setItem('favShows',favAddStr);
 		}
 		
 		
@@ -2359,7 +2359,7 @@ LaunchReview.launch(appId, function(){
 		
 function profile()
 	{
-	 setFav();
+	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
 	alert( favS);	
