@@ -1594,7 +1594,7 @@ function store(un,pd) {
 	 
    // window.localStorage.setItem('key', un);
 //alert(un);
-  window.localStorage.setItem("key", 'siva');
+ // window.localStorage.setItem("key", 'siva');
 //cordova.plugins.SecureLocalStorage.setItem("key" , un);
 	//window.localStorage.key = un;
   //  window.localStorage.setItem('pw', pd);
@@ -1608,7 +1608,7 @@ function check() {
     // stored data from the register-form
      var storedName = window.localStorage.getItem("key");
 //   var storedName =cordova.plugins.SecureLocalStorage.getItem("key")
-alert('s'+storedName);
+//alert('s'+storedName);
 	 
       // check if stored data from register-form is equal to data from login form
     if(storedName == null) {
@@ -1636,7 +1636,7 @@ function ajaxCall(n) {
 	 }
 	 else
 	 {
-		 store(x,y);
+	//	 store(x,y);
 	// check();
 	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
 	 var xhttp = new XMLHttpRequest();
@@ -2345,12 +2345,12 @@ LaunchReview.launch(appId, function(){
 		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
               
                   <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMM</a>
-		    <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login/Register</a>
+		<!--    <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login/Register</a>-->
           </ul>
        
         </nav>
 
-		<nav role='sub' class="nav">
+	<!--	<nav role='sub' class="nav">
                     
           <ul>
 		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
@@ -2363,7 +2363,7 @@ LaunchReview.launch(appId, function(){
 		    <li> <a id="myLink" href="#" onclick="profile();" class="ssm-toggle-nav">Sivasankari</a>
           </ul>
        
-        </nav>
+        </nav>-->
          <div id=main >
             <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor=#0c9db7><tr height='70px' style='color:#ffffff'><td style='vertical-align: middle;' >&nbsp;&nbsp;
          <a href="#" class="ssm-toggle-nav"  style='text-decoration: none;  font-size: 15px;color: white;'  title="open nav">&#9776;</a></td><td  align='center'><font size=3 color='#ffffff'><b>Madras Music & Miscellany</b></font></td><td><button id='artist' class='btn2'><img src='search.png' style='border:none; outline: none; width :25px; height:25px;vertical-align:middle'></button>&nbsp;</td></tr></table>
