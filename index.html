@@ -1901,7 +1901,7 @@ function ven_det(v)
 			timeString = h + timeString.substr(2, 3);
 		calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
-		
+		storeDate=events[i][2]+"/"+events[i][1]+"/"+events[i][3];
 		dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
 	                var n = weekday[dayStr.getDay()];
 			var mNam= monthNames[dayStr.getMonth()];
@@ -1922,14 +1922,14 @@ function ven_det(v)
 			}
 			
 		
-		
+		evSt=events[i][7];
 		if(i%2==0)
 	{
 		
 		
 //	theevent+="<div id='wrapper' style='background:white'><div id='left' style='background:white;font-size: 9pt;'>"+events[i][5]+" at "+jj+"<br></div><div id='right' style='background:white;font-size: 9pt;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br><br></div></div> "	; 	
 		
-		ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white;'>"+n+", " +events[i][2]+" "+mNam+jj+"<br><button id=favAdd onclick='favAdd(dayStr,events[i][7])' class=btn2><img src='fav.png'></button></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> 	"; 
+		ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white;'>"+n+", " +events[i][2]+" "+mNam+jj+"<br><button id=favAdd onclick='favAdd(storeDate,evSt)' class=btn2><img src='fav.png'></button></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> 	"; 
 		
 		
 		
@@ -1938,7 +1938,7 @@ function ven_det(v)
 			
 	else
 	{
-ev_lst+="<div id='wrapper' style='background:#f1f1f1'><div id='left' style='background:#f1f1f1;'>"+n+", " +events[i][2]+" "+mNam+" "+jj+"<br><button id=favAdd onclick='favAdd(dayStr,events[i][7])' class=btn2><img src='fav.png'></button></div><div id='right' style='background:#f1f1f1;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> "	; 	
+ev_lst+="<div id='wrapper' style='background:#f1f1f1'><div id='left' style='background:#f1f1f1;'>"+n+", " +events[i][2]+" "+mNam+" "+jj+"<br><button id=favAdd onclick='favAdd(storeDate,evSt)' class=btn2><img src='fav.png'></button></div><div id='right' style='background:#f1f1f1;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> "	; 	
 	}
 		
 		
