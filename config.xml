@@ -26,6 +26,7 @@
   <preference name="AndroidPersistentFileLocation" value="Internal" />
   <preference name="iosPersistentFileLocation" value="Library" />
   <preference name="InAppBrowserStorageEnabled" value="true"/>
+  <preference name="BackupWebStorage" value="local" />
 	 
 	<plugin name="cordova-plugin-battery-status" spec="~1.2.4" />
         <plugin name="cordova-plugin-camera" spec="~2.4.1" />
