@@ -556,7 +556,7 @@ margin: 0 auto;
  var u_name;
 	$(document).ready(function() {
 	   var keyname = window.localStorage.key(i);
-		   var u_name= window.localStorage.getItem("key");
+	 var u_name= window.localStorage.getItem("key");
 	  alert('key'+keyname);
 	 	alert('unam'+u_name);
      
@@ -1605,72 +1605,7 @@ function storeLocal(un,pd) {
 }
  
 		
-function store(un,pd)
-		{
-	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSLocal, fail);	
-		
-		}
-		
-
-function gotFSLocal(fileSystem) {
-	//alert(fileSystem.root.fullPath);
-    //    window.rootFS = fileSystem.root;
-        fileSystem.root.getFile("login.txt", null, gotFileEntryLocal, fail);
-		
-	
-    }	
-
-function gotFileEntryLocal(fileEntry) {
-        fileEntry.file(gotFileLocal, fail);
-    }
-		
-function gotFileLocal(file){
-      readDataUrlLocal(file);
-        readAsTextLocal(file);
-    }
-		
-		
-		 function readDataUrlLocal(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as data URL");
-            console.log(evt.target.result);
-        };
-        reader.readAsDataURLLocal(file);
-    }
-	
-	function readAsTextLocal(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as text");
-            console.log(evt.target.result);
-	   alert(evt.target.result);
-	    document.getElementById('storge').value=evt.target.result;	
-	 
-	//	 ajaxFunction();
-        };
-        reader.readAsTextLocal(file);
-  }	
-function fail(evt) {
-        console.log(evt.target.error.code);
-    }
-
-function gotFSLocal(fileSystem) {
-        fileSystem.root.getFile("events.txt", {create: true, exclusive: false}, gotFileEntryLocalWrite, fail);
-}
-		
-function gotFileEntryLocalWrite(fileEntry) {
-        fileEntry.createWriter(WriteTextLocal, fail);
-    }			
-	
-function WriteTextLocal(writer) {
-      writer.onwriteend = function(evt){ // Fired when end write.
-        console.log("End write text in file");
-
-    };
-writer.write(document.getElementById('usrname').value;
-}
-		
+ 	
 		
 function check() {
 
