@@ -1984,9 +1984,15 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 		
 			favAddStr+=eDat+"%"+eNam+"^";
 	alert(favAddStr);
-	 	window.localStorage.setItem('favShows',favAddStr);
+	 //	window.localStorage.setItem('favShows',favAddStr);
 		}
 		
+		
+		function setFav()
+		{
+		window.localStorage.setItem('favShows',favAddStr);
+		
+		}
 function getLoc() 
 {
 	
@@ -2353,6 +2359,9 @@ LaunchReview.launch(appId, function(){
 		
 function profile()
 	{
+		 
+	 setFav();
+	 
  var favS= window.localStorage.getItem("favShows");
 	alert( favS);	
 }
