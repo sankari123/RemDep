@@ -817,6 +817,7 @@ if( activePg==5)
       else
       {
         // Code to navigate to the history action
+	 window.localStorage.setItem('favShows',favAddStr);
       navigator.notification.confirm("Do you want to exit MMM?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");   
       }
 }
@@ -1928,7 +1929,7 @@ function ven_det(v)
 		
 //	theevent+="<div id='wrapper' style='background:white'><div id='left' style='background:white;font-size: 9pt;'>"+events[i][5]+" at "+jj+"<br></div><div id='right' style='background:white;font-size: 9pt;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br><br></div></div> "	; 	
 		
-		ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white;'>"+n+", " +events[i][2]+" "+mNam+jj+"<br></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> 	"; 
+		ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white;'>"+n+", " +events[i][2]+" "+mNam+jj+"<br><button id=favAdd onclick='favAdd(dayStr,events[i][7])' class=btn2><img src='fav.png'></button></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> 	"; 
 		
 		
 		
@@ -1937,7 +1938,7 @@ function ven_det(v)
 			
 	else
 	{
-ev_lst+="<div id='wrapper' style='background:#f1f1f1'><div id='left' style='background:#f1f1f1;'>"+n+", " +events[i][2]+" "+mNam+" "+jj+"<br></div><div id='right' style='background:#f1f1f1;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> "	; 	
+ev_lst+="<div id='wrapper' style='background:#f1f1f1'><div id='left' style='background:#f1f1f1;'>"+n+", " +events[i][2]+" "+mNam+" "+jj+"<br><button id=favAdd onclick='favAdd(dayStr,events[i][7])' class=btn2><img src='fav.png'></button></div><div id='right' style='background:#f1f1f1;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> "	; 	
 	}
 		
 		
@@ -1975,7 +1976,17 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 //	  var img_url="http://maps.googleapis.com/maps/api/staticmap?size="+width+"x300&markers=color:blue%7Clabel:S%7C"+v1+',Chennai'+"&sensor=false";
         document.getElementById("map").innerHTML="<img src='"+img_url+"'>";	 
  }
-	  
+
+	var favAddStr;	
+		
+		function favAdd(eDat,eNam)
+		{
+		
+			favAddStr+=eDat+"%"+eNam+"^";
+	
+	 	//window.localStorage.setItem('favShows',favAddStr);
+		}
+		
 function getLoc() 
 {
 	
@@ -2162,7 +2173,16 @@ function calAdd()
    
 	 
 }	
+function fav()
+	{
+	
+var favItm= $("#xPort").html();
+	var regex = /(<([^>]+)>)/ig;
+	 favItm = favItm.replace(regex, " ");
 
+   favItm = favItm.replace(/&nbsp;/g,'');
+		
+	}
 	
 function share()
 {
@@ -2329,6 +2349,12 @@ LaunchReview.launch(appId, function(){
     alert("Error launching store app: " + err);
 });
 	
+}
+		
+function profile()
+	{
+ var favS= window.localStorage.getItem("favShows");
+	alert( favS);	
 }
 </script>
 </head>
@@ -2515,6 +2541,7 @@ LaunchReview.launch(appId, function(){
     <div style='font-size: 9pt;'>Download</div></div>
  <div style="float: left; font-size: 9pt;width: 33%;"><button class='btn1'  onclick='share();'><img src="share1.png"></button>
     <div style='font-size: 9pt;'>Share</div></div>
+ 
  <br style="clear: left;" />
 </div>
  
