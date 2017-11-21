@@ -556,10 +556,10 @@ margin: 0 auto;
  var u_name;
 	$(document).ready(function() {
 	      var keyname = window.localStorage.key(i);
-		u_name=window.localStorage.getItem("key");
+		u_name=window.localStorage["key"];
 	 alert(keyname);
 		alert(u_name);
-    	 
+     
  
   if(u_name == null){                   
          $('nav[role="main"]').slideAndSwipe();     
@@ -1594,11 +1594,11 @@ function store(un,pd) {
 	 
    // window.localStorage.setItem('key', un);
 //alert(un);
-  window.localStorage.setItem("key", un);
+//  window.localStorage.setItem("key", un);
 //cordova.plugins.SecureLocalStorage.setItem("key" , un);
 	//window.localStorage.key = un;
   //  window.localStorage.setItem('pw', pd);
-//window.localStorage["nam"] =un;
+window.localStorage["key"] =un;
 //window.localStorage["pw"] = pd;
 	//alert(window.localStorage.getItem('pw'));
 }
