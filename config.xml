@@ -55,7 +55,7 @@
   	<plugin name="cordova-pdf-generator" source="npm" />
 	<plugin name="cordova-plugin-keyboard" source="npm" />
 	<plugin name="cordova-plugin-nativestorage" source="npm" spec="~2.1.0"/>
-  
+  <plugin name="nl-afas-cordova-plugin-securelocalstorage">
   <icon src="icon.png" />
   <icon src="icon.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="icon_mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
