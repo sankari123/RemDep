@@ -1601,6 +1601,7 @@ function store(un,pd) {
    // window.localStorage.setItem('key', un);
 alert(un);
  window.localStorage.setItem("key", un);
+	check();
  
 	//window.localStorage.key = un;
   //  window.localStorage.setItem('pw', pd);
@@ -1612,12 +1613,12 @@ alert(un);
 function check() {
 
     // stored data from the register-form
-    var storedName = window.localStorage["nam"];
-    var storedPw = window.localStorage["pw"];
+    var storedName = window.localStorage.getItem("key");
+    
 alert(storedName);
-	alert(storedPw);
+	 
       // check if stored data from register-form is equal to data from login form
-    if(storedName !== '' && storedPw !== '') {
+    if(storedName == null) {
          $('nav[role="main"]').slideAndSwipe();
     }else {
            $('nav[role="sub"]').slideAndSwipe();
