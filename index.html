@@ -1628,7 +1628,7 @@ function ajaxCall(n) {
 	 opt1=n;
 	 x=document.getElementById('usrname').value;
 	 y=document.getElementById('usrpwd').value;
-	 // alert(x +'in');
+	 alert(n +'   in');
 	 if(x!='' && y!='')
 	 {
 	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
@@ -1665,7 +1665,7 @@ function ajaxCall(n) {
         window.localStorage.setItem("key", x);
      check();
 	       navigator.notification.alert(  msg1,   alertDismissed,  'Login',   'OK'  );
-	      document.getElementById("defaultOpen").click();
+	     
     }
     }
   };
@@ -1681,7 +1681,7 @@ function ajaxCall(n) {
 	//	 alert('wrong');
 	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
 	 }
-	
+	 document.getElementById("defaultOpen").click();
 }
 
 function validateEmail($email) {
