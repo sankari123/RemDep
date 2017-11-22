@@ -1628,7 +1628,7 @@ function ajaxCall(n) {
 	 opt1=n;
 	 x=document.getElementById('usrname').value;
 	 y=document.getElementById('usrpwd').value;
-	 alert(n +'   in');
+	// alert(n +'   in');
 	 if(x!='' && y!='')
 	 {
 	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
@@ -1690,8 +1690,8 @@ function ajaxCall(n) {
 	//	 alert('wrong');
 	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
 	 }
-	setTimeout(function(){  }, 3000);
-	 document.getElementById("defaultOpen").click();
+	setTimeout(function(){  }, 29000);
+	document.getElementById("defaultOpen").click();
 }
 
 function validateEmail($email) {
