@@ -1982,7 +1982,7 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 		function favAdd(eDat,eNam)
 		{
 		 var favS1= window.localStorage.getItem("favShows");
-			if(favS1!=null)
+			if(favS1!=null || favS1!='')
 			{
 				
 			favAddStr+=favS1+eDat+"%"+eNam+"^";
@@ -2367,6 +2367,12 @@ function profile()
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
 	alert( favS);	
+		var favS= favS.replace('undefined','');
+	fArr = favS.substring(0, favS.length-1 );
+	fArr=fArr.split('^');
+	fshows=[];
+	 alert(fArr[0]);
+	
 }
 </script>
 </head>
