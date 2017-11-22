@@ -2374,20 +2374,21 @@ function profile()
 	favS = favS.substring(0, favS.length-1 );
 	favS=favS.split('^');
 		
-		
+		fArr=[];
 	for (var i = 0, len = favS.length; i < len; i++) {
 	 	latR1= favS[i].split('%');
 	 	//alert('latr1'+latR1);
 		pDat1=String(latR1[0]);
-		//alert('dat'+pDat1);
-		pnam1=String(latR1[1]);
+		 alert('dat'+pDat1);
+		pnam1=latR1[1];
+		 alert('pnam'+pnam1);
 		fArr.push([pDat1,pnam1]);
 		  
 	}
-		alert('far'+fArr);
+		//alert('far'+fArr);
 //	var ori=multiDimensionalUnique(fArr);
 		for(var i = 0, l = fArr.length; i < l; i++) {
-	 alert(fArr[i]);
+	 alert(fArr[i][0]+"-"+fArr[i][1]);
 		}
 }
 		
