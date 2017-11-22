@@ -1680,6 +1680,7 @@ function ajaxCall(n) {
 	//	 alert('wrong');
 	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
 	 }
+	document.getElementById("defaultOpen").click();
 }
 
 function validateEmail($email) {
@@ -2375,11 +2376,8 @@ function profile()
 		
 		
 	for (var i = 0, len = favS.length; i < len; i++) {
-		delimiter = '%';
-		start = 0;
-		var result = favS[i].split(delimiter, start+1).join(delimiter);
-		alert('res'+result);
-		latR1=result.split('%');
+	 	latR1= favS[i].split('%');
+		alert(latR1);
 		pDat1=String(latR1[0]);
 		pnam1=String(latR1[1]);
 		fArr.push(pDat1,pnam1);
