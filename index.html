@@ -1652,13 +1652,22 @@ function ajaxCall(n) {
       if(this.status == 200 || this.status == 0){
    //   document.getElementById("responsecontainer").innerHTML = this.responseText;
 	    //  alert(this.responseText);
+	      if(this.responseText=='No')
+	      {
+		      n='No';
+	      }
+	      
 	      if(n=='register')
 	      {
 	      
 	       msg1="Welcome to Madras Music & Miscellany... You will receive periodic notifications...";}
-	      else
+	      else if (n=='display')
 	      { 
 	      msg1="Thanks for logging in...";
+	      }
+	      else
+	      {
+	         msg1='Authentication failed. Please register...!' ;
 	      }
 	       
       
