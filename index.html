@@ -1665,6 +1665,7 @@ function ajaxCall(n) {
         window.localStorage.setItem("key", x);
      check();
 	       navigator.notification.alert(  msg1,   alertDismissed,  'Login',   'OK'  );
+	      document.getElementById("defaultOpen").click();
     }
     }
   };
@@ -1680,7 +1681,7 @@ function ajaxCall(n) {
 	//	 alert('wrong');
 	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
 	 }
-	document.getElementById("defaultOpen").click();
+	
 }
 
 function validateEmail($email) {
