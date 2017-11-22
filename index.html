@@ -1981,18 +1981,22 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 		
 		function favAdd(eDat,eNam)
 		{
-		
+		 var favS1= window.localStorage.getItem("favShows");
+			if(favS1!=null)
+			{
+				
+			favAddStr+=favS1+eDat+"%"+eNam+"^";
+			}
+			else
+			{
 			favAddStr+=eDat+"%"+eNam+"^";
+			}
 	//alert(favAddStr);
  	window.localStorage.setItem('favShows',favAddStr);
 		}
 		
 		
-		function setFav()
-		{
-		window.localStorage.setItem('favShows',favAddStr);
-		
-		}
+		 
 function getLoc() 
 {
 	
