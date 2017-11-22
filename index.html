@@ -2368,12 +2368,37 @@ function profile()
  var favS= window.localStorage.getItem("favShows");
 	alert( favS);	
 		var favS= favS.replace('undefined','');
-	fArr = favS.substring(0, favS.length-1 );
-	fArr=fArr.split('^');
-	fshows=[];
-	 alert(fArr[0]);
-	
+	favS = favS.substring(0, favS.length-1 );
+	favS=favS.split('^');
+	for (var i = 0, len = favS.length; i < len; i++) {
+		delimiter = '%';
+		start = 6;
+		var result = favS[i].split(delimiter, start+1).join(delimiter);
+		latR1=result.split('%');
+		pDat1=String(latR1[0]);
+		pnam1=String(latR1[1]);
+		fArr.push(pDat1,pnam1);
+	}
+	var ori=multiDimensionalUnique(fArr);
+		for(var i = 0, l = ori.length; i < l; i++) {
+	 alert(ori[i]);
+		}
 }
+		
+		function multiDimensionalUnique(arr) {
+    var uniques = [];
+    var itemsFound = {};
+    for(var i = 0, l = arr.length; i < l; i++) {
+        var stringified = JSON.stringify(arr[i]);
+        if(itemsFound[stringified]) { continue; }
+        uniques.push(arr[i]);
+        itemsFound[stringified] = true;
+    }
+    return uniques;
+}
+
+
+		
 </script>
 </head>
  
