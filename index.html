@@ -1646,12 +1646,11 @@ function check() {
 	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
 	 var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
-	//  alert(this.readyState);
+ 
     if (this.readyState == 4) {
 	 //   alert(this.status);
       if(this.status == 200 || this.status == 0){
-   //   document.getElementById("responsecontainer").innerHTML = this.responseText;
-	  //   alert(this.responseText);
+   
 	      if(this.responseText=='No')
 	      {
 		      n='No';
@@ -1693,8 +1692,10 @@ function check() {
 	//	 alert('wrong');
 	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
 	 }
-	//setTimeout(function(){  }, 9000);
+	 setTimeout(function(){  }, 9000);
 	document.getElementById("defaultOpen").click();
+
+
 }
 
 function validateEmail($email) {
