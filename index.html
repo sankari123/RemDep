@@ -1628,7 +1628,7 @@ function check() {
 	 opt1=n;
 	 x=document.getElementById('usrname').value;
 	 y=document.getElementById('usrpwd').value;
-	// alert(n +'   in');
+	 
 	 if(x!='' && y!='')
 	 {
 	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
@@ -1645,13 +1645,13 @@ function check() {
 	
 	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
 	 var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+	xhttp.onreadystatechange = function() {
 	//  alert(this.readyState);
     if (this.readyState == 4) {
 	 //   alert(this.status);
       if(this.status == 200 || this.status == 0){
    //   document.getElementById("responsecontainer").innerHTML = this.responseText;
-	     alert(this.responseText);
+	  //   alert(this.responseText);
 	      if(this.responseText=='No')
 	      {
 		      n='No';
@@ -1660,9 +1660,10 @@ function check() {
 	      if(n=='register')
 	      {
 	      
-	       msg1="Welcome to Madras Music & Miscellany... You will receive periodic notifications...";}
+	       msg1="Welcome to Madras Music & Miscellany... You will receive periodic notifications...";
+		   
+		   }
 	       window.localStorage.setItem("key", x);
-      		}	
 	      else if (n=='display')
 	      { 
 	      msg1="Thanks for logging in...";
@@ -1672,9 +1673,10 @@ function check() {
 	      {
 	         msg1='Authentication failed. Please register...!' ;
 	      }
+	  }
 	          check() ;  
      		
-	       navigator.notification.alert(  msg1,   alertDismissed,  'Login',   'OK'  );
+	       navigator.notification.alert(msg1,   alertDismissed,  'Login',   'OK'  );
 	     
     }
     }
@@ -1691,15 +1693,14 @@ function check() {
 	//	 alert('wrong');
 	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
 	 }
-	setTimeout(function(){  }, 9000);
+	//setTimeout(function(){  }, 9000);
 	document.getElementById("defaultOpen").click();
 }
 
 function validateEmail($email) {
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
   return emailReg.test( $email );
-} 
-	
+}	
 function forgot_pass()
 	
 	{
