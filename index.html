@@ -1661,19 +1661,21 @@ function check() {
 	      
 	       msg1="Welcome to Madras Music & Miscellany... You will receive periodic notifications...";
 		   window.localStorage.setItem("key", x);
+		      check();
 		   }
 	       
 	      else if (n=='display')
 	      { 
 	      msg1="Thanks for logging in...";
 		 window.localStorage.setItem("key", x);
+		      check();
 	      }
 	      else
 	      {
 	         msg1='Authentication failed. Please register...!' ;
 	      }
 	  }
-	          check() ;  
+	          
      		
 	       navigator.notification.alert(msg1,   alertDismissed,  'Login',   'OK'  );
 	     
