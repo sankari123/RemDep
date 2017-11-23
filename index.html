@@ -1616,7 +1616,7 @@ function check() {
 //alert('s'+storedName);
 	 
       // check if stored data from register-form is equal to data from login form
-    if(storedName == null) {
+    if(storedName == null || storedName == '' || storedName == 'undefined'  ) {
          $('nav[role="main"]').slideAndSwipe();
     }else {
            $('nav[role="sub"]').slideAndSwipe();
@@ -1660,9 +1660,9 @@ function check() {
 	      {
 	      
 	       msg1="Welcome to Madras Music & Miscellany... You will receive periodic notifications...";
-		   
+		   window.localStorage.setItem("key", x);
 		   }
-	       window.localStorage.setItem("key", x);
+	       
 	      else if (n=='display')
 	      { 
 	      msg1="Thanks for logging in...";
