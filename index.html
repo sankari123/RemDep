@@ -1616,7 +1616,7 @@ function check() {
 //alert('s'+storedName);
 	 
       // check if stored data from register-form is equal to data from login form
-    if(storedName == null || storedName == '' || storedName == 'undefined'  ) {
+    if(storedName == null   ) {
          $('nav[role="main"]').slideAndSwipe();
     }else {
            $('nav[role="sub"]').slideAndSwipe();
