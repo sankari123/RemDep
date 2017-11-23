@@ -1651,32 +1651,13 @@ function check() {
 	 //   alert(this.status);
       if(this.status == 200 || this.status == 0){
    
-	      if(this.responseText=='No')
+	      if(this.responseText.charAt(0)=='1')
 	      {
-		      n='No';
-	      }
-	      
-	      if(n=='register')
-	      {
-	      
-	       msg1="Welcome to Madras Music & Miscellany... You will receive periodic notifications...";
-		   window.localStorage.setItem("key", x);
-		      check();
-		   }
-	       
-	      else if (n=='display')
-	      { 
-	      msg1="Thanks for logging in...";
-		 window.localStorage.setItem("key", x);
+		      window.localStorage.setItem("key", x);
 		      check();
 	      }
-	      else
-	      {
-	         msg1='Authentication failed. Please register...!' ;
-	      }
-	  }
-	          
-     		
+	      
+	      msg1=this.responseText.slice(1);
 	       navigator.notification.alert(msg1,   alertDismissed,  'Login',   'OK'  );
 	     
     }
@@ -1688,14 +1669,15 @@ function check() {
 	 }	
 	 
 	 
-	 
+}	 
 	 else
 	 {
 	//	 alert('wrong');
 	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
 	 }
-	// setTimeout(function(){  }, 9000);
+	setTimeout(function(){  }, 9000);
 	document.getElementById("defaultOpen").click();
+
 
 
 }
