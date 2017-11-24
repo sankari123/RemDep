@@ -1688,7 +1688,7 @@ function check() {
 		 
 	   e_mail=e_mail.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 
-	
+	alert(e_mail);
 	
 	 var params = "usrMail=" + e_mail; 
 	 var xhttp = new XMLHttpRequest();
@@ -1697,17 +1697,17 @@ function check() {
     if (this.readyState == 4) {
 	 //   alert(this.status);
       if(this.status == 200 || this.status == 0){
-   	//	alert(this.responseText);
+    	alert(this.responseText);
 	      	     
 	       navigator.notification.alert(this.responseText,   alertDismissed,  'Forgot Password',   'OK'  );
 	     
     }
     };
-  
+	}
   xhttp.open("POST", url2, true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(params);
-	 }	
+		
 	 
 	setTimeout(function(){  }, 9000);
 	document.getElementById("defaultOpen").click();
