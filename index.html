@@ -1682,7 +1682,7 @@ function check() {
 
 }
 
-		function ajaxCallFn(url2,e_mail)   {
+	function ajaxCallFn(url2,e_mail)   {
 	 var msg1;
 	 opt1=n;
 		 
@@ -1726,12 +1726,7 @@ function forgot_pass()
 	{
 //	alert('in'); 
 		 activePg=2;
-	navigator.notification.prompt(
-            'Enter mail ID',  // message
-            onPrompt,                  // callback to invoke
-            'Forgot Password',            // title
-            ['Ok','Cancel']              // buttonLabels
-        );
+	navigator.notification.prompt('Enter mail ID', onPrompt,   'Forgot Password',   ['Ok']     );
 }
 	
 function onPrompt(results) {
