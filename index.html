@@ -1727,13 +1727,15 @@ function forgot_pass()
 //	alert('in'); 
 		 activePg=2;
 	navigator.notification.prompt('Enter mail ID', onPrompt,   'Forgot Password',   ['Ok']     );
+		  ajaxCallFn(mailForgot); 
 }
-	
+	var mailForgot; 
 function onPrompt(results) {
   //alert( results.input1);
 	if(results.input1!='')
 	{
 	var emailID=results.input1.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+		 mailForgot=emailID;
 	 if( !validateEmail(emailID)) 
 	 { 
 	 var msg2='Invalid Email ID';
@@ -1744,7 +1746,7 @@ function onPrompt(results) {
 	{
 		alert('in'+emailID); 
 	// var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
-	  ajaxCallFn(emailID); 
+	
 
 		
 	}
