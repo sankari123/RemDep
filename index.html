@@ -1682,7 +1682,7 @@ function check() {
 
 }
 
-	function ajaxCallFn(url2,e_mail)   {
+	function ajaxCallFn(e_mail)   {
 	 var msg1;
 	 opt1=n;
 		 
@@ -1704,7 +1704,7 @@ function check() {
     }
     };
 	}
-  xhttp.open("POST", url2, true);
+  xhttp.open("POST", "http://www.writeacademy.in/MMF/forgot_pass-mmf.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(params);
 		
@@ -1743,8 +1743,8 @@ function onPrompt(results) {
 	else
 	{
 		alert('in'+emailID); 
-	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
-	  ajaxCallFn(url1,emailID); 
+	// var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
+	  ajaxCallFn(emailID); 
 
 		
 	}
