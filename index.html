@@ -1675,12 +1675,47 @@ function check() {
 	//	 alert('wrong');
 	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
 	 }
-	//setTimeout(function(){  }, 9000);
-	//document.getElementById("defaultOpen").click();
+	setTimeout(function(){  }, 9000);
+	document.getElementById("defaultOpen").click();
 
 
 
 }
+
+		function ajaxCallFn(url2,e_mail)   {
+	 var msg1;
+	 opt1=n;
+		 
+	   e_mail=e_mail.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+
+	
+	
+	 var params = "usrMail=" + e_mail; 
+	 var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+ 
+    if (this.readyState == 4) {
+	 //   alert(this.status);
+      if(this.status == 200 || this.status == 0){
+   	//	alert(this.responseText);
+	      	     
+	       navigator.notification.alert(this.responseText,   alertDismissed,  'Forgot Password',   'OK'  );
+	     
+    }
+    };
+  
+  xhttp.open("POST", url2, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(params);
+	 }	
+	 
+	setTimeout(function(){  }, 9000);
+	document.getElementById("defaultOpen").click();
+
+}	 
+	 
+
+
 
 function validateEmail($email) {
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
