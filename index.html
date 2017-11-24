@@ -1688,7 +1688,7 @@ function check() {
 		 
 	   e_mail=e_mail.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 
-	alert(e_mail);
+	//alert(e_mail);
 	
 	 var params = "usrMail=" + e_mail; 
 	 var xhttp = new XMLHttpRequest();
@@ -2424,8 +2424,9 @@ function profile()
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
 	 alert( favS);	
-		  favS= favS.replace('undefined','');
-		  favS= favS.replace('null','');
+		
+		  favS= favS.replace(/undefined/g, "");
+		  favS= favS.replace(/null/g, "");
 	 	alert( favS);	
 		 
 }
