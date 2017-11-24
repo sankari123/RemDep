@@ -1984,7 +1984,7 @@ function ven_det(v)
 		
 //	theevent+="<div id='wrapper' style='background:white'><div id='left' style='background:white;font-size: 9pt;'>"+events[i][5]+" at "+jj+"<br></div><div id='right' style='background:white;font-size: 9pt;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br><br></div></div> "	; 	
 		
-		ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white;'>"+n+", " +events[i][2]+" "+mNam+jj+"<br><button id='favID'  value='"+dayStr+'^'+jj+'^'+v+" onclick='favAddShows(this.value)'><img src='fav.png'></button></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> 	"; 
+		ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white;'>"+n+", " +events[i][2]+" "+mNam+jj+"<br><button id='favID'  value='"+dayStr+"^"+jj+"^"+" onclick='favAddShows(this.value)'><img src='fav.png'></button></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> 	"; 
 		
 		
 		
@@ -1993,7 +1993,7 @@ function ven_det(v)
 			
 	else
 	{
-ev_lst+="<div id='wrapper' style='background:#f1f1f1'><div id='left' style='background:#f1f1f1;'>"+n+", " +events[i][2]+" "+mNam+" "+jj+"<br><button id='favID' value='"+dayStr+'^'+jj+'^'+v+" onclick='favAddShows(this.value)'><img src='fav.png'></button></div><div id='right' style='background:#f1f1f1;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> "	; 	
+ev_lst+="<div id='wrapper' style='background:#f1f1f1'><div id='left' style='background:#f1f1f1;'>"+n+", " +events[i][2]+" "+mNam+" "+jj+"<br><button id='favID' value='"+dayStr+"^"+jj+"^"+" onclick='favAddShows(this.value,v)'><img src='fav.png'></button></div><div id='right' style='background:#f1f1f1;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div></div> "	; 	
 	}
 		
 		
@@ -2034,9 +2034,9 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 
 	var favAddStr;	
 		
-		function favAddShows(fav)
+		function favAddShows(fav,ven)
 		{
-			alert(fav+"------"+fav);
+			alert(fav+"------"+fav+ven);
 		 var favS1= window.localStorage.getItem("favShows");
 			if(favS1!=null || favS1!='')
 			{
