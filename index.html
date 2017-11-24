@@ -2423,11 +2423,30 @@ function profile()
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
-	 alert( favS);	
+	// alert( favS);	
 		
 		  favS= favS.replace(/undefined/g, "");
 		  favS= favS.replace(/null/g, "");
-	 	alert( favS);	
+	 	//alert( favS);
+		favS = favS.substring(0, favS.length-1 );
+	favS=favS.split('!');
+		
+		fArr=[];
+		ori=[];
+	for (var i = 0, len = favS.length; i < len; i++) {
+	 	latR1= favS[i].split('^');
+	 	//alert('latr1'+latR1);
+		pDat1=latR1[0];
+		pnam1=latR1[1];
+		fArr.push([pDat1,pnam1]);
+		  
+	}
+		alert('far'+fArr);
+var ori=multiDimensionalUnique(fArr);
+		
+		for(var i = 0, l = ori.length; i < l; i++) {
+	 alert(ori[i][0]+"------"+ori[i][1]);
+		}
 		 
 }
 		
