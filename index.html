@@ -2034,18 +2034,18 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 
 	var favAddStr;	
 		
-		function favAddShows(eDat,dTim,ven)
+		function favAddShows(fav)
 		{
-			alert(eDat+"------"+eNam)
+			alert(fav+"------"+fav)
 		 var favS1= window.localStorage.getItem("favShows");
 			if(favS1!=null || favS1!='')
 			{
 				
-			favAddStr+=favS1+eDat+"%"+eNam+"^";
+			favAddStr+=favS1+fav+"^";
 			}
 			else
 			{
-			favAddStr+=eDat+"%"+eNam+"^";
+			favAddStr+=fav+"^";
 			}
 	//alert(favAddStr);
  	window.localStorage.setItem('favShows',favAddStr);
