@@ -1727,7 +1727,7 @@ function forgot_pass()
 //	alert('in'); 
 		 activePg=2;
 	navigator.notification.prompt('Enter mail ID', onPrompt,   'Forgot Password',   ['Ok']     );
-		  ajaxCallFn(mailForgot); 
+		//  ajaxCallFn(mailForgot); 
 }
 	var mailForgot; 
 function onPrompt(results) {
@@ -1735,7 +1735,7 @@ function onPrompt(results) {
 	if(results.input1!='')
 	{
 	var emailID=results.input1.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-		 mailForgot=emailID;
+	//	 mailForgot=emailID;
 	 if( !validateEmail(emailID)) 
 	 { 
 	 var msg2='Invalid Email ID';
@@ -1746,6 +1746,29 @@ function onPrompt(results) {
 	{
 		alert('in'+emailID); 
 	// var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
+		
+		var params = "usrMail=" + emailID; 
+	 var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+ 
+    if (this.readyState == 4) {
+	 //   alert(this.status);
+      if(this.status == 200 || this.status == 0){
+    	alert(this.responseText);
+	      	     
+	       navigator.notification.alert(this.responseText,   alertDismissed,  'Forgot Password',   'OK'  );
+	     
+    }
+    };
+	}
+  xhttp.open("POST", "http://www.writeacademy.in/MMF/forgot_pass-mmf.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(params);
+		
+	 
+	setTimeout(function(){  }, 9000);
+	document.getElementById("defaultOpen").click();
+		
 	
 
 		
