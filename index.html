@@ -2423,35 +2423,8 @@ function profile()
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
-	//alert( favS);	
-		var favS= favS.replace('undefined','');
-		var favS= favS.replace('null','');
-	//	alert( favS);	
-	favS = favS.substring(0, favS.length-1 );
-	favS=favS.split('^');
-		
-		fArr=[];
-	for (var i = 0, len = favS.length; i < len; i++) {
-	 	latR1= favS[i].split('%');
-	 	//alert('latr1'+latR1);
-		pDat1=String(latR1[0]);
-		pDat1= pDat1.replace('undefined','');
-		pDat1= pDat1.replace('null','');
-		// alert('dat'+pDat1);
-		pnam1=latR1[1];
-		
-		pnam1= pnam1.replace('undefined','');
-		pnam1= pnam1.replace('null','');
+	 alert( favS);	
 		 
-		// alert('pnam'+pnam1);
-		fArr.push([pDat1,pnam1]);
-		  
-	}
-		//alert('far'+fArr);
-//	var ori=multiDimensionalUnique(fArr);
-		for(var i = 0, l = fArr.length; i < l; i++) {
-	 alert(fArr[i][0]+"------"+fArr[i][1]);
-		}
 }
 		
 		function multiDimensionalUnique(arr) {
@@ -2498,7 +2471,7 @@ function profile()
 		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
               
                   <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMM</a>
-		    <li> <a id="myLink" href="#" onclick="profile();" class="ssm-toggle-nav">My Profile</a>
+		    <li> <a id="myLink" href="#" onclick="profile();" class="ssm-toggle-nav">Profile</a>
           </ul>
        
         </nav>
