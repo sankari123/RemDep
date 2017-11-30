@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
  
-<!--<script class="jsbin" src="js/jquery.min.js"></script>-->
-<script src="js/jquery-ui.min.js"></script>
+<script class="jsbin" src="js/jquery.min.js"></script>
+<!--<script src="js/jquery-ui.min.js"></script>-->
 <script src = "js/jquery-ui.js"></script>
 <script src="js/jquery.touchSwipe.min.js"></script>
 <script src="js/jquery.slideandswipe.min.js"></script>
@@ -2003,8 +2003,8 @@ function ven_det(v)
 			}
 			
 		
-		//aName=events[i][7].replace(/\s/g, "_");
-		//eName=events[i][8].replace(/\s/g, "_");
+		aName=events[i][7].replace(/\s/g, "_");
+		eName=events[i][8].replace(/\s/g, "_");
 		if(i%2==0)
 	{
 		
@@ -2017,12 +2017,12 @@ function ven_det(v)
 //ev_lst+="<tr><td>"+n+", " +events[i][2]+"  "+mNam+jj+"</td><td>"+events[i][6]+" - <b>"+events[i][8]+"</b></td></tr><tr><td><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td><td>"+events[i][7]+"</td></tr>";
 //ev_lst+="<tr><td rowspan=2>"+ n+", " +events[i][2]+"  "+mNam+"</td><td>"+ events[i][6] +" - <b>"+events[i][8]+"</b></td><td rowspan=3 align='center'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr>"; 
 // ev_lst+="<tr><td rowspan=2>"+events[i][7]+"</td></tr>";
-  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 	
+  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+eName+"^"+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 	
 	}
 			
 	else
 	{
-	ev_lst+="<tr><td width='41%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 	
+	ev_lst+="<tr><td width='41%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+eName+"^"+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 	
 		
 		
 		//ev_lst+="<tr><td rowspan=2>"+ n+", " +events[i][2]+"  "+mNam+"</td><td>"+ events[i][6] +" - <b>"+events[i][8]+"</b></td><td rowspan=3 align='center'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr>"; 
