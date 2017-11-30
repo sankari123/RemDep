@@ -2015,14 +2015,17 @@ function ven_det(v)
 //ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white;'>"+n+", " +events[i][2]+" "+mNam+jj+"<br></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div><div id='right'><button id='favID' value="i+"^"+v+"> </button></div></div><hr color=#f1f1f1> 	"; 		
 		
 //ev_lst+="<tr><td>"+n+", " +events[i][2]+"  "+mNam+jj+"</td><td>"+events[i][6]+" - <b>"+events[i][8]+"</b></td></tr><tr><td><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td><td>"+events[i][7]+"</td></tr>";
-ev_lst+="<tr><td rowspan=2>"+ n+", " +events[i][2]+"  "+mNam+"</td><td>"+ events[i][6] +" - <b>"+events[i][8]+"</b></td><td rowspan=3 align='center'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr>"; 
- ev_lst+="<tr><td rowspan=2>"+events[i][7]+"</td></tr>";
-  	 		
+//ev_lst+="<tr><td rowspan=2>"+ n+", " +events[i][2]+"  "+mNam+"</td><td>"+ events[i][6] +" - <b>"+events[i][8]+"</b></td><td rowspan=3 align='center'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr>"; 
+// ev_lst+="<tr><td rowspan=2>"+events[i][7]+"</td></tr>";
+  ev_lst+="<tr><td>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr><tr><td>"+jj+"</td></tr>"; 	
 	}
 			
 	else
 	{
-		ev_lst+="<tr><td rowspan=2>"+ n+", " +events[i][2]+"  "+mNam+"</td><td>"+ events[i][6] +" - <b>"+events[i][8]+"</b></td><td rowspan=3 align='center'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr>"; 
+	ev_lst+="<tr><td>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr><tr><td>"+jj+"</td></tr>"; 	
+		
+		
+		//ev_lst+="<tr><td rowspan=2>"+ n+", " +events[i][2]+"  "+mNam+"</td><td>"+ events[i][6] +" - <b>"+events[i][8]+"</b></td><td rowspan=3 align='center'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td></tr>"; 
  ev_lst+="<tr><td rowspan=2>"+events[i][7]+"</td></tr>";
 //ev_lst+="<tr><td>"+n+", " +events[i][2]+"  "+mNam+jj+"</td><td>"+events[i][6]+" - <b>"+events[i][8]+"</b></td></tr><tr><td><button id='favID' onclick='favAddShows(this.value,this)'; value="+i+"^"+v+"> </button></td><td>"+events[i][7]+"</td></tr>";
 //ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white;'>"+n+", " +events[i][2]+" "+mNam+jj+"<br></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br></div><div id='right'><button id='favID'  value="i+"^"+v+"></button></div></div><hr color=#f1f1f1> 	"; 
