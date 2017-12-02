@@ -23,16 +23,16 @@
 
   
     <style type="text/css" media="screen">
-	    #favID
-	    {
-    padding: 1em;
-      background: url('http://www.writeacademy.in/mmf/fav.png')  no-repeat ; no-repeat ;
-	   border:0px;
+	    .chartme-btn-main
+{
+    background: url('http://www.writeacademy.in/mmf/fav.png')  no-repeat;
+	padding: 1em;
 }
-#favID.image {
-      background: url('http://www.writeacademy.in/mmf/fav_red.png')  no-repeat ;
-	  border:0px;
-}
+.arrowdown
+{
+    background: url('http://www.writeacademy.in/mmf/fav_red.png')  no-repeat;
+padding: 1em;
+}          
 	    
 	    #main {
 	   max-width: 1200px;
@@ -2006,7 +2006,7 @@ function ven_det(v)
 		aName=events[i][7].replace(/\s/g, "_");
 		eName=events[i][8].replace(/\s/g, "_");
 		
-  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  onclick='favAddShows(this.value,this)'; value="+eName+"^"+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 	
+  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class='chartme-btn-main' onclick='favAddShows(this.value,this)'; value="+eName+"^"+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 	
 		
 		
 		
@@ -2061,17 +2061,30 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 		function favAddShows(fav,el)
 		{
 	 //	alert(fav);
-			if($(el).attr('att') == 0){
-        $(el).toggleClass('image');
-        $(el).data('att',1);
-	alert('gray');			
-    } else {
-	    alert('red');
-        $(el).toggleClass('image');
-        $(el).data('att',0);
-    }
+//			if($(el).attr('att') == 0){
+  //      $(el).toggleClass('image');
+    //    $(el).data('att',1);
+	//alert('gray');			
+    //} else {
+	//    alert('red');
+      //  $(el).toggleClass('image');
+      //  $(el).data('att',0);
+   // }
+			if($(el).hasClass("arrowdown"))
+	{
+	//alert('in');
+	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
+	//window.localStorage.setItem('favShows',favAddStr);
+		ctr=0;
+	}
+	else
+	{
+	//alert('out');
+	 $(el).addClass('arrowdown').removeClass('chartme-btn-main');
+		window.localStorage.setItem('NotfavShows',fav);
+	}
 			
-	
+		
 		 var favS1= window.localStorage.getItem("favShows");
 			if(favS1!='')
 			{
@@ -2477,6 +2490,39 @@ function profile()
 	}
 		alert('far'+fArr);
 var ori=multiDimensionalUnique(fArr);
+		
+	var favS1= window.localStorage.getItem("NotfavShows");
+	// alert( favS);	
+		
+		  favS1= favS.replace(/undefined/g, "");
+		  favS1= favS.replace(/null/g, "");
+	 	//alert( favS);
+		favS1 = favS.substring(0, favS1.length-1 );
+	favS1=favS.split('!');
+		
+		fArr1=[];
+		ori1=[];
+	for (var i = 0, len = favS1.length; i < len; i++) {
+	 	latR1= favS[i].split('^');
+	 	//alert('latr1'+latR1);
+		pDat1=latR1[0];
+		pnam1=latR1[1];
+		fArr1.push([pDat1,pnam1]);
+		  
+	}
+		alert('far'+fArr1);
+var ori1=multiDimensionalUnique(fArr1);	
+	var found = false;
+for (var i = 0; i < ori1.length; i++) {
+    if (ori.indexOf(ori1[i]) > -1) {
+        found = true;
+        alert(ori.indexOf(ori1[i]);
+	    //break;
+    }
+}
+		
+		
+		
 		var pdfTxt="<table border=1 width='100%' cellpadding=0 cellspacing=0 bgcolor='#fafbfc' style='font-size: 11px'><tr height='50px'><td colspan=2 align='center'>My Favorites </td></tr>";
 	pdfTxt+="<tr><td>Artist</td><td>Program Details<td></tr>";
 		for(var i = 0, l = ori.length; i < l; i++) {
