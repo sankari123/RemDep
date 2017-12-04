@@ -2036,7 +2036,45 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 	
 var favArr1 = [];
 var NotfavArr2 = [];
+ function favAddShows(fav,el)
+		{
+	  
+			var res = fav.split(" ");
+			
+	if($(el).hasClass("arrowdown"))
+	{
+	 
+	var favHst=window.localStorage.getItem("favShows");
+		if(favHst!='')
+		{
+			
+			favArr1.push(favHst);
+		}
+	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
+	   itm1=res[0];
+		  itm2=res[1];
+		 favArr1.push([itm1,itm2]);
+	      window.localStorage.setItem('favShows',favArr1);
+			
+	}
+	else
+	{
+		var NotfavHst=window.localStorage.getItem("NotfavShows");
+			       if(NotfavHst!='')
+		{
 		
+			favArr2.push(NotfavHst);
+		}
+	 $(el).addClass('arrowdown').removeClass('chartme-btn-main');
+	  itm1=res[0];
+		  itm2=res[1];
+			       NotfavArr1.push([itm1,itm2]);
+		window.localStorage.setItem('NotfavShows',NotfavArr1);
+	}
+			
+		
+	 
+		}		
 		
 		 
 function getLoc() 
