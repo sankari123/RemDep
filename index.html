@@ -2037,54 +2037,6 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 var favArr1 = [];
 var NotfavArr2 = [];
 		
-		function favAddShows(fav,el)
-		{
-	  alert(fav);
-			var res = fav.split(" ");
-			
-	if($(el).hasClass("arrowdown"))
-	{
-	//alert('in');
-		if(window.localStorage.getItem("favShows")!='')
-		{
-			var favHst=window.localStorage.getItem("favShows");
-			favArr1.push(favHst);
-		}
-	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
-	//window.localStorage.setItem('favShows',favAddStr);
-		 
-		 favArr1.push([res[0],res[1]));
-	      window.localStorage.setItem('favShows',favArr1);
-			
-	}
-	else
-	{
-	//alert('out');
-			       if(window.localStorage.getItem("NotfavShows")!='')
-		{
-			var NotfavHst=window.localStorage.getItem("NotfavShows");
-			favArr2.push(NotfavHst);
-		}
-	 $(el).addClass('arrowdown').removeClass('chartme-btn-main');
-			       NotfavArr1.push([res[0],res[1])); 
-		window.localStorage.setItem('NotfavShows',NotfavArr1);
-	}
-			
-		
-	//	 var favS1= window.localStorage.getItem("favShows");
-	//		if(favS1!='')
-	//		{
-	//			
-	//		favAddStr+=favS1+fav;
-	//		}
-	//		else
-	//		{
-	//		favAddStr+=fav;
-	//		}
-	//alert(favAddStr);
- 	//window.localStorage.setItem('favShows',favAddStr);
-		}
-		
 		
 		 
 function getLoc() 
