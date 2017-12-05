@@ -2486,64 +2486,41 @@ function profile()
 		alert( NotfavS);	
 		  favS= favS.replace(/undefined/g, "");
 		  favS= favS.replace(/null/g, "");
+		 NotfavS= NotfavS.replace(/undefined/g, "");
+		  NotfavS= NotfavS.replace(/null/g, "");
 	 	//alert( favS);
-		favS = favS.substring(0, favS.length-1 );
-	favS=favS.split('!');
 		
+		favS=favS.split('!');
+		NotfavS=NotfavS.split('!');
 		fArr=[];
-		ori=[];
-	for (var i = 0, len = favS.length; i < len; i++) {
-	 	latR1= favS[i].split('^');
-	 	//alert('latr1'+latR1);
-		pDat1=latR1[0];
-		pnam1=latR1[1];
-		fArr.push([pDat1,pnam1]);
-		  
-	}
-		//alert('far'+fArr);
-var ori=multiDimensionalUnique(fArr);
+//	ori=[];
+	for (var i = 0, len = favS.length; i < len-1; i++) {
+ 
+ 		latR1= favS[i];
+	 	 latR1= latR1.slice( 1 );
+		fArr.push([latR1]);
 		
-//
-		var favS1= window.localStorage.getItem("NotfavShows");
-	// alert( favS);	
+ 		  
+ 	}
+		var ori=multiDimensionalUnique(fArr);
+		alert('latr1'+fArr);
 		
-		  favS1= favS1.replace(/undefined/g, "");
-		  favS1= favS1.replace(/null/g, "");
-	 	//alert( favS);
-		favS1 = favS1.substring(0, favS1.length-1 );
-	favS1=favS1.split('!');
+		for (var i = 0, len = NotfavS.length; i < len-1; i++) {
+ 
+ 		latR1= NotfavS[i];
+	 	 latR1= latR1.slice( 1 );
+		NotfArr.push([latR1]);
 		
-		fArr1=[];
-		ori1=[];
-	for (var i = 0, len = favS1.length; i < len; i++) {
-	 	latR1= favS[i].split('^');
-	 	//alert('latr1'+latR1);
-		pDat1=latR1[0];
-		pnam1=latR1[1];
-		fArr1.push([pDat1,pnam1]);
-		  
-	}
-		alert('far'+fArr1);
-var ori1=multiDimensionalUnique(fArr1);	
-	var found = false;
-for (var i = 0; i < ori1.length; i++) {
-    if (ori.indexOf(ori1[i]) > -1) {
-        found = true;
-        alert(ori.indexOf(ori1[i]));
-	    //break;
-    }
-}
+ 		  
+ 	}
+		var ori=multiDimensionalUnique(NotfArr);
+		alert('Notlatr1'+NotfArr);
 		
 		
+ 
 		
-	//	var pdfTxt="<table border=1 width='100%' cellpadding=0 cellspacing=0 bgcolor='#fafbfc' style='font-size: 11px'><tr height='50px'><td colspan=2 align='center'>My Favorites </td></tr>";
-//	pdfTxt+="<tr><td>Artist</td><td>Program Details<td></tr>";
-		for(var i = 0, l = ori.length; i < l; i++) {
-	 alert(ori[i][0]+"------"+ori[i][1]);
-			
-			
-			
-		}
+		
+
 		 
 }
 		
