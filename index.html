@@ -816,7 +816,7 @@ function onDeviceReady(){
 	//document.getElementById("defaultOpen").click();
 	document.getElementById("defaultOpen").click();
 	
- 	chkFavorite();
+ 	//chkFavorite();
 	
 	
 	checkConnection();
@@ -2444,15 +2444,14 @@ LaunchReview.launch(appId, function(){
 }
 function chkFavorite()
 	{
-		
 	var favS= window.localStorage.getItem("favShows");
 	var NotfavS= window.localStorage.getItem("NotfavShows");
-		 favS= favS.replace(/undefined/g, "");
-		  favS= favS.replace(/null/g, "");
-		 NotfavS= NotfavS.replace(/undefined/g, "");
-		  NotfavS= NotfavS.replace(/null/g, "");
-		alert( favS);	
-		alert( NotfavS);	
+//		 favS= favS.replace(/undefined/g, "");
+//		  favS= favS.replace(/null/g, "");
+//		 NotfavS= NotfavS.replace(/undefined/g, "");
+//		  NotfavS= NotfavS.replace(/null/g, "");
+		alert(favS);	
+		alert(NotfavS);	
 		}
 function profile()
 	{
