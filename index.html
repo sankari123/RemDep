@@ -2042,24 +2042,7 @@ var NotfavArr = [];
 			
 	if($(el).hasClass("arrowdown"))
 	{
-	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
-	 alert('in');
-	var favHst=window.localStorage.getItem("favShows");
-		if(favHst!='')
-		{
-			alert(favHst);
-			favArr.push(favHst);
-		}
-	
-	   itm1=res[0];
-		  itm2=res[1];
-		 favArr.push([itm1,itm2]);
-	      window.localStorage.setItem('favShows',favArr);
-			
-	}
-	else
-	{
-		 $(el).addClass('arrowdown').removeClass('chartme-btn-main');
+	 $(el).addClass('arrowdown').removeClass('chartme-btn-main');
 		 alert('out');
 		var NotfavHst=window.localStorage.getItem("NotfavShows");
 		  if(NotfavHst!='')
@@ -2072,6 +2055,27 @@ var NotfavArr = [];
 		  itm2=res[1];
 			   NotfavArr.push([itm1,itm2]);
 		window.localStorage.setItem('NotfavShows',NotfavArr);
+			
+	}
+	else
+	{
+		 
+		$(el).addClass('chartme-btn-main').removeClass('arrowdown');
+	 alert('in');
+	var favHst=window.localStorage.getItem("favShows");
+		if(favHst!='')
+		{
+			alert(favHst);
+			favArr.push(favHst);
+		}
+	
+	   itm1=res[0];
+		  itm2=res[1];
+		 favArr.push([itm1,itm2]);
+	      window.localStorage.setItem('favShows',favArr);
+		
+		
+		
 	}
 			
 		
