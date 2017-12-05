@@ -1938,8 +1938,7 @@ function ven_det(v)
 	
 	v=v.replace(/_/g, " ");
 	 
-	 
- 
+	 chkFavorite();
 	
 	active_page=2;
 	document.getElementById("xPort").style.display="block";
@@ -2443,7 +2442,17 @@ LaunchReview.launch(appId, function(){
 });
 	
 }
-		
+function chkFavorite()
+	{
+	var favS= window.localStorage.getItem("favShows");
+	var NotfavS= window.localStorage.getItem("NotfavShows");
+		 favS= favS.replace(/undefined/g, "");
+		  favS= favS.replace(/null/g, "");
+		 NotfavS= NotfavS.replace(/undefined/g, "");
+		  NotfavS= NotfavS.replace(/null/g, "");
+		alert( favS);	
+		alert( NotfavS);	
+		}
 function profile()
 	{
 	// setFav();
@@ -2468,17 +2477,18 @@ function profile()
 		fArr.push([pDat1,pnam1]);
 		  
 	}
-		alert('far'+fArr);
+		//alert('far'+fArr);
 var ori=multiDimensionalUnique(fArr);
 		
-	var favS1= window.localStorage.getItem("NotfavShows");
+//
+		var favS1= window.localStorage.getItem("NotfavShows");
 	// alert( favS);	
 		
-		  favS1= favS.replace(/undefined/g, "");
-		  favS1= favS.replace(/null/g, "");
+		  favS1= favS1.replace(/undefined/g, "");
+		  favS1= favS1.replace(/null/g, "");
 	 	//alert( favS);
-		favS1 = favS.substring(0, favS1.length-1 );
-	favS1=favS.split('!');
+		favS1 = favS1.substring(0, favS1.length-1 );
+	favS1=favS1.split('!');
 		
 		fArr1=[];
 		ori1=[];
