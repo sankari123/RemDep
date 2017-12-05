@@ -2042,7 +2042,7 @@ var NotfavArr = [];
 			
 	if($(el).hasClass("arrowdown"))
 	{
-	 $(el).addClass('arrowdown').removeClass('chartme-btn-main');
+	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
 		 alert('out');
 		var NotfavHst=window.localStorage.getItem("NotfavShows");
 		  if(NotfavHst!='')
@@ -2059,8 +2059,8 @@ var NotfavArr = [];
 	}
 	else
 	{
-		 
-		$(el).addClass('chartme-btn-main').removeClass('arrowdown');
+		 $(el).addClass('arrowdown').removeClass('chartme-btn-main'); 
+		
 	 alert('in');
 	var favHst=window.localStorage.getItem("favShows");
 		if(favHst!='')
