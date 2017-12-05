@@ -2034,8 +2034,8 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 		
 	var favAddStr;	
 	
-var favArr1 = [];
-var NotfavArr2 = [];
+var favArr = [];
+var NotfavArr = [];
  function favAddShows(fav,el)
 		{
 	  alert(fav);
@@ -2049,13 +2049,13 @@ var NotfavArr2 = [];
 		if(favHst!='')
 		{
 			alert(favHst);
-			favArr1.push(favHst);
+			favArr.push(favHst);
 		}
 	
 	   itm1=res[0];
 		  itm2=res[1];
-		 favArr1.push([itm1,itm2]);
-	      window.localStorage.setItem('favShows',favArr1);
+		 favArr.push([itm1,itm2]);
+	      window.localStorage.setItem('favShows',favArr);
 			
 	}
 	else
@@ -2066,13 +2066,13 @@ var NotfavArr2 = [];
 		  if(NotfavHst!='')
 		{
 		  alert(NotfavHst);
-		NotfavArr2.push(NotfavHst);
+		NotfavArr.push(NotfavHst);
 		}
 	
 	  	itm1=res[0];
 		  itm2=res[1];
-			   NotfavArr1.push([itm1,itm2]);
-		window.localStorage.setItem('NotfavShows',NotfavArr1);
+			   NotfavArr.push([itm1,itm2]);
+		window.localStorage.setItem('NotfavShows',NotfavArr);
 	}
 			
 		
@@ -2449,8 +2449,9 @@ function profile()
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
-	// alert( favS);	
-		
+	var NotfavS= window.localStorage.getItem("NotfavShows");	
+	alert( favS);	
+		alert( NotfavS);	
 		  favS= favS.replace(/undefined/g, "");
 		  favS= favS.replace(/null/g, "");
 	 	//alert( favS);
