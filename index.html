@@ -816,7 +816,7 @@ function onDeviceReady(){
 	//document.getElementById("defaultOpen").click();
 	document.getElementById("defaultOpen").click();
 	
-	var keyName = window.localStorage.key(0);
+ 	chkFavorite();
 	
 	
 	checkConnection();
@@ -1938,7 +1938,7 @@ function ven_det(v)
 	
 	v=v.replace(/_/g, " ");
 	 
-	 chkFavorite();
+	// chkFavorite();
 	
 	active_page=2;
 	document.getElementById("xPort").style.display="block";
@@ -2444,6 +2444,7 @@ LaunchReview.launch(appId, function(){
 }
 function chkFavorite()
 	{
+		
 	var favS= window.localStorage.getItem("favShows");
 	var NotfavS= window.localStorage.getItem("NotfavShows");
 		 favS= favS.replace(/undefined/g, "");
