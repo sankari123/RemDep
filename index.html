@@ -2002,7 +2002,7 @@ function ven_det(v)
 		aName=events[i][7].replace(/\s/g, "_");
 		eName=events[i][8].replace(/\s/g, "_");
 		
-  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class='chartme-btn-main' onclick='favAddShows(this.value,this)'; value="+eName+"^"+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 	
+  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class='chartme-btn-main' onclick='favAddShows(this.value,this)'; value="+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 	
 		
 	 
 		
@@ -2035,25 +2035,23 @@ var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
 	
 var favArr = [];
 var NotfavArr = [];
- function favAddShows(fav,el)
+
+		
+function favAddShows(fav,el)
 		{
-	  alert(fav);
-			var res = fav.split("^");
+	 
 			
 	if($(el).hasClass("arrowdown"))
 	{
 	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
-		 alert('out');
+		 
 		var NotfavHst=window.localStorage.getItem("NotfavShows");
-		  if(NotfavHst!='')
+		  if(NotfavHst!='' || NotfavHst!=null || NotfavHst!='undefined')
 		{
-		  alert(NotfavHst);
+	 
 		NotfavArr.push(NotfavHst);
 		}
-	
-	  	itm1=res[0];
-		  itm2=res[1];
-			 NotfavArr.push([itm2]);
+		 NotfavArr.push([fav]);
 		window.localStorage.setItem('NotfavShows',NotfavArr);
 			
 	}
@@ -2061,19 +2059,18 @@ var NotfavArr = [];
 	{
 		 $(el).addClass('arrowdown').removeClass('chartme-btn-main'); 
 		
-	 alert('in');
+	  
 	var favHst=window.localStorage.getItem("favShows");
-		if(favHst!='')
+		if(favHst!='' || favHst!=null || favHst!='undefined')
 		{
-			alert(favHst);
+			 
 			favArr.push(favHst);
 		}
 	
-	   itm1=res[0];
-		  itm2=res[1];
- 		favArr.push([itm2]);
+	    
+ 		favArr.push([fav]);
 	      window.localStorage.setItem('favShows',favArr);
-		//window.localStorage.setItem('favShow2',itm2);
+		 
 		
 		
 		
