@@ -2488,26 +2488,33 @@ function profile()
 		  favS= favS.replace(/null/g, "");
 		 NotfavS= NotfavS.replace(/undefined/g, "");
 		  NotfavS= NotfavS.replace(/null/g, "");
-	 	//alert( favS);
+	 	 alert( favS);
 		
-		favS=favS.split('!');
-		NotfavS=NotfavS.split('!');
+		favS1=favS.split('!');
+		NotfavS1=NotfavS.split('!');
+		 //alert( favS);
 		fArr=[];
 //	ori=[];
-	for (var i = 0, len = favS.length; i < len-1; i++) {
+	for (var i = 0, len = favS1.length; i < len-1; i++) {
  
- 		latR1= favS[i];
+ 		latR1= favS1[i];
 	 	 latR1= latR1.slice( 1 );
 		fArr.push([latR1]);
 		
  		  
  	}
 		var ori=multiDimensionalUnique(fArr);
-		alert('latr1'+fArr);
-		
-		for (var i = 0, len = NotfavS.length; i < len-1; i++) {
+		for (var i = 0, len = fArr.length; i < len; i++) {
  
- 		latR1= NotfavS[i];
+ 		alert(fArr[i]);
+		
+ 		  
+ 	}
+		//alert('latr1'+fArr);
+		
+		for (var i = 0, len = NotfavS1.length; i < len-1; i++) {
+ 
+ 		latR1= NotfavS1[i];
 	 	 latR1= latR1.slice( 1 );
 		NotfArr.push([latR1]);
 		
