@@ -1947,8 +1947,6 @@ function ven_det(v)
 	var NotfavS= window.localStorage.getItem("NotfavShows");
 	
 	
-	
-	
 	active_page=2;
 	document.getElementById("xPort").style.display="block";
 	document.getElementById("xPort").style.visibility="true";
@@ -2010,7 +2008,15 @@ function ven_det(v)
 		
 		aName=events[i][7].replace(/\s/g, "_");
 		eName=events[i][8].replace(/\s/g, "_");
-		
+		if( favS ! =null || favS !='undefined')
+	{
+		if(favS.indexOf(aName) !== -1)
+		{
+			clsName='arrowdown';
+		}
+	}
+alert(clsName);
+	
 
   ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+'chartme-btn-main' +"  onclick='favAddShows(this.value,this)'; value="+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 
 		}
