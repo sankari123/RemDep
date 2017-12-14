@@ -1930,7 +1930,12 @@ function calClick()
 chkFav=[];
 chkNotFav=[];
 var table_string;
+function stringIsEmpty(value) {
 
+    return value ? value.trim().length == 0 : true;
+
+}
+		
 function ven_det(v)
 {
  
@@ -2008,6 +2013,11 @@ function ven_det(v)
 		
 		aName=events[i][7].replace(/\s/g, "_");
 		eName=events[i][8].replace(/\s/g, "_");
+		
+		
+		
+		chkValue1=stringIsEmpty(favS)
+		chkValue2=stringIsEmpty(NotfavS)
  //	 if ( !favS ) {
   // some_variable is either null, undefined, 0, NaN, false, or an empty string
 //}
@@ -2028,19 +2038,9 @@ function ven_det(v)
 //	clsName='chartme-btn-main';
 //	}
 		
-		if ( !favS ) {
-  // some_variable is either null, undefined, 0, NaN, false, or an empty string
-			//clsName='chartme-btn-main';
-			oo=1;
-}
-	 if(! NotfavS)
-	{
-	//	clsName='chartme-btn-main';
-	//clsName='arrowdown';
-	 gg=1;
-	}
+		 
 		alert(oo+'--'+gg);
-		if(oo!=1 && gg!=1)
+		if(chkValue1== false || chkValue2== false )
 		{
 				 if(favS.indexOf(aName) !== -1 && NotfavS.indexOf(aName) !== -1)
 			{
@@ -2061,8 +2061,7 @@ function ven_det(v)
 		{
 		alert('in');
 		clsName='chartme-btn-main';
-			oo=0;
-			gg=0;
+			 
 		}
 			
 		 
