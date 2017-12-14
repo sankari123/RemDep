@@ -2008,16 +2008,18 @@ function ven_det(v)
 		
 		aName=events[i][7].replace(/\s/g, "_");
 		eName=events[i][8].replace(/\s/g, "_");
- 
-	if(favS ==null && NotfavS == null)
+ //	 if ( !favS ) {
+  // some_variable is either null, undefined, 0, NaN, false, or an empty string
+//}
+	if(favS ===null && NotfavS === null)
 	{
 			clsName='chartme-btn-main';
 	}
-	else if(favS ==undefined && NotfavS == undefined)
+	else if(typeof(favS)  ==='undefined' && typeof(NotfavS)  === 'undefined')
 	{
 	clsName='chartme-btn-main';
 	}
-		 
+	
 		else if(favS.indexOf(aName) !== -1 && NotfavS.indexOf(aName) !== -1)
 		{
 			clsName='chartme-btn-main';
