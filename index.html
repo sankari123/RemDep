@@ -2019,7 +2019,14 @@ function ven_det(v)
 	{
 	clsName='chartme-btn-main';
 	}
-	
+	else if(typeof(NotfavS)  ==='undefined' && favS  === null)
+	{
+	clsName='chartme-btn-main';
+	}
+	else if(typeof(favS)  ==='undefined' && NotfavS  === null)
+	{
+	clsName='chartme-btn-main';
+	}
 		else if(favS.indexOf(aName) !== -1 && NotfavS.indexOf(aName) !== -1)
 		{
 			clsName='chartme-btn-main';
