@@ -1931,10 +1931,18 @@ chkFav=[];
 chkNotFav=[];
 var table_string;
 function stringIsEmpty(value) {
-
-    return value ? value.trim().length == 0 : true;
+    if( typeof(value) === 'undefined' || value === null ){
+    return true;
+}
+    else 
+    {
+        return false;
+    
+    }
 
 }
+
+		
 		
 function ven_det(v)
 {
