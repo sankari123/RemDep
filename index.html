@@ -1956,10 +1956,10 @@ function ven_det(v)
 	v=v.replace(/_/g, " ");
 	 
 	
-	
+	profile();
 	
 	var favS= window.localStorage.getItem("favShows");
-	var NotfavS= window.localStorage.getItem("NotfavShows");
+	//var NotfavS= window.localStorage.getItem("NotfavShows");
 	
 	
 	active_page=2;
@@ -2027,7 +2027,7 @@ function ven_det(v)
 		
 		
 		chkValue1=stringIsEmpty(favS);
-		chkValue2=stringIsEmpty(NotfavS);
+	//	chkValue2=stringIsEmpty(NotfavS);
  //	 if ( !favS ) {
   // some_variable is either null, undefined, 0, NaN, false, or an empty string
 //}
@@ -2050,29 +2050,18 @@ function ven_det(v)
 		
 		 
  alert(chkValue1);
-	 alert(chkValue2);	
+//	 alert(chkValue2);	
 	
 		
 		
-		if(chkValue1 ==true && chkValue2 == true)
+		if(chkValue1 ==true )
 			
 		{
 		clsName='chartme-btn-main';
 			
 		}
-		else if(chkValue1==true && chkValue2 == false)
-		{
-		if(NotfavS.indexOf(aName) !== -1)
-		   {
-		  clsName='arrowdown'; 
-		   
-		   }
-			else
-			{
-			clsName='chartme-btn-main';
-			}
-		}
-		else if(chkValue1 ==false && chkValue2 == true)
+	 
+		else  
 		{
 		
 			if(favS.indexOf(aName) !== -1)
@@ -2085,29 +2074,8 @@ function ven_det(v)
 			clsName='chartme-btn-main';
 			}
 		}	
-		else if(chkValue1 == false && chkValue2 == false)
-		{
-		
-			
-			 if(favS.indexOf(aName) !== -1 && NotfavS.indexOf(aName) !== -1)
-			{
-				clsName='chartme-btn-main';
-			}
-		
-				else if(favS.indexOf(aName) !== -1 && NotfavS.indexOf(aName) == -1)
-			{
-				clsName='arrowdown';
-			}
-		
-				else if(favS.indexOf(aName) == -1 && NotfavS.indexOf(aName) !== -1)
-			{
-				clsName='chartme-btn-main';
-			}
-			else if(favS.indexOf(aName) == -1 && NotfavS.indexOf(aName) == -1)
-			{
-				clsName='chartme-btn-main';
-			}
-		}
+		 
+		 
 		
 			
 			
@@ -2635,17 +2603,17 @@ function profile()
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
-	var NotfavS= window.localStorage.getItem("NotfavShows");	
+//	var NotfavS= window.localStorage.getItem("NotfavShows");	
 	alert( favS);	
-		alert( NotfavS);	
+//		alert( NotfavS);	
 		  favS= favS.replace(/undefined/g, "");
 		  favS= favS.replace(/null/g, "");
-		 NotfavS= NotfavS.replace(/undefined/g, "");
-		  NotfavS= NotfavS.replace(/null/g, "");
-	 	 alert( favS);
+//		 NotfavS= NotfavS.replace(/undefined/g, "");
+//		  NotfavS= NotfavS.replace(/null/g, "");
+//	 	 alert( favS);
 		
 		favS1=favS.split('!');
-		NotfavS1=NotfavS.split('!');
+//		NotfavS1=NotfavS.split('!');
 		 //alert( favS);
 		fArr=[];
 //	ori=[];
@@ -2666,16 +2634,16 @@ function profile()
  	}
 		//alert('latr1'+fArr);
 		
-		for (var i = 0, len = NotfavS1.length; i < len-1; i++) {
+	//	for (var i = 0, len = NotfavS1.length; i < len-1; i++) {
  
- 		latR1= NotfavS1[i];
-	 	 latR1= latR1.slice( 1 );
-		NotfArr.push([latR1]);
+ 	//	latR1= NotfavS1[i];
+	 //	 latR1= latR1.slice( 1 );
+//		NotfArr.push([latR1]);
 		
  		  
- 	}
-		var ori=multiDimensionalUnique(NotfArr);
-		alert('Notlatr1'+NotfArr);
+ //	}
+//		var ori=multiDimensionalUnique(NotfArr);
+//		alert('Notlatr1'+NotfArr);
 		
 		
  
