@@ -2117,7 +2117,7 @@ function ven_det(v)
 		
 		 
 //alert(favS+'-'+NotfavS+'-'+clsName);
-  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows(this.value,this)'; value="+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 
+  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 
 		}
 		
 	 
@@ -2153,6 +2153,41 @@ var favArr = [];
 var NotfavArr = [];
 
 		
+		
+		function favAddShows11(fav,el)
+		{
+		if($(el).hasClass("arrowdown"))
+	{
+	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
+		var favHst=window.localStorage.getItem("favShows");
+		// var pattern = /\bproprietary\b/ig;
+   		favHst= favHst.replace(fav,"");
+		window.localStorage.setItem('favShows',favHst);
+		
+	}	
+			else
+			{
+			
+			 $(el).addClass('arrowdown').removeClass('chartme-btn-main'); 
+		
+	  
+		var favHst=window.localStorage.getItem("favShows");
+		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
+		{
+			 
+			favArr.push(favHst);
+		}
+	
+	    
+ 		favArr.push([fav]);
+	      window.localStorage.setItem('favShows',favArr);
+			}
+		
+		}
+		
+		
+		
+		
 function favAddShows(fav,el)
 		{
 	 
@@ -2162,7 +2197,7 @@ function favAddShows(fav,el)
 	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
 		 
 		var NotfavHst=window.localStorage.getItem("NotfavShows");
-		  if(NotfavHst!='' || NotfavHst!=null || NotfavHst!='undefined')
+		  if(NotfavHst!='' || NotfavHst!=null || typeof(NotfavHst)!='undefined')
 		{
 	 
 		NotfavArr.push(NotfavHst);
@@ -2177,7 +2212,7 @@ function favAddShows(fav,el)
 		
 	  
 	var favHst=window.localStorage.getItem("favShows");
-		if(favHst!='' || favHst!=null || favHst!='undefined')
+		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
 		{
 			 
 			favArr.push(favHst);
