@@ -2612,13 +2612,10 @@ document.getElementById("archive").style.display="block";
 		
 	 
 		var strFav="<table border=1 width='100%' cellpadding=0 cellspacing=0 bgcolor='#fafbfc' style='font-size: 11px'><tr height='50px'><td align='center'>My Favorites </td></tr>";
-	strFav+="<tr><td>Program</td></tr>";
+	 
 	for (var i = 0; i < fArr.length; i++) {
 			s=fArr[i];
-		while(s.charAt(0) === ',')
-			{
- 			s = s.substr(1);
-			}	
+		
 	       	strFav+="<tr height='50px'><td>"+s+"</td><tr>";
 		
 	}
