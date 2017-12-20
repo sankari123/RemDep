@@ -2565,7 +2565,9 @@ function chkFavorite()
 		}
 function profile()
 	{
-	document.getElementById("archive").style.visibility="true";
+document.getElementById("category").style.display="none";
+document.getElementById("category").style.visibility="false";
+document.getElementById("archive").style.visibility="true";
 document.getElementById("archive").style.display="block";
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
@@ -2615,7 +2617,10 @@ document.getElementById("archive").style.display="block";
 	 
 	for (var i = 0; i < fArr.length; i++) {
 			s=fArr[i];
-		
+		if(s.charAt(0) === ',')
+			{
+ 			s = s.slice(1);
+			}	
 	       	strFav+="<tr height='50px'><td>"+s+"</td><tr>";
 		
 	}
