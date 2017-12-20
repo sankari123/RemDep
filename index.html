@@ -1956,7 +1956,7 @@ function ven_det(v)
 	v=v.replace(/_/g, " ");
 	 
 	
-	//profile();
+	 
 	
 	var favS= window.localStorage.getItem("favShows");
 	//var NotfavS= window.localStorage.getItem("NotfavShows");
@@ -2590,6 +2590,7 @@ function profile()
  
  		latR1= favS1[i];
 	 	  latR1= latR1.slice(1);
+	 	//alert('latR'+latR1);
 		if(latR1 != '')
 		{
 		fArr.push([latR1]);
@@ -2599,24 +2600,15 @@ function profile()
  	}
 		var ori=multiDimensionalUnique(fArr);
 		for (var i = 0, len = fArr.length; i < len; i++) {
- 
- 		alert(fArr[i]);
+ 		 
+ 		alert('i'+fArr[i]);
 		
  		  
  	}
 	}	
 		alert('latr1'+fArr.length);
 		
-	//	for (var i = 0, len = NotfavS1.length; i < len-1; i++) {
- 
- 	//	latR1= NotfavS1[i];
-	 //	 latR1= latR1.slice( 1 );
-//		NotfArr.push([latR1]);
-		
- 		  
- //	}
-//		var ori=multiDimensionalUnique(NotfArr);
-//		alert('Notlatr1'+NotfArr);
+	 
 		
 		
  
