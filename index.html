@@ -1956,7 +1956,7 @@ function ven_det(v)
 	v=v.replace(/_/g, " ");
 	 
 	
-	profile();
+	//profile();
 	
 	var favS= window.localStorage.getItem("favShows");
 	//var NotfavS= window.localStorage.getItem("NotfavShows");
@@ -2049,7 +2049,7 @@ function ven_det(v)
 //	}
 		
 		 
- alert(chkValue1);
+ //alert(chkValue1);
 //	 alert(chkValue2);	
 	
 		
@@ -2141,6 +2141,8 @@ var NotfavArr = [];
 		
 	  
 		var favHst=window.localStorage.getItem("favShows");
+				alert('fav-before '+favHst);
+				alert('favarr'+favArr);
 		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
 		{
 			 
@@ -2150,6 +2152,8 @@ var NotfavArr = [];
 	    
  		favArr.push([fav]);
 	      window.localStorage.setItem('favShows',favArr);
+				var favUpd=window.localStorage.getItem("favShows");
+				alert('fav -after'+favUpd);
 			}
 		
 		}
@@ -2157,49 +2161,7 @@ var NotfavArr = [];
 		
 		
 		
-function favAddShows(fav,el)
-		{
-	 
-			
-	if($(el).hasClass("arrowdown"))
-	{
-	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
-		 
-		var NotfavHst=window.localStorage.getItem("NotfavShows");
-		  if(NotfavHst!='' || NotfavHst!=null || typeof(NotfavHst)!='undefined')
-		{
-	 
-		NotfavArr.push(NotfavHst);
-		}
-		 NotfavArr.push([fav]);
-		window.localStorage.setItem('NotfavShows',NotfavArr);
-			
-	}
-	else
-	{
-		 $(el).addClass('arrowdown').removeClass('chartme-btn-main'); 
-		
-	  
-	var favHst=window.localStorage.getItem("favShows");
-		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
-		{
-			 
-			favArr.push(favHst);
-		}
 	
-	    
- 		favArr.push([fav]);
-	      window.localStorage.setItem('favShows',favArr);
-		 
-		
-		
-		
-		
-	}
-			
-		
-	 
-		}		
 		
 		 
 function getLoc() 
