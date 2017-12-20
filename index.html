@@ -2617,10 +2617,9 @@ document.getElementById("archive").style.display="block";
 	 
 	for (var i = 0; i < fArr.length; i++) {
 			s=fArr[i];
-		 if( s.indexOf(0) == ',' )
+		while( s.charAt( 0 ) === ',' )
 	  {
-s = s.replace(/^,+/, "");
-
+    s = s.slice( 1 );
 
 }
 		s=s.replace(/_/g, " ");
