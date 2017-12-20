@@ -2617,10 +2617,9 @@ document.getElementById("archive").style.display="block";
 	 
 	for (var i = 0; i < fArr.length; i++) {
 			s=fArr[i];
-		if(s.charAt(0) === ',')
-			{
- 			s = s.slice(1);
-			}	
+		if(s.substr(0,1) == ",") {
+    		s = s.substr(1);
+		}	
 	       	strFav+="<tr height='50px'><td>"+s+"</td><tr>";
 		
 	}
