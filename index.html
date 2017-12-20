@@ -2606,13 +2606,13 @@ function profile()
 //	var NotfavS= window.localStorage.getItem("NotfavShows");	
 	alert( favS);	
 //		alert( NotfavS);	
-		  favS= favS.replace(/undefined/g, "");
-		  favS= favS.replace(/null/g, "");
+	//	  favS= favS.replace(/undefined/g, "");
+	//	  favS= favS.replace(/null/g, "");
 //		 NotfavS= NotfavS.replace(/undefined/g, "");
 //		  NotfavS= NotfavS.replace(/null/g, "");
 //	 	 alert( favS);
 		
-		favS1=favS.split('!');
+	//	favS1=favS.split('!');
 //		NotfavS1=NotfavS.split('!');
 		 //alert( favS);
 		fArr=[];
@@ -2620,6 +2620,7 @@ function profile()
 		
 	if(favS !=null && typeof(favS) !='undefined')
 	{
+		favS1=favS.split('!');
 	for (var i = 0, len = favS1.length; i < len-1; i++) {
  
  		latR1= favS1[i];
