@@ -2132,7 +2132,7 @@ var NotfavArr = [];
    		favHst= favHst.replace(fav,"");
 		window.localStorage.setItem('favShows',favHst);
 		newfavS=window.localStorage.getItem("favShows");
-		alert('new'+newfavS);
+		//alert('new'+newfavS);
 	}	
 			else
 			{
@@ -2141,10 +2141,10 @@ var NotfavArr = [];
 		
 	  
 		var favHst=window.localStorage.getItem("favShows");
-				alert('fav-before '+favHst);
+			//	alert('fav-before '+favHst);
 				
 				favArr.length = 0;
-				alert('favarr'+favArr);
+			//	alert('favarr'+favArr);
 		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
 		{
 			 
@@ -2155,7 +2155,7 @@ var NotfavArr = [];
  		favArr.push([fav]);
 	      window.localStorage.setItem('favShows',favArr);
 				var favUpd=window.localStorage.getItem("favShows");
-				alert('fav -after'+favUpd);
+				//alert('fav -after'+favUpd);
 			}
 		
 		}
@@ -2589,8 +2589,11 @@ function profile()
 	for (var i = 0, len = favS1.length; i < len-1; i++) {
  
  		latR1= favS1[i];
-	 	 latR1= latR1.slice( 1 );
+	 	  latR1= latR1.slice(1);
+		if(latR1 != '')
+		{
 		fArr.push([latR1]);
+		}
 		
  		  
  	}
@@ -2601,7 +2604,8 @@ function profile()
 		
  		  
  	}
-	}	//alert('latr1'+fArr);
+	}	
+		alert('latr1'+fArr.length);
 		
 	//	for (var i = 0, len = NotfavS1.length; i < len-1; i++) {
  
