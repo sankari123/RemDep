@@ -2617,7 +2617,7 @@ document.getElementById("archive").style.display="block";
 	 
 	for (var i = 0; i < fArr.length; i++) {
 			s=fArr[i];
-		 if( s.charAt( 0 ) === ',' )
+		 if( s.indexOf(0) == ',' )
 	  {
 s = s.replace(/^,+/, "");
 
