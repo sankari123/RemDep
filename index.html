@@ -2565,11 +2565,13 @@ function chkFavorite()
 		}
 function profile()
 	{
+	document.getElementById("archive").style.visibility="true";
+document.getElementById("archive").style.display="block";
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
 //	var NotfavS= window.localStorage.getItem("NotfavShows");	
-	alert( favS);	
+	//alert( favS);	
 //		alert( NotfavS);	
 	//	  favS= favS.replace(/undefined/g, "");
 	//	  favS= favS.replace(/null/g, "");
@@ -2601,15 +2603,29 @@ function profile()
 		var ori=multiDimensionalUnique(fArr);
 		for (var i = 0, len = fArr.length; i < len; i++) {
  		 
- 		alert('i'+fArr[i]);
+ 		//alert('i'+fArr[i]);
 		
  		  
  	}
 	}	
-		alert('latr1'+fArr.length);
+	//	alert('latr1'+fArr.length);
 		
 	 
+		var strFav="<table border=1 width='100%' cellpadding=0 cellspacing=0 bgcolor='#fafbfc' style='font-size: 11px'><tr height='50px'><td align='center'>My Favorites </td></tr>";
+	strFav+="<tr><td>Program</td></tr>";
+	for (var i = 0; i < fArr.length; i++) {
+			s=fArr[i];
+		while(s.charAt(0) === ',')
+			{
+ 			s = s.substr(1);
+			}	
+	       	strFav+="<tr height='50px'><td>"+s+"</td><tr>";
 		
+	}
+	
+ 
+		
+	  document.getElementById('archive').innerHTML =strFav+"</table>";
 		
  
 		
