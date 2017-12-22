@@ -2617,12 +2617,12 @@ document.getElementById("dl_btn").style.display="none";
  	}
 		var ori=multiDimensionalUnique(fArr);
 		for (var i = 0, len = fArr.length; i < len; i++) {
-		s=fArr[i];
-		while(s.charAt(0) === ',')
-			{
-			 s = s.substr(1);
-			}
-		 s=s.replace(/_/g, " ");
+		//s=fArr[i];
+		while(fArr[i].charAt(0) === ',')
+  			s = fArr[i].substring(1);
+		 
+
+		// s=fArr[i].replace(/_/g, " ");
  		alert(i+'-------  -'+s);
 		
  		  
