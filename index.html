@@ -2617,7 +2617,10 @@ document.getElementById("dl_btn").style.display="none";
  	}
 		var ori=multiDimensionalUnique(fArr);
 		for (var i = 0, len = fArr.length; i < len; i++) {
- 		alert(i+'  -'+fArr[i]);
+			s=fArr[i];
+		s = (s.length && s[0] == ',') ? s.slice(1) : s;
+		 s=s.replace(/_/g, " ");
+ 		alert(i+'  -'+s);
 		
  		  
  	}
@@ -2630,8 +2633,7 @@ document.getElementById("dl_btn").style.display="none";
 	 
 	for (var i = 0; i < fArr.length; i++) {
 			s=fArr[i];
-		s = (s.length && s[0] == ',') ? s.slice(1) : s;
-		 s=s.replace(/_/g, " ");
+		 
 	 
 	       	strFav+="<tr height='50px'><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+s+"</td><tr>";
 		
