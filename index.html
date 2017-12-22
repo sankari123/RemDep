@@ -2568,6 +2568,8 @@ function chkFavorite()
 		}
 function profile()
 	{
+		document.getElementById("det").style.display="none";
+	document.getElementById("det").style.visibility="false";
 document.getElementById("category").style.display="none";
 document.getElementById("category").style.visibility="false";
 document.getElementById("archive").style.visibility="true";
@@ -2617,13 +2619,11 @@ document.getElementById("dl_btn").style.display="none";
  	}
 		var ori=multiDimensionalUnique(fArr);
 		for (var i = 0, len = fArr.length; i < len; i++) {
-		//s=fArr[i];
-		//while(fArr[i].charAt(0) === ',')
-  		//	s = fArr[i].substring(1);
-		 
-
-		// s=fArr[i].replace(/_/g, " ");
- 		//alert(i+'-------  -'+s);
+		s=fArr[i];
+		var ig = s.length;
+		while (ig--) {
+ 		 alert(s.charAt(i));
+		}
 		
  		  
  	}
