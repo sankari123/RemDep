@@ -2617,13 +2617,10 @@ document.getElementById("dl_btn").style.display="none";
 		
  		  
  	}
+		 alert(  checkArray(fArr));
 		var ori=multiDimensionalUnique(fArr);
 		for (var i = 0, len = fArr.length; i < len; i++) {
-		s=fArr[i];
-		var ig = s.length;
-		while (ig--) {
- 		 alert(s.charAt(i));
-		}
+		str1=fArr[i];
 		
  		  
  	}
@@ -2651,6 +2648,15 @@ document.getElementById("dl_btn").style.display="none";
 		
 
 		 
+}
+
+		
+		function checkArray(my_arr){
+   for(var i=0;i<my_arr.length;i++){
+       if(my_arr[i] === "")   
+          return false;
+   }
+   return true;
 }
 		
 		function multiDimensionalUnique(arr) {
