@@ -2618,7 +2618,10 @@ document.getElementById("dl_btn").style.display="none";
 		var ori=multiDimensionalUnique(fArr);
 		for (var i = 0, len = fArr.length; i < len; i++) {
 		s=fArr[i];
-		s = (s.length && s[0] == ',') ? s.slice(1) : s;
+		while(s.charAt(0) === ',')
+			{
+			 s = s.substr(1);
+			}
 		 s=s.replace(/_/g, " ");
  		alert(i+'-------  -'+s);
 		
