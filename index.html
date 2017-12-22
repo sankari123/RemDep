@@ -1165,6 +1165,8 @@ function showevents(day,month,year,week,dayofweek) {
 	document.getElementById("dl_btn").style.visibility="true";
 	document.getElementById("csv").style.display="none";
 	document.getElementById("csv").style.visibility="false"; 
+	document.getElementById("archive").style.display="none";
+	document.getElementById("archive").style.visibility="false"; 
 //	window.plugins.spinnerDialog.hide();		
 var theevent = "";
 var floater = 0;
@@ -2570,6 +2572,16 @@ document.getElementById("category").style.display="none";
 document.getElementById("category").style.visibility="false";
 document.getElementById("archive").style.visibility="true";
 document.getElementById("archive").style.display="block";
+document.getElementById("dl_btn").style.display="none";
+document.getElementById("dl_btn").style.visibility="false";		
+document.getElementById("xPort").style.display="none";
+	document.getElementById("xPort").style.visibility="false";
+	document.getElementById("map").style.display="none";
+	document.getElementById("map").style.visibility="false";
+	document.getElementById("xPort1").style.display="none";
+	document.getElementById("xPort1").style.visibility="false";
+document.getElementById("dl_btn").style.display="none";
+	document.getElementById("dl_btn").style.visibility="false";		
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
@@ -2618,7 +2630,10 @@ document.getElementById("archive").style.display="block";
 	 
 	for (var i = 0; i < fArr.length; i++) {
 			s=fArr[i];
-	
+	while(s.charAt(0) === ',')
+{
+ s = s.substr(1);
+}
 		//s=s.replace(/_/g, " ");
 	 
 	       	strFav+="<tr height='50px'><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+s+"</td><tr>";
