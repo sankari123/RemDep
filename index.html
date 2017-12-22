@@ -2618,10 +2618,7 @@ document.getElementById("archive").style.display="block";
 	 
 	for (var i = 0; i < fArr.length; i++) {
 			s=fArr[i];
-		while(s.charAt(0) === ',')
-{
- s = s.substr(1);
-}
+	
 		s=s.replace(/_/g, " ");
 	 
 	       	strFav+="<tr height='50px'><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+s+"</td><tr>";
