@@ -2090,7 +2090,7 @@ function ven_det(v)
 		
 		 
 //alert(favS+'-'+NotfavS+'-'+clsName);
-  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 
+  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+aName+'^'+eName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 
 		}
 		
 	 
@@ -2146,13 +2146,13 @@ var NotfavArr = [];
 		
 	  
 		var favHst=window.localStorage.getItem("favShows");
-			 	alert('fav-before '+favHst);
+			// 	alert('fav-before '+favHst);
 				
 				favArr.length = 0;
 			//	alert('favarr'+favArr);
 		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
 		{
-			 alert('in');
+		//	 alert('in');
 			favArr.push(favHst);
 		}
 	
@@ -2160,7 +2160,7 @@ var NotfavArr = [];
  		favArr.push([fav]);
 	      window.localStorage.setItem('favShows',favArr);
 				var favUpd=window.localStorage.getItem("favShows");
-				 alert('fav -after'+favUpd);
+				// alert('fav -after'+favUpd);
 			}
 		
 		}
@@ -2640,6 +2640,7 @@ document.getElementById("dl_btn").style.display="none";
 			 s = s.substr(1);
 				}
 	 		s=s.replace(/_/g, " ");
+		      s=s.replace(/^/g, " ");
 	       	strFav+="<tr height='50px'><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+s+"</td><tr>";
 		
 	}
