@@ -1183,6 +1183,7 @@ function showevents(day,month,year,week,dayofweek) {
 var theevent = "";
 var floater = 0;
 		var kkkk=0;
+	var favS= window.localStorage.getItem("favShows");
 	document.getElementById('xPort').innerHTML='' ;
 	//document.getElementById("xPort").innerHTML='';
 	 
@@ -1237,29 +1238,51 @@ var floater = 0;
 				jj=timeString + " "+ampm;
 
 			}
+			aName=events[i][7].replace(/\s/g, "_");
+		eName=events[i][8].replace(/\s/g, "_");
+		
+		
+		
+		chkValue1=stringIsEmpty(favS);
+		
+		if(chkValue1 ==true )
 			
+		{
+		clsName='chartme-btn-main';
+			
+		}
+	 
+		else  
+		{
+		
+			if(favS.indexOf(aName) !== -1)
+		   {
+		   clsName='arrowdown';
+		   
+		   }
+			else
+			{
+			clsName='chartme-btn-main';
+			}
+		}	
+		 
 		while(kkkk<1)
 		{
-		theevent+="<center><font size=2><b>"+n+", " +events[i][2]+" "+mNam+" "+events[i][3]+"</b></font></center>";
+		theevent+="<table><tr><td colspan=3><center><font size=2><b>"+n+", " +events[i][2]+" "+mNam+" "+events[i][3]+"</b></font></center></td></tr>";
 			kkkk++;
 		}
 		
-		if(i%2==0)
-	{
-		
-		
-		
+		 
+//	<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
+//<tr><td>row 2 col2</td> </tr>
+ // <tr><td>row 2 col2</td> </tr>	
+theevent+="<tr><td rowspan=3>"+events[i][5]+" at "+jj+"</td><td >"+events[i][6]+" - <b>"+events[i][8]+"</b></td><td  rowspan=3>"+"<button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";	theevent+="<tr><td>"+events[i][7]+"</td> </tr>";
+		theevent+="<tr><td>&nbsp;</td> </tr>";
 		 
 	
-		theevent+="<div id='wrapper' style='background:white'><div id='left' style='background:white;padding-left:8px;'>"+events[i][5]+" at "+jj+"<br></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br><br></div></div> "	; 	
-	}
-			
-	else
-	{
-theevent+="<div id='wrapper' style='background:#f1f1f1'><div id='left' style='background:#f1f1f1;padding-left:8px;'>"+events[i][5]+" at "+jj+"<br></div><div id='right' style='background:#f1f1f1;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br><br></div></div> "	; 	
-	}
-		
-		
+		//theevent+="<div id='wrapper' style='background:white'><div id='left' style='background:white;padding-left:8px;'>"+events[i][5]+" at "+jj+"<br></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br><br></div></div> "	; 	
+	 
+ 
 		
 		
 		
@@ -1275,7 +1298,7 @@ theevent+="<div id='wrapper' style='background:#f1f1f1'><div id='left' style='ba
 		
 	}
 	 document.getElementById('dl_btn1').innerHTML=theevent;
-	 document.getElementById('xPort').innerHTML=theevent;
+	 document.getElementById('xPort').innerHTML=theevent+"</table>";
 	 
 }
 	
