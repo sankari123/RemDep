@@ -1157,8 +1157,6 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
-	document.getElementById("archive").style.display="none";
-	document.getElementById("archive").style.visibility="false"; 
 	
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
@@ -1898,7 +1896,9 @@ function calClick()
 		//alert('optsel'+optSel);
 		optSel=2;
 		 activePg=1;
-		active_page=1;
+		active_page=1; 
+		document.getElementById("archive").style.display="none";
+		document.getElementById("archive").style.visibility="false"; 
 		$('#calendar').show('slide', 400);
 		// $("#calendar").slideToggle("slow");
 		//	  $('#calendar').toggle('slide','right',500);	 
