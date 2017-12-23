@@ -2634,14 +2634,14 @@ document.getElementById("dl_btn").style.display="none";
 	 
 	      for (var i = 0; i < fArr.length; i++) {
 			s=String(fArr[i]);
-		      alert(s);
+		  //    alert(s);
 			 while(s.charAt(0) === ',')
 				{
 			 s = s.substr(1);
 				}
 	 		s=s.replace(/_/g, " ");
 		      s=s.replace('^', " - ");
-		         alert(s);
+		    //     alert(s);
 	       	strFav+="<tr height='50px'><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+s+"</td><tr>";
 		
 	}
