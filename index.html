@@ -2570,22 +2570,24 @@ function chkFavorite()
 		}
 function profile()
 	{
-		document.getElementById("calendar").style.display="none";
-	document.getElementById("calendar").style.visibility="false";
-document.getElementById("category").style.display="none";
-document.getElementById("category").style.visibility="false";
+		 
+		$("#arSrch").html("");
+		  $('#main').hide();
+		  $('#mainMenu').hide();
+		  $('#category').hide();
+			$('#map').hide();
+		 $('#calendar').hide();
+		  $('#dl_btn').hide();
+		  $('#lst_mnu').hide();
+			$('#backmenu').show();	
+			$('#dl_btn1').hide();
+			 $('#xPort').hide();
+			  $('#xPort1').hide();
+			   $('#tab').hide();
+ 
 document.getElementById("archive").style.visibility="true";
 document.getElementById("archive").style.display="block";
-document.getElementById("dl_btn").style.display="none";
-document.getElementById("dl_btn").style.visibility="false";		
-document.getElementById("xPort").style.display="none";
-	document.getElementById("xPort").style.visibility="false";
-	document.getElementById("map").style.display="none";
-	document.getElementById("map").style.visibility="false";
-	document.getElementById("xPort1").style.display="none";
-	document.getElementById("xPort1").style.visibility="false";
-document.getElementById("dl_btn").style.display="none";
-	document.getElementById("dl_btn").style.visibility="false";		
+ 	
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
