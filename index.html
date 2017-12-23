@@ -2311,6 +2311,28 @@ for (var i = 0, len = events.length; i < len; i++)
 		
 		
 		chkValue1=stringIsEmpty(favS);
+			
+		if(chkValue1 ==true )
+			
+		{
+		clsName='chartme-btn-main';
+			
+		}
+	 
+		else  
+		{
+		
+			if(favS.indexOf(aName) !== -1)
+		   {
+		   clsName='arrowdown';
+		   
+		   }
+			else
+			{
+			clsName='chartme-btn-main';
+			}
+		}	
+		 
 			//alert(n);
 			//var result = parseFloat(4.00);
 		//	alert(hours);
