@@ -2255,7 +2255,10 @@ calEvt ='';
 	calEvtDetails='';
 //alert(catSel);
 	var ev_lst='';
-var ev_lst="<br><center><b>"+  catSel +"</center></b><br>";
+	var favS= window.localStorage.getItem("favShows");
+//var ev_lst="<br><center><b>"+  catSel +"</center></b><br>";
+	var ev_lst="<table border='0' id='test' class='ven1' cellpadding='0' cellspacing='0'>";
+	ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+catSel+"</font></td></tr> ";
 	var heading1=ev_lst;
 for (var i = 0, len = events.length; i < len; i++)
 {
@@ -2290,10 +2293,20 @@ for (var i = 0, len = events.length; i < len; i++)
 
 			}
 			
+		aName=events[i][7].replace(/\s/g, "_");
+		eName=events[i][8].replace(/\s/g, "_");
+		
+		
+		
+		chkValue1=stringIsEmpty(favS);
 			//alert(n);
 			//var result = parseFloat(4.00);
 		//	alert(hours);
-		 
+//<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
+//<tr><td>row 2 col2</td> </tr>
+ // <tr><td>row 2 col2</td> </tr>
+	  
+	  
 //	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
 //		ev_lst+="<tr align='center' ><td>"+n+", " +events[i][2]+" "+mNam+" "+timeString+"<br>";
 			
@@ -2304,12 +2317,21 @@ for (var i = 0, len = events.length; i < len; i++)
 //</div> 
 	if(i%2==0)
 	{
-	ev_lst+="<div id='wrapper'><div id='left'>"+events[i][5]+"</div><div id='right'><b>" +n+", " +events[i][2]+" "+mNam+" "+' '+jj+'</b><br><font color=#6a737d>'+'<br>'+events[i][8]+'<br><br>'+events[i][7]+"</font><br><br></div></div> "	;		
+		
+ev_lst="<tr><td rowspan=3>"+events[i][5]+"</td><td><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=3><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
+		
+	ev_lst+="<tr><td>"+=events[i][8]+"</td> </tr>	;
+	ev_lst+="<tr><td>"+=events[i][7]+"</td> </tr>;
+//	ev_lst+="<div id='wrapper'><div id='left'>"+events[i][5]+"</div><div id='right'><b>" +n+", " +events[i][2]+" "+mNam+" "+' '+jj+'</b><br><font color=#6a737d>'+'<br>'+events[i][8]+'<br><br>'+events[i][7]+"</font><br><br></div></div> "	;		
 	}
 			
 	else
 	{
-	ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white'>"+events[i][5]+"</div><div id='right' style='background:white'><b>" +n+", " +events[i][2]+" "+mNam+" "+' '+jj+'</b><br><font color=#6a737d>'+'<br>'+events[i][8]+'<br><br>'+events[i][7]+"</font><br><br></div></div> "	;
+	ev_lst="<tr><td rowspan=3>"+events[i][5]+"</td><td><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=3><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
+		
+	ev_lst+="<tr><td>"+=events[i][8]+"</td> </tr>	;
+	ev_lst+="<tr><td>"+=events[i][7]+"</td> </tr>;
+	//ev_lst+="<div id='wrapper' style='background:white'><div id='left' style='background:white'>"+events[i][5]+"</div><div id='right' style='background:white'><b>" +n+", " +events[i][2]+" "+mNam+" "+' '+jj+'</b><br><font color=#6a737d>'+'<br>'+events[i][8]+'<br><br>'+events[i][7]+"</font><br><br></div></div> "	;
 	}
 			
 		}
@@ -2323,7 +2345,7 @@ for (var i = 0, len = events.length; i < len; i++)
 	{
 		ev_lst=heading1+'<br><br><center><font >No events to show ...</font></center>';
 	}
-	document.getElementById('xPort').innerHTML=ev_lst;
+	document.getElementById('xPort').innerHTML=ev_lst+"</table>";
 	 
  
 }
