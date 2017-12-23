@@ -1157,6 +1157,9 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
+	document.getElementById("archive").style.display="none";
+	document.getElementById("archive").style.visibility="false"; 
+	
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
 	document.getElementById("xPort").style.display="block";
@@ -1165,8 +1168,7 @@ function showevents(day,month,year,week,dayofweek) {
 	document.getElementById("dl_btn").style.visibility="true";
 	document.getElementById("csv").style.display="none";
 	document.getElementById("csv").style.visibility="false"; 
-	document.getElementById("archive").style.display="none";
-	document.getElementById("archive").style.visibility="false"; 
+	 
 //	window.plugins.spinnerDialog.hide();		
 var theevent = "";
 var floater = 0;
@@ -2144,13 +2146,13 @@ var NotfavArr = [];
 		
 	  
 		var favHst=window.localStorage.getItem("favShows");
-			//	alert('fav-before '+favHst);
+			 	alert('fav-before '+favHst);
 				
 				favArr.length = 0;
 			//	alert('favarr'+favArr);
 		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
 		{
-			 
+			 alert('in');
 			favArr.push(favHst);
 		}
 	
@@ -2158,7 +2160,7 @@ var NotfavArr = [];
  		favArr.push([fav]);
 	      window.localStorage.setItem('favShows',favArr);
 				var favUpd=window.localStorage.getItem("favShows");
-				//alert('fav -after'+favUpd);
+				 alert('fav -after'+favUpd);
 			}
 		
 		}
