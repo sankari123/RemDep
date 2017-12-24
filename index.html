@@ -568,7 +568,11 @@ span  {
 display	: none;
  
 }
-		
+.wide {
+    display:block;
+    width:0px;
+    height:0px;
+}		
 .fake-input { position: relative; width:240px; }
 .fake-input input { border:none: background:#fff; display:block; width: 100%; box-sizing: border-box }
 .fake-input img { position: absolute; top: 2px; right: 5px }	
@@ -769,9 +773,10 @@ function displayResults(artistNam)
 $("#input1").blur();
 $("#arSrch").hide();
 $('#xPort').show();	
-//$('#xPort1').show();	
+$('#map-container').hide();
+$('#map').hide();		
 $('#dl_btn').show();		
- 
+// document.getElementById('map').setAttribute("class","wide");
 document.getElementById('xPort').innerHTML='' ;
 	
 var artEvt ='';
