@@ -753,11 +753,11 @@ function monkeyPatchAutocomplete() {
 
           $.ui.autocomplete.prototype._renderItem = function( ul, item) {
               var re = new RegExp("^" + this.term, "i") ;
-              var t = item.label.replace(re,"<br><span id='arSrch' style='height:100%;color:black;vertical-align:middle ;text-align: left;'>" + this.term + "</span>");
+              var t = item.label.replace(re,"<br><span id='arSrch' style='height:100%;color:black;vertical-align:top ;text-align: left;'>" + this.term + "</span>");
               return $( "<li></li>" )
                   .data( "item.autocomplete", item )
     .append( "<a><img src='search1.png' style='   vertical-align: bottom;  '>" + t + "</a>" )
-                  .appendTo( ul );
+                  .appendTo(ul);
           };
       }
 
@@ -2796,7 +2796,7 @@ document.getElementById("archive").style.display="block";
 	 
 	
 	      <table border=0 width='100%' bgcolor='#0c9db7'><tr height='70px'><td style='vertical-align: top;'>&nbsp;&nbsp;
-           <font size=3><b><a href="#" onclick="backSt();" style='text-decoration: none; color: #ffffff;' title="back">&#x003C;</a></b></font></td><td width=99% align='center'><b><font size=3 color='#ffffff'>Madras Music & Miscellany</font></b></td></tr></table> 
+           <font size=5><b><a href="#" onclick="backSt();" style='text-decoration: none; color: #ffffff;' title="back">&#x003C;</a></b></font></td><td width=99% align='center'><b><font size=3 color='#ffffff'>Madras Music & Miscellany</font></b></td></tr></table> 
 		</div>
         <!-- jQuery library (served from Google) -->
          <div class="ssm-overlay ssm-toggle-nav"></div>
