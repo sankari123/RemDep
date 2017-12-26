@@ -2427,7 +2427,10 @@ function calAdd()
   var location = "Chennai";
   // Description about the event 
   var notes = calEvtDetails1[i];
-   var calsuccess = function(message) { navigator.notification.alert('Scehdule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');};
+		alert(startDate);
+		alert(endDate);
+		alert(notes);
+   var calsuccess = function(message) { navigator.notification.alert('Schedule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');};
   var calerror = function(message) { alert("Error: " + message); };
 
 	}
