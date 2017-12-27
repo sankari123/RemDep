@@ -2426,8 +2426,8 @@ function calAdd()
   //var startDate = stringToDate(String(calEvt1[i]),"yyyy/MM/dd","-");
   // End date and time of the event 
 	var endDate=String(calEvt1[i]);
-	 	endDate=endDate.replace(/  /g, "-");
-		endDate=endDate+'9:30:00';
+	 	endDate=endDate.replace(/  /g, ",");
+		endDate=endDate+',9,30,0,0,0';
 	//	alert(endDate);
  //  endDate = new Date(String(calEvt1[i]));
   // Title of the event
