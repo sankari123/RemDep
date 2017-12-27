@@ -1209,7 +1209,8 @@ var floater = 0;
 	 
 			var ampm = H < 12 ? "am" : "pm";
 			timeString = h + timeString.substr(2, 3);
-
+			calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
+			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
 
 			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
 
@@ -1305,6 +1306,8 @@ theevent+="<tr ><td rowspan=3>"+events[i][5]+" at "+jj+"</td><td >"+events[i][6]
 	    //    document.forms.eventform.eventlist.value = 'No events to show.';
 		
 	}
+	calEvt = calEvt.replace('undefined','');
+	calEvtDetails = calEvtDetails.replace('undefined','');
 	// document.getElementById('dl_btn1').innerHTML=theevent;
 	 document.getElementById('xPort').innerHTML=theevent+"</table>";
 	 
