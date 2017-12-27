@@ -2424,10 +2424,10 @@ function calAdd()
  // var startDate = new Date(calEvt1[i]);
 	var stDat=String(calEvt1[i]);	
 		stDat=stDat.replace(/ /g, "-")+" 09:30:00";
-		var startDate=new Date(stDat);
+		//var startDate=new Date(stDat);
 		//dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
   // End date and time of the event 
-  var endDate = new Date(calEvt1[i]);
+ // var endDate = new Date(calEvt1[i]);
   // Title of the event 
   var title = "Madras Music Miscellany";
   // Location of the event 
@@ -2448,7 +2448,7 @@ function calAdd()
 
 	}
   
-  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
+  window.plugins.calendar.createEvent(title,location,notes,stDat,stDat,calsuccess,calerror)
  //  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
 	 
 }	
