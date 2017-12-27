@@ -2427,9 +2427,11 @@ function calAdd()
   // End date and time of the event 
 	var endDate=String(calEvt1[i]);
 	 	endDate=endDate.replace(/  /g, "-");
+		endDate=endDate+'9:30:00';
 	//	alert(endDate);
  //  endDate = new Date(String(calEvt1[i]));
-  // Title of the event 
+  // Title of the event
+		var dat=new Date(endDate);
   var title = "Madras Music Miscellany";
   // Location of the event 
   var location = "Chennai";
