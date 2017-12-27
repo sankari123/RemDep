@@ -2424,6 +2424,7 @@ function calAdd()
  // var startDate = new Date(calEvt1[i]);
 	var stDat=String(calEvt1[i]);	
 		stDat=stDat.replace(/ /g, "-")+" 09:30:00";
+		stDat=stDat.replace(/--/g, "-");
 		//var startDate=new Date(stDat);
 		//dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
   // End date and time of the event 
