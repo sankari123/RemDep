@@ -2422,7 +2422,7 @@ function calAdd()
 	//	alert(calEvt1[i]);
 	// Start date and time of the event
  // var startDate = new Date(calEvt1[i]);
-	stDat=String(calEvt1[i])+" 09:30:00";	
+	var stDat=String(calEvt1[i])+" 09:30:00";	
 		var startDate=new Date(stDat);
 		//dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
   // End date and time of the event 
@@ -2433,7 +2433,8 @@ function calAdd()
   var location = "Chennai";
   // Description about the event 
   var notes = calEvtDetails1[i];
-		 alert(startDate);
+		 alert(startDate); 
+		alert(stDat);
 	//	alert(endDate);
 	//	alert(notes);
 //var success = function(message) { alert("Schedule added Successfully...!  " + JSON.stringify(message)); };
