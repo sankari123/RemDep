@@ -2423,7 +2423,7 @@ function calAdd()
 	for (var i = 0; i <calEvt1.length-1; i++) {
 	//	alert(calEvt1[i]);
 	// Start date and time of the event
-  var startDate = stringToDate(calEvt1[i],"yyyy/MM/dd","-");
+  var startDate = stringToDate(String(calEvt1[i]),"yyyy/MM/dd","-");
   // End date and time of the event 
 		
   var endDate = new Date(String(calEvt1[i]));
