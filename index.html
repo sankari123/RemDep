@@ -2423,8 +2423,9 @@ function calAdd()
 	for (var i = 0; i <calEvt1.length-1; i++) {
 	//	alert(calEvt1[i]);
 	// Start date and time of the event
-  var startDate = new Date(String(calEvt1[i]));
+  var startDate = stringToDate(calEvt1[i],"yyyy/MM/dd","-");
   // End date and time of the event 
+		
   var endDate = new Date(String(calEvt1[i]));
   // Title of the event 
   var title = "Madras Music Miscellany";
@@ -2432,12 +2433,13 @@ function calAdd()
   var location = "Chennai";
   // Description about the event 
   var notes = calEvtDetails1[i];
+		alert(startDate);
    var calsuccess = function(message) { navigator.notification.alert('Scehdule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');};
   var calerror = function(message) { alert("Error: " + message); };
 
 	}
   
-  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
+  window.plugins.calendar.createEvent(title,location,notes,startDate,startDate,calsuccess,calerror)
    
 	 
 }	
