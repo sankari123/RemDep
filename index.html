@@ -2426,9 +2426,9 @@ function calAdd()
   //var startDate = stringToDate(String(calEvt1[i]),"yyyy/MM/dd","-");
   // End date and time of the event 
 	var endDate=String(calEvt1[i]);
-	 	endDate=endDate.replace(/  /g, ",");
-		endDate=endDate+',9,30,0,0,0';
-		alert(endDate);
+	 //	endDate=endDate.replace(/  /g, ",");
+		//endDate=endDate+',9,30,0,0,0';
+		//alert(endDate);
  //  endDate = new Date(String(calEvt1[i]));
   // Title of the event
 		var dat=new Date(String(endDate));
@@ -2437,7 +2437,7 @@ function calAdd()
   var location = "Chennai";
   // Description about the event 
   var notes = calEvtDetails1[i];
-		alert(dat);
+		//alert(dat);
    var calsuccess = function(message) { alert('Scehdule added Successfully...');};
   var calerror = function(message) { alert("Error: " + message); };
 
