@@ -2,7 +2,7 @@
 <head>
 <title>Madras Music & Miscellany</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, minimu(m-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/javascript" src="cordova.js"></script>
 	 
 <link class="jsbin" href="css/jquery-ui.css" rel="stylesheet" type="text/css"></link>
@@ -16,7 +16,7 @@
 	
  <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>  
-  
+  <script type="text/javascript" src="Calendar.js"></script>
  
 	
 	
@@ -2414,7 +2414,46 @@ ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b>"+n+", " +eve
 } 
 		
 
+	function calAdd()
 	
+{
+	
+	
+	calEvt1=calEvt.split('&');
+	 calEvtDetails1=calEvtDetails.split('%');
+	 
+	 
+	for (var i = 0; i <calEvt1.length-1; i++) {
+	//	alert(calEvt1[i]);
+	// Start date and time of the event
+  var startDate = new Date(calEvt1[i]);
+  // End date and time of the event 
+  var endDate = new Date(calEvt1[i]);
+  // Title of the event 
+  var title = "Madras Music Miscellany";
+  // Location of the event 
+  var location = "Chennai";
+  // Description about the event 
+  var notes = calEvtDetails1[i];
+
+
+ //alert(startDate);
+	//	alert(endDate);
+	//	alert(notes);
+    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,cal1success,cal1error);
+		var cal1success = function(message) { alert("Success: " + JSON.stringify(message)); };
+  var cal1error = function(message) { alert("Error: " + message); };
+		
+  var calsuccess = function(message) {
+    navigator.notification.alert("Event added successfully.");
+	  alert("Event added successfully.");
+  };
+  var calerror = function(message) { 
+    navigator.notification.alert("Error occurred while adding the event.");
+  };
+	}
+}	
+
 
 
 function fav()
