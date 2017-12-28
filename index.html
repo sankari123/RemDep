@@ -2410,12 +2410,18 @@ ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b>"+n+", " +eve
 	document.getElementById('xPort').innerHTML=ev_lst+"</table>";
 	 
  
-}
+} 
+		
+function requestReadWritePermission() {
+    // no callbacks required as this opens a popup which returns async
+    window.plugins.calendar.requestReadWritePermission();
+  }
 	
 function calAdd()
 	
 {
 	
+	requestReadWritePermission();
 	calEvt1=calEvt.split('&');
 	 calEvtDetails1=calEvtDetails.split('%');
 	// var cal = new calendarPlugin(); 
