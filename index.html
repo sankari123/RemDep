@@ -2421,40 +2421,39 @@ function calAdd()
 	
 {
 	
-	requestReadWritePermission();
+	
 	calEvt1=calEvt.split('&');
 	 calEvtDetails1=calEvtDetails.split('%');
-	// var cal = new calendarPlugin(); 
+	 
 	 
 	for (var i = 0; i <calEvt1.length-1; i++) {
-	//	alert(calEvt1[i]);
+		alert(calEvt1[i]);
 	// Start date and time of the event
-  //var startDate = stringToDate(String(calEvt1[i]),"yyyy/MM/dd","-");
+  var startDate = new Date(calEvt1[i]);
   // End date and time of the event 
-	var endDate=String(calEvt1[i]);
-	 //	endDate=endDate.replace(/  /g, ",");
-		//endDate=endDate+',9,30,0,0,0';
-		//alert(endDate);
- //  endDate = new Date(String(calEvt1[i]));
-  // Title of the event
-  var dat=new Date(calEvt1[i]);
+  var endDate = new Date(calEvt1[i]);
+  // Title of the event 
   var title = "Madras Music Miscellany";
   // Location of the event 
   var location = "Chennai";
   // Description about the event 
-  var notes = String(calEvtDetails1[i]);
-		 alert(dat);
-  var calsuccess = function(message) { alert('Scehdule added Successfully...');};
-  var calerror = function(message) { alert("Error: " + message); };
+  var notes = calEvtDetails1[i];
 
+
+ //alert(startDate);
+	//	alert(endDate);
+	//	alert(notes);
+    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
+  var calsuccess = function(message) {
+    navigator.notification.alert("Event added successfully.");
+	  alert("Event added successfully.");
+  };
+  var calerror = function(message) { 
+    navigator.notification.alert("Error occurred while adding the event.");
+  };
 	}
-  
-  window.plugins.calendar.createEvent(title,location,notes,dat,dat,calsuccess,calerror);
-  
-  
-   
-	 
 }	
+
 function fav()
 	{
 	
