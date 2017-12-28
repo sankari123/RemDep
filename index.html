@@ -2431,14 +2431,14 @@ function calAdd()
 		//alert(endDate);
  //  endDate = new Date(String(calEvt1[i]));
   // Title of the event
-		var dat=new Date(String(endDate));
+  var dat=new Date(calEvt1[i]);
   var title = "Madras Music Miscellany";
   // Location of the event 
   var location = "Chennai";
   // Description about the event 
   var notes = String(calEvtDetails1[i]);
-		//alert(dat);
-   var calsuccess = function(message) { alert('Scehdule added Successfully...');};
+		 alert(dat);
+  var calsuccess = function(message) { alert('Scehdule added Successfully...');};
   var calerror = function(message) { alert("Error: " + message); };
 
 	}
