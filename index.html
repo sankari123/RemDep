@@ -2436,13 +2436,20 @@ function calAdd()
   var location = "Chennai";
   // Description about the event 
   var notes = calEvtDetails1[i];
-   var calsuccess = function(message) { navigator.notification.alert('Scehdule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');};
-  var calerror = function(message) { alert("Error: " + message); };
+		
+var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+  var error = function(message) { alert("Error: " + message); };
+ 
+  // create a calendar (iOS only for now) 
+  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+ / if you want to create
+		
+		
+  
 
 	}
   
-  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
-   
+  
 	 
 }	
 	
