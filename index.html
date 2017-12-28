@@ -2437,12 +2437,17 @@ function calAdd()
   var location = "Chennai";
   // Description about the event 
   var notes = calEvtDetails1[i];
-		
-var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-  var error = function(message) { alert("Error: " + message); };
+		window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
+  var calsuccess = function(message) {
+    //navigator.notification.alert("Event added successfully.");
+	  alert("Event added successfully.");
+  };
+  var calerror = function(message) { 
+    navigator.notification.alert("Error occurred while adding the event.");
+  };
  
   // create a calendar (iOS only for now) 
-  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+ // window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
  / if you want to create
 		
 		
