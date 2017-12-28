@@ -2401,7 +2401,7 @@ ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b>"+n+", " +eve
 	calEvtDetails = calEvtDetails.replace('undefined','');
 	if(heading1==ev_lst)
 	{
-		ev_lst=heading1+'<br><br><center><font >No events to show ...</font></center>';
+		ev_lst=heading1+'<tr><td>No events to show ...</td><tr>';
 	}
 	document.getElementById('xPort').innerHTML=ev_lst+"</table>";
 	 
