@@ -17,7 +17,7 @@
  <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>  
   
- 
+ <script type="text/javascript" src="Calendar.js"></script>
 
   
     <style type="text/css" media="screen">
@@ -1924,7 +1924,6 @@ function doRequest(url,monSel) {
 	      
     }
 	     
-    }
   };
   xhttp.open("POST", url, true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -2439,17 +2438,19 @@ function calAdd()
   // Description about the event 
   var notes = calEvtDetails1[i];
 
-var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-  var error = function(message) { alert("Error: " + message); };
- //alert(startDate);
-	//	alert(endDate);
-	//	alert(notes);
-    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error)
- //   window.plugins.calendar.createEvent(title,eventLocation,notes,startDate,endDate,success,error);
-  
+
  
+    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
+  var calsuccess = function(message) {
+    navigator.notification.alert("Event added successfully.");
+	//  alert("Event added successfully.");
+  };
+  var calerror = function(message) { 
+    navigator.notification.alert("Error occurred while adding the event.");
+  };
 	}
 }	
+
 
 function fav()
 	{
