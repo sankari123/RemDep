@@ -2430,8 +2430,8 @@ function calAdd()
   var notes = calEvtDetails1[i];
    var calsuccess = function(message) { navigator.notification.alert('Scehdule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');};
   var calerror = function(message) { alert("Error: " + message); };
- window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
-		//window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,success,error);
+// window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
+		window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,calsuccess,calerror);
 	}
   
  
