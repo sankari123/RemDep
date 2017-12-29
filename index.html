@@ -101,17 +101,66 @@ margin: 0 auto;
     .ui-widget .ui-widget { font-size: 0.8em; }
 
     div.inputDiv  {
+         width: 500px;
+	margin: auto;
+	margin-top: 50px;
          float: left;
-         width:270px;
         
-      /*   border: Navy 1px dotted;*/
-         margin: 14px;
+     
          padding: 0px;
-	 color: #aaaaaa;
+		 color: gray;
+		   display:none;
 	
 	
 			 
     }
+	    #input1
+	{
+	width: 80%;
+	border: 1px solid #ccc;
+  outline: 0;
+   
+	}
+	#input1:focus {
+	/*box-shadow: 0 0 15px 5px #b0e0ee;*/
+	border: 2px solid #bebede;
+}
+	    .close-icon {
+	border:1px solid transparent;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.close-icon:after {
+	content: "X";
+	display: block;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	background-color: #FA9595;
+	z-index:1;
+	right: 35px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 2px;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-weight: normal;
+	font-size: 12px;
+	/*box-shadow: 0 0 2px #E50F0F;*/
+	cursor: pointer;
+}
+#input1:not(:valid) ~ .close-icon {
+	display: none;
+}
+#input1,.close-icon,#inputDiv {
+	position: relative;
+	padding: 10px;
+}
 	    
 	    .artDisplay
 	    {
@@ -591,6 +640,11 @@ margin: 0 auto;
 	    }
     </style>
 	<script>
+		$(document).ready(function(){
+		$("#close_icon").click(function(){
+	document.getElementById('artDisplay').style.display='none';
+	document.getElementById('artDisplay').style.visibility='false';
+		})});
 		
 		$(document).ready(function() {
 			
@@ -701,6 +755,7 @@ $(document).ready(function(){
 		prep();
               //alert(wordlist);
 
+			
 			pop('searchmenu');
 			 
 				 monkeyPatchAutocomplete();
@@ -2828,7 +2883,7 @@ document.getElementById("archive").style.display="block";
 	  <div id='inputDiv' class='inputDiv'>
       
       <form id="form1">
-        <b><a href="#" onclick="backSt();" style='text-decoration: none; color: #ffffff;' title="back">&#x003C;</a></b></font> <input type="text" id="input1"  style='width :500px;padding-top: 6px;padding-bottom: 6px;' placeholder="Search Artist" />
+        <b><a href="#" onclick="backSt();" style='text-decoration: none; color: #ffffff;' title="back">&#x003C;</a></b></font> <input type="text" id="input1"  style='width :500px;padding-top: 6px;padding-bottom: 6px;' placeholder="Search Artist" /><button id='close_icon'  class="close-icon" type="reset"></button>
 
       </form>
     </div>
