@@ -21,12 +21,14 @@
 
 
 .ui-menu {
-	list-style-image: url("search1.png") ;	
-	padding-right: 19px;
+	list-style: none ;	
+	padding-right: 9px;
 	margin: 0;
 	display: block;
 	outline: none;
-	 color: gray;
+	color: gray;
+	height:100%;
+
 }
 .ui-menu .ui-menu {
 	position: absolute;
@@ -35,7 +37,7 @@
 .ui-menu .ui-menu-item {
 	position: relative;
 	margin: 0;
-	 padding: 3px 1em 53px .4em; 
+ padding: 3px 1em 53px .4em;  
 	cursor: pointer;
 	min-height: 0; /* support: IE7 */
 	/* support: IE10, see #8844 */
