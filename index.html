@@ -22,6 +22,15 @@
 
   
     <style type="text/css" media="screen"> 
+	    
+	    #cat_tbl span { 
+		    display: inline-block;
+  vertical-align: middle;
+  margin-left: 60px;  /* width of image */
+   font-size: 15px;
+		    
+		    
+	    }
 	    span.group-item-icon,
 span.file-item-icon {
   display: inline-block;
@@ -2913,7 +2922,7 @@ document.getElementById("archive").style.display="block";
 		<!--<font size=1 face='arial'>Browse by Category</font><br><br>-->
 		<!-- <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input><br><br>-->
 		 
-	   <table width='100%' border=0 cellpadding=0 cellpadding=0 >
+	   <table id='cat_tbl' width='100%' border=0 cellpadding=0 cellpadding=0 >
 		   <tr><td onclick='eventList(1);'><button onclick='eventList(1);' class='btn2'><img src='concert.png'  style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td><td width='7%'><button onclick='eventList(1);' class='btn2'><img src='arrow.png'  width=10px height=10px style="vertical-align:middle"></button><font color='white'>&nbsp;&nbsp;&nbsp;&nbsp;11</font></td></tr>
 		   <tr valign="top"><td colspan=2><hr size=1 color='#ececec'></td></tr>
 		    <tr><td  onclick='eventList(2);'><button onclick='eventList(2);' class='btn2' ><img src='dance.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Dance</span></button></td><td width='7%'><button onclick='eventList(2);' class='btn2' ><img src='arrow.png'   width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
