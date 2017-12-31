@@ -23,7 +23,7 @@
 .ui-menu {
 	list-style-image: url("search.png") ;		
 	padding-right: 9px;
-	padding-top: 10px;
+	padding-top: 30px;
 	margin: 0;
 	display: block;
 	outline: none;
@@ -38,8 +38,8 @@
 .ui-menu .ui-menu-item {
 	position: relative;
 	margin: 0;
-	 padding-top: 3px ; 
-	 padding-bottom: 13px; 
+	 
+	 
 	cursor: pointer;
 	min-height: 0; /* support: IE7 */
 	/* support: IE10, see #8844 */
