@@ -23,7 +23,7 @@
 .ui-menu {
 	list-style-image: url("search.png") ;	
 	padding-right: 0px;
-	 padding-top: 23px ; 
+	 top: 23px ; 
 	margin: 0;
 	display: block;
 	outline: none;
@@ -41,31 +41,7 @@
 	 
 	 color: gray;
 }
-.ui-menu .ui-menu-divider {
-	margin: 5px 0;
-	height: 0;
-	font-size: 0;
-	line-height: 0;
-	border-width: 1px 0 0 0;
-}
-.ui-menu .ui-state-focus,
  
-
-
-/* Overlays */
-.ui-widget-overlay {
-	background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
-	opacity: .3;
-	filter: Alpha(Opacity=30); /* support: IE8 */
-}
-.ui-widget-shadow {
-	margin: -8px 0 0 -8px;
-	padding: 8px;
-	background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
-	opacity: .3;
-	filter: Alpha(Opacity=30); /* support: IE8 */
-	border-radius: 8px;
-}
 .ui-helper-hidden {
 	display: none;
 }
