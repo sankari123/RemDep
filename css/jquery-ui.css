@@ -5,7 +5,7 @@
 .ui-widget-overlay {
 	position: fixed;
 	top: 10;
-	left: 0;
+	
 	width: 100%;
 	height: 100%;
 	 color: gray;
@@ -14,7 +14,7 @@
 .ui-autocomplete {
 	position: absolute;
 	 
-	left: 30px;
+	left: 130px;
 	cursor: default;
 	color: red;
 }
@@ -23,7 +23,7 @@
 .ui-menu {
 	list-style-image: url("search.png") ;	
 	list-style-position:outside;
-	 padding:30px 10px 100px 0;
+	 padding:30px 10px 0 0;
 	 top: 100px ; 
 	margin: 0;
 	display: block;
