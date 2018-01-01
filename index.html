@@ -602,6 +602,7 @@ display	: none;
 {
   position: relative;
     width: 100%;
+	 display:none;
     
 }	
    .inputDiv
@@ -609,7 +610,7 @@ display	: none;
 	    position: absolute;
     left: 10px;
     width: 300px;
-	    background-color: #b0e0e6;
+	 /*   background-color: #b0e0e6;*/
  
    }	    
 		    
@@ -794,7 +795,7 @@ function monkeyPatchAutocomplete() {
 
           $.ui.autocomplete.prototype._renderItem = function( ul, item) {
               var re = new RegExp("^" + this.term, "i") ;
-              var t = item.label.replace(re,"<br><span id='arSrch' style='color:black;vertical-align:top ;text-align: left;'>" + this.term + "</span>");
+              var t = item.label.replace(re,"<br><span id='arSrch' style='color:black;vertical-align:top ;'>" + this.term + "</span>");
               return $( "<li></li>" )
                   .data( "item.autocomplete", item )
     .append( "<a><img src='search1.png' style='   vertical-align: middle;  '>" + t + "</a>" )
