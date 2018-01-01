@@ -22,7 +22,7 @@
 
 .ui-menu {
 	list-style-image: url("search.png") ;	
-	list-style-position:inside;
+	list-style-position:initial;
 	 padding:30px 10px 0 0;
 	 top: 100px ; 
 	margin: 0;
