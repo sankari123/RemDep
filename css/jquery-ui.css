@@ -20,29 +20,7 @@
 }
 
 
-.ui-menu {
-/*	list-style-image: none ;	
-	list-style-position:outside;*/
-	 padding:30px 10px 0 0;
-	 top: 100px ; 
-	margin: 0;
-	display: block;
-	outline: none;
-	 color: gray;
-	left: 130px;
-}
- 
- .ui-menu .ui-menu-item {
-	position: relative;
-	margin: 0;
-	 padding-top: 3px ; 
-	 padding-bottom: 13px; 
-	cursor: pointer;
-	min-height: 0; /* support: IE7 */
-	/* support: IE10, see #8844 */
-	 
-	 color: gray;
-}
+
 .ui-helper-hidden {
 	display: none;
 }
