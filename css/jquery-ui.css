@@ -13,13 +13,24 @@
 
 .ui-autocomplete {
 	position: absolute;
-	 
+	 width: 100%;
 	left: 130px;
 	cursor: default;
-	color: red;
+	color: white;
 }
 
-
+.ui-menu {
+/*	list-style-image: none ;	
+	list-style-position:outside;*/
+	 padding:30px 10px 0 0;
+	 top: 100px ; 
+	margin: 0;
+	display: block;
+	outline: none;
+	 color: gray;
+	left: 130px;
+}
+ 
 
 .ui-helper-hidden {
 	display: none;
