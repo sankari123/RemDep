@@ -2039,7 +2039,7 @@ $.widget( "ui.autocomplete", {
 		minLength: 1,
 		position: {
 			my: "left top",
-			at: "left top",
+			at: "left bottom",
 			collision: "none"
 		},
 		source: null,
