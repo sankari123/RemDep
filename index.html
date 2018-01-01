@@ -610,7 +610,8 @@ display	: none;
 	    position: absolute;
     left: 10px;
     width: 300px;
-	 /*   background-color: #b0e0e6;*/
+	    height: 40px;
+	    background-color: #f6f7f7; 
  
    }	    
 		    
@@ -704,6 +705,8 @@ document.getElementById(div).style.visibility="false";
 		
 $("#input1").keypress(function(){
 	 $('#inpu1').css('border', '0px solid #11b818');
+	 $('#inpu1').css('border-bottom', '0px dotted blue');
+	  
      $('#artist').trigger('click');
 });
 		
@@ -795,7 +798,7 @@ function monkeyPatchAutocomplete() {
 
           $.ui.autocomplete.prototype._renderItem = function( ul, item) {
               var re = new RegExp("^" + this.term, "i") ;
-              var t = item.label.replace(re,"<br><span id='arSrch' style='color:black;vertical-align:top ;'>" + this.term + "</span>");
+              var t = item.label.replace(re,"<br><span id='arSrch' style='color:black;vertical-align:top ;text-align: center;'>" + this.term + "</span>");
               return $( "<li></li>" )
                   .data( "item.autocomplete", item )
     .append( "<a><img src='search1.png' style='   vertical-align: middle;  '>" + t + "</a>" )
