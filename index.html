@@ -131,7 +131,12 @@ margin: 0 auto;
     h1 { font-size: 20pt; color:Navy; }
     h2 { font-size: 18pt; font-weight:bold; color: #DDD; }
 
-  
+  /*  body { background-color: #FFF; font: 16px Helvetica, Arial; color: #000; }
+    body { margin:0; padding:0; height:100%;}*/
+
+ /*   .ui-widget { color: gray;font-size: 0.8em; line-height:0.8em; }
+    .ui-widget .ui-widget { font-size: 0.8em; }*/
+
     
 	    
 	    .artDisplay
@@ -241,7 +246,8 @@ margin: 0 auto;
     border-color: #eeedf0;
 	  border-collapse:separate;
  
- 
+/*    border-radius:6px;*/
+  /*  -moz-border-radius:6px;*/
 		}
 		
 		
@@ -250,7 +256,8 @@ margin: 0 auto;
 width: 100vw;
 text-align:center; 
 	
- 
+/*			border-style: solid;*/
+  /*  border-color: black;*/
 		}
 .ven1
 		{
@@ -259,7 +266,9 @@ text-align:center;
 			 
 	  border-collapse:separate; 
 	 
-
+/*   padding-left:6px;*/
+/*    border-radius:6px;*/
+  /*  -moz-border-radius:6px;*/
 		}
 .ven2
 		{
@@ -267,9 +276,9 @@ text-align:center;
 			  
 			border-style: solid;
 			font-size: 9pt;
-  
+ */   border-color: black;*/
 	  border-collapse:separate;
- 
+   */ border:solid black 1px;*/
     border-radius:6px;
     -moz-border-radius:6px;
 		}	
@@ -351,7 +360,10 @@ button:focus {outline:none;} ::-moz-focus-inner {border:0;}
                 width: 100% !important;
 		display:none;
 		font: 15px arial, sans-serif;
-		 
+		/*background-color:  #f8f9fb;*/
+/*		font-family: "Sans Serif";*/
+	/*	font-size: 9pt;*/
+	/*	font: normal 12pt "Sans Serif";  */
 		}
 #xPort1
 	{
@@ -582,6 +594,9 @@ display	: none;
     width:0px;
     height:0px;
 }		
+.fake-input { position: relative; width:240px; }
+.fake-input input { border:none: background:#fff; display:block; width: 100%; box-sizing: border-box }
+.fake-input img { position: absolute; top: 2px; right: 5px }	
 
 .searchmenu
 {
@@ -647,7 +662,7 @@ var usrauth ;
 	var wordlist=new Array();
 	function prep()
 	{
- }
+ 
  wordlist= remove_duplicates_safe(artistArr);
  wordlist.sort();
 	}
@@ -706,7 +721,9 @@ $(document).ready(function(){
 			  $('#xPort1').hide();
 			   $('#tab').hide();
 		 
-              
+		
+		prep();
+              //alert(wordlist);
 
 			pop('searchmenu');
 			 
@@ -714,7 +731,7 @@ $(document).ready(function(){
 
           $("#input1").autocomplete({
 		 
-           
+               
               source: function(req, responseFn) {
                  // addMessage("search on: '" + req.term + "'<br/>");
 		        $('#dl_btn').hide();
@@ -841,12 +858,12 @@ function onDeviceReady(){
 	//document.getElementById("defaultOpen").click();
 	document.getElementById("defaultOpen").click();
 	
- 	 
+ 	//chkFavorite();
 	
 	
 	checkConnection();
 	document.addEventListener("backbutton", backButtonHandler, false);
-	 
+	
 }
 	
  
@@ -1285,7 +1302,9 @@ var floater = 0;
 		}
 		
 		 
- 
+//	<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
+//<tr><td>row 2 col2</td> </tr>
+ // <tr><td>row 2 col2</td> </tr>	
 theevent+="<tr ><td rowspan=3>"+events[i][5]+" at "+jj+"</td><td >"+events[i][6]+" - <b>"+events[i][8]+"</b></td><td  rowspan=3 width='10px'>"+"<button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";	theevent+="<tr><td>"+events[i][7]+"</td> </tr>";
 		theevent+="<tr><td>&nbsp;</font></td> </tr>";
 		 
@@ -1435,10 +1454,14 @@ function procVal(pVar)
 		active_page=1;
 		activePg=1;
 		var j;
-		 
+		//checkConnection();
+		// $("#lst_mnu").slideToggle("slow");
+			//  $('#lst_mnu').toggle('slide','right',500);
 		 
 		$('#lst_mnu').show('slide', 400);
-		
+		//document.getElementById("lst_mnu").style.display="block";
+		//document.getElementById("lst_mnu").style.visibility="true";
+		 
 		 
 		
 		document.getElementById("calendar").style.display="none";
@@ -1559,7 +1582,17 @@ function backSt()
 		$('#dl_btn').hide();
 		$('#archive').hide();
 		$('#map').hide();
-	 
+		//document.getElementById("login").style.visibility="false";
+		//document.getElementById("login").style.display="none";
+		//document.getElementById("category").style.display="block";
+		//document.getElementById("category").style.visibility="true";
+		//document.getElementById("main").style.display="block";
+	//	document.getElementById("main").style.visibility="true";
+	//	 document.getElementById("mainMenu").style.display="block";
+	//	document.getElementById("mainMenu").style.visibility="true"; 
+	//	document.getElementById("backmenu").style.display="none";
+	//	document.getElementById("backmenu").style.visibility="false";
+	//	document.getElementById("defaultOpen").click();
 }
 
 
@@ -1654,16 +1687,27 @@ function storeLocal(un,pd) {
 //    window.localStorage.setItem('key', un);
 	 
   window.localStorage.setItem('key', un);
- 
+//alert(un);
+ // window.localStorage.setItem("key", 'siva');
+//cordova.plugins.SecureLocalStorage.setItem("key" , un);
+	//window.localStorage.key = un;
+  //  window.localStorage.setItem('pw', pd);
+//window.localStorage["key"] =un;
+//window.localStorage["pw"] = pd;
+	//alert(window.localStorage.getItem('pw'));
 }
  
 		
  	
 		
 function check() {
- 
+
+    // stored data from the register-form
      var storedName = window.localStorage.getItem("key");
- 
+//   var storedName =cordova.plugins.SecureLocalStorage.getItem("key")
+//alert('s'+storedName);
+	 
+      // check if stored data from register-form is equal to data from login form
     if(storedName == null   ) {
          $('nav[role="main"]').slideAndSwipe();
     }else {
@@ -2052,10 +2096,31 @@ function ven_det(v)
 		
 		
 		chkValue1=stringIsEmpty(favS);
-	 
+	//	chkValue2=stringIsEmpty(NotfavS);
+ //	 if ( !favS ) {
+  // some_variable is either null, undefined, 0, NaN, false, or an empty string
+//}
+//	if(favS ===null && NotfavS === null)
+//	{
+//			clsName='chartme-btn-main';
+//	}
+//	else if(typeof(favS)  ==='undefined' && typeof(NotfavS)  === 'undefined')
+//	{
+//	clsName='chartme-btn-main';
+//	}
+//	else if(typeof(NotfavS)  ==='undefined' && favS  === null)
+//	{
+//	clsName='chartme-btn-main';
+//	}
+//	else if(typeof(favS)  ==='undefined' && NotfavS  === null)
+//	{
+//	clsName='chartme-btn-main';
+//	}
 		
 		 
- 
+ //alert(chkValue1);
+//	 alert(chkValue2);	
+	
 		
 		
 		if(chkValue1 ==true )
@@ -2320,7 +2385,22 @@ for (var i = 0, len = events.length; i < len; i++)
 			}
 		}	
 		 
-		 
+			//alert(n);
+			//var result = parseFloat(4.00);
+		//	alert(hours);
+//<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
+//<tr><td>row 2 col2</td> </tr>
+ // <tr><td>row 2 col2</td> </tr>
+	  
+	  
+//	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
+//		ev_lst+="<tr align='center' ><td>"+n+", " +events[i][2]+" "+mNam+" "+timeString+"<br>";
+			
+//	ev_lst+=events[i][5]+'<br>'+'<br>';
+//	ev_lst+=events[i][8]+'<br>';
+//	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
+//ev_lst="<div id='wrapper'><div id='left'>"+events[i][5]+"</div><div id='right'>"+n+"," +events[i][2]+" "+mNam+" "+timeString+"<br>"+events[i][8]+"<br>"+events[i][7]+"</div>"
+//</div> 
 	 
 		
 ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
@@ -2565,7 +2645,27 @@ function chkFavorite()
 //		  NotfavS= NotfavS.replace(/null/g, "");
 		alert('fav'+favS);	
 		alert('not fav'+NotfavS);	
+//		favS = favS.substring(0, favS.length-1 );
+//	favS=favS.split('!');
+		
+//		fArr=[];
+//		ori=[];
+//	for (var i = 0, len = favS.length; i < len; i++) {
+//	 	latR1= favS[i].split('^');
+//	 	//alert('latr1'+latR1);
+//		pDat1=latR1[0];
+//		pnam1=latR1[1];
+//		fArr.push([pDat1,pnam1]);
+		  
+//	}
+//		 alert('far'+fArr);
+//var ori=multiDimensionalUnique(fArr);
+//for (var i = 0, len =ori.length; i < len; i++) {
+	 //	alert(ori[i][0]);
  
+		  
+//	}
+		
 		
 		
 		}
@@ -2591,9 +2691,20 @@ document.getElementById("archive").style.display="block";
 	// setFav();
 	//  window.localStorage.setItem('favShows',favAddStr);
  var favS= window.localStorage.getItem("favShows");
- 
+//	var NotfavS= window.localStorage.getItem("NotfavShows");	
+	//alert( favS);	
+//		alert( NotfavS);	
+	//	  favS= favS.replace(/undefined/g, "");
+	//	  favS= favS.replace(/null/g, "");
+//		 NotfavS= NotfavS.replace(/undefined/g, "");
+//		  NotfavS= NotfavS.replace(/null/g, "");
+//	 	 alert( favS);
+		
+	//	favS1=favS.split('!');
+//		NotfavS1=NotfavS.split('!');
+		 //alert( favS);
 		fArr=[];
- 
+//	ori=[];
 		
 	if(favS !=null && typeof(favS) !='undefined')
 	{
@@ -2720,7 +2831,13 @@ document.getElementById("archive").style.display="block";
 		</div>
         <!-- jQuery library (served from Google) -->
          <div class="ssm-overlay ssm-toggle-nav"></div>
- 
+	<!--<div id="autocomplete-container">  
+  <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input>
+  <ul id="autocomplete-results">
+  </ul>
+</div>
+  
+    <script  src="index.js"></script>-->
 
 	<div id='searchmenu' class='searchmenu' >
 	 
@@ -2736,7 +2853,9 @@ document.getElementById("archive").style.display="block";
       </form>
     </div>
 
-  
+ <!--<div id='msgs' class="inputDiv" style='color:red;font-size:10pt;font-weight:normal;'>
+    </div> -->
+<!--<input id='reslt' style='color :red;' >-->
 	 
 		</div>
 	
@@ -2775,7 +2894,13 @@ document.getElementById("archive").style.display="block";
 	
 	
 	<div id='category' class='category'>
-     	 
+         <!--                   <div class = "ui-widget">
+          
+         <input id = "automplete-1" placeholder="Artist" >
+      </div> -->
+		<!--<font size=1 face='arial'>Browse by Category</font><br><br>-->
+		<!-- <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input><br><br>-->
+		 
 	   <table id='cat_tbl' width='100%' border=0 cellpadding=0 cellpadding=0 >
 		   <tr><td onclick='eventList(1);'><button onclick='eventList(1);' class='btn2'><img src='concert.png'  style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td><td width='7%'><button onclick='eventList(1);' class='btn2'><img src='arrow.png'  width=10px height=10px style="vertical-align:middle"></button><font color='white'>&nbsp;&nbsp;&nbsp;&nbsp;11</font></td></tr>
 		   <tr valign="top"><td colspan=2><hr size=1 color='#ececec'></td></tr>
