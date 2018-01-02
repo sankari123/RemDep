@@ -2096,30 +2096,7 @@ function ven_det(v)
 		
 		
 		chkValue1=stringIsEmpty(favS);
-	//	chkValue2=stringIsEmpty(NotfavS);
- //	 if ( !favS ) {
-  // some_variable is either null, undefined, 0, NaN, false, or an empty string
-//}
-//	if(favS ===null && NotfavS === null)
-//	{
-//			clsName='chartme-btn-main';
-//	}
-//	else if(typeof(favS)  ==='undefined' && typeof(NotfavS)  === 'undefined')
-//	{
-//	clsName='chartme-btn-main';
-//	}
-//	else if(typeof(NotfavS)  ==='undefined' && favS  === null)
-//	{
-//	clsName='chartme-btn-main';
-//	}
-//	else if(typeof(favS)  ==='undefined' && NotfavS  === null)
-//	{
-//	clsName='chartme-btn-main';
-//	}
-		
-		 
- //alert(chkValue1);
-//	 alert(chkValue2);	
+	 
 	
 		
 		
@@ -2385,22 +2362,7 @@ for (var i = 0, len = events.length; i < len; i++)
 			}
 		}	
 		 
-			//alert(n);
-			//var result = parseFloat(4.00);
-		//	alert(hours);
-//<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
-//<tr><td>row 2 col2</td> </tr>
- // <tr><td>row 2 col2</td> </tr>
-	  
-	  
-//	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
-//		ev_lst+="<tr align='center' ><td>"+n+", " +events[i][2]+" "+mNam+" "+timeString+"<br>";
-			
-//	ev_lst+=events[i][5]+'<br>'+'<br>';
-//	ev_lst+=events[i][8]+'<br>';
-//	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
-//ev_lst="<div id='wrapper'><div id='left'>"+events[i][5]+"</div><div id='right'>"+n+"," +events[i][2]+" "+mNam+" "+timeString+"<br>"+events[i][8]+"<br>"+events[i][7]+"</div>"
-//</div> 
+		 
 	 
 		
 ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
@@ -2480,9 +2442,7 @@ function share()
    message = message.replace(/&nbsp;/g,'');
 	
 	
-//	window.plugins.socialsharing.share('MMM','Madras Music & Miscellany','Testing',null);
-//setTimeout(function(){ navigator.notification.alert('Image Shared Successfully...',  alertDismissed,   'DigiGraph',   'OK'); },8000);
-//window.plugins.socialsharing.share('Optional message',  'Optional title','default.pdf',null);	
+ 
 window.plugins.socialsharing.share(message); 
 }
 	
@@ -2532,18 +2492,14 @@ function procValArc(pVar)
 		events1.push(["",String(eMon),String(eDat1),String(eYr),pTim,venue,pnam,Pdeta,art]);
 			 
 		}
-//	 events1 = events1.sort(function(a,b) {
-  //    return a[1] - b[1];
-//    });
+ 
 	
 	
-//	events1=events1.sort(function(b,a) {
-//  return b[1] - a[1] || a[3] - b[3];
-//});
+ 
 	
 	
 	 
-	//alert('len '+events1.length);
+	 
 	displayArchive();
 }	
 
@@ -2639,32 +2595,10 @@ function chkFavorite()
 	{
 	var favS= window.localStorage.getItem("favShows");
 	var NotfavS= window.localStorage.getItem("NotfavShows");
-//		 favS= favS.replace(/undefined/g, "");
-//		  favS= favS.replace(/null/g, "");
-//		 NotfavS= NotfavS.replace(/undefined/g, "");
-//		  NotfavS= NotfavS.replace(/null/g, "");
+ 
 		alert('fav'+favS);	
 		alert('not fav'+NotfavS);	
-//		favS = favS.substring(0, favS.length-1 );
-//	favS=favS.split('!');
-		
-//		fArr=[];
-//		ori=[];
-//	for (var i = 0, len = favS.length; i < len; i++) {
-//	 	latR1= favS[i].split('^');
-//	 	//alert('latr1'+latR1);
-//		pDat1=latR1[0];
-//		pnam1=latR1[1];
-//		fArr.push([pDat1,pnam1]);
-		  
-//	}
-//		 alert('far'+fArr);
-//var ori=multiDimensionalUnique(fArr);
-//for (var i = 0, len =ori.length; i < len; i++) {
-	 //	alert(ori[i][0]);
  
-		  
-//	}
 		
 		
 		
@@ -2688,23 +2622,11 @@ function profile()
 document.getElementById("archive").style.visibility="true";
 document.getElementById("archive").style.display="block";
  	
-	// setFav();
-	//  window.localStorage.setItem('favShows',favAddStr);
+	 
  var favS= window.localStorage.getItem("favShows");
-//	var NotfavS= window.localStorage.getItem("NotfavShows");	
-	//alert( favS);	
-//		alert( NotfavS);	
-	//	  favS= favS.replace(/undefined/g, "");
-	//	  favS= favS.replace(/null/g, "");
-//		 NotfavS= NotfavS.replace(/undefined/g, "");
-//		  NotfavS= NotfavS.replace(/null/g, "");
-//	 	 alert( favS);
-		
-	//	favS1=favS.split('!');
-//		NotfavS1=NotfavS.split('!');
-		 //alert( favS);
+ 
 		fArr=[];
-//	ori=[];
+ 
 		
 	if(favS !=null && typeof(favS) !='undefined')
 	{
@@ -2831,13 +2753,7 @@ document.getElementById("archive").style.display="block";
 		</div>
         <!-- jQuery library (served from Google) -->
          <div class="ssm-overlay ssm-toggle-nav"></div>
-	<!--<div id="autocomplete-container">  
-  <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input>
-  <ul id="autocomplete-results">
-  </ul>
-</div>
-  
-    <script  src="index.js"></script>-->
+	 
 
 	<div id='searchmenu' class='searchmenu' >
 	 
@@ -2853,9 +2769,7 @@ document.getElementById("archive").style.display="block";
       </form>
     </div>
 
- <!--<div id='msgs' class="inputDiv" style='color:red;font-size:10pt;font-weight:normal;'>
-    </div> -->
-<!--<input id='reslt' style='color :red;' >-->
+  
 	 
 		</div>
 	
