@@ -21,7 +21,24 @@
  
 
   
-    <style type="text/css" media="screen">
+    <style type="text/css" media="screen"> 
+	    
+	    #cat_tbl span { 
+		    display: inline-block;
+  vertical-align: middle;
+  margin-left: 60px;  /* width of image */
+   font-size: 15px;
+		    
+		    
+	    }
+	
+#input1:focus 
+	    {
+	     outline: none !important;
+    border:0px solid white;
+     
+	    }
+	    
 	    span.deleteicon {
                 position: relative;
             }
@@ -40,6 +57,7 @@
                 padding-right: 0px;
                 box-sizing: border-box;
             }
+	    
 	    
  .chartme-btn-main
 {
@@ -116,17 +134,10 @@ margin: 0 auto;
   /*  body { background-color: #FFF; font: 16px Helvetica, Arial; color: #000; }
     body { margin:0; padding:0; height:100%;}*/
 
-    .ui-widget { color: gray;font-size: 0.8em; line-height:0.8em; }
-    .ui-widget .ui-widget { font-size: 0.8em; }
+ /*   .ui-widget { color: gray;font-size: 0.8em; line-height:0.8em; }
+    .ui-widget .ui-widget { font-size: 0.8em; }*/
 
-    div.inputDiv  {
-         left: 10px;
-    width: 300px;
-	    height: 40px;
-	    background-color: #f6f7f7; 
-	
-			 
-    }
+    
 	    
 	    .artDisplay
 	    {
@@ -514,12 +525,7 @@ display	: none;
 		display	: none;
    
 }		
-span  {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 60px;  /* width of image */
-   font-size: 15px;
-}
+
 	   
 	    
 	
@@ -594,24 +600,35 @@ display	: none;
 
 .searchmenu
 {
-   display:none;
- width: 100%;
-	 
-margin: 0 auto;
-  
+  position: relative;
+    width: 100%;
+	 display:none;
     
 }	
+   .inputDiv
+    {
+	    position: absolute;
+    left: 10px;
+    width: 300px;
+	    height: 40px;
+	    background-color: #f6f7f7; 
+ 
+   }	    
+		    
+		    
+		    
 .nav1
 	    {
 	    display:none; 
 	    }
     </style>
 	<script>
-		$(document).ready(function() {
+		  $(document).ready(function() {
                 $('input.deletable').wrap('<span class="deleteicon" />').after($('<span/>').click(function() {
                     $(this).prev('input').val('').trigger('change').focus();
                 }));
             });
+		
 		$(document).ready(function() {
 			
 			});
@@ -687,6 +704,9 @@ document.getElementById(div).style.visibility="false";
 }
 		
 $("#input1").keypress(function(){
+	 $('#inpu1').css('border', '0px solid #11b818');
+	 $('#inpu1').css('border-bottom', '0px dotted blue');
+	  
      $('#artist').trigger('click');
 });
 		
@@ -778,11 +798,12 @@ function monkeyPatchAutocomplete() {
 
           $.ui.autocomplete.prototype._renderItem = function( ul, item) {
               var re = new RegExp("^" + this.term, "i") ;
-              var t = item.label.replace(re,"<br><span id='arSrch' style='color:black;vertical-align:top ;text-align: left;'>" + this.term + "</span>");
+              var t = item.label.replace(re,"<br><span id='arSrch' style='display:inline-block; color:black;vertical-align:top ;text-align: center;'>" + this.term + "</span>");
               return $( "<li></li>" )
                   .data( "item.autocomplete", item )
-  //  .append( "<a><img src='search1.png' style='   vertical-align: bottom;  '>" + t + "</a>" )
-		      .append( "<table border=0 cellpadding=0 cellspacing=0><tr bordercolor=white><td valign='bottom'><a><img src='search1.png' style=' vertical-align: bottom;' >" +  "</td><td><img src='blank.png'  ></td><td valign='top'>" + t + "</a></td></tr></table>" )
+   // .append( "<a><img src='search1.png' style='   vertical-align: middle;  '>" + t + "</a>" )
+		  
+		  .append( "<table border=0 cellpadding=0 cellspacing=0><tr bordercolor=white><td valign='bottom'><a><img src='search1.png' style=' vertical-align: bottom;' >" +  "</td><td><img src='blank.png'  ></td><td valign='top'>" + t + "</a></td></tr></table>" )
                   .appendTo(ul);
           };
       }
@@ -1030,7 +1051,9 @@ function preloadimages(){
 }
 
 
-/* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
+/* The path of images to be preloaded inside parenthesis: (Extend 
+
+list as desired.) */
 preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 
 var thisDate = 1;							// Tracks current date being written in calendar
@@ -2840,7 +2863,7 @@ document.getElementById("archive").style.display="block";
   
     <script  src="index.js"></script>-->
 
-	<div id='searchmenu' class='searchmenu'>
+	<div id='searchmenu' class='searchmenu' >
 	 
 	
 	  
@@ -2849,8 +2872,7 @@ document.getElementById("archive").style.display="block";
 	  <div id='inputDiv' class='inputDiv'>
       
       <form id="form1">
-        <input type="text" id="input1"  class='deletable'  style='color :black;width :300px;left: 10px;height: 40px;' placeholder="Search Artist" />
-
+         <input type="text" id="input1"  class='deletable'  style='color :black;width :300px;left: 10px;height: 40px;' placeholder="Search Artist" />
 
       </form>
     </div>
@@ -2903,7 +2925,7 @@ document.getElementById("archive").style.display="block";
 		<!--<font size=1 face='arial'>Browse by Category</font><br><br>-->
 		<!-- <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input><br><br>-->
 		 
-	   <table width='100%' border=0 cellpadding=0 cellpadding=0 >
+	   <table id='cat_tbl' width='100%' border=0 cellpadding=0 cellpadding=0 >
 		   <tr><td onclick='eventList(1);'><button onclick='eventList(1);' class='btn2'><img src='concert.png'  style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td><td width='7%'><button onclick='eventList(1);' class='btn2'><img src='arrow.png'  width=10px height=10px style="vertical-align:middle"></button><font color='white'>&nbsp;&nbsp;&nbsp;&nbsp;11</font></td></tr>
 		   <tr valign="top"><td colspan=2><hr size=1 color='#ececec'></td></tr>
 		    <tr><td  onclick='eventList(2);'><button onclick='eventList(2);' class='btn2' ><img src='dance.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Dance</span></button></td><td width='7%'><button onclick='eventList(2);' class='btn2' ><img src='arrow.png'   width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
