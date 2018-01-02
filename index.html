@@ -803,7 +803,7 @@ function monkeyPatchAutocomplete() {
                   .data( "item.autocomplete", item )
    // .append( "<a><img src='search1.png' style='   vertical-align: middle;  '>" + t + "</a>" )
 		  
-		  .append( "<table ><tr><td><a><img src='search1.png' style=' vertical-align: middle;' >" +  "</td><td><img src='blank.png' style=' vertical-align: top;' ></td><td>" + t + "</a></td></tr></table>" )
+		  .append( "<table ><tr><td><a><img src='search1.png' style=' vertical-align: bottom;' >" +  "</td><td><img src='blank.png'  ></td><td>" + t + "</a></td></tr></table>" )
                   .appendTo(ul);
           };
       }
@@ -1051,7 +1051,9 @@ function preloadimages(){
 }
 
 
-/* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
+/* The path of images to be preloaded inside parenthesis: (Extend 
+
+list as desired.) */
 preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 
 var thisDate = 1;							// Tracks current date being written in calendar
