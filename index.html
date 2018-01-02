@@ -22,6 +22,25 @@
 
   
     <style type="text/css" media="screen">
+	    span.deleteicon {
+                position: relative;
+            }
+            span.deleteicon span {
+                position: absolute;
+                display: block;
+                top: 5px;
+                right: 0px;
+                width: 16px;
+                height: 16px;
+                background: url('clear_cross.png') ;
+		background-repeat: no-repeat;
+                cursor: pointer;
+            }
+            span.deleteicon input {
+                padding-right: 0px;
+                box-sizing: border-box;
+            }
+	    
  .chartme-btn-main
 {
     background: url('fav.png')  no-repeat;
@@ -591,7 +610,11 @@ margin: 0 auto;
 	    }
     </style>
 	<script>
-		
+		$(document).ready(function() {
+                $('input.deletable').wrap('<span class="deleteicon" />').after($('<span/>').click(function() {
+                    $(this).prev('input').val('').trigger('change').focus();
+                }));
+            });
 		$(document).ready(function() {
 			
 			});
@@ -2829,7 +2852,8 @@ document.getElementById("archive").style.display="block";
 	  <div id='inputDiv' class='inputDiv'>
       
       <form id="form1">
-        <b><a href="#" onclick="backSt();" style='text-decoration: none; color: #ffffff;' title="back">&#x003C;</a></b></font> <input type="text" id="input1"  style='width :500px;padding-top: 6px;padding-bottom: 6px;' placeholder="Search Artist" />
+        <input type="text" id="input1"  class='deletable'  style='color :black;width :300px;left: 10px;height: 40px;' placeholder="Search Artist" />
+
 
       </form>
     </div>
