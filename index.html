@@ -2408,12 +2408,16 @@ function calAdd()
   var location = "Chennai";
   
   var notes = calEvtDetails1[i];
+		var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+  var error = function(message) { alert("Error: " + message); };
 	//	var startDate = new Date(2018,1,15,18,30,0,0,0);  
   //var endDate = new Date(2018,1,15,21,30,0,0,0);
+		var createCalOptions = window.plugins.calendar.getCreateCalendarOptions();
+		window.plugins.calendar.createCalendar(createCalOptions,success,error);
    var calsuccess = function(message) { navigator.notification.alert('Schedule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');};
   var calerror = function(message) { alert("Error: " + message); };
-// window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
- window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,calsuccess,calerror);
+  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
+// window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,calsuccess,calerror);
 
 	}
   
