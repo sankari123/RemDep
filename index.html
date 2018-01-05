@@ -283,9 +283,7 @@ text-align:center;
 			 
 	  border-collapse:separate; 
 	 
-/*   padding-left:6px;*/
-/*    border-radius:6px;*/
-  /*  -moz-border-radius:6px;*/
+ 
 		}
 .ven2
 		{
@@ -2424,20 +2422,18 @@ function calAdd()
   
   var endDate = new Date(calEvt1[i]);
    
-  var title = "Madras Music Miscellany";
+  var title = "Madras Music & Miscellany";
   
   var location = "Chennai";
   
   var notes = calEvtDetails1[i];
-		var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-  var error = function(message) { alert("Error: " + message); };
-	//	var startDate = new Date(2018,1,15,18,30,0,0,0);  
-  //var endDate = new Date(2018,1,15,21,30,0,0,0);
-		var createCalOptions = window.plugins.calendar.getCreateCalendarOptions();
-		window.plugins.calendar.createCalendar(createCalOptions,success,error);
-   var calsuccess = function(message) { navigator.notification.alert('Schedule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');};
+		 
+	  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
+   var calsuccess = function(message) { navigator.notification.alert('Schedule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');
+				       alert("Event added successfully.");
+				      };
   var calerror = function(message) { alert("Error: " + message); };
-  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
+ 
 // window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,calsuccess,calerror);
 
 	}
