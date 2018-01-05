@@ -2428,11 +2428,20 @@ function calAdd()
   
   var notes = calEvtDetails1[i];
 		 
-	  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
-   var calsuccess = function(message) { navigator.notification.alert('Schedule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');
-				       alert("Event added successfully.");
-				      };
-  var calerror = function(message) { alert("Error: " + message); };
+ var success = function(message) { 
+     alert("Success: " + JSON.stringify(message)); 
+  };
+  var error = function(message) { 
+     alert("Error: " + message); 
+  };
+
+  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+
+	//	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
+   //var calsuccess = function(message) { navigator.notification.alert('Schedule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');
+	//			       alert("Event added successfully.");
+	//			      };
+  //var calerror = function(message) { alert("Error: " + message); };
  
 // window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,calsuccess,calerror);
 
