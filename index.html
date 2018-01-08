@@ -1479,7 +1479,8 @@ function procVal(pVar)
 		$('#lst_mnu').show('slide', 400);
 		//document.getElementById("lst_mnu").style.display="block";
 		//document.getElementById("lst_mnu").style.visibility="true";
-		 
+		 if(events.length>0)
+			{
 		 
 		
 		document.getElementById("calendar").style.display="none";
@@ -1545,7 +1546,12 @@ im_htm+="<tr height='120px'> <td style='width: 50%; height: 50px; border: 0px so
 	}
 	
 document.getElementById('lst_mnu').innerHTML=im_htm+"</table>" ;
-	
+			}
+		else
+	{
+	navigator.notification.alert('Please check internet connection...');
+	}
+
 }
 
 function login()
@@ -1649,13 +1655,17 @@ function openCity(evt, cityName) {
 	}
 }	
 
-function category()
+
+		
+		function category()
 {
 	  
  
 		$('#category').show('slide', 400);
 		$('#xPort').hide();
-	  activePg=1;
+	  	activePg=1;
+	 		if(events.length>0)
+			{
 		document.getElementById("xPort").style.visibility="false";
 		//document.getElementById("category").style.display="block";
 		//document.getElementById("category").style.visibility="true";
@@ -1697,7 +1707,11 @@ function category()
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
 		 
-	 
+			}
+	else
+	{
+	navigator.notification.alert('Please check internet connection...');
+	}
 		 
 		
 }
@@ -1986,6 +2000,9 @@ function calClick()
 		//	  $('#calendar').toggle('slide','right',500);	 
 		//document.getElementById("calendar").style.display="block";
 		//document.getElementById("calendar").style.visibility="true";
+		
+		if(events.length>0)
+			{
 		document.getElementById("category").style.display="none";
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("login").style.display="none";
@@ -2010,6 +2027,14 @@ function calClick()
 		document.getElementById("archive").style.display="none";
 	
 		checkConnection();
+			}
+		else
+	{
+	navigator.notification.alert('Please check internet connection...');
+	}
+
+
+
 }
 
 		
