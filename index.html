@@ -645,6 +645,7 @@ display	: none;
                 $('input.deletable').wrap('<span class="deleteicon" />').after($('<span/>').click(function() {
                     $(this).prev('input').val('').trigger('change').focus();
 			$("#dl_btn").hide();
+			$("#xPort").html("");
                 }));
             });
 		
