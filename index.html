@@ -1702,17 +1702,10 @@ function openCity(evt, cityName) {
 		
 }
 function storeLocal(un,pd) {
-//    window.localStorage.setItem('key', un);
+ 
 	 
   window.localStorage.setItem('key', un);
-//alert(un);
- // window.localStorage.setItem("key", 'siva');
-//cordova.plugins.SecureLocalStorage.setItem("key" , un);
-	//window.localStorage.key = un;
-  //  window.localStorage.setItem('pw', pd);
-//window.localStorage["key"] =un;
-//window.localStorage["pw"] = pd;
-	//alert(window.localStorage.getItem('pw'));
+ 
 }
  
 		
@@ -1720,11 +1713,9 @@ function storeLocal(un,pd) {
 		
 function check() {
 
-    // stored data from the register-form
+     
      var storedName = window.localStorage.getItem("key");
-//   var storedName =cordova.plugins.SecureLocalStorage.getItem("key")
-//alert('s'+storedName);
-	 
+ 
       // check if stored data from register-form is equal to data from login form
     if(storedName == null   ) {
          $('nav[role="main"]').slideAndSwipe();
@@ -2628,18 +2619,7 @@ LaunchReview.launch(appId, function(){
 });
 	
 }
-function chkFavorite()
-	{
-	var favS= window.localStorage.getItem("favShows");
-	var NotfavS= window.localStorage.getItem("NotfavShows");
  
-		alert('fav'+favS);	
-		alert('not fav'+NotfavS);	
- 
-		
-		
-		
-		}
 function profile()
 	{
 		 
@@ -2827,17 +2807,16 @@ document.getElementById("archive").style.display="block";
 		</td></tr></table>
 </div>
 <div id="London" class="tabcontent">
-<!--  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
-   
+ 
 </div>
 
 <div id="Paris" class="tabcontent">
-<!--   <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
+ 
   
 </div>
 
 <div id="Tokyo" class="tabcontent">
- <!--  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
+ 
  
 </div>
 
@@ -2870,8 +2849,7 @@ document.getElementById("archive").style.display="block";
 				
 			</td></tr></table>
 <div id='lst_mnu' align='left'> 	</div>
-	<!--<div id="previewImage">
-    </div>-->
+	 
     <div id='archive'></div>  
 	<div id='calEvent'>
 			 
