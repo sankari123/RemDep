@@ -309,7 +309,7 @@ text-align:center;
 .btn34 {  background-color: #0c9db7; border:none; padding: 11px 11px 11px 11px; font-weight: bold; color: white; border-radius: 5px;font-family:  Arial, Helvetica, sans-serif; }		
 		
 .btnSrch {  display:inline-block;   text-decoration:none;}	
-.btn2 {  background-color: transparent; border:none; padding: 0;   color: black;font: normal 12pt "Arial", "Helvetica", "Sans Serif";   text-decoration: none;}
+.btn2 {  background-color: transparent; border:none; padding: 0;   color: black;font-weight: bold;  }
 button:focus {outline:none;} ::-moz-focus-inner {border:0;}
 #evtcal a:link {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		/* unvisited link */
 #evtcal a:visited {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}	/* visited link */
@@ -2405,12 +2405,12 @@ for (var i = 0, len = events.length; i < len; i++)
 	 
 	dayStr1=String(events[i][2])+"/"+String(events[i][1])+"/"+String(events[i][3]);
 //ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
-ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b><button id=bookRef1 class=btn2 onclick='bookTkt1(this.value)' value="+dayStr1+">"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></button></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";		
-//	ev_lst+="<tr><td>+events[i][8]+"</td> </tr>";
-		ev_lst+="<tr><td><button id=bookRef2  class=btn2  onclick='bookTkt2(this.value)' value="+eName+">"+events[i][8]+"</button></td> </tr>";	
+//ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b><button id=bookRef1 class=btn10 onclick='bookTkt1(this.value)' value="+dayStr1+">"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></button></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";		
+ 	ev_lst+="<tr><td>"+events[i][8]+"</td> </tr>";
+//		ev_lst+="<tr><td><button id=bookRef2  class=btn10  onclick='bookTkt2(this.value)' value="+eName+">"+events[i][8]+"</button></td> </tr>";	
 	
-	//		ev_lst+="<tr><td>"+events[i][7]+"</td> </tr>";
-			ev_lst+="<tr><td><button id=bookRef3  class=btn2  onclick='bookTkt3(this.value)' value="+aName+">"+events[i][7]+"</button></td> </tr>";	
+	 		ev_lst+="<tr><td>"+events[i][7]+"</td> </tr>";
+	//		ev_lst+="<tr><td><button id=bookRef3  class=btn10  onclick='bookTkt3(this.value)' value="+aName+">"+events[i][7]+"</button></td> </tr>";	
 	ev_lst+="<tr height='8px'><td>&nbsp;</td> </tr>";
 //	ev_lst+="<div id='wrapper'><div id='left'>"+events[i][5]+"</div><div id='right'><b>" +n+", " +events[i][2]+" "+mNam+" "+' '+jj+'</b><br><font color=#6a737d>'+'<br>'+events[i][8]+'<br><br>'+events[i][7]+"</font><br><br></div></div> "	;		
 	 
