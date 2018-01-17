@@ -867,14 +867,24 @@ for (var i = 0, len = events.length; i < len; i++)
 	
 }		
 //****************************************************************//
+		
+		var fixed = document.getElementById('category');
 function init() {
     	document.addEventListener("deviceready", onDeviceReady, false);
+	
+
+
 	
 }
 var newUsr;
  
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait...!");
+	fixed.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
 	 document.getElementById("dl_btn").style.display="none";
 	document.getElementById("dl_btn").style.visibility="false";
 	//document.getElementById("defaultOpen").click();
