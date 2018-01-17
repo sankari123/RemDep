@@ -881,11 +881,28 @@ var newUsr;
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait...!");
 	var fixed = document.getElementById('category');
+	
 	fixed.addEventListener('touchmove', function(e) {
 
         e.preventDefault();
 
 }, false);
+		var calendar = document.getElementById('calendar');
+	
+	calendar.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+	
+		var lstMnu = document.getElementById('lst_mnu');
+	
+	lstMnu.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+	
 	 document.getElementById("dl_btn").style.display="none";
 	document.getElementById("dl_btn").style.visibility="false";
 	//document.getElementById("defaultOpen").click();
