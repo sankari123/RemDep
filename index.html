@@ -868,7 +868,7 @@ for (var i = 0, len = events.length; i < len; i++)
 }		
 //****************************************************************//
 		
-		var fixed = document.getElementById('category');
+		
 function init() {
     	document.addEventListener("deviceready", onDeviceReady, false);
 	
@@ -880,6 +880,7 @@ var newUsr;
  
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait...!");
+	var fixed = document.getElementById('category');
 	fixed.addEventListener('touchmove', function(e) {
 
         e.preventDefault();
