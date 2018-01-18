@@ -2107,7 +2107,7 @@ function ven_det(v)
 		if(k==0)
 		{
 			 
-			ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+v+"</font></td></tr> ";
+			ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+v+"</font></td></tr> </table>";
 		}
 		k++;
 		hours=String(events[i][4]);
@@ -2174,13 +2174,13 @@ function ven_det(v)
 		
 			
 			
-			
+	ev_lst+="<table border='0' id='test' class='testven' cellpadding='0' cellspacing='0'>";		
 			
 			
 		
 		 
 //alert(favS+'-'+NotfavS+'-'+clsName);
-  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 
+  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr></table>"; 
 		}
 		
 	 
@@ -2189,7 +2189,7 @@ function ven_det(v)
 	 
 	 calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
- document.getElementById('xPort').innerHTML=ev_lst+"</table>" ;
+ document.getElementById('xPort').innerHTML=ev_lst ;
 	
  
 	v1=v.replace(/ /g, "+");
