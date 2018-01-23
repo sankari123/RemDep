@@ -1462,6 +1462,7 @@ function procVal(pVar)
 	events=[];
 	venue_arr=[];
 	artistArr=new Array();
+	alert('locarr'+locArr);
 	for (var i = 0; i<locArr.length; i++) {
 		delimiter = ',';
 		start = 6;
@@ -1495,7 +1496,7 @@ function procVal(pVar)
 	//testing();
 	uniq = remove_duplicates_safe(venue_arr);
 //	uniq = uniq.map(function(e) {  var result = {};    result['text'] =e[0];  result['value'] =e[0];   return result;});
- //alert(events);
+ alert('array len'+events.length);
 }
 	
 
