@@ -2037,7 +2037,7 @@ function calClick()
 		document.getElementById("archive").style.visibility="false";
 		document.getElementById("archive").style.display="none";
 	
-		checkConnection();
+		//checkConnection();
 			 
 
 
@@ -2344,7 +2344,8 @@ catSel='Meetup';
 }
 calEvt ='';
 	calEvtDetails='';
-//alert(catSel);
+	alert(catSel);
+	alert(events.length);
 	var ev_lst='';
 	var favS= window.localStorage.getItem("favShows");
 //var ev_lst="<br><center><b>"+  catSel +"</center></b><br>";
