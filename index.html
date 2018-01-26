@@ -1448,7 +1448,7 @@ var venue_arr = new Array();
 	
 function procVal(pVar)
 {
- alert(connSel+'----'+pVar);
+ //alert(connSel+'----'+pVar);
 	 if (pVar!='')
 	 {
 	  window.plugins.spinnerDialog.hide();
@@ -1462,7 +1462,7 @@ function procVal(pVar)
 	events=[];
 	venue_arr=[];
 	artistArr=new Array();
-	alert('locarr'+locArr);
+	//alert('locarr'+locArr);
 	for (var i = 0; i<locArr.length; i++) {
 		delimiter = ',';
 		start = 6;
@@ -1496,7 +1496,7 @@ function procVal(pVar)
 	//testing();
 	uniq = remove_duplicates_safe(venue_arr);
 //	uniq = uniq.map(function(e) {  var result = {};    result['text'] =e[0];  result['value'] =e[0];   return result;});
- alert('array len'+events.length);
+ //alert('array len'+events.length);
 }
 	
 
@@ -2348,7 +2348,7 @@ calEvt ='';
 	alert(events.length);
 	var ev_lst='';
 	
-	if (localStorage.getItem("favShows") === null) {
+	if (localStorage.getItem("favShows") === null || typeof(localStorage.getItem("favShows") )=='undefined') {
 		chkValue1 =true ;
   //...
 }
@@ -2401,7 +2401,7 @@ for (var i = 0, len = events.length; i < len; i++)
 		
 		
 		
-		
+		alert(chkValue1);
 			
 		if(chkValue1 ==true )
 			
