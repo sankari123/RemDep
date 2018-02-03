@@ -2345,19 +2345,21 @@ catSel='Meetup';
 calEvt ='';
 	calEvtDetails='';
 	//alert(catSel);
-	alert(events.length);
+	//alert(events.length);
 	var ev_lst='';
 	
-	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows") )=='undefined') {
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows") =='undefined' || window.localStorage.getItem("favShows") =='')) {
 		chkValue1 =true ;
+		alert(chkValue1+'--');
   //...
 }
 	else
 	{
 	var favS= window.localStorage.getItem("favShows");
 	chkValue1=stringIsEmpty(favS);
+		alert(chkValue1+'--'+favS);
 	}
-	alert(favS);
+	
 //var ev_lst="<br><center><b>"+  catSel +"</center></b><br>";
 	var ev_lst="<table border='1' id='test'  class='ven1' cellpadding='0' cellspacing='0'>";
 	ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+catSel+"</font></td></tr></table> ";
@@ -2401,7 +2403,7 @@ for (var i = 0, len = events.length; i < len; i++)
 		
 		
 		
-		alert(chkValue1);
+	//	alert(chkValue1);
 			
 		if(chkValue1 ==true )
 			
@@ -2425,7 +2427,7 @@ for (var i = 0, len = events.length; i < len; i++)
 		}	
 		 
 		 
-	 alert(clsName);
+	// alert(clsName);
 	dayStr1=String(events[i][2])+"/"+String(events[i][1])+"/"+String(events[i][3]);
   ev_lst+="<tr ><td rowspan=3  width='35%'> &nbsp;&nbsp;"+events[i][5]+"</td><td ><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=3 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
  //ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b><button id=bookRef1 class='btn btn-default active' onclick='bookTkt1(this.value)' value="+dayStr1+">"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></button></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";		
