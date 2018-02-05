@@ -659,7 +659,7 @@ display	: none;
 	$(document).ready(function() {
 	   
 	// var u_name= window.localStorage.getItem("key");
-	 check();
+	// check();
 	 //	alert('unam'+u_name);
      
  
@@ -880,6 +880,7 @@ var newUsr;
  
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait...!");
+	check();
 	var fixed = document.getElementById('category');
 	
 	fixed.addEventListener('touchmove', function(e) {
