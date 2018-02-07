@@ -1750,14 +1750,14 @@ function check() {
 
      
      var storedName = window.localStorage.getItem("key");
- alert(storedName);
+// alert(storedName);
       // check if stored data from register-form is equal to data from login form
     if(window.localStorage.getItem("key")== null  || typeof(window.localStorage.getItem("key")) == "undefined" || window.localStorage.getItem("key")== ''  ) {
          $('nav[role="main"]').slideAndSwipe();
-	    alert('null'+window.localStorage.getItem("key"));
+	//    alert('null'+window.localStorage.getItem("key"));
     }else {
            $('nav[role="sub"]').slideAndSwipe();
-	     alert('data'+window.localStorage.getItem("key"));
+	//     alert('data'+window.localStorage.getItem("key"));
     }
 	 
 }		
