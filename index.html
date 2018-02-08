@@ -2354,16 +2354,16 @@ calEvt ='';
 	var ev_lst='';
 	//   if(window.localStorage.getItem("key")== null  || typeof(window.localStorage.getItem("key")) == "undefined" || window.localStorage.getItem("key")== '') {
 
-	if (window.localStorage.getItem("favShows") == null || typeof(window.localStorage.getItem("favShows")) =='undefined' || window.localStorage.getItem("favShows") ==''  ) {
-		chkValue1 =true ;
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkValue1 ='true' ;
 	// alert(chkValue1+'-a-'+window.localStorage.getItem("favShows"));
   //...
 }
 	else
 	{
 	var favS= window.localStorage.getItem("favShows");
-	chkValue1=stringIsEmpty(favS);
-	 //	alert(chkValue1+'--'+favS);
+	//chkValue1=stringIsEmpty(favS);
+	  	chkValue1 ='false' ;
 	}
 	
 //var ev_lst="<br><center><b>"+  catSel +"</center></b><br>";
@@ -2413,14 +2413,14 @@ for (var i = 0, len = events.length; i < len; i++)
 		
  
 			
-		if(chkValue1 ==true )
+		if(chkValue1 =='true' )
 			
 		{
 		clsName='chartme-btn-main';
 			
 		}
 	 
-		if (chkValue1==false)
+		else
 			{
 				  if(favS.indexOf(aName) !== -1)
 		   		{
