@@ -2372,10 +2372,12 @@ calEvt ='';
 	var heading1=ev_lst;
 for (var i = 0, len = events.length; i < len; i++)
 {
+	
+	alert('in');
 	cat1=events[i][6];
 	if(catSel==cat1)
 		{
-			
+			alert('in2');
 			 ev_lst+="<table border='1' id='test'  class='testven' cellpadding='0' cellspacing='0'>";
 			hours=String(events[i][4]);
 			var timeString = hours;
@@ -2409,7 +2411,7 @@ for (var i = 0, len = events.length; i < len; i++)
 		
 		
 		
-alert(chkValue1);
+ 
 			
 		if(chkValue1 ==true )
 			
@@ -2432,7 +2434,7 @@ alert(chkValue1);
 			}	
 		 
 		 
-alert(clsName);
+alert(chkValue1+'-'+clsName);
 	dayStr1=String(events[i][2])+"/"+String(events[i][1])+"/"+String(events[i][3]);
   ev_lst+="<tr ><td rowspan=3  width='35%'> &nbsp;&nbsp;"+events[i][5]+"</td><td ><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=3 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
  //ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b><button id=bookRef1 class='btn btn-default active' onclick='bookTkt1(this.value)' value="+dayStr1+">"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></button></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";		
@@ -2453,7 +2455,7 @@ alert(clsName);
 	ev_lst = ev_lst.replace('undefined','');
 	calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
-	alert(ev_lst);
+ 
 	if(heading1==ev_lst)
 	{
 		ev_lst=heading1+'<tr><td>No events to show ...</td><tr>';
