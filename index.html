@@ -2373,11 +2373,11 @@ calEvt ='';
 for (var i = 0, len = events.length; i < len; i++)
 {
 	
-	alert('in');
+
 	cat1=events[i][6];
 	if(catSel==cat1)
 		{
-			alert('in2');
+			alert(ev_lst);
 			 ev_lst+="<table border='1' id='test'  class='testven' cellpadding='0' cellspacing='0'>";
 			hours=String(events[i][4]);
 			var timeString = hours;
@@ -2410,26 +2410,29 @@ for (var i = 0, len = events.length; i < len; i++)
 		eName=events[i][8].replace(/\s/g, "_");
 		
 		
-		
+		chkValue1 
  
 			
 		if(chkValue1 =='true' )
 			
 		{
 		clsName='chartme-btn-main';
-			
+			alert('true');	
 		}
 	 
 		else
 			{
-				  if(favS.indexOf(aName) !== -1)
+				if(favS.indexOf(aName) !== -1)
 		   		{
 		   			clsName='arrowdown';
+					alert('false exists');	
 		   
 		         	}
 				else
 				{
 				clsName='chartme-btn-main';
+					alert('false not  exists');	
+		   
 				}
 			}	
 		 
