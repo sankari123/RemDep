@@ -2380,7 +2380,7 @@ for (var i = 0, len = events.length; i < len; i++)
 			alert(ev_lst);
 			
 			hours=String(events[i][4]);
-			alert(hours);
+			
 			var timeString = hours;
 			var H = +timeString.substr(0, 2);
 			var h = H % 12 || 12;
@@ -2389,11 +2389,13 @@ for (var i = 0, len = events.length; i < len; i++)
 			calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
 			dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
+			alert(dayStr);
 	                var n = weekday[dayStr.getDay()];
+			alert(n);
 			var mNam= monthNames[dayStr.getMonth()];
 			
 			
-			alert(mNam) ;
+			//alert(mNam) ;
 			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
 
 				if(chkStr =='00')
