@@ -2355,7 +2355,7 @@ calEvt ='';
 	//   if(window.localStorage.getItem("key")== null  || typeof(window.localStorage.getItem("key")) == "undefined" || window.localStorage.getItem("key")== '') {
 
 	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
-		chkValue1 ='true' ;
+		chkVal1 ='1' ;
 	 alert(chkValue1+'-a-'+window.localStorage.getItem("favShows"));
   //...
 }
@@ -2363,7 +2363,7 @@ calEvt ='';
 	{
 	var favS= window.localStorage.getItem("favShows");
 	//chkValue1=stringIsEmpty(favS);
-	  	chkValue1 ='false' ;
+	  	chkVal1 ='2' ;
 	}
 	
 //var ev_lst="<br><center><b>"+  catSel +"</center></b><br>";
@@ -2410,10 +2410,10 @@ for (var i = 0, len = events.length; i < len; i++)
 		eName=events[i][8].replace(/\s/g, "_");
 		
 		
-		 alert(chkValue1);	
+		 alert(chkVal1);	
  
 			
-		if(chkValue1 =='true')
+		if(chkVal1 =='1')
 			
 		{
 		clsName='chartme-btn-main';
@@ -2438,7 +2438,7 @@ for (var i = 0, len = events.length; i < len; i++)
 			}	
 		 
 		 
-alert(chkValue1+'-'+clsName);
+alert(chkVal1+'-'+clsName);
 	dayStr1=String(events[i][2])+"/"+String(events[i][1])+"/"+String(events[i][3]);
   ev_lst+="<tr ><td rowspan=3  width='35%'> &nbsp;&nbsp;"+events[i][5]+"</td><td ><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=3 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
  //ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b><button id=bookRef1 class='btn btn-default active' onclick='bookTkt1(this.value)' value="+dayStr1+">"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></button></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";		
