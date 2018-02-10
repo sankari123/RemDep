@@ -2356,7 +2356,7 @@ calEvt ='';
 
 	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
 		chkVal1 ='1' ;
-	// alert(chkValue1+'-a-'+window.localStorage.getItem("favShows"));
+	  alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
   //...
 }
 	else
@@ -2380,6 +2380,7 @@ for (var i = 0, len = events.length; i < len; i++)
 			alert(ev_lst);
 			 ev_lst+="<table border='1' id='test'  class='testven' cellpadding='0' cellspacing='0'>";
 			hours=String(events[i][4]);
+			alert(hours);
 			var timeString = hours;
 			var H = +timeString.substr(0, 2);
 			var h = H % 12 || 12;
