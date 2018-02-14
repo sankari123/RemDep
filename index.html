@@ -2389,7 +2389,7 @@ for (var i = 0, len = events.length; i < len; i++)
 			calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
 			//dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
-			var from = events[2]+'-'+events[1]+'-'+events[3]; 
+			var from = events[i][2]+'-'+events[i][1]+'-'+events[i][3]; 
 			var numbers = from.match(/\d+/g); 
 			var dat1 = new Date(numbers[2], numbers[1]-1, numbers[0]);
 	                var n = weekday[dat1.getDay()];
