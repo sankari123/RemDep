@@ -2378,7 +2378,9 @@ for (var i = 0, len = events.length; i < len; i++)
 	if(catSel==cat1)
 		{
 			alert(ev_lst);
-			
+			alert(events[i][3]);
+			alert(events[i][1]);
+			alert(events[i][2]);
 			hours=String(events[i][4]);
 			
 			var timeString = hours;
@@ -2389,16 +2391,16 @@ for (var i = 0, len = events.length; i < len; i++)
 			calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
 			//dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
-			var from = events[i][2]+'-'+events[i][1]+'-'+events[i][3]; 
-			var numbers = from.match(/\d+/g); 
-			var dat1 = new Date(numbers[2], numbers[1]-1, numbers[0]);
+			//var from = events[i][2]+'-'+events[i][1]+'-'+events[i][3]; 
+			//var numbers = from.match(/\d+/g); 
+			var dat1 = new Date(events[i][3], events[i][1], events[i][2]);
 			alert(dat1);
-			alert(numbers);
+			//alert(numbers);
 			var weekday1=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday");
 	                var n = weekday1[dat1.getDay()];
-			//alert('n'+n);
+		 	alert('n'+n);
 			var mNam= monthNames[dat1.getMonth()];
-			//alert('nam+'+mNam) ;
+			 alert('nam+'+mNam) ;
 			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
 
 				if(chkStr =='00')
