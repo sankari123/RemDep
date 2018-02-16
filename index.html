@@ -1266,7 +1266,7 @@ var floater = 0;
 		var kkkk=0;
 	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
 		chkVal1 ='1' ;
-	//  alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+	 alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
   //...
 }
 	else
@@ -1309,11 +1309,11 @@ var floater = 0;
 			
 
     var dat1 = new Date(events[i][3], events[i][1]-1, events[i][2]);
-			//alert(dat1);
-			//alert(numbers);
+			 alert(dat1);
+			 //alert(numbers);
 			var weekday1=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday");
 	                var n = weekday1[dat1.getDay()];
-		// 	alert('n'+n);
+	  	alert('n'+n);
 			
 			 var month = new Array();
     month[0] = "January";
@@ -1331,7 +1331,7 @@ var floater = 0;
 			
 			
 			var mNam= month[dat1.getMonth()];
-		//	 alert('nam+'+mNam) ;
+		 	 alert('nam+'+mNam) ;
 			
 			
 			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
@@ -1356,7 +1356,7 @@ var floater = 0;
 			
 		{
 		clsName='chartme-btn-main';
-		//	alert('true');	
+		 	alert('true');	
 		}
 	 
 		else
@@ -1364,14 +1364,14 @@ var floater = 0;
 				if(favS.indexOf(aName) !== -1)
 		   		{
 		   			clsName='arrowdown';
-				//	alert('false exists');	
+			 	alert('false exists');	
 		   
 		         	}
 				else
 				{
 				clsName='chartme-btn-main';
-				//	alert('false not  exists');	
-		   //
+				 	alert('false not  exists');	
+		 
 				}
 			 	
 			}	
@@ -1381,8 +1381,7 @@ var floater = 0;
 		theevent+="<br><table class=ven1><tr height='40px'><td colspan=3><center><b>"+n+", " +events[i][2]+" "+mNam+" "+events[i][3]+"</b></center></td></tr></table>";
 			kkkk++;
 		}
-		
-		 
+		alert(theevent);	
 //	<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
 //<tr><td>row 2 col2</td> </tr>
  // <tr><td>row 2 col2</td> </tr>
