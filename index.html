@@ -1264,7 +1264,17 @@ function showevents(day,month,year,week,dayofweek) {
 var theevent = "";
 var floater = 0;
 		var kkkk=0;
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkVal1 ='1' ;
+	//  alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+  //...
+}
+	else
+	{
 	var favS= window.localStorage.getItem("favShows");
+	//chkValue1=stringIsEmpty(favS);
+	  	chkVal1 ='2' ;
+	}
 	document.getElementById('xPort').innerHTML='' ;
 	//document.getElementById("xPort").innerHTML='';
 	 
@@ -1340,29 +1350,31 @@ var floater = 0;
 		eName=events[i][8].replace(/\s/g, "_");
 		
 		
+ 
 		
-		chkValue1=stringIsEmpty(favS);
-		
-		if(chkValue1 ==true )
+		if(chkVal1 =='1')
 			
 		{
 		clsName='chartme-btn-main';
-			
+		//	alert('true');	
 		}
 	 
-		else  
-		{
-		
-			if(favS.indexOf(aName) !== -1)
-		   {
-		   clsName='arrowdown';
-		   
-		   }
-			else
+		else
 			{
-			clsName='chartme-btn-main';
-			}
-		}	
+				if(favS.indexOf(aName) !== -1)
+		   		{
+		   			clsName='arrowdown';
+				//	alert('false exists');	
+		   
+		         	}
+				else
+				{
+				clsName='chartme-btn-main';
+				//	alert('false not  exists');	
+		   //
+				}
+			 	
+			}	
 		 
 		while(kkkk<1)
 		{
@@ -2186,31 +2198,44 @@ function ven_det(v)
 		
 		
 		
-		chkValue1=stringIsEmpty(favS);
+		//chkValue1=stringIsEmpty(favS);
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkVal1 ='1' ;
+	//  alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+  //...
+}
+	else
+	{
+	var favS= window.localStorage.getItem("favShows");
+	//chkValue1=stringIsEmpty(favS);
+	  	chkVal1 ='2' ;
+	}
 	 
 	
 		
-		
-		if(chkValue1 ==true )
+	if(chkVal1 =='1')
 			
 		{
 		clsName='chartme-btn-main';
-			
+		//	alert('true');	
 		}
 	 
-		else  
-		{
-		
-			if(favS.indexOf(aName) !== -1)
-		   {
-		   clsName='arrowdown';
-		   
-		   }
-			else
+		else
 			{
-			clsName='chartme-btn-main';
-			}
-		}	
+				if(favS.indexOf(aName) !== -1)
+		   		{
+		   			clsName='arrowdown';
+				//	alert('false exists');	
+		   
+		         	}
+				else
+				{
+				clsName='chartme-btn-main';
+				//	alert('false not  exists');	
+		   //
+				}
+			 	
+			}	
 		 
 		 
 		
