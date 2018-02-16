@@ -2416,10 +2416,10 @@ for (var i = 0, len = events.length; i < len; i++)
 	cat1=events[i][6];
 	if(catSel==cat1)
 		{
-			alert(ev_lst);
-			alert(events[i][3]);
-			alert(events[i][1]);
-			alert(events[i][2]);
+			//alert(ev_lst);
+			//alert(events[i][3]);
+			//alert(events[i][1]);
+			//alert(events[i][2]);
 			hours=String(events[i][4]);
 			
 			var timeString = hours;
@@ -2473,14 +2473,14 @@ for (var i = 0, len = events.length; i < len; i++)
 		eName=events[i][8].replace(/\s/g, "_");
 		
 		
-		 alert(chkVal1+'--  '+aName+'--'+eName);	
+		// alert(chkVal1+'--  '+aName+'--'+eName);	
  
 			
 		if(chkVal1 =='1')
 			
 		{
 		clsName='chartme-btn-main';
-			alert('true');	
+		//	alert('true');	
 		}
 	 
 		else
@@ -2488,20 +2488,20 @@ for (var i = 0, len = events.length; i < len; i++)
 				if(favS.indexOf(aName) !== -1)
 		   		{
 		   			clsName='arrowdown';
-					alert('false exists');	
+				//	alert('false exists');	
 		   
 		         	}
 				else
 				{
 				clsName='chartme-btn-main';
-					alert('false not  exists');	
-		   
+				//	alert('false not  exists');	
+		   //
 				}
 			 	
 			}	
 		 
 		 
-alert(chkVal1+'-'+clsName);
+//alert(chkVal1+'-'+clsName);
 	dayStr1=String(events[i][2])+"/"+String(events[i][1])+"/"+String(events[i][3]);
 			 ev_lst+="<table border='1' id='test'  class='testven' cellpadding='0' cellspacing='0'>";
   ev_lst+="<tr ><td rowspan=3  width='35%'> &nbsp;&nbsp;"+events[i][5]+"</td><td ><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=3 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
