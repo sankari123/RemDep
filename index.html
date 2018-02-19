@@ -644,6 +644,7 @@ display	: none;
 	    }
     </style>
 	<script>
+		var  pth=0;
 		  $(document).ready(function() {
                 $('input.deletable').wrap('<span class="deleteicon" />').after($('<span/>').click(function() {
                     $(this).prev('input').val('').trigger('change').focus();
@@ -1007,6 +1008,8 @@ function gotFileEntry(fileEntry) {
 function gotFile(file){
       readDataUrl(file);
         readAsText(file);
+	alert('pth'+ pth);
+	   changedate('return');
     }
 
 
@@ -1027,8 +1030,7 @@ function gotFile(file){
             console.log(evt.target.result);
 	 //   alert(evt.target.result);
 	    document.getElementById('rest1').value=evt.target.result;	
-		preloadimages();
-	   changedate('return');
+		
 	//	 ajaxFunction();
         };
         reader.readAsText(file);
@@ -2070,7 +2072,7 @@ function calClick()
 		document.getElementById("panel").style.visibility="false";
 		document.getElementById("archive").style.visibility="false";
 		document.getElementById("archive").style.display="none";
-	
+			pth=111;
 		//  changedate('return');
 		  checkConnection();
 			 
