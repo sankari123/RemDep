@@ -1008,8 +1008,7 @@ function gotFileEntry(fileEntry) {
 function gotFile(file){
       readDataUrl(file);
         readAsText(file);
-	alert('pth'+ pth);
-	   changedate('return');
+	 
     }
 
 
@@ -1030,7 +1029,8 @@ function gotFile(file){
             console.log(evt.target.result);
 	 //   alert(evt.target.result);
 	    document.getElementById('rest1').value=evt.target.result;	
-		
+		 ajaxFunction();
+		 changedate('retuen');
 	//	 ajaxFunction();
         };
         reader.readAsText(file);
