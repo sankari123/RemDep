@@ -1106,8 +1106,9 @@ var eastermonth = 0;
 var easterday = 0;
 var flg=1;
 function changedate(buttonpressed) {
+	alert('in');
 	ajaxFunction();
-	//alert('optsel'+optSel);	
+	 alert('optsel'+optSel);	
 	//buttonpressed='return';
  
 	if (buttonpressed == "return") { 
@@ -2074,7 +2075,7 @@ function calClick()
 		document.getElementById("archive").style.visibility="false";
 		document.getElementById("archive").style.display="none";
 			pth=111;
-		  changedate('return');
+		  preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 	//	  checkConnection();
 	//	 preloadimages();
 			 
