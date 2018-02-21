@@ -1108,9 +1108,9 @@ var flg=1;
 function changedate(buttonpressed) {
 	alert('in');
 	ajaxFunction();
-	 alert('optsel'+optSel);	
+	 
 	//buttonpressed='return';
- 
+ alert(events.length);
 	if (buttonpressed == "return") { 
 		monthNum = todaysMonth;
 		yearNum = todaysYear;
@@ -1483,7 +1483,7 @@ var venue_arr = new Array();
 	
 function procVal(pVar)
 {
- //alert(connSel+'----'+pVar);
+ alert(connSel+'----'+pVar);
 	 if (pVar!='')
 	 {
 	  window.plugins.spinnerDialog.hide();
@@ -2075,9 +2075,8 @@ function calClick()
 		document.getElementById("archive").style.visibility="false";
 		document.getElementById("archive").style.display="none";
 			pth=111;
-		  preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
-	//	  checkConnection();
-	//	 preloadimages();
+		 changedate('return');
+	 
 			 
 
 
