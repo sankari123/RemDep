@@ -883,6 +883,7 @@ var newUsr;
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait...!");
 	check();
+	checkConnection();
 	var fixed = document.getElementById('category');
 	
 	fixed.addEventListener('touchmove', function(e) {
@@ -914,7 +915,7 @@ function onDeviceReady(){
  	//chkFavorite();
 	
 	
-	checkConnection();
+	
 	document.addEventListener("backbutton", backButtonHandler, false);
 	
 }
