@@ -1,70 +1,959 @@
-<!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-<title><center><font face=verdana size=12>Madras Music & Miscellany</font></center></title>
-<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-       <!-- cordova  -->
-	<script type="text/javascript" src="cordova.js"></script>
-       
-	  <!-- CSS stylesheet for example -->
-	
-	<link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
-	<link rel="stylesheet" href="normalize.min.css">
-	 <!-- JS  for example -->
-	<script src="js/jquery-2.2.3.min.js"></script>
-	<script src="js/jquery.touchSwipe.min.js"></script>
-	<script src="js/jquery.slideandswipe.min.js"></script>
- 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script type="text/javascript" src="Calendar.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.js"></script>
+<title>Madras Music & Miscellany</title>
  
-        
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="cordova.js"></script>
+	 
+	<link class="jsbin" href="css/jquery-ui.css" rel="stylesheet" type="text/css"></link>
+<link rel="stylesheet" href="css/styles.css"></link>
+<link rel="stylesheet" href="css/slide-and-swipe-menu.css"></link>
+ 
+ 
+<script class="jsbin" src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src = "js/jquery-ui.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/jquery.slideandswipe.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>  
+  
 
-<script type="text/JavaScript" language="JavaScript">
+  
+    <style type="text/css" media="screen"> 
+	    
+	    #cat_tbl span { 
+		    display: inline-block;
+  vertical-align: middle;
+  margin-left: 60px;  /* width of image */
+   font-size: 15px;
+		
+		    
+	    }
+	    
+	     #cat_tbl
+	    
+	    {
+	    position:relative;
+	    height: 80vh;
+	    }
+	#input1{ 
+   padding: 10px 5px;
+   font: 12px 'lucida sans', 'trebuchet MS', 'Tahoma';
+   border: 0px solid #a4c3ca;
+   background: #fafbfc;
+
+   color :black;
+   width :300px;
+   left: 10px;
+		right: 0px;
+    
+}
+#input1:focus 
+	    {
+	     outline: none !important;
+    border:0px solid white;
+     
+	    }
+	    
+	    span.deleteicon {
+                position: relative;
+            }
+            span.deleteicon span {
+                position: absolute;
+                display: block;
+                top: 5px;
+                right: 10px;
+                width: 20px;
+                height: 18px;
+                background: url('clear_cross.png')  ;
+		background-repeat: no-repeat;
+                cursor: pointer;
+            }
+            span.deleteicon input {
+                padding-right: 4px;
+                box-sizing: border-box;
+            }
+	    
+	    
+ .chartme-btn-main
+{
+    background: url('fav.png')  no-repeat;
+	padding: 1em;
+	border: 0;
+	background-color: transparent;
+border-top-style: none;
+border-right-style: none;
+border-bottom-style: none;
+border-left-style: none;
+}
+.arrowdown
+{
+    background: url('fav_red.png')  no-repeat;
+padding: 1em;
+	border: 0;
+	background-color: transparent;
+border-top-style: none;
+border-right-style: none;
+border-bottom-style: none;
+border-left-style: none;
+}          
+	    
+	    #main {
+	   max-width: 1200px;
+margin: 0 auto;
+	    }
+#wrapper {
+	 
+	 width: 100%;
+margin: 0 auto;
+  display: flex;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	
-	 $(document).ready(function() {
-                $('.nav').slideAndSwipe();
+}
+#left {
+  flex: 0 0 35%;
+	 width: 50%;
+   background: white;
+	text-align: center;
+	 font-family: 'Open Sans';
+	font-size: 10pt;
+	 display: inline-block;
+	  vertical-align: bottom;
+	padding-top: 5px;
+	 
+	 
+}
+#right {
+  flex: 1;
+   background: white;
+	 width: 50%;
+	font-size: 9pt;
+	font-family: 'Open Sans';
+	 display: inline-block;
+	padding-left: 3px;
+	padding-top: 5px;
+}
+	 #right_most {
+  flex: 1;
+   background: white;
+	 width: 10%;
+	font-size: 9pt;
+	font-family: 'Open Sans';
+	 display: inline-block;
+	padding-left: 3px;
+	padding-top: 5px;
+}
+    h1 { font-size: 20pt; color:Navy; }
+    h2 { font-size: 18pt; font-weight:bold; color: #DDD; }
+
+  /*  body { background-color: #FFF; font: 16px Helvetica, Arial; color: #000; }
+    body { margin:0; padding:0; height:100%;}*/
+
+ /*   .ui-widget { color: gray;font-size: 0.8em; line-height:0.8em; }
+    .ui-widget .ui-widget { font-size: 0.8em; }*/
+
+    
+	    
+	    .artDisplay
+	    {
+	    display: none; 
+	    }
+
+	   
+
+
+	 nav[role="main"] ul {
+          margin: 0;
+	  color:#cfddfa;
+          padding: 2%;
+          list-style: none;
+		  
+      }
+     nav[role="main"] ul li {
+          margin: 0;
+	    color: white;  
+	      text-align: center; 
+	     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		  
+      }
+      nav[role="main"] ul li a {
+          padding: 15px 20px;
+          font-size: 13px;
+          font-weight: 100;
+          color: white;
+          text-decoration: none;
+          display: block;
+          border-bottom: 1px solid #3b6f8a;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;		;   
+          -webkit-transition:  background 0.3s ease-in-out;
+          -moz-transition:  background 0.3s ease-in-out;
+          -ms-transition:  background 0.3s ease-in-out;
+          -o-transition:  background 0.3s ease-in-out;
+          transition:  background 0.3s ease-in-out;
+      } 	
+      nav[role="main"] ul li:hover a {
+          background: #3b6f8a;
+      }
+
+
+	  nav[role="sub"] ul {
+          margin: 0;
+	      color:#cfddfa;
+          padding: 2%;
+          list-style: none;
+		  
+      }
+      nav[role="sub"]  ul li {
+          margin: 0;
+	    color: white;  
+	      text-align: center; 
+		  
+      }
+      nav[role="sub"]  ul li a {
+           padding: 15px 20px;
+          font-size: 13px;
+          font-weight: 100;
+          color: white;
+          text-decoration: none;
+          display: block;
+          border-bottom: 1px solid #3b6f8a;
+			   
+          -webkit-transition:  background 0.3s ease-in-out;
+          -moz-transition:  background 0.3s ease-in-out;
+          -ms-transition:  background 0.3s ease-in-out;
+          -o-transition:  background 0.3s ease-in-out;
+          transition:  background 0.3s ease-in-out;
+      } 	
+      nav[role="sub"] 	 ul li:hover a {
+          background: #3b6f8a;
+      }
+	  
+		
+		body, html {
+    width: 100%; !important;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+	    
+	    
+	   
+.btn24
+	
+	{
+	width:100%;
+	height:100%;
+	background-color:#f2f2f2; border:block; padding: 2;  display:inline-block; font-weight: bold; color: black;
+	border-radius:6px;
+    -moz-border-radius:6px;
+	}	  
+	    
+ 
+.names { font-weight: bold; 
+		text-align:left;}
+
+		.ven_cal
+		{
+		 width: 100vw;
+		font-size: 8pt;
+			background-color: #eeedf0;
+    border-color: #eeedf0;
+	  border-collapse:separate;
+ 
+/*    border-radius:6px;*/
+  /*  -moz-border-radius:6px;*/
+		}
+		
+		
+.ven
+{
+width: 100vw;
+text-align:center; 
+	
+/*			border-style: solid;*/
+  /*  border-color: black;*/
+		}
+.ven1
+		{
+		 width: 100vw;
+		font-size: 11pt;
+			 
+	  border-collapse:separate; 
+	 
+ 
+		}
+	    
+.testven
+{
+ 
+    width: 100vw;
+    
+ /*   box-shadow: 10px 10px 10px #dedede inset;
+    border-radius: 5px;*/
+    background: white;
+   padding-bottom: 4px;
+	 padding-top: 4px;
+}	     
+.ven2
+		{
+		 width: 100vw;
+			  
+			border-style: solid;
+			font-size: 9pt;
+ */   border-color: black;*/
+	  border-collapse:separate;
+   */ border:solid black 1px;*/
+    border-radius:6px;
+    -moz-border-radius:6px;
+		}	
+.hideDontTakeUpSpace
+        {
+            display:none;
+        }
+
+.btn1 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: white; text-decoration:underline;
+    display:inline-block;}
+
+		 	
+.btn34 {  background-color: #0c9db7; border:none; padding: 11px 11px 11px 11px; font-weight: bold; color: white; border-radius: 5px;font-family:  Arial, Helvetica, sans-serif; }		
+		
+.btnSrch {  display:inline-block;   text-decoration:none;}	
+.btn2 {  background-color: transparent; border:none; padding: 0;   color: black;font-weight: bold;  }
+button:focus {outline:none;} ::-moz-focus-inner {border:0;}
+#evtcal a:link {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		/* unvisited link */
+#evtcal a:visited {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}	/* visited link */
+#evtcal a:hover {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: underline;}	/* mouse over link */
+#evtcal a:active {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		/* selected link */
+#lst_mnu
+	{
+		display:none;
+		text-align:center;
+		 max-width: 1200px;
+		margin: 0 auto;
+                width: 100% !important;
+    height: 100vh;
+		
+	}
+#lst_mnu table {
+    
+    width: 100% !important;
+   border-color: black; 
+	font-family: "Sans Serif"; 
+	font-size: 9pt; 
+  }
+		
+.cat
+	{
+  max-width: 400px;
+    width: 100% !important;
+}
+	#evt_lst
+	{
+		display:none;
+		height: 100vh;
+		
+	}
+	.map_c
+	{
+		 width: 100vw;
+	}
+		
+		
+		 #middlecol {
+    border-right: 2px solid red;
+    width: 45%;
+  }
+
+  #middlecol table {
+    max-width: 400px;
+    width: 100% !important;
+  }
+#xPort
+	{
+		
+		 max-width: 1200px;
+		margin: 0 auto;
+                width: 100% !important;
+		display:none;
+		font: 15px arial, sans-serif;
+		/*background-color:  #f8f9fb;*/
+/*		font-family: "Sans Serif";*/
+	/*	font-size: 9pt;*/
+	/*	font: normal 12pt "Sans Serif";  */
+		}
+#xPort1
+	{
+		
+		display:none;
+		 
+		}
+	    
+	    #map-container{
+ position: relative; 
+}
+
+#map{
+   width: 100vw;
+	display:none;
+	 
+}
+	    
+
+/* The following is just coloring and faux images */
+
+.dl_btn {
+    width: 100% !important;
+     background:#f3f3f3;
+	display: none;
+}
+
+.dl_btn1 {
+   
+	display: none;
+}				
+		div.tab {
+    overflow: hidden;
+    border: 0px solid #ccc;
+    background-color:  #0c9db7;
+    width: 100% !important;
+    height:50px;
+	    
+	  
+}
+		
+ 
+/* Style the buttons inside the tab */
+div.tab button {
+    
+   background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 13px;
+    color: white;
+    border-left:solid white 0px;
+    border-right:solid white 0px;
+    border-top:solid white 0px;
+    border-bottom:solid #0c9db7; 3px;
+    background:#0c9db7;
+    width:33%; height:50px
+}
+
+ 
+div.tab button:hover {
+    /*  background-color: #ddd;*/
+    border-bottom:solid white 4px;
+}
+
+ 
+div.tab button.active {
+     /*  background-color: #ccc;*/
+     border-bottom:solid white 4px;
+}
+
+ 
+.tabcontent {
+     display: none;
+    padding: 3px 12px;
+  
+    border-top: none;
+}
+
+ 
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.topright:hover {color: red;}
+
+#div_hr
+{
+	display	: none;
+		} 
+		
+.style1{
+ 
+display	: none;
+}
+		
+		#calEvent
+		{
+		
+			width: 100vw;
+			
+			font-size: 9pt;
+     
+
+     display:none;
+		
+		}
+		 
+	
+		@media screen and (min-width: 100px) and (max-width: 199px)
+{
+    .button
+    {
+        width: 25px;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 299px)
+{
+    .button
+    {
+        width: 50px;
+    }
+}
+		
+.left-div {
+		 border-radius: 25px;
+    float: left;
+    width: 50vw;
+    height: 20px;
+    background-color: linen;
+/*    margin-right: 8px;*/
+  
+}
+.right-div {
+ /*   margin-left: 108px;*/
+	 width: 50vw;
+	 border-radius: 25px;
+	background-color: green;
+    
+}
+.category
+		{
+		 
+      height: 80vh;
+	width: 100%;	
+   position: relative;
+  left: 1%;
+ text-align: left;
+			overflow: hidden;
+			overflow-y: hidden;
+}
+#calendar
+		{
+		 
+		display	: none;
+		width: 100vw;	
+   
+}		
+
+	   
+	    
+	
+		.left1 {
+         width:50%;
+         border-right:1px solid #000000;
+        float:left;
+        height:70px;
+	padding-left:6px;
+    }
+   .right1 {
+       float:left;
+       padding-left:50%;
+       
+	   height:40px;
+   }
+   
+   .common1 {
+        width:100%;
+         float:left;
+         
+   }
+	.alt-color tr:nth-child(3n) {
+             background-color: #b4c5d3;
+		
+        }	
+	.ven1 tr:nth-child(2n) {
+   
+		
+        }
+/*	.ven1 tr:nth-child(odd) {
+    background: silver;
+}*/
+	.login
+{
+   display:none;
+   text-align:center;
+}	
+.backmenu
+{
+   display:none;
+	 
+    
+}
+		
+		.updFile
+		{
+		 
+		display	: none;
+   
+}
+		.csv
+{
+		 
+		display	: none;
+   
+}		
+.archive
+{
+		 
+display	: none;
+ 
+}
+.wide {
+    display:block;
+    width:0px;
+    height:0px;
+}		
+
+.searchmenu
+{
+  position: relative;
+    width: 100%;
+	 display:none;
+    
+}	
+     .inputDiv
+    {
+	    position: relative;
+    left: 10px;
+  /*  width: 300px;*/
+	    height: 40px;
+	    
+ max-width: 940px;
+  margin:0 auto;
+  padding:0;
+   }
+		    
+		    
+		    
+.nav1
+	    {
+	    display:none; 
+	    }
+    </style>
+	<script>
+		var  pth=0;
+		  $(document).ready(function() {
+                $('input.deletable').wrap('<span class="deleteicon" />').after($('<span/>').click(function() {
+                    $(this).prev('input').val('').trigger('change').focus();
+			$("#dl_btn").hide();
+			$("#xPort").html("");
+                }));
             });
+		
+		$(document).ready(function() {
+			
+			});
+ var directionsService = new google.maps.DirectionsService();
+ var u_name;
+	$(document).ready(function() {
+	   
+	// var u_name= window.localStorage.getItem("key");
+	// check();
+	 //	alert('unam'+u_name);
+     
+ 
+ //if(u_name ==null ){                   
+  //       $('nav[role="main"]').slideAndSwipe();     
+  //}  
+ //	else
+ //	{
+// $('nav[role="sub"]').slideAndSwipe();
+ //}
+		 
+	
+            });
+
+
+	var active_page;
   var optSel;
 var usrauth ;	
 	usrauth='';	
-function alertDismissed() {
-            alert('ddd');
-        }	
+
+
+	var wordlist=new Array();
+	function prep()
+	{
+ 
+ wordlist= remove_duplicates_safe(artistArr);
+ wordlist.sort();
+	}
+
+ function remove_duplicates_safe(arr) {
+    var seen = {};
+    var ret_arr = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (!(arr[i] in seen)) {
+            ret_arr.push(arr[i]);
+            seen[arr[i]] = true;
+        }
+    }
+    return ret_arr;
+}
+
+ 
+
+     
+
+    function addMessage(msg){
+     //   $('#msgs').append(msg);
+    }
+function pop(div) {
+document.getElementById(div).style.display = 'block';
+document.getElementById(div).style.visibility="true";	
+}
+function hide(div) {
+document.getElementById(div).style.display = 'none';
+document.getElementById(div).style.visibility="false";	
+}
+		
+$("#input1").keypress(function(){
+	 $('#inpu1').css('border', '0px solid #11b818');
+	 $('#inpu1').css('border-bottom', '0px dotted blue');
+	  
+     $('#artist').trigger('click');
+});
+		
+$(document).ready(function(){
+		$("#artist").click(function(){
+			activePg=2;
+	//	  $('#arSrch').show();	 
+		$("#arSrch").html("");
+		  $('#main').hide();
+		  $('#mainMenu').hide();
+		  $('#category').hide(); 
+			$('#archive').hide();
+			$('#map').hide();
+		 $('#calendar').hide();
+		  $('#dl_btn').hide();
+		  $('#lst_mnu').hide();
+			$('#backmenu').show();	
+			$('#dl_btn1').hide();
+			 $('#xPort').hide();
+			  $('#xPort1').hide();
+			   $('#tab').hide();
+		 
+		
+		prep();
+              //alert(wordlist);
+
+			pop('searchmenu');
+			 
+				 monkeyPatchAutocomplete();
+
+          $("#input1").autocomplete({
+		 
+               
+              source: function(req, responseFn) {
+                 // addMessage("search on: '" + req.term + "'<br/>");
+		        $('#dl_btn').hide();
+		$("#xPort").html("");
+                  var re = $.ui.autocomplete.escapeRegex(req.term);
+				  var matcher = new RegExp( "^" + re, "i" );
+				    
+                  var a = $.grep( wordlist, function(item,index){
+                      //addMessage("&nbsp;&nbsp;sniffing: '" + item + "'<br/>");
+                      return matcher.test(item);
+                  });
+                //  addMessage("Result: " + a.length + " items<br/>");
+                  responseFn( a );
+              },
+
+              select: function(value, data){
+                  if (typeof data == "undefined") {
+                  //    addMessage('You selected: ' + value + "<br/>");
+			  alert('out');
+				//	  document.getElementById('reslt').value=data.item.value;
+                  }else {
+                   //   addMessage('You selected: ' + data.item.value + "<br/>");
+			 
+			   
+    			//document.activeElement.blur();
+    				
+ 
+			  displayResults(data.item.value);
+				//	   document.getElementById('reslt').value=data.item.value;
+                  }
+              }
+          });
+			});
+			
+});	
+
+function monkeyPatchAutocomplete() {
+		  $('#dl_btn').hide();
+	$("#xPort").html("");
+          // Don't really need to save the old fn, 
+          // but I could chain if I wanted to
+          var oldFn = $.ui.autocomplete.prototype._renderItem;
+
+          $.ui.autocomplete.prototype._renderItem = function( ul, item) {
+              var re = new RegExp("^" + this.term, "i") ;
+              var t = item.label.replace(re,"<br><span id='arSrch' style='display:inline-block; color:black;vertical-align:top ;text-align: center;'>" + this.term + "</span>");
+              return $( "<li></li>" )
+                  .data( "item.autocomplete", item )
+   // .append( "<a><img src='search1.png' style='   vertical-align: middle;  '>" + t + "</a>" )
+		  
+		  .append( "<table border=0 cellpadding=0 cellspacing=0><tr bordercolor=white><td valign='bottom'><a><img src='search1.png' style=' vertical-align: bottom;' >" +  "</td><td><img src='blank.png'  ></td><td valign='top'>" + t + "</a></td></tr></table>" )
+                  .appendTo(ul);
+          };
+      }
+
+
+		
+		
+function displayResults(artistNam)
+{
+$("#input1").blur();
+$("#arSrch").hide();
+$('#xPort').show();	
+$('#map-container').hide();
+$('#map').hide();
+$('#det').hide();
+$('#calendar').hide();
+$('#dl_btn').show();		
+// document.getElementById('map').setAttribute("class","wide");
+document.getElementById('xPort').innerHTML='' ;
+	
+var artEvt ='';
+	var artEvtDetails='';
+//alert(artistNam);
+	var art_lst='';
+var art_lst="<table border='0' id='test' class='ven1' cellpadding='0' cellspacing='0'>";
+art_lst+="<tr height='40px' bgcolor='white'><td colspan=3 align='center'><b>"+  artistNam +"</b></td></tr>";
+for (var i = 0, len = events.length; i < len; i++)
+{
+	 
+	if(events[i][8]==artistNam)
+		{
+			
+			hours=String(events[i][4]);
+			var timeString = hours;
+			var H = +timeString.substr(0, 2);
+			var h = H % 12 || 12;
+			var ampm = H < 12 ? "am" : "pm";
+			timeString = h + timeString.substr(2, 3) + " "+ampm;
+		        artEvt = artEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
+			artEvtDetails=artEvtDetails+events[i][5]+'  '+events[i][8]+'%';
+//events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);			
+	 
+	art_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
+			
+			
+	art_lst+=events[i][5]+'<br>'+'<br>';
+	 
+	art_lst+=events[i][7]+'<hr size=2></td></tr>';
+		 
+		}
+ 
+} 
+ 
+	art_lst = art_lst.replace('undefined','');
+	artEvt = artEvt.replace('undefined','');
+	artEvtDetails = artEvtDetails.replace('undefined','');
+	document.getElementById('xPort').innerHTML=art_lst +"<table>";
+	
+	
+	
+}		
+//****************************************************************//
+		
+		
 function init() {
     	document.addEventListener("deviceready", onDeviceReady, false);
 	
-}
-function getLoc()
-{
- 	if (navigator.geolocation)
-          {
-            navigator.geolocation.getCurrentPosition(myMap);
-          }
-        else
-          {
-             alert("Geolocation API not supported.");
-          }
 
+
+	
 }
-function myMap(position) {
-       x = position.coords.latitude;
-        y = position.coords.longitude;
- }
+var newUsr;
+ 
 function onDeviceReady(){
-	window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
-	document.getElementById("dl_btn").style.display="none";
-	document.getElementById("dl_btn").style.visibility="false";
-	document.getElementById("defaultOpen").click();
+	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait...!");
+	check();
 	checkConnection();
-	document.addEventListener("backbutton", function (e) {
-        e.preventDefault(); 
-	navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");    }, false );
+	var fixed = document.getElementById('category');
+	
+	fixed.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+		var calendar = document.getElementById('calendar');
+	
+	calendar.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+	
+		var lstMnu = document.getElementById('lst_mnu');
+	
+	lstMnu.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+	
+	 document.getElementById("dl_btn").style.display="none";
+	document.getElementById("dl_btn").style.visibility="false";
+	//document.getElementById("defaultOpen").click();
+	document.getElementById("defaultOpen").click();
+	
+ 	//chkFavorite();
+	
+	
+	
+	document.addEventListener("backbutton", backButtonHandler, false);
+	
 }
+	
+ 
+function backButtonHandler(e)
+   {
+if( activePg==5)  
+      {
+        venueBack(); // Code to exit app
+       //  navigator.app.backHistory(); 
+	      
+      }
+	   else if( activePg==2)
+	   {
+	   categoryBack();
+	   }
+      else
+      {
+        // Code to navigate to the history action
+	// window.localStorage.setItem('favShows',favAddStr);
+      navigator.notification.confirm("Do you want to exit MMM?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");   
+      }
+}
+ 
+		
+		function venueBack()
+		{
+		venueFilter();
+		
+		}
+		
+		function categoryBack()
+		{
+		category();
+		
+		}
+		
 function checkConnection() {
      var networkState = navigator.connection.type;
      if(navigator.connection.type == Connection.NONE) {        
@@ -120,6 +1009,7 @@ function gotFileEntry(fileEntry) {
 function gotFile(file){
       readDataUrl(file);
         readAsText(file);
+	 
     }
 
 
@@ -140,7 +1030,8 @@ function gotFile(file){
             console.log(evt.target.result);
 	 //   alert(evt.target.result);
 	    document.getElementById('rest1').value=evt.target.result;	
-	   changedate('prevmo');
+		// ajaxFunction();
+		 changedate('return');
 	//	 ajaxFunction();
         };
         reader.readAsText(file);
@@ -177,11 +1068,10 @@ else{
    if (navigator.app) {
      navigator.app.exitApp(); }
    else if (navigator.device) {
-     navigator.device.exitApp(); } }	}
+     navigator.device.exitApp(); } }	
+}
 	   
-	
-	
-	
+
 /* Preload images script */
 var myimages=new Array()
 function preloadimages(){
@@ -191,7 +1081,11 @@ function preloadimages(){
 	}
 	
 }
-/* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
+
+
+/* The path of images to be preloaded inside parenthesis: (Extend 
+
+list as desired.) */
 preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 
 var thisDate = 1;							// Tracks current date being written in calendar
@@ -214,6 +1108,8 @@ var flg=1;
 function changedate(buttonpressed) {
 	ajaxFunction();
 	//alert('optsel'+optSel);	
+	//buttonpressed='return';
+ 
 	if (buttonpressed == "return") { 
 		monthNum = todaysMonth;
 		yearNum = todaysYear;
@@ -246,7 +1142,7 @@ function changedate(buttonpressed) {
 	firstDate = new Date(String(monthNum)+"/1/"+String(yearNum));
 	firstDay = firstDate.getDay() + 1;
 	
-	
+	alert('to create');
 	createCalendar();
 	return;
 	
@@ -274,7 +1170,7 @@ easterday = day;
 function createCalendar() {
 	//window.plugins.spinnerDialog.hide();	
 	
-	
+	alert('create');
 	
 	
 	calendarString = '';
@@ -358,42 +1254,150 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
+//	alert('in');
+	alert(events.length);
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
-	document.getElementById("dl_btn1").style.display="block";
-	document.getElementById("dl_btn1").style.visibility="true";
+	document.getElementById("xPort").style.display="block";
+	document.getElementById("xPort").style.visibility="true";
 	document.getElementById("dl_btn").style.display="block";
 	document.getElementById("dl_btn").style.visibility="true";
 	document.getElementById("csv").style.display="none";
 	document.getElementById("csv").style.visibility="false"; 
+	 
 //	window.plugins.spinnerDialog.hide();		
 var theevent = "";
 var floater = 0;
+		var kkkk=0;
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkVal1 ='1' ;
+//	 alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+  //...
+}
+	else
+	{
+	var favS= window.localStorage.getItem("favShows");
+	//chkValue1=stringIsEmpty(favS);
+	  	chkVal1 ='2' ;
+	}
+	document.getElementById('xPort').innerHTML='' ;
+	//document.getElementById("xPort").innerHTML='';
 	 
+		
 	for (var i = 0; i < events.length; i++) {
 	
 	if ((events[i][2] == day) && (events[i][1] == month) && (events[i][3] == year)) {
 			
 			hours=String(events[i][4]);
+		 	
+			 	
 			var timeString = hours;
-			var H = +timeString.substr(0, 2);
+			var H = timeString.substr(0, 2);
 			var h = H % 12 || 12;
-			var ampm = H < 12 ? "AM" : "PM";
-			timeString = h + timeString.substr(2, 3) + " "+ampm;
-			 
-			theevent += "<br>&nbsp;&nbsp;Events of: " +day +'/'+ month + '/'+year + '&nbsp;&nbsp;    '+timeString+'<br>';
-			//theevent += 'Time: ' +  timeString + '\n';
-			theevent += '&nbsp;&nbsp;'+events[i][6];
-			theevent += '&nbsp;&nbsp;<b>' + events[i][8] + '</b><br>';
-			theevent +=  '&nbsp;&nbsp;'+events[i][5] + '<br>';
-			theevent +=  '&nbsp;&nbsp;'+events[i][7] + '<br>';
-			theevent += '<br><hr size=2 color=gray>';
-		//	document.forms.eventform.eventlist.value = theevent;
+	 
+			var ampm = H < 12 ? "am" : "pm";
+			timeString = h + timeString.substr(2, 3);
+
+
+			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
+
+				if(chkStr =='00')
+			{
+
+				jj=h + " "+ampm;
+			}
+			else
+			{
+				jj=timeString + " "+ampm;
+
+			}
 			
-		//   theevent1="<tr><td>"+day +'/'+ month + '/'+year+"</td><td>"+events[i][6] +"</td></tr>";
-		  // theevent1+="<tr><td>"+timeString+"</td><td>"+events[i][8] +"</td></tr>"; 
-		   //theevent1+="<tr><td>"+events[i][5]+"</td><td>"+events[i][7] +"</td></tr>"; 
- 		
+
+    var dat1 = new Date(events[i][3], events[i][1]-1, events[i][2]);
+			// alert(dat1);
+			 //alert(numbers);
+			var weekday1=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday");
+	                var n = weekday1[dat1.getDay()];
+	  	//alert('n'+n);
+			
+			 var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+			
+			
+			var mNam= month[dat1.getMonth()];
+		 //	 alert('nam+'+mNam) ;
+			
+			
+			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
+
+				if(chkStr =='00')
+			{
+
+				jj=h + " "+ampm;
+			}
+			else
+			{
+				jj=timeString + " "+ampm;
+
+			}
+			aName=events[i][7].replace(/\s/g, "_");
+		eName=events[i][8].replace(/\s/g, "_");
+		
+		
+ 
+		
+		if(chkVal1 =='1')
+			
+		{
+		clsName='chartme-btn-main';
+		 	alert('true');	
+		}
+	 
+		else
+			{
+				if(favS.indexOf(aName) !== -1)
+		   		{
+		   			clsName='arrowdown';
+			 	//alert('false exists');	
+		   
+		         	}
+				else
+				{
+				clsName='chartme-btn-main';
+				 	//alert('false not  exists');	
+		 
+				}
+			 	
+			}	
+		 
+		while(kkkk<1)
+		{
+		theevent+="<br><table class=ven1><tr height='40px'><td colspan=3><center><b>"+n+", " +events[i][2]+" "+mNam+" "+events[i][3]+"</b></center></td></tr></table>";
+			kkkk++;
+		}
+		//alert(theevent);	
+//	<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
+//<tr><td>row 2 col2</td> </tr>
+ // <tr><td>row 2 col2</td> </tr>
+		theevent+="<table class=testven>";
+theevent+="<tr ><td rowspan=3 width='30%'>"+events[i][5]+" at "+jj+"</td><td>"+events[i][6]+" - <b>"+events[i][8]+"</b></td><td  rowspan=3 width='10px'>"+"<button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";	theevent+="<tr><td>"+events[i][7]+"</td> </tr>";
+		theevent+="<tr><td>&nbsp;</font></td> </tr><tr><td colspan=3><hr></td></tr></table>";
+		 
+	
+		//theevent+="<div id='wrapper' style='background:white'><div id='left' style='background:white;padding-left:8px;'>"+events[i][5]+" at "+jj+"<br></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br><br></div></div> "	; 	
+	 
+ 
 		
 		
 		
@@ -409,6 +1413,7 @@ var floater = 0;
 		
 	}
 	 document.getElementById('dl_btn1').innerHTML=theevent;
+	 document.getElementById('xPort').innerHTML=theevent;
 	 
 }
 	
@@ -427,37 +1432,48 @@ return dayofmonth;
 }
 var ajaxResponse;
 var arr_store;
-function ajaxFunction()
+  function ajaxFunction()
 {
-	window.plugins.spinnerDialog.hide();
+
 	if(connSel=='Y')
 	{	
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://www.writeacademy.in/MMF/test.php', true);
-	xhr.onload = function(){
-    	//console.log(xhr);
-		//alert(xhr.responseText);
-	//document.getElementById("ajaxDiv").innerHTML = xhr.responseText;
-	document.getElementById('rest1').value=xhr.responseText;
+	xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       
+	   document.getElementById('rest1').value=xhr.responseText;
 	ajaxResponse=xhr.responseText;
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+	  //  window.plugins.spinnerDialog.hide();
 	procVal(ajaxResponse);
-	};
-	xhr.send();
+    }
+	else
+	{
+	//alert('Network error...Failed to load events. Try again..');
+	}
+	 
+};
+xhr.open("GET", 'http://www.writeacademy.in/MMF/test.php', true);
+xhr.send();
+
+
 	}
 	else
 	{
 	//	alert('no conn');
 	//	alert(document.getElementById('rest1').value);
+		 
 	procVal(document.getElementById('rest1').value);
 	}
-	window.plugins.spinnerDialog.hide();
+	
+	 
 }
-	function alertDismissed1()
+function alertDismissed1()
 	{
-	navigator.device.exitApp();
+//	navigator.device.exitApp();
 		//navigator.app.exitApp();
-	}
+}
 	
 		
 var latR;
@@ -466,7 +1482,11 @@ var venue_arr = new Array();
 	
 function procVal(pVar)
 {
-//multiArr=[];
+ //alert(connSel+'----'+pVar);
+	 if (pVar!='')
+	 {
+	  window.plugins.spinnerDialog.hide();
+	 }
 	//alert('Ajax Resp'+pVar);
 	locArr = pVar;
 	//document.getElementById('rest1').value=pVar;
@@ -475,6 +1495,8 @@ function procVal(pVar)
 	locArr=locArr.split('#');
 	events=[];
 	venue_arr=[];
+	artistArr=new Array();
+	//alert('locarr'+locArr);
 	for (var i = 0; i<locArr.length; i++) {
 		delimiter = ',';
 		start = 6;
@@ -498,6 +1520,7 @@ function procVal(pVar)
 		//multiArr.push([latR[2],latR[0],latR[1],dist]);
 		events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);
 		venue_arr.push([venue]);
+		artistArr.push(art);
 		//alert(events.length);
 		//write ajax response to text file
 		
@@ -507,41 +1530,25 @@ function procVal(pVar)
 	//testing();
 	uniq = remove_duplicates_safe(venue_arr);
 //	uniq = uniq.map(function(e) {  var result = {};    result['text'] =e[0];  result['value'] =e[0];   return result;});
- //alert(events);
+ //alert('array len'+events.length);
 }
 	
 
-	
-function remove_duplicates_safe(arr) {
-    var seen = {};
-    var ret_arr = [];
-    for (var i = 0; i < arr.length; i++) {
-        if (!(arr[i] in seen)) {
-            ret_arr.push(arr[i]);
-            seen[arr[i]] = true;
-        }
-    }
-    return ret_arr;
 
-}	
-var flg=false;	
-var lat2,long2;
-// Show the picker
-	
 
-	
 	function venueFilter()
 	{
+		active_page=1;
+		activePg=1;
 		var j;
-		checkConnection();
-		document.getElementById("lst_mnu").style.display="block";
-		document.getElementById("lst_mnu").style.visibility="true";
-		getLoc();
-		for (var i = 0, len = uniq.length; i < len; i++) {
-	//	 alert(uniq[i]);
-		}
-		// alert(uniq);
-		//lst_mnu.innerHTML='';
+		//checkConnection();
+		// $("#lst_mnu").slideToggle("slow");
+			//  $('#lst_mnu').toggle('slide','right',500);
+		 
+		$('#lst_mnu').show('slide', 400);
+		//document.getElementById("lst_mnu").style.display="block";
+		//document.getElementById("lst_mnu").style.visibility="true";
+		 
 		
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
@@ -549,12 +1556,12 @@ var lat2,long2;
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("det").style.display="none";
 		document.getElementById("det").style.visibility="false";
-		
+		document.getElementById("map").style.display="none";
+		document.getElementById("map").style.visibility="false";
 		document.getElementById("xPort1").style.display="none";
 		document.getElementById("xPort1").style.visibility="false";
 		
-		document.getElementById("csv").style.display="none";
-		document.getElementById("csv").style.visibility="false"; 
+		
 		
 		document.getElementById("xPort").style.display="none";
 		document.getElementById("xPort").style.visibility="false";
@@ -593,34 +1600,465 @@ var im_htm="<table border='0'  class='ven' cellpadding='0' cellspacing='0'>";
 if(uniq[j]=='d')
 {
 	 
-	im_htm+="<tr height='120px'> <td style='width: 100px; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni +">"+uniq[i]+"</button></td><td>&nbsp;</td> </tr>";
+	im_htm+="<tr height='120px'> <td style='width: 50%; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni +">"+uniq[i]+"</button></td><td>&nbsp;</td> </tr>";
  }
 		else
 		{
  
 			
-im_htm+="<tr height='120px'> <td style='width: 100px; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni +">"+uniq[i]+"</button></td> <td style='width: 100px; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni1+">"+uniq[j]+"</button></td> </tr>";
+im_htm+="<tr height='120px'> <td style='width: 50%; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni +">"+uniq[i]+"</button></td> <td style='width: 50%; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni1+">"+uniq[j]+"</button></td> </tr>";
 }
 	 i=j;
 	
 	}
 	
 document.getElementById('lst_mnu').innerHTML=im_htm+"</table>" ;
+		 
+}
+
+function login()
+{
+//alert('in');
+ activePg=2;
+	//alert('in loop');
+	document.getElementById("backmenu").style.display="block";
+	document.getElementById("backmenu").style.visibility="true";
+	document.getElementById("main").style.visibility="false";
+	document.getElementById("main").style.display="none";
+	document.getElementById("mainMenu").style.visibility="false";
+	document.getElementById("mainMenu").style.display="none";
+	document.getElementById("map").style.display="none";
+document.getElementById("map").style.visibility="false";
+document.getElementById("calendar").style.display="none";
+document.getElementById("calendar").style.visibility="false"; 
+document.getElementById("login").style.visibility="true";
+document.getElementById("login").style.display="block";
+document.getElementById("archive").style.visibility="false";
+document.getElementById("archive").style.display="none";
 	
+document.getElementById("det").style.display="none";
+document.getElementById("det").style.visibility="false";
+document.getElementById("lst_mnu").style.display="none";
+document.getElementById("lst_mnu").style.visibility="false";
+document.getElementById("dl_btn").style.display="none";
+document.getElementById("dl_btn").style.visibility="false";
+document.getElementById("dl_btn1").style.display="none";
+document.getElementById("dl_btn1").style.visibility="false";
+document.getElementById("category").style.display="none";
+document.getElementById("category").style.visibility="false";
+document.getElementById("xPort").style.display="none";
+document.getElementById("xPort").style.visibility="false";
+document.getElementById("xPort1").style.display="none";
+document.getElementById("xPort1").style.visibility="false";
+document.getElementById("tab").style.display="none";
+document.getElementById("tab").style.visibility="false";
+}
+function backSt() 
+	{
+		backbtn=1;
+		  activePg=2;
+		
+		 $('#category').show();
+		 $('#main').show();
+		 $('#mainMenu').show();
+		 $('#searchmenu').hide();
+		 $('#login').hide();
+		 $('#backmenu').hide();
+		 $('#xPort').hide();
+		$('#dl_btn').hide();
+		$('#archive').hide();
+		$('#map').hide();
+		//document.getElementById("login").style.visibility="false";
+		//document.getElementById("login").style.display="none";
+		//document.getElementById("category").style.display="block";
+		//document.getElementById("category").style.visibility="true";
+		//document.getElementById("main").style.display="block";
+	//	document.getElementById("main").style.visibility="true";
+	//	 document.getElementById("mainMenu").style.display="block";
+	//	document.getElementById("mainMenu").style.visibility="true"; 
+	//	document.getElementById("backmenu").style.display="none";
+	//	document.getElementById("backmenu").style.visibility="false";
+	//	document.getElementById("defaultOpen").click();
+}
+
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+	 activePg=1;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+	
+	if(cityName=='London')
+	{
+	optSel=2;
+	active_page=1;
+	calClick();
 	}
+	else if(cityName=='Paris')
+	{
+	optSel=3;
+	active_page=1;
+	venueFilter();
+	}
+	else if(cityName=='Tokyo')
+	{
+	optSel=1;
+	active_page=1;
+	 
+	category();
+	}
+}	
+
+
+		
+		function category()
+{
+	  
+ 
+		$('#category').show('slide', 400);
+		$('#xPort').hide();
+	  	activePg=1;
+	 		 
+		document.getElementById("xPort").style.visibility="false";
+		//document.getElementById("category").style.display="block";
+		//document.getElementById("category").style.visibility="true";
+		document.getElementById("login").style.display="none";
+		document.getElementById("login").style.visibility="false"; 
+		
+		document.getElementById("mainMenu").style.display="block";
+		document.getElementById("mainMenu").style.visibility="true"; 
+		document.getElementById("main").style.display="block";
+		document.getElementById("main").style.visibility="true";
+		// $('#searchmenu').hide();
+		$("#searchmenu").css("display","none");
+		document.getElementById("map").style.display="none";
+		document.getElementById("map").style.visibility="false";
+		
+		document.getElementById("backmenu").style.display="none";
+		document.getElementById("backmenu").style.visibility="false";
+		
+		document.getElementById("dl_btn1").style.display="none";
+		document.getElementById("dl_btn1").style.visibility="false";
+		document.getElementById("dl_btn").style.display="none";
+		document.getElementById("dl_btn").style.visibility="false";
+		document.getElementById("calendar").style.display="none";
+		document.getElementById("calendar").style.visibility="false";
+		document.getElementById("lst_mnu").style.display="none";
+		document.getElementById("lst_mnu").style.visibility="false";
+		
+		document.getElementById("xPort1").style.display="none";
+		document.getElementById("archive").style.visibility="false";
+		document.getElementById("archive").style.display="none";
+		document.getElementById("xPort1").style.visibility="false";
+		document.getElementById("rnd").style.display="none";
+		document.getElementById("rnd").style.visibility="false";
+		document.getElementById("det").style.display="block";
+		document.getElementById("det").style.visibility="true";
+		
+		document.getElementById("route_canvas").style.display="none";
+		document.getElementById("route_canvas").style.visibility="false"
+		document.getElementById("panel").style.display="none";
+		document.getElementById("panel").style.visibility="false";
+		  
+		
+}
+function storeLocal(un,pd) {
+ 
+	 
+  window.localStorage.setItem('key', un);
+ 
+}
+ 
+		
+ 	
+		
+function check() {
+
+     
+     var storedName = window.localStorage.getItem("key");
+// alert(storedName);
+      // check if stored data from register-form is equal to data from login form
+    if(window.localStorage.getItem("key")== null  || typeof(window.localStorage.getItem("key")) == "undefined" || window.localStorage.getItem("key")== ''  ) {
+         $('nav[role="main"]').slideAndSwipe();
+	//    alert('null'+window.localStorage.getItem("key"));
+    }else {
+           $('nav[role="sub"]').slideAndSwipe();
+	//     alert('data'+window.localStorage.getItem("key"));
+    }
+	 
+}		
+ function ajaxCall(n)   {
+	 var msg1;
+	 opt1=n;
+	 x=document.getElementById('usrname').value;
+	 y=document.getElementById('usrpwd').value;
+	 
+	 if(x!='' && y!='')
+	 {
+	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+
+	 if( !validateEmail(x)) 
+	 {
+	 var msg2='Invalid Email ID/Password';
+	 navigator.notification.alert(  msg2,   alertDismissed,  'Login',   'Done'  );
+      
+	 }
+	 else
+	 {
+	 //	 store(x,y);
+	
+	 var params = "unam=" + x +"&pwd=" + y+"&optionBtn=" + opt1; 
+	 var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+ 
+    if (this.readyState == 4) {
+	 //   alert(this.status);
+      if(this.status == 200 || this.status == 0){
+   	//	alert(this.responseText);
+	      if(this.responseText.charAt(0)=='1')
+	      {
+		      window.localStorage.setItem("key", x);
+		      check();
+	      }
+	      
+	      msg1=this.responseText.slice(1);
+	       navigator.notification.alert(msg1,   alertDismissed,  'Login',   'OK'  );
+	     
+    }
+    };
+  }
+  xhttp.open("POST", "http://www.writeacademy.in/MMF/userCheck.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(params);
+	 }	
+	 
+	 
+}	 
+	 else
+	 {
+	//	 alert('wrong');
+	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
+	 }
+	setTimeout(function(){  }, 29000);
+	document.getElementById("defaultOpen").click();
+
+
+
+}
+
+	function ajaxCallFn(e_mail)   {
+	 var msg1;
+	 opt1=n;
+		 
+	   e_mail=e_mail.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+
+	//alert(e_mail);
+	
+	 var params = "usrMail=" + e_mail; 
+	 var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+ 
+    if (this.readyState == 4) {
+	 //   alert(this.status);
+      if(this.status == 200 || this.status == 0){
+    	//alert(this.responseText);
+	      	     
+	       navigator.notification.alert(this.responseText,   alertDismissed,  'Forgot Password',   'OK'  );
+	     
+    }
+    };
+	}
+  xhttp.open("POST", "http://www.writeacademy.in/MMF/forgot_pass-mmf.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(params);
+		
+	 
+	setTimeout(function(){  }, 19000);
+	document.getElementById("defaultOpen").click();
+
+}	 
+	 
+
+
+
+function validateEmail($email) {
+  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  return emailReg.test( $email );
+}	
+function forgot_pass()
+	
+	{
+//	alert('in'); 
+		 activePg=2;
+	navigator.notification.prompt('Enter mail ID', onPrompt,   'Forgot Password',   ['Ok']     );
+		//  ajaxCallFn(mailForgot); 
+}
+	var mailForgot; 
+function onPrompt(results) {
+  //alert( results.input1);
+	if(results.input1!='')
+	{
+	var emailID=results.input1.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+	//	 mailForgot=emailID;
+	 if( !validateEmail(emailID)) 
+	 { 
+	 var msg2='Invalid Email ID';
+	 navigator.notification.alert(  msg2,   alertDismissed,  'Forgot Password',   'OK'  );
+      
+	 }
+	else
+	{
+		//alert('in'+emailID); 
+	// var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
+		
+		var params = "usrMail=" + emailID; 
+	 var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+ 
+    if (this.readyState == 4) {
+	 //   alert(this.status);
+      if(this.status == 200 || this.status == 0){
+    	//alert(this.responseText);
+	      	     
+	       navigator.notification.alert(this.responseText,   alertDismissed,  'Forgot Password',   'OK'  );
+	     
+    }
+    };
+	}
+  xhttp.open("POST", "http://www.writeacademy.in/MMF/forgot_pass-mmf.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(params);
+		
+	 
+	setTimeout(function(){  }, 19000);
+	document.getElementById("defaultOpen").click();
+		
+	
+
+		
+	}
+      
+	}
+	else
+	{
+	var msg2='Invalid Email ID';
+	 navigator.notification.alert(  msg2,   alertDismissed,  'Forgot Password',   'OK'  );
+      
+	 }
+}	
+		
+var file_upload='xport1.csv';	
+	
+	
+function archive()
+{
+	var config = {
+    title: "Select a Month", 
+    items: [
+        { text: "January", value: "1" },
+        { text: "February", value: "2" },
+        { text: "March", value: "3" },
+        { text: "April", value: "4" },
+        { text: "May", value: "5" },
+        { text: "June", value: "6" },  
+	{ text: "July", value: "7" },
+	{ text: "August", value: "8" },
+        { text: "September", value: "9" },
+        { text: "October", value: "10" },
+        { text: "November", value: "11" },
+        { text: "December", value: "12" } 
+        
+    ],
+    selectedValue: "July",
+    doneButtonLabel: "Done",
+    cancelButtonLabel: "Cancel"
+};	
+ activePg=2;
+// Show the picker
+window.plugins.listpicker.showPicker(config, 
+    function(item) { 
+   //   alert("You have selected " + item.text);
+	selMonth= item;
+	var url1 = "http://www.writeacademy.in/MMF/archiveTest.php"; 
+	doRequest(url1,selMonth);
+ 
+    },
+    function() { 
+      //  alert("You have cancelled");
+    }
+);
+}
+
+function doRequest(url,monSel) {
+	//alert(monSel);
+	var params = "arcMon=" + monSel; 
+	var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+ 
+    if (this.readyState == 4) {
+	 
+      if(this.status == 200 || this.status == 0){
+  
+    document.getElementById('rest2').value= this.responseText;
+	     
+	      if(this.responseText.length!=0)
+		 {
+		//  document.getElementById("archive").innerHTML = this.responseText;
+	    procValArc(document.getElementById('rest2').value); 
+		 }
+	        else {
+    		 navigator.notification.alert( 'No archive found..!',   alertDismissed,  'Archive',   'OK'  );
+    		}
+	      
+    }
+	     
+    }
+  };
+  xhttp.open("POST", url, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(params);
+}
+
+
+function alertDismissed() {
+            alert('Invalid');
+        }	
+
+ 
+
+	
 function calClick()
 	{
-		//alert('optsel'+optSel);
+		 alert('optsel');
 		optSel=2;
-		//alert('optsel'+optSel);
-		document.getElementById("calendar").style.display="block";
-		document.getElementById("calendar").style.visibility="true";
+		 activePg=1;
+		active_page=1; 
+		  document.getElementById("calendar").style.display="block";
+		  document.getElementById("calendar").style.visibility="true";
+		document.getElementById("archive").style.display="none";
+		document.getElementById("archive").style.visibility="false"; 
+	 	$('#calendar').show('slide', 400);
+		// $("#calendar").slideToggle("slow");
+		//	  $('#calendar').toggle('slide','right',500);	 
+		
+	//	
+		 
 		document.getElementById("category").style.display="none";
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("login").style.display="none";
 		document.getElementById("login").style.visibility="false";
 		document.getElementById("xPort").style.display="none";
 		document.getElementById("xPort").style.visibility="false";
+		document.getElementById("map").style.display="none";
+		document.getElementById("map").style.visibility="false";
 		document.getElementById("xPort1").style.display="none";
 		document.getElementById("xPort1").style.visibility="false";
 		document.getElementById("lst_mnu").style.display="none";
@@ -633,60 +2071,63 @@ function calClick()
 		document.getElementById("route_canvas").style.visibility="false"
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
-		document.getElementById("csv").style.display="none";
-		document.getElementById("csv").style.visibility="false"; 
-		checkConnection();
-	}
+		document.getElementById("archive").style.visibility="false";
+		document.getElementById("archive").style.display="none";
+			pth=111;
+		//  changedate('return');
+	//	  checkConnection();
+		 preloadimages();
+			 
 
-	function getDrive()
-	{
-	
-	//alert('in');
-	document.getElementById("route_canvas").style.display="block";
-	document.getElementById("route_canvas").style.visibility="true";
-	document.getElementById("panel").style.display="block";
-	document.getElementById("panel").style.visibility="true";
-	document.getElementById('panel').innerHTML = "";
-	var directionsService = new google.maps.DirectionsService();
-        var directionsDisplay = new google.maps.DirectionsRenderer();
 
-         var map = new google.maps.Map(document.getElementById('route_canvas'), {
-           zoom:7,
-           mapTypeId: google.maps.MapTypeId.ROADMAP
-         });
-        
-         directionsDisplay.setMap(map);
-         directionsDisplay.setPanel(document.getElementById('panel'));
-	//new google.maps.LatLng(position.coords.latitude,    position.coords.longitude), 13)
-      	origin  = new google.maps.LatLng(x,y);
-        destination = new google.maps.LatLng(lat2,long2);
-         var request = {
-		 
-           origin: origin, 
-           destination: destination,
-           travelMode: google.maps.DirectionsTravelMode.DRIVING
-         };
-    
-         directionsService.route(request, function(response, status) {
-           if (status == google.maps.DirectionsStatus.OK) {
-             directionsDisplay.setDirections(response);
-           }
-         });
-	}
+
+}
+
+		
+chkFav=[];
+chkNotFav=[];
 var table_string;
-	
+function stringIsEmpty(value) {
+//	alert(value);
+    if( typeof(value) === 'undefined' || value === null ){
+	    
+    return true;
+}
+    else 
+    {
+        return false;
+    
+    }
+
+}
+
+		
+		
 function ven_det(v)
 {
-	
+ 
 	k=0;
-	//venue=String(latR[1]);
-	v=v.replace(/_/g, " ");
+	 
+	 activePg=5;
 	
+	v=v.replace(/_/g, " ");
+	 
+	
+	 
+	
+	var favS= window.localStorage.getItem("favShows");
+	//var NotfavS= window.localStorage.getItem("NotfavShows");
+	
+	
+	active_page=2;
 	document.getElementById("xPort").style.display="block";
 	document.getElementById("xPort").style.visibility="true";
+	document.getElementById("map").style.display="block";
+	document.getElementById("map").style.visibility="true";
 	document.getElementById("xPort1").style.display="block";
 	document.getElementById("xPort1").style.visibility="true";
-	
+	document.getElementById("archive").style.display="none";
+	document.getElementById("archive").style.visibility="false";
 	document.getElementById("lst_mnu").style.display="none";
 	document.getElementById("lst_mnu").style.visibility="false";
 	document.getElementById("dl_btn").style.display="block";
@@ -702,47 +2143,215 @@ function ven_det(v)
  {
 	if(events[i][5]==v)
 	{
-		//alert('in');
+		 
 		if(k==0)
 		{
-			//alert('in2');
-			ev_lst+="<tr height='90px'><td colspan=3 align='center'><font size=3>"+v+"- Schedule</font></td></tr>";
+			 
+			ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+v+"</font></td></tr> </table>";
 		}
 		k++;
 		hours=String(events[i][4]);
 			var timeString = hours;
 			var H = +timeString.substr(0, 2);
 			var h = H % 12 || 12;
-			var ampm = H < 12 ? "AM" : "PM";
-			timeString = h + timeString.substr(2, 3) + " "+ampm;
+			var ampm = H < 12 ? "am" : "pm";
+			timeString = h + timeString.substr(2, 3);
 		calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
-	
-		ev_lst+="<tr align='center'><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
-	ev_lst+=events[i][6]+'<br>'+'<br>';
-	ev_lst+=events[i][8]+'<br>';
-	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
-		
-		
-//	evt_lst+="<tr valign='top' height='100px'><td > "+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+"<br>"+timeString+"</td><td>&nbsp;&nbsp;"+events[i][6]+"&nbsp;&nbsp;&nbsp;<b>"+events[i][8]+"</b>&nbsp;&nbsp;"+events[i][7]+"</td></tr>";
-	
-	//	evt_lst+="<tr valign='top'><td bordercolor='black'> &nbsp;&nbsp;"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+"</td><td rowspan=2>"+events[i][6]+"</td><td><b>"+events[i][8]+"</b></td></tr>";
-		
-	//	evt_lst+="<tr valign='top'><td bordercolor='white'>"+timeString+"</td><td bordercolor='white'>"+events[i][7]+"</td></tr>";
+		storeDate=events[i][2]+"/"+events[i][1]+"/"+events[i][3];
+		var dat1 = new Date(events[i][3], events[i][1]-1, events[i][2]);
+			//alert(dat1);
+			//alert(numbers);
+			var weekday1=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday");
+	                var n = weekday1[dat1.getDay()];
+		 	//alert('n'+n);
+			
+			 var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+			
+			
+			var mNam= month[dat1.getMonth()];
+			// alert('nam+'+mNam) ;
+			
+		//	events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);	
+			
+			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
+
+				if(chkStr =='00')
+			{
+
+				jj=h + " "+ampm;
+			}
+			else
+			{
+				jj=timeString + " "+ampm;
+
+			}
 			
 		
+		aName=events[i][7].replace(/\s/g, "_");
+		eName=events[i][8].replace(/\s/g, "_");
+		
+		
+		
+		//chkValue1=stringIsEmpty(favS);
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkVal1 ='1' ;
+	//  alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+  //...
+}
+	else
+	{
+	var favS= window.localStorage.getItem("favShows");
+	//chkValue1=stringIsEmpty(favS);
+	  	chkVal1 ='2' ;
 	}
-	// table_string=evt_lst;
+	 
+	
+		
+	if(chkVal1 =='1')
+			
+		{
+		clsName='chartme-btn-main';
+		//	alert('true');	
+		}
+	 
+		else
+			{
+				if(favS.indexOf(aName) !== -1)
+		   		{
+		   			clsName='arrowdown';
+				//	alert('false exists');	
+		   
+		         	}
+				else
+				{
+				clsName='chartme-btn-main';
+				//	alert('false not  exists');	
+		   //
+				}
+			 	
+			}	
+		 
+		 
+		
+			
+			
+	ev_lst+="<table border='0' id='test' class='testven' cellpadding='0' cellspacing='0'>";		
+			
+			
+		
+		 
+//alert(favS+'-'+NotfavS+'-'+clsName);
+  ev_lst+="<tr><td width='35%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr></table>"; 
+		}
+		
+	 
+		
+	 
+	 
 	 calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
- document.getElementById('xPort').innerHTML=ev_lst+"</table>" ;
+ document.getElementById('xPort').innerHTML=ev_lst ;
 	
+ 
+	v1=v.replace(/ /g, "+");
+ 
+	 
 
- }
-//alert('venue '+v);
 }
-	  
+		 getLoc();
 	
+	
+width= window.innerWidth;	   // |//| document.body.clientWidth,
+  height= window.innerHeight;	   //|| document.body.clientHeight
+  
+var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+        +v1+",Chennai&zoom=17&size="+width+"x300&markers=color:blue%7Clabel:S%7C11211%7C11206%7C11222&sensor=false";
+	
+ 
+        document.getElementById("map").innerHTML="<img src='"+img_url+"'>";	 
+ }
+		
+	var favAddStr;	
+	
+var favArr = [];
+var NotfavArr = [];
+
+		
+		
+		function favAddShows11(fav,el)
+		{
+			
+		if($(el).hasClass("arrowdown"))
+	{
+		alert('1');
+	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
+		var favHst=window.localStorage.getItem("favShows");
+		// var pattern = /\bproprietary\b/ig;
+   		favHst= favHst.replace(fav,"");
+		window.localStorage.setItem('favShows',favHst);
+		newfavS=window.localStorage.getItem("favShows");
+		//alert('new'+newfavS);
+	}	
+			else
+			{
+			alert('2');
+			 $(el).addClass('arrowdown').removeClass('chartme-btn-main'); 
+		
+	  
+		var favHst=window.localStorage.getItem("favShows");
+			// 	alert('fav-before '+favHst);
+				
+				favArr.length = 0;
+			//	alert('favarr'+favArr);
+		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
+		{
+		 	 alert('3');
+			favArr.push(favHst);
+		}
+	alert('4');
+	    
+ 		favArr.push([fav]);
+	      window.localStorage.setItem('favShows',favArr);
+				var favUpd=window.localStorage.getItem("favShows");
+				// alert('fav -after'+favUpd);
+			}
+		
+		}
+		
+		
+		
+		
+	
+		
+		 
+function getLoc() 
+{
+	
+    // nothing
+ 
+	if (navigator.geolocation)
+          {
+            //navigator.geolocation.getCurrentPosition(myMap);
+          }
+        else
+          {
+                document.getElementById("map").innerHTML="Network error. Connect to internet...";
+          }
+
+} 
 	
 function printData()
 {
@@ -764,88 +2373,6 @@ function printData()
 			
 });	
 
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-	
-	if(cityName=='London')
-	{
-	optSel=2;
-	calClick();
-	}
-	else if(cityName=='Paris')
-	{
-	optSel=3;
-	venueFilter();
-	}
-	else if(cityName=='Tokyo')
-	{
-	optSel=1;
-	category();
-	}
-}	
-
-	
-	function category()
-	{
-	//alert('in');
-		
-	document.getElementById("defaultOpen").click();
-			checkConnection();
-		document.getElementById("category").style.display="block";
-		document.getElementById("category").style.visibility="true";
-		document.getElementById("main").style.display="block";
-		document.getElementById("main").style.visibility="true";
-		 document.getElementById("mainMenu").style.display="block";
-		document.getElementById("mainMenu").style.visibility="true"; 
-		document.getElementById("backmenu").style.display="none";
-		document.getElementById("backmenu").style.visibility="false";
-		document.getElementById("login").style.display="none";
-		document.getElementById("login").style.visibility="false"; 
-		document.getElementById("csv").style.display="none";
-		document.getElementById("csv").style.visibility="false"; 
-		
-		
-		document.getElementById("archive").style.display="none";
-		document.getElementById("archive").style.visibility="false"; 
-		
-		document.getElementById("dl_btn1").style.display="none";
-		document.getElementById("dl_btn1").style.visibility="false";
-		document.getElementById("dl_btn").style.display="none";
-		document.getElementById("dl_btn").style.visibility="false";
-		document.getElementById("calendar").style.display="none";
-		document.getElementById("calendar").style.visibility="false";
-		document.getElementById("lst_mnu").style.display="none";
-		document.getElementById("lst_mnu").style.visibility="false";
-		document.getElementById("xPort").style.display="none";
-		document.getElementById("xPort").style.visibility="false";
-		document.getElementById("xPort1").style.display="none";
-		document.getElementById("xPort1").style.visibility="false";
-		
-		document.getElementById("rnd").style.display="none";
-		document.getElementById("rnd").style.visibility="false";
-		document.getElementById("det").style.display="block";
-		document.getElementById("det").style.visibility="true";
-		
-		document.getElementById("route_canvas").style.display="none";
-		document.getElementById("route_canvas").style.visibility="false"
-		document.getElementById("panel").style.display="none";
-		document.getElementById("panel").style.visibility="false";
-		 
-	
-		 
-		
-	}
-	document.getElementById("defaultOpen").click();
 var calEvt='';
 var calEvtDetails='';
 var calEvt1=[];
@@ -855,7 +2382,7 @@ var calEvtDetails1=[];
 function eventList(eVal)
 {
 //alert('eval'+eVal);
-
+ activePg=2;
 document.getElementById("xPort").style.display="block";
 document.getElementById("xPort").style.visibility="true";
 	document.getElementById("xPort1").style.display="block";
@@ -867,12 +2394,12 @@ document.getElementById("dl_btn").style.display="block";
 document.getElementById("dl_btn").style.visibility="true";
 document.getElementById("category").style.display="none";
 document.getElementById("category").style.visibility="false";
-document.getElementById('xPort').innerHTML='' ;
+//document.getElementById('xPort').innerHTML='' ;
 var catSel;
 
 if(eVal=='1' || eVal==1)
 {
-	catSel='Vocal';
+	catSel='Concert';
 }else if(eVal=='2' || eVal==2)
 {
 	catSel='Dance';
@@ -892,105 +2419,227 @@ catSel='Meetup';
 }
 calEvt ='';
 	calEvtDetails='';
-//alert(catSel);
+	//alert(catSel);
+	// alert(events.length);
+	//alert(window.localStorage.getItem("favShows").indexOf(','));
 	var ev_lst='';
-var ev_lst="<table border='0' id='test' class='ven1' cellpadding='0' cellspacing='0'>";
-ev_lst+="<tr height='40px' bgcolor='white'><td colspan=3 align='center'><b>"+  catSel +"   Schedule</b></td></tr>";
+	//   if(window.localStorage.getItem("key")== null  || typeof(window.localStorage.getItem("key")) == "undefined" || window.localStorage.getItem("key")== '') {
+
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkVal1 ='1' ;
+	//  alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+  //...
+}
+	else
+	{
+	var favS= window.localStorage.getItem("favShows");
+	//chkValue1=stringIsEmpty(favS);
+	  	chkVal1 ='2' ;
+	}
+	
+//var ev_lst="<br><center><b>"+  catSel +"</center></b><br>";
+	var ev_lst="<table border='1' id='test'  class='ven1' cellpadding='0' cellspacing='0'>";
+	ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+catSel+"</font></td></tr></table> ";
+	var heading1=ev_lst;
 for (var i = 0, len = events.length; i < len; i++)
 {
+	
+
 	cat1=events[i][6];
 	if(catSel==cat1)
 		{
-			
+			//alert(ev_lst);
+			//alert(events[i][3]);
+			//alert(events[i][1]);
+			//alert(events[i][2]);
 			hours=String(events[i][4]);
+			
 			var timeString = hours;
 			var H = +timeString.substr(0, 2);
 			var h = H % 12 || 12;
-			var ampm = H < 12 ? "AM" : "PM";
-			timeString = h + timeString.substr(2, 3) + " "+ampm;
-		calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
+			var ampm = H < 12 ? "am" : "pm";
+			timeString = h + timeString.substr(2, 3)  ;
+			calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
+			//dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
+			//var from = events[i][2]+'-'+events[i][1]+'-'+events[i][3]; 
+			//var numbers = from.match(/\d+/g); 
+			var dat1 = new Date(events[i][3], events[i][1]-1, events[i][2]);
+			//alert(dat1);
+			//alert(numbers);
+			var weekday1=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday");
+	                var n = weekday1[dat1.getDay()];
+		 //	alert('n'+n);
 			
-	//	evt_lst+="<tr valign='top' height='100px'><td> "+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+'<br>'+timeString +"</td><td>&nbsp;&nbsp;"+events[i][5]+"</td><td>&nbsp;&nbsp;"+"<b>"+events[i][8]+"</b>&nbsp;&nbsp;"+events[i][7]+"</td></tr>";
+			 var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
 			
-	//	evt_lst+="<tr valign='top' height='25px'><td> &nbsp;&nbsp;"+events[i][2]+"."+events[i][1]+"."+events[i][3]+"</td><td rowspan=2>"+events[i][5]+"</td><td>"+"<b>"+events[i][8]+"</b></td></tr>";	
 			
-	//	evt_lst+="<tr valign='top' height='25px'><td> "+timeString+"</td><td>"+events[i][7]+"</td></tr>";
-			//calArray+=events[i][3]+'/' +events[i][1]+"/"+events[i][2]+'&';
-		//	calArrayDetails+=events[i][5]+'-'+events[i][8]+'-'+'%';
+			var mNam= month[dat1.getMonth()];
+			// alert('nam+'+mNam) ;
+			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
+
+				if(chkStr =='00')
+			{
+
+				jj=h + " "+ampm;
+			}
+			else
+			{
+				jj=timeString + " "+ampm;
+
+			}
 			
-	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
+		aName=events[i][7].replace(/\s/g, "_");
+		eName=events[i][8].replace(/\s/g, "_");
+		
+		
+		// alert(chkVal1+'--  '+aName+'--'+eName);	
+ 
 			
+		if(chkVal1 =='1')
 			
-	ev_lst+=events[i][5]+'<br>'+'<br>';
-	ev_lst+=events[i][8]+'<br>';
-	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
-		//	calEvt+=events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
-		//	calEvtDetails+=events[i][5]+'  '+events[i][8]+'%';
-	//  ev_lst+=events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+'<br>'+events[i][5]+'<br>'+ events[i][8]+'<br>'+events[i][7]+'<br><hr size=2>';
-		//alert('evlst'+ev_lst);	
+		{
+		clsName='chartme-btn-main';
+		//	alert('true');	
+		}
+	 
+		else
+			{
+				if(favS.indexOf(aName) !== -1)
+		   		{
+		   			clsName='arrowdown';
+				//	alert('false exists');	
+		   
+		         	}
+				else
+				{
+				clsName='chartme-btn-main';
+				//	alert('false not  exists');	
+		   //
+				}
+			 	
+			}	
+		 
+		 
+//alert(chkVal1+'-'+clsName);
+	dayStr1=String(events[i][2])+"/"+String(events[i][1])+"/"+String(events[i][3]);
+			 ev_lst+="<table border='1' id='test'  class='testven' cellpadding='0' cellspacing='0'>";
+  ev_lst+="<tr ><td rowspan=3  width='35%'> &nbsp;&nbsp;"+events[i][5]+"</td><td ><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=3 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
+ //ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b><button id=bookRef1 class='btn btn-default active' onclick='bookTkt1(this.value)' value="+dayStr1+">"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></button></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";		
+ 	ev_lst+="<tr ><td>"+events[i][8]+"</td> </tr>";
+ //		ev_lst+="<tr><td><button id=bookRef2  class='btn btn-default active'  onclick='bookTkt2(this.value)' value="+eName+">"+events[i][8]+"</button></td> </tr>";	
+	
+	 		ev_lst+="<tr ><td>"+events[i][7]+"</td> </tr>";
+	 //		ev_lst+="<tr><td><button id=bookRef3  class='btn btn-default active'  onclick='bookTkt3(this.value)' value="+aName+">"+events[i][7]+"</button></td> </tr>";	
+	ev_lst+="<tr><td colspan=3><hr></td></tr></table>";
+//	ev_lst+="<div id='wrapper'><div id='left'>"+events[i][5]+"</div><div id='right'><b>" +n+", " +events[i][2]+" "+mNam+" "+' '+jj+'</b><br><font color=#6a737d>'+'<br>'+events[i][8]+'<br><br>'+events[i][7]+"</font><br><br></div></div> "	;		
+	 
+	 
+			
 		}
  
 } 
-//document.getElementById('xPort').innerHTML=evt_lst+"</table>" ;
-//	alert('evlst'+ev_lst);
+ 
 	ev_lst = ev_lst.replace('undefined','');
 	calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
-	document.getElementById('xPort').innerHTML=ev_lst +"<table>";
-	//alert(calEvt);
-}
-	
-	
-function eventChecking()
+ 
+	if(heading1==ev_lst)
 	{
-	for (var i = 0; i < events.length; i++) {
-			alert(events[i][2]+"-"+events[i][1]+"-"+events[i][3]);
-			
-		}
-	alert(events.length);
-	
-	
+		ev_lst=heading1+'<tr><td>No events to show ...</td><tr></table>';
 	}
+	document.getElementById('xPort').innerHTML=ev_lst;
+	 
+ 
+}
 
-	
+		function bookTkt1(bookID1)
+		{
+		alert(bookID1);
+		}
+		
+		
+		
+		function bookTkt2(bookID2)
+		{
+		alert(bookID2);
+		}
+		function bookTkt3(bookID3)
+		{
+		alert(bookID3);
+		}
+function passBookIDInf()
+{
+		
+		
+}
+		
+		
 function calAdd()
 	
 {
-	
 	
 	calEvt1=calEvt.split('&');
 	 calEvtDetails1=calEvtDetails.split('%');
 	 
 	 
 	for (var i = 0; i <calEvt1.length-1; i++) {
-		alert(calEvt1[i]);
-	// Start date and time of the event
+ 
   var startDate = new Date(calEvt1[i]);
-  // End date and time of the event 
+  
   var endDate = new Date(calEvt1[i]);
-  // Title of the event 
-  var title = "Madras Music Miscellany";
-  // Location of the event 
+   
+  var title = "Madras Music & Miscellany";
+  
   var location = "Chennai";
-  // Description about the event 
+  
   var notes = calEvtDetails1[i];
-
-
- //alert(startDate);
-	//	alert(endDate);
-	//	alert(notes);
-    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
-  var calsuccess = function(message) {
-    navigatore.notification.alert("Event added successfully.");
-	  alert("Event added successfully.");
+		 
+ var success = function(message) { 
+     alert("Success: " + JSON.stringify(message)); 
   };
-  var calerror = function(message) { 
-    navigatore.notification.alert("Error occurred while adding the event.");
+  var error = function(message) { 
+     alert("Error: " + message); 
   };
+
+  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+
+	//	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
+   //var calsuccess = function(message) { navigator.notification.alert('Schedule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');
+	//			       alert("Event added successfully.");
+	//			      };
+  //var calerror = function(message) { alert("Error: " + message); };
+ 
+// window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,calsuccess,calerror);
+
 	}
+  
+ 
+   
+	 
 }	
+function fav()
+	{
+	
+var favItm= $("#xPort").html();
+	var regex = /(<([^>]+)>)/ig;
+	 favItm = favItm.replace(regex, " ");
 
+   favItm = favItm.replace(/&nbsp;/g,'');
+		
+	}
 	
 function share()
 {
@@ -1003,9 +2652,7 @@ function share()
    message = message.replace(/&nbsp;/g,'');
 	
 	
-//	window.plugins.socialsharing.share('MMM','Madras Music & Miscellany','Testing',null);
-//setTimeout(function(){ navigator.notification.alert('Image Shared Successfully...',  alertDismissed,   'DigiGraph',   'OK'); },8000);
-//window.plugins.socialsharing.share('Optional message',  'Optional title','default.pdf',null);	
+ 
 window.plugins.socialsharing.share(message); 
 }
 	
@@ -1021,329 +2668,6 @@ navigator.notification.alert('Share Failed...',  alertDismissed,   'Madras Music
 function alertDismissed() {
             // do
 			}	
-function login()
-{
-//alert('in');
- 
-	//alert('in loop');
-	document.getElementById("backmenu").style.display="block";
-	document.getElementById("backmenu").style.visibility="true";
-	document.getElementById("main").style.visibility="false";
-	document.getElementById("main").style.display="none";
-	document.getElementById("mainMenu").style.visibility="false";
-	document.getElementById("mainMenu").style.display="none";
-	document.getElementById("archive").style.display="none";
-		document.getElementById("archive").style.visibility="false"; 
-document.getElementById("calendar").style.display="none";
-document.getElementById("calendar").style.visibility="false"; 
-document.getElementById("login").style.visibility="true";
-document.getElementById("login").style.display="block";
-document.getElementById("csv").style.display="none";
-document.getElementById("csv").style.visibility="false"; 
-document.getElementById("det").style.display="none";
-document.getElementById("det").style.visibility="false";
-document.getElementById("lst_mnu").style.display="none";
-document.getElementById("lst_mnu").style.visibility="false";
-document.getElementById("dl_btn").style.display="none";
-document.getElementById("dl_btn").style.visibility="false";
-document.getElementById("dl_btn1").style.display="none";
-document.getElementById("dl_btn1").style.visibility="false";
-document.getElementById("category").style.display="none";
-document.getElementById("category").style.visibility="false";
-document.getElementById("xPort").style.display="none";
-document.getElementById("xPort").style.visibility="false";
-document.getElementById("xPort1").style.display="none";
-document.getElementById("xPort1").style.visibility="false";
-document.getElementById("tab").style.display="none";
-document.getElementById("tab").style.visibility="false";
-	}
-//var el = document.getElementById("display");
-//el.addEventListener("click", function(){alert("click1 triggered")}, false);
-//el.addEventListener("click", function(){alert("click2 triggered")}, false);	
- 
-function authusr()
-{
-//	alert('in');
-	
-	 
- //data: { userID : userID }
-	//$.ajax({    //create an ajax request to load_page.php
-      //    type: "POST",
-     //     url: 'http://www.writeacademy.in/MMF/authUsr.php',             
-    //      dataType: "html",
-  //        data: {
-  //            "unam": $('#usrname').val(),
-//	      "pwd": $('#usrpwd').val(),  
- //         },            
- //         success: function(data) {
-//     obj = JSON.parse(data);
-//     if (obj && obj.success === true) {
- //       document.getElementById('responsecontainer').innerHTML=data;
-//     }
- //  },
-//   error: function(e) {
- //    alert('Error: ' + e.message);
-//   }
-//});
-     
-	 
-}
- 
- function ajaxCall() {
-	 
-	 //alert('in');
-	 x=document.getElementById('usrname').value;
-	 y=document.getElementById('usrpwd').value;
-		var params = "unam=" + x +"&pwd=" + y; 
-	 var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-	  //alert(this.readyState);
-    if (this.readyState == 4) {
-	 //   alert(this.status);
-      if(this.status == 200 || this.status == 0){
-   //   document.getElementById("responsecontainer").innerHTML = this.responseText;
-	      alert(this.responseText);
-    }
-    }
-  };
-  xhttp.open("POST", "http://www.writeacademy.in/MMF/authUsr.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send(params);
-		
- 
-}
-
-var filePath;
-function uploadSchedule()
-{
-	alert('in');
-	//  filePath = "/storage/emulated/0/Download/xport1.csv";
-	//  filePath = "file:///storage/emulated/0/Mmf/xport1.csv";
-	filePath = "file:///storage/emulated/0/Android/media/com.phonegap.helloworld/MMF/xport1.csv";
-	 //filePath = "file:///storage/emulated/0/Android/data/mmf/xport1.csv";
-	alert(filePath);
-  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
-  window.resolveLocalFileSystemURI(filePath, onResolveSuccess, failu1);
-}
-function onFileSystemSuccess(fileSystem) {
-        alert('filesys name '+fileSystem.name);
-    }
-
-    function onResolveSuccess(fileEntry) {
-        alert('file entry '+fileEntry.name);
-	     alert("Let's upload!!!" + filePath+'--'+fileEntry.name)
-   var fileURL=filePath;
-   var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
-   var options = new FileUploadOptions();
-   options.fileKey = "file";
-  options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
-    alert(options.fileName);
-   options.mimeType = "text/plain";
-   options.chunkedMode = true;
-	
-   var headers = {'headerParam':'headerValue'};
-   options.headers = headers;
-   var ft = new FileTransfer();
-   ft.upload(fileURL, uri, onUSuccess, onUError, options);
-	
-	    
-    }
-	
-	function failu1(error) {
-	 
-        alert('error code= '+error.code);
-    }	
- 
-
-    function failu(error) {
-	 
-        alert('error '+error.code);
-    }	
- 
-function onUSuccess(r) {
-      console.log("Code = " + r.responseCode);
-      console.log("Response = " + r.response);
-      console.log("Sent = " + r.bytesSent);
-   }
-
-   function onUError(error) {
-      alert("An error has occurred: Code = " + error.code);
-      alert("upload error source " + error.source);
-      alert("upload error target " + error.target);
-   }
-	
-function readCSV()
-{
-
-	alert('in');	
-	//document.getElementById('rest1').style.display="block";
- 
-	document.getElementById("csv").style.display="block";	
-	document.getElementById("csv").style.visibility="true";
-	document.getElementById("backmenu").style.display="block";
-	document.getElementById("backmenu").style.visibility="true";
-	document.getElementById("category").style.display="none";
-	document.getElementById("category").style.visibility="false";
-	
-	document.getElementById("main").style.visibility="false";
-	document.getElementById("main").style.display="none";
-	document.getElementById("mainMenu").style.visibility="false";
-	document.getElementById("mainMenu").style.display="none";
-document.getElementById("calendar").style.display="none";
-document.getElementById("calendar").style.visibility="false"; 
-document.getElementById("login").style.visibility="false";
-document.getElementById("login").style.display="none";
-document.getElementById("det").style.display="none";
-document.getElementById("det").style.visibility="false";
-document.getElementById("lst_mnu").style.display="none";
-document.getElementById("lst_mnu").style.visibility="false";
-document.getElementById("dl_btn").style.display="none";
-document.getElementById("dl_btn").style.visibility="false";
-document.getElementById("dl_btn1").style.display="none";
-document.getElementById("dl_btn1").style.visibility="false";
-
-document.getElementById("xPort").style.display="none";
-document.getElementById("xPort").style.visibility="false";
-document.getElementById("xPort1").style.display="none";
-document.getElementById("xPort1").style.visibility="false";
-document.getElementById("tab").style.display="none";
-document.getElementById("tab").style.visibility="false";
-	
- var url = "readCSV.php"; 
-	
-	
-	var xhr1 = new XMLHttpRequest();
-	xhr1.open('GET', url, true);
-	xhr1.onload = function(){
-     
-	document.getElementById('rest2').value=xhr1.responseText;
-	};
-	xhr1.send();
-	
-//document.getElementById('csv').innerHTML=xhr1.responseText;
-
-	
-   
-  
-}
- 
-	
-function archive1()
-{
-var config = {
-    title: "Select a Fruit", 
-    items: [
-        { text: "Orange", value: "orange" },
-        { text: "Apple", value: "apple" },
-        { text: "Watermelon", value: "watermelon" },
-        { text: "Papaya", value: "papaya" },
-        { text: "Banana", value: "banana" },
-        { text: "Pear", value: "pear" }         
-    ],
-    selectedValue: "papaya",
-    doneButtonLabel: "Done",
-    cancelButtonLabel: "Cancel"
-};
-
-// Show the picker
-window.plugins.listpicker.showPicker(config, 
-    function(item) { 
-        alert("You have selected " + item);
-    },
-    function() { 
-        alert("You have cancelled");
-    }
-);	
-}
- 
-	
-	
-	
-	function archive()
-{
-//alert('in');
- 
-	//alert('in loop');
-	document.getElementById("backmenu").style.display="block";
-	document.getElementById("backmenu").style.visibility="true";
-	document.getElementById("main").style.visibility="false";
-	document.getElementById("main").style.display="none";
-	document.getElementById("mainMenu").style.visibility="false";
-	document.getElementById("mainMenu").style.display="none";
-document.getElementById("calendar").style.display="none";
-document.getElementById("calendar").style.visibility="false"; 
-document.getElementById("archive").style.visibility="true";
-document.getElementById("archive").style.display="block";
-document.getElementById("csv").style.display="none";
-document.getElementById("csv").style.visibility="false"; 
-document.getElementById("det").style.display="none";
-document.getElementById("det").style.visibility="false";
-document.getElementById("lst_mnu").style.display="none";
-document.getElementById("lst_mnu").style.visibility="false";
-document.getElementById("dl_btn").style.display="none";
-document.getElementById("dl_btn").style.visibility="false";
-document.getElementById("dl_btn1").style.display="none";
-document.getElementById("dl_btn1").style.visibility="false";
-document.getElementById("category").style.display="none";
-document.getElementById("category").style.visibility="false";
-document.getElementById("xPort").style.display="none";
-document.getElementById("xPort").style.visibility="false";
-document.getElementById("xPort1").style.display="none";
-document.getElementById("xPort1").style.visibility="false";
-document.getElementById("tab").style.display="none";
-document.getElementById("tab").style.visibility="false";
-
-
-}
-
-function doRequest(url) {
-	alert(url);
-   var xhr1 = new XMLHttpRequest();
-xhr1.open("GET",url, true);
-xhr1.onload = function (e) {
-  if (xhr1.readyState === 4) {
-    if (xhr1.status === 200) {
-     // alert(xhr1.responseText);
-	    document.getElementById('rest2').value=xhr1.responseText;
-	    procValArc(document.getElementById('rest2').value); 
-	
-    } else {
-     alert(xhr1.statusText);
-    }
-  }
-};
-xhr1.onerror = function (e) {
-  alert(xhr1.statusText);
-};
-xhr1.send(null);
-}
-	
-	
-	 
-
-	
- 
-	
-	
- function getval( )
-{ 
-	//alert('in');
-	 
-        var sel = document.getElementById("monNam");
-     alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
-    // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
-	//var url = "http://www.writeacademy.in/MMF/archive.php"; 
-	 var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
-doRequest(url1);
- 
-	//procValArc(document.getElementById('rest2').value); 
-	
-	 
-	
-	
-	
-}
-//events1=new Array();	
 
 function procValArc(pVar)
 {
@@ -1376,465 +2700,283 @@ function procValArc(pVar)
 		eYr=dt2.getFullYear();
 		 
 		events1.push(["",String(eMon),String(eDat1),String(eYr),pTim,venue,pnam,Pdeta,art]);
-		 
-		 
-		}
-	alert('len '+events1.length);
-	// displayArchive();
-}
-	
-n
-</script>
-	<style type="text/css">
-		.nav ul {
-          margin: 0;
-          padding: 2%;
-          list-style: none;
-		  
-      }
-      .nav ul li {
-          margin: 0;
-	    color: black;  
-		  
-      }
-      .nav ul li a {
-          padding: 15px 20px;
-          font-size: 13px;
-          font-weight: 100;
-          color: black;
-          text-decoration: none;
-          display: block;
-          border-bottom: 1px solid #C9223D;
-		  
-		   
-          -webkit-transition:  background 0.3s ease-in-out;
-          -moz-transition:  background 0.3s ease-in-out;
-          -ms-transition:  background 0.3s ease-in-out;
-          -o-transition:  background 0.3s ease-in-out;
-          transition:  background 0.3s ease-in-out;
-      } 	
-      .nav ul li:hover a {
-          background: #C9223D;
-      }
-	  
-	  
-		
-		body, html {
-    width: 100%; !important;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    
-}
-.btn24
-	
-	{
-	width:100%;
-	height:100%;
-	background-color:#f2f2f2; border:block; padding: 2;  display:inline-block; font-weight: bold; color: black;
-	border-radius:6px;
-    -moz-border-radius:6px;
-	}
-.names { font-weight: bold; 
-		text-align:left;}
-
-		.ven_cal
-		{
-		 width: 100vw;
-		font-size: 8pt;
-			background-color: #eeedf0;
-    border-color: #eeedf0;
-	  border-collapse:separate;
- 
-/*    border-radius:6px;*/
-  /*  -moz-border-radius:6px;*/
-		}
-		
-		
-.ven
-{
-width: 100vw;
-text-align:center; 
-	
-/*			border-style: solid;*/
-  /*  border-color: black;*/
-		}
-		.ven1
-		{
-		 width: 100vw;
-		font-size: 11pt;
 			 
-	  border-collapse:separate;
-/*   padding-left:6px;*/
-/*    border-radius:6px;*/
-  /*  -moz-border-radius:6px;*/
-		}
-.ven2
-		{
-		 width: 100vw;
-			  
-			border-style: solid;
-			font-size: 9pt;
- */   border-color: black;*/
-	  border-collapse:separate;
-   */ border:solid black 1px;*/
-    border-radius:6px;
-    -moz-border-radius:6px;
-		}	
-.hideDontTakeUpSpace
-        {
-            display:none;
-        }
-
-.btn1 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: white; text-decoration:underline;
-    display:inline-block;}
-.btn24
-	
-	{
-	width:100%;
-	height:100%;
-	background-color:#f2f2f2; border:block; padding: 2;  display:inline-block; font-weight: bold; color: black;
-	border-radius:6px;
-    -moz-border-radius:6px;
-	}
-		 	
-.btn34 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: black; text-decoration:none;
-    display:inline-block;}		
-		
-		
-.btn2 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: black;}
-button:focus {outline:none;} ::-moz-focus-inner {border:0;}
-#evtcal a:link {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		/* unvisited link */
-#evtcal a:visited {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}	/* visited link */
-#evtcal a:hover {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: underline;}	/* mouse over link */
-#evtcal a:active {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		/* selected link */
-#lst_mnu
-	{
-		display:none;
-		text-align:center;
-		
-    width: 100vw;
-		
-	}
-#lst_mnu table {
-    max-width: 400px;
-    width: 100% !important;
-   border-color: black; 
-	font-family: "Sans Serif"; 
-	font-size: 9pt; 
-  }
-		
-.cat
-	{
-  max-width: 400px;
-    width: 100% !important;
-}
-	#evt_lst
-	{
-		display:none;
-		height: 100vh;
-		
-	}
-	.map_c
-	{
-		 width: 100vw;
-	}
-		
-		
-		 #middlecol {
-    border-right: 2px solid red;
-    width: 45%;
-  }
-
-  #middlecol table {
-    max-width: 400px;
-    width: 100% !important;
-  }
-#xPort
-	{
-		
-		max-width: 400px;
-                width: 100% !important;
-		display:none;
-		font: 15px arial, sans-serif;
-		background-color:  #f8f9fb;
-/*		font-family: "Sans Serif";*/
-	/*	font-size: 9pt;*/
-	/*	font: normal 12pt "Sans Serif";  */
-		}
-#xPort1
-	{
-		
-		display:none;
-		 
 		}
  
-/* The following is just coloring and faux images */
-
-.dl_btn {
-    width: 100% !important;
-     background:#f3f3f3;
-	display: none;
-}
-
-.dl_btn1 {
-   
-	display: none;
-}				
-		div.tab {
-    overflow: hidden;
-    border: 0px solid #ccc;
-    background-color:  #c0e5fa;
-    width: 100% !important;
-    height:50px;
-	    
-	  
-}
-		
- 
-/* Style the buttons inside the tab */
-div.tab button {
-    
-   background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 13px;
-    color: white;
-    border-left:solid white 0px;
-    border-right:solid white 0px;
-    border-top:solid white 0px;
-    border-bottom:solid #c0e5fa 3px;
-    background:#c0e5fa;
-    width:33%; height:50px
-}
-
-/* Change background color of buttons on hover */
-div.tab button:hover {
-    /*  background-color: #ddd;*/
-    border-bottom:solid white 4px;
-}
-
-/* Create an active/current tablink class */
-div.tab button.active {
-     /*  background-color: #ccc;*/
-     border-bottom:solid white 4px;
-}
-
-/* Style the tab content */
-.tabcontent {
-     display: none;
-    padding: 3px 12px;
- /*   border: 1px solid #ccc;*/
-    border-top: none;
-}
-
-/* Style the close button */
-.topright {
-    float: right;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.topright:hover {color: red;}
-
-#div_hr
-{
-	display	: none;
-		} 
-		
-.style1{
-/*border-top: 1px solid #8c8b8b;*/
-display	: none;
-}
-		
-		#calEvent
-		{
-		
-			width: 100vw;
-			
-			font-size: 9pt;
-     
-
-     display:none;
-		
-		}
-		 
 	
-		@media screen and (min-width: 100px) and (max-width: 199px)
-{
-    .button
-    {
-        width: 25px;
-    }
-}
-
-@media screen and (min-width: 200px) and (max-width: 299px)
-{
-    .button
-    {
-        width: 50px;
-    }
-}
-		
-.left-div {
-		 border-radius: 25px;
-    float: left;
-    width: 50vw;
-    height: 20px;
-    background-color: linen;
-/*    margin-right: 8px;*/
-  
-}
-.right-div {
- /*   margin-left: 108px;*/
-	 width: 50vw;
-	 border-radius: 25px;
-	background-color: green;
-    
-}
-.category
-		{
-		 
-		border-radius: 25px;
-    border: 2px solid #FFFFFF;
-    padding: 20px; 
-   
-   position: fixed;
-}
-#calendar
-		{
-		 
-		display	: none;
-   
-}		
-span {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 60px;  /* width of image */
-}
-		
-		
-		.left1 {
-         width:50%;
-         border-right:1px solid #000000;
-        float:left;
-        height:70px;
-	padding-left:6px;
-    }
-   .right1 {
-       float:left;
-       padding-left:50%;
-       
-	   height:40px;
-   }
-   
-   .common1 {
-        width:100%;
-         float:left;
-         
-   }
-	.alt-color tr:nth-child(3n) {
-             background-color: #b4c5d3;
-		
-        }	
-	.ven1 tr:nth-child(2n) {
-      /*       background-color: silver;*/
-		
-        }
-/*	.ven1 tr:nth-child(odd) {
-    background: silver;
-}*/
-	.login
-{
-   display:none;
-   text-align:center;
+	
+ 
+	
+	
+	 
+	 
+	displayArchive();
 }	
-.backmenu
-{
-   display:none;
-    
-}
-		
-.updFile
-		{
-		 
-		display	: none;
-   
-}
-		.csv
-{
-		 
-		display	: none;
-   
-}		
-		.archive
-{
-		 
-display	: none;
- border: 0px solid #ccc;
-    width: 100%;
-    border-radius: 3px;
-    overflow: hidden;
-    background: #fafafa url("archive.png") no-repeat 90% 50%;
-   
-}
-		
-.archive select {
-    padding: 5px 8px;
-    width: 180px;
-    border: none;
-    box-shadow: none;
-    background: transparent;
-    background-image: none;
-    -webkit-appearance: none;
-}
 
-.archive select:focus {
-    outline: none;
-}
+function displayArchive()
+{
+ 	 
+  activePg=2;
+document.getElementById("backmenu").style.display="block";
+document.getElementById("backmenu").style.visibility="true";
+document.getElementById("main").style.visibility="false";
+document.getElementById("main").style.display="none";
+document.getElementById("mainMenu").style.visibility="false";
+document.getElementById("mainMenu").style.display="none";
+document.getElementById("dl_btn").style.display="none";
+document.getElementById("dl_btn").style.visibility="false";
+document.getElementById("calendar").style.display="none";
+document.getElementById("calendar").style.visibility="false"; 
+document.getElementById("archive").style.visibility="true";
+document.getElementById("archive").style.display="block";
+document.getElementById("xPort").style.display="none";
+document.getElementById("xPort").style.visibility="false";
+document.getElementById("lst_mnu").style.display="none";
+document.getElementById("lst_mnu").style.visibility="false";
+document.getElementById("category").style.display="none";
+document.getElementById("category").style.visibility="false";
+ document.getElementById("map").style.display="none";
+document.getElementById("map").style.visibility="false";	
+ 
+		//alert('in');
+prevyr='';	
 		
- 
- 
- 
-
-	</style>
+		
+		
+	var pdfTxt="<table border=1 width='100%' cellpadding=0 cellspacing=0  style='font-size: 11px'><tr height='50px'><td colspan=4 align='center'>Archive </td></tr>";
+	pdfTxt+="<tr><td>Date</td><td>Venue</td><td>Program</td><td>Artist</td></tr>";
+	for (var i = 0; i < events1.length; i++) {
+			
+		if(events1[i][3]!=prevyr  && i!=0)	
+	       {
+			pdfTxt+="<tr height='20px' bgcolor='#fafbfc'><td colspan=4>&nbsp;</td></tr>";
+		}	
+		pdfTxt+="<tr height='50px'><td>"+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3].substring(2, 4)+"</td><td>"+events1[i][5]+"</td><td>"+events1[i][6]+"</td><td>"+events1[i][8]+"<tr>";
+		
+		prevyr=events1[i][3];	
+		
+	}
 	
+ 
+		
+	  document.getElementById('archive').innerHTML =pdfTxt+"</table>";
+// document.getElementById('archive').innerHTML ='iiiiiiisdfsdfsdfsdf';
+}
+		
+function stringToDate(_date,_format,_delimiter)
+{
+            var formatLowerCase=_format.toLowerCase();
+            var formatItems=formatLowerCase.split(_delimiter);
+            var dateItems=_date.split(_delimiter);
+            var monthIndex=formatItems.indexOf("mm");
+            var dayIndex=formatItems.indexOf("dd");
+            var yearIndex=formatItems.indexOf("yyyy");
+            var month=parseInt(dateItems[monthIndex]);
+            month-=1;
+            var formatedDate = new Date(dateItems[yearIndex],month,dateItems[dayIndex]);
+            return formatedDate;
+}
+
+//var d = new Date();
+var weekday = new Array(7);
+weekday[0] =  "Sun";
+weekday[1] = "Mon";
+weekday[2] = "Tue";
+weekday[3] = "Wed";
+weekday[4] = "Thu";
+weekday[5] = "Fri";
+weekday[6] = "Sat";
+		
+var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function rateApp()
+{
+//alert("in");
+LaunchReview.launch(appId, function(){
+    alert("Successfully launched store app");
+},function(err){
+    alert("Error launching store app: " + err);
+});
+	
+}
+ 
+function profile()
+	{
+		 
+		$("#arSrch").html("");
+		 
+		  $('#category').hide();
+			$('#map').hide();
+		 $('#calendar').hide();
+		  $('#dl_btn').hide();
+		  $('#lst_mnu').hide();
+		 
+			$('#dl_btn1').hide();
+			 $('#xPort').hide();
+			  $('#xPort1').hide();
+			   $('#tab').hide();
+ 
+document.getElementById("archive").style.visibility="true";
+document.getElementById("archive").style.display="block";
+ 	
+	 
+ var favS= window.localStorage.getItem("favShows");
+ 
+		fArr=[];
+ 
+		
+	if(favS !=null && typeof(favS) !='undefined')
+	{
+		favS1=favS.split('!');
+	for (var i = 0, len = favS1.length; i < len-1; i++) {
+ 
+ 		latR1= favS1[i];
+	 	  latR1= latR1.slice(1);
+	 	//alert('latR'+latR1);
+		if(latR1 != '')
+		{
+		fArr.push([latR1]);
+		}
+		
+ 		  
+ 	}
+		// alert(  checkArray(fArr));
+		var ori=multiDimensionalUnique(fArr);
+		for (var i = 0, len = fArr.length; i < len; i++) {
+		//str1=fArr[i];
+		
+ 		  
+ 	}
+	}	
+	//	alert('farr  '+fArr.length);
+		
+	  if(fArr.length >0)
+	 {
+		var strFav="<table border=0 width='100%' cellpadding=0 cellspacing=0 bgcolor='#fafbfc' style='font-size: 13px;font-family:Trebuchet MS, Helvetica, sans-serif';><tr height='50px'><td align='center'>My Favorites </td></tr>";
+	 
+	      for (var i = 0; i < fArr.length; i++) {
+			s=String(fArr[i]);
+		  //    alert(s);
+			 while(s.charAt(0) === ',')
+				{
+			 s = s.substr(1);
+				}
+	 		s=s.replace(/_/g, " ");
+		      s=s.replace('^', " - ");
+		    //     alert(s);
+	       	strFav+="<tr height='50px'><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+s+"</td><tr>";
+		
+	}
+	
+ 		
+	}
+	else
+	{
+		strFav="<table border=0 width='100%'><tr height='60px'><td  align='center'>No Favorites</td></tr>";
+	
+	}
+		
+		 document.getElementById('archive').innerHTML =strFav+"</table>";
+
+		 
+}
+
+		
+		function checkArray(my_arr){
+   for(var i=0;i<my_arr.length;i++){
+       if(my_arr[i] === "")   
+          return false;
+   }
+   return true;
+}
+		
+		function multiDimensionalUnique(arr) {
+    var uniques = [];
+    var itemsFound = {};
+    for(var i = 0, l = arr.length; i < l; i++) {
+        var stringified = JSON.stringify(arr[i]);
+        if(itemsFound[stringified]) { continue; }
+        uniques.push(arr[i]);
+        itemsFound[stringified] = true;
+    }
+    return uniques;
+}
+
+
+		
+</script>
 </head>
+ 
 
 <body style="background-color: transparent;" onload='init();'> 
-<nav class="nav">
+<nav role='main' class="nav">
                     
           <ul>
 		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
-		  <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login</a>
-      	           <li> <a id="myLink" href="#" onclick="uploadSchedule();" class="ssm-toggle-nav">Upload Scehdule</a>
- 		  <li> <a id="myLink" href="#" onclick="readCSV();" class="ssm-toggle-nav">Check Schedule</a> 
+		
+      		<!--   <li> <a id="myLink" href="#" onclick="uploadSchedule();" class="ssm-toggle-nav">Upload Scehdule</a>-->
+ 		  
 		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
               
-                  <li><a href="#">Feedback</a></li>
+                  <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMM</a>
+		    <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login/Register</a>
           </ul>
        
         </nav>
-        <div id=main>
-            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor='#003c67'><tr height='70px'><td>&nbsp;
-         <font size=4><b>   <a href="#" class="ssm-toggle-nav" style='text-decoration: none;color: #ffffff;' title="open nav">&#9776;</a></b></font></td><td width='99%' align='center'><font color='#ffffff'></b>Madras Music & Miscellany</b></font></td></tr></table>
+
+	 	<nav role='sub' class="nav">
+                    
+          <ul>
+		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
+		
+      		<!--   <li> <a id="myLink" href="#" onclick="uploadSchedule();" class="ssm-toggle-nav">Upload Scehdule</a>-->
+ 		  
+		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
+              
+                  <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMM</a>
+		    <li> <a id="myLink" href="#" onclick="profile();" class="ssm-toggle-nav">Profile</a>
+          </ul>
+       
+        </nav>
+         <div id=main >
+            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor="#0c9db7"><tr height='70px' style='color:#ffffff'><td style='vertical-align: middle;' >&nbsp;&nbsp;
+         <a href="#" class="ssm-toggle-nav"  style='text-decoration: none;  font-size: 15px;color: white;'  title="open nav">&#9776;</a></td><td  align='center'><font size=3 color='#ffffff'><b>Madras Music & Miscellany</b></font></td><td><button id='artist' class='btn2'><img src='search.png' style='border:none; outline: none; width :25px; height:25px;vertical-align:middle'></button>&nbsp;</td></tr></table>
         </div>
 <div id='backmenu' class='backmenu'>
-		      <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>&nbsp;
-           <font size=4><b><a href="#" onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></font></td><td width=99% align='center'><b><font size=4>Madras Music & Miscellany</font></b></td></tr></table>
+	 
+	
+	      <table border=0 width='100%' bgcolor='#0c9db7'><tr height='70px'><td style='vertical-align: top;'>&nbsp;&nbsp;
+           <font size=5><b><a href="#" onclick="backSt();" style='text-decoration: none; color: #ffffff;' title="back">&#x003C;</a></b></font></td><td width=99% align='center'><b><font size=3 color='#ffffff'>Madras Music & Miscellany</font></b></td></tr></table> 
 		</div>
         <!-- jQuery library (served from Google) -->
-       
-        <div class="ssm-overlay ssm-toggle-nav"></div>
+         <div class="ssm-overlay ssm-toggle-nav"></div>
+	 
+
+	<div id='searchmenu' class='searchmenu' >
+	 
+	
+	  
+	 
+	 
+	  <div id='inputDiv' class='inputDiv'>
+      
+      <form id="form1">
+         <input type="text" id="input1"  class='deletable'  style='color :black;width :97%;left: 10px;right: 0px;height: 50px;' placeholder="Search Artist" />
+
+      </form>
+    </div>
+
+  
+	 
+		</div>
+	
+    <div id='artDisplay' class= 'artDisplay'>
+</div>
 	
 	<div id='mainMenu' class='mainMenu'>	
 	 
-<table border="0"  bordercolor='#c0e5fa' cellpadding="0" cellspacing="0" width="100%">
-	<tr height='25px'  bgcolor='#c0e5fa'><td align=center>
+<table border="0"   cellpadding="0" cellspacing="0" width="100%">
+	<tr height='25px'  bgcolor='#0c9db7'><td align=center>
 	<div class="tab">
  
   <button class="tablinks" onclick="openCity(event, 'Tokyo')" id="defaultOpen">Events</button>
@@ -1845,17 +2987,16 @@ display	: none;
 		</td></tr></table>
 </div>
 <div id="London" class="tabcontent">
-<!--  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
-   
+ 
 </div>
 
 <div id="Paris" class="tabcontent">
-<!--   <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
+ 
   
 </div>
 
 <div id="Tokyo" class="tabcontent">
- <!--  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
+ 
  
 </div>
 
@@ -1863,35 +3004,33 @@ display	: none;
 	
 	
 	<div id='category' class='category'>
-		 
-		<font size=1 face='arial'>Browse by Category</font><br><br>
-	   <table width='100%' border=0 cellpadding=0 cellpadding=0 class='cat'>
-		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td></tr>
-		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
-		    <tr><td ><button onclick='eventList(2);' class='btn2' ><img src='dance.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Dance</span></button></td></tr>
-		    <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
-		   <tr><td><button onclick='eventList(3);' class='btn2'><img src='drama.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span >Drama</span></button></td></tr>
-		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
-		    <tr><td><button onclick='eventList(4);' class='btn2' ><img src='lec-dem.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Lec-Dem</span></button></td></tr>
-		    <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
-		   <tr><td><button onclick='eventList(5);' class='btn2'><img src='harikatha.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Harikatha</span></button></td></tr>
-		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
-		    <tr><td ><button onclick='eventList(6);' class='btn2' ><img src='meetup.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Meetup</span></button></td></tr>
-		    <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
+       
+	   <table id='cat_tbl' width='100%' border=0 cellpadding=0 cellpadding=0 >
+		   <tr><td onclick='eventList(1);'><button onclick='eventList(1);' class='btn2'><img src='concert.png'  style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td><td width='7%'><button onclick='eventList(1);' class='btn2'><img src='arrow.png'  width=10px height=10px style="vertical-align:middle"></button><font color='white'>&nbsp;&nbsp;&nbsp;&nbsp;11</font></td></tr>
+		   <tr valign="top"><td colspan=2><hr size=1 color='#ececec'></td></tr>
+		    <tr><td  onclick='eventList(2);'><button onclick='eventList(2);' class='btn2' ><img src='dance.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Dance</span></button></td><td width='7%'><button onclick='eventList(2);' class='btn2' ><img src='arrow.png'   width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
+		    <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
+		   <tr><td  onclick='eventList(3);'><button onclick='eventList(3);' class='btn2'><img src='drama.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Drama</span></button></td><td width='7%'><button onclick='eventList(3);' class='btn2' ><img src='arrow.png'   width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
+		   <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
+		    <tr><td  onclick='eventList(4);'><button onclick='eventList(4);' class='btn2' ><img src='lec-dem.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Lec-Dem</span></button></td><td width='7%'><button onclick='eventList(4);' class='btn2' ><img src='arrow.png'   width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
+		    <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
+		   <tr><td  onclick='eventList(5);'><button onclick='eventList(5);' class='btn2'><img src='harikatha.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Harikatha</span></button></td><td width='7%'><button onclick='eventList(5);' class='btn2' ><img src='arrow.png'  width=10px height=10px  style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
+		   <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
+		    <tr><td  onclick='eventList(6);'><button onclick='eventList(6);' class='btn2' ><img src='meetup.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Meetup</span></button></td><td width='7%'><button onclick='eventList(6);' class='btn2' ><img src='arrow.png'  width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
+		    <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
 		   
 		</table>
-			
-	</div>
+		</div>	
+	 
 	
 	<table id="evtcal" border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
 			<td style="padding: 3px;" align="center" valign="top" width="314">
-				<div id="calendar"><!--  Dynamically Filled --></div>
+				<div id="calendar"> <!--  Dynamically Filled --></div> 
 				
 			</td></tr></table>
-	<div id='lst_mnu' align='left'>	</div>
-	<!--<div id="previewImage">
-    </div>-->
-      
+<div id='lst_mnu' align='left'> 	</div>
+	 
+    <div id='archive'></div>  
 	<div id='calEvent'>
 			 
 		<div id='left1' class="left1"></div>
@@ -1906,18 +3045,22 @@ display	: none;
 	 
 	   <table align='center' border=0 cellpadding=0 cellpadding=0  >
 		   <tr height='130px'> <td>Madras Music & Miscellany</td></tr>
-		   <tr > <td><input type="text" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrname" placeholder="Email ID" value='write2sankari@gmail.com'></td></tr>	
-	 <tr > <td><input type="password" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrpwd" placeholder="*******" value='peace4all'></td></tr>
+		   <tr > <td><input type="text" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrname" placeholder="Email ID" ></td></tr>	
+	 <tr > <td><input type="password" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrpwd" placeholder="*******" ></td></tr>
 		    <tr><td>&nbsp;</td></tr>
-		   <tr><td align=right> <a href="#" style='text-decoration: none;'><font size=1>Forgot Password?</font></a></td></tr>
+		   <tr><td align=right> <a href="#" onclick='forgot_pass(); ' style='text-decoration: none;color: black;'><font size=2>Forgot Password?</font></a></td></tr>
 		   <tr><td>&nbsp;</td></tr>
-	<tr bgcolor='f4f4f4' height='60px'><td> <button id='display' class="btn34" onclick='ajaxCall();'>Login</button>	</td></tr>
+	<tr height='40px'><td> <button id='display' class="btn34" onclick='ajaxCall(this.id);'>Login</button>&nbsp;	&nbsp;&nbsp;<button id='register' class="btn34" onclick='ajaxCall(this.id);'>Register</button></td></tr>
 		   
 		</table>
 		 
-	
+		
 	</div>
-
+ <div id='map-container'>
+ <div id='map'  width='300px' height='300px'>
+  
+  </div>
+</div>
 	<div class="dl_btn" id='dl_btn' align='center'>
     
  <div style="float: left; font-size: 9pt; width: 33%;"> <button class='btn1'  onclick='calAdd();'><img src="cal1.png"></button>
@@ -1926,51 +3069,34 @@ display	: none;
     <div style='font-size: 9pt;'>Download</div></div>
  <div style="float: left; font-size: 9pt;width: 33%;"><button class='btn1'  onclick='share();'><img src="share1.png"></button>
     <div style='font-size: 9pt;'>Share</div></div>
+ 
  <br style="clear: left;" />
 </div>
  
 	<div id='xPort' >     </div>
 
 		<div id='dl_btn1'></div>
-	
-		
-
+		 
 	
 			<div id='det' align='center' style="background-color:white">
 				 
-				<form id="eventform" name="eventform" action="#" method="get">
+			<!--	<form id="eventform" name="eventform" action="#" method="get">
 					<textarea name="eventlist"  style="border: none" cols="40" rows="20" wrap="soft" readonly>					</textarea>
-				</form>
+				</form>-->
 			</div>
 	 
- <textarea id="rest1" class="hideDontTakeUpSpace" rows=1  cols=40 readonly></textarea> 
+ <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea> 
 
 <div id='xPort1'>     </div>
  <div id='csv' class='csv'>
   
 	  
       </div>
-<div id='archive' class='archive'>
-<select id='monNam'>
-  <option value="">Select a Month</option>
-  <option value="1">January</option>
-  <option value="2">February</option>
-  <option value="3">March</option>
-  <option value="4">April</option>
-  <option value="5">May</option>
-  <option value="6">June</option>
-  <option value="7">July</option>
-  <option value="8">August</option>
- <option value="9">September</option>
- <option value="10">October</option>
- <option value="11">November</option>
-  <option value="12">December</option>
-	  
-</select>
-<button id='btnarch' class="btn2" onclick='getval();'>Done</button>	
-	
-	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=5 cols=40 readonly></textarea> 
-</div>
 
+ <textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 ></textarea> 
+<textarea id="storge" class="hideDontTakeUpSpace"  rows=1 cols=2 ></textarea> 
 </body>
 </html>
+
+
+ 
