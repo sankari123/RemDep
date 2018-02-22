@@ -1073,9 +1073,9 @@ else{
 	   
 
 /* Preload images script */
-var myimages=new Array("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
+var myimages=new Array() 
 function preloadimages(){
-	alert('prload');
+	//alert('prload');
 	for (i=0;i<preloadimages.arguments.length;i++){
 		myimages[i]=new Image();
 		myimages[i].src=preloadimages.arguments[i];
@@ -1085,7 +1085,7 @@ function preloadimages(){
 
 
 /* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
-//preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
+preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 
 var thisDate = 1;							// Tracks current date being written in calendar
 var wordMonth = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
