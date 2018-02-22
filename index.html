@@ -17,8 +17,7 @@
 <script src="js/jquery.slideandswipe.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>  
-  <script type="text/javascript" src="Calendar.js"></script>
- 
+  
 
   
     <style type="text/css" media="screen"> 
@@ -28,10 +27,28 @@
   vertical-align: middle;
   margin-left: 60px;  /* width of image */
    font-size: 15px;
-		    
+		
 		    
 	    }
-	
+	    
+	     #cat_tbl
+	    
+	    {
+	    position:relative;
+	    height: 80vh;
+	    }
+	#input1{ 
+   padding: 10px 5px;
+   font: 12px 'lucida sans', 'trebuchet MS', 'Tahoma';
+   border: 0px solid #a4c3ca;
+   background: #fafbfc;
+
+   color :black;
+   width :300px;
+   left: 10px;
+		right: 0px;
+    
+}
 #input1:focus 
 	    {
 	     outline: none !important;
@@ -46,15 +63,15 @@
                 position: absolute;
                 display: block;
                 top: 5px;
-                right: 0px;
-                width: 16px;
-                height: 16px;
-                background: url('clear_cross.png') ;
+                right: 10px;
+                width: 20px;
+                height: 18px;
+                background: url('clear_cross.png')  ;
 		background-repeat: no-repeat;
                 cursor: pointer;
             }
             span.deleteicon input {
-                padding-right: 0px;
+                padding-right: 4px;
                 box-sizing: border-box;
             }
 	    
@@ -224,8 +241,6 @@ margin: 0 auto;
 	    
 	    
 	   
-	  
-	    
 .btn24
 	
 	{
@@ -234,7 +249,9 @@ margin: 0 auto;
 	background-color:#f2f2f2; border:block; padding: 2;  display:inline-block; font-weight: bold; color: black;
 	border-radius:6px;
     -moz-border-radius:6px;
-	}
+	}	  
+	    
+ 
 .names { font-weight: bold; 
 		text-align:left;}
 
@@ -266,10 +283,20 @@ text-align:center;
 			 
 	  border-collapse:separate; 
 	 
-/*   padding-left:6px;*/
-/*    border-radius:6px;*/
-  /*  -moz-border-radius:6px;*/
+ 
 		}
+	    
+.testven
+{
+ 
+    width: 100vw;
+    
+ /*   box-shadow: 10px 10px 10px #dedede inset;
+    border-radius: 5px;*/
+    background: white;
+   padding-bottom: 4px;
+	 padding-top: 4px;
+}	     
 .ven2
 		{
 		 width: 100vw;
@@ -289,20 +316,12 @@ text-align:center;
 
 .btn1 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: white; text-decoration:underline;
     display:inline-block;}
-.btn24
-	
-	{
-	width:100%;
-	height:100%;
-	background-color:#f2f2f2; border:block; padding: 2;  display:inline-block; font-weight: bold; color: black;
-	border-radius:6px;
-    -moz-border-radius:6px;
-	}
+
 		 	
 .btn34 {  background-color: #0c9db7; border:none; padding: 11px 11px 11px 11px; font-weight: bold; color: white; border-radius: 5px;font-family:  Arial, Helvetica, sans-serif; }		
 		
 .btnSrch {  display:inline-block;   text-decoration:none;}	
-.btn2 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: black;}
+.btn2 {  background-color: transparent; border:none; padding: 0;   color: black;font-weight: bold;  }
 button:focus {outline:none;} ::-moz-focus-inner {border:0;}
 #evtcal a:link {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		/* unvisited link */
 #evtcal a:visited {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}	/* visited link */
@@ -426,27 +445,27 @@ div.tab button {
     width:33%; height:50px
 }
 
-/* Change background color of buttons on hover */
+ 
 div.tab button:hover {
     /*  background-color: #ddd;*/
     border-bottom:solid white 4px;
 }
 
-/* Create an active/current tablink class */
+ 
 div.tab button.active {
      /*  background-color: #ccc;*/
      border-bottom:solid white 4px;
 }
 
-/* Style the tab content */
+ 
 .tabcontent {
      display: none;
     padding: 3px 12px;
- /*   border: 1px solid #ccc;*/
+  
     border-top: none;
 }
 
-/* Style the close button */
+ 
 .topright {
     float: right;
     cursor: pointer;
@@ -461,7 +480,7 @@ div.tab button.active {
 		} 
 		
 .style1{
-/*border-top: 1px solid #8c8b8b;*/
+ 
 display	: none;
 }
 		
@@ -513,16 +532,19 @@ display	: none;
 .category
 		{
 		 
-      height: 100vh;
+      height: 80vh;
 	width: 100%;	
-   position: fixed;
+   position: relative;
   left: 1%;
  text-align: left;
+			overflow: hidden;
+			overflow-y: hidden;
 }
 #calendar
 		{
 		 
 		display	: none;
+		width: 100vw;	
    
 }		
 
@@ -553,7 +575,7 @@ display	: none;
 		
         }	
 	.ven1 tr:nth-child(2n) {
-      /*       background-color: silver;*/
+   
 		
         }
 /*	.ven1 tr:nth-child(odd) {
@@ -594,9 +616,6 @@ display	: none;
     width:0px;
     height:0px;
 }		
-.fake-input { position: relative; width:240px; }
-.fake-input input { border:none: background:#fff; display:block; width: 100%; box-sizing: border-box }
-.fake-input img { position: absolute; top: 2px; right: 5px }	
 
 .searchmenu
 {
@@ -605,15 +624,17 @@ display	: none;
 	 display:none;
     
 }	
-   .inputDiv
+     .inputDiv
     {
 	    position: relative;
     left: 10px;
-    width: 300px;
+  /*  width: 300px;*/
 	    height: 40px;
-	    background-color: #f6f7f7; 
- 
-   }	    
+	    
+ max-width: 940px;
+  margin:0 auto;
+  padding:0;
+   }
 		    
 		    
 		    
@@ -623,9 +644,12 @@ display	: none;
 	    }
     </style>
 	<script>
+		var  pth=0;
 		  $(document).ready(function() {
                 $('input.deletable').wrap('<span class="deleteicon" />').after($('<span/>').click(function() {
                     $(this).prev('input').val('').trigger('change').focus();
+			$("#dl_btn").hide();
+			$("#xPort").html("");
                 }));
             });
 		
@@ -636,18 +660,18 @@ display	: none;
  var u_name;
 	$(document).ready(function() {
 	   
-	 var u_name= window.localStorage.getItem("key");
-	 
-	 	//alert('unam'+u_name);
+	// var u_name= window.localStorage.getItem("key");
+	// check();
+	 //	alert('unam'+u_name);
      
  
- if(u_name ==null){                   
-         $('nav[role="main"]').slideAndSwipe();     
-  }  
- 	else
- 	{
- $('nav[role="sub"]').slideAndSwipe();
- }
+ //if(u_name ==null ){                   
+  //       $('nav[role="main"]').slideAndSwipe();     
+  //}  
+ //	else
+ //	{
+// $('nav[role="sub"]').slideAndSwipe();
+ //}
 		 
 	
             });
@@ -662,15 +686,7 @@ var usrauth ;
 	var wordlist=new Array();
 	function prep()
 	{
-//	eventsNew="Bombay Chanakya,Crazy Mohan,Bombay Sri Chankya ,U.ve Sri M.v.ananthapadmanabha Swamy ,U.ve Sri M.v.ananthapadmanabha Swamy ,U.ve Sri M.v.ananthapadmanabha Swamy ,Sri P.muthukumaran ,Smt. Subhalakshmi Krishnamoorthy,Bombay Chanakya,Bombay Chanakya,Bombay Jayashree,Mambalam Sisters,Trichur Brothers,Bombay Sisters";
-	// alert('in');
-
-//var uniqNew=new Array();
-
-//eventsNew=eventsNew.split(',');
-//for (var i = 0; i<eventsNew.length; i++) {
-//  uniqNew.push(eventsNew[i]);
-//}
+ 
  wordlist= remove_duplicates_safe(artistArr);
  wordlist.sort();
 	}
@@ -728,15 +744,7 @@ $(document).ready(function(){
 			 $('#xPort').hide();
 			  $('#xPort1').hide();
 			   $('#tab').hide();
-		//	hide('main');
-		//	hide('backmenu');
-		//	hide('category');
-		//	hide('dl_btn');
-		//	hide('dl_btn1');
-		//	hide('mainMenu');
-		//	hide('xPort');
-		//	hide('xPort1');
-		//	hide('tab');
+		 
 		
 		prep();
               //alert(wordlist);
@@ -747,12 +755,7 @@ $(document).ready(function(){
 
           $("#input1").autocomplete({
 		 
-              // The source option can be an array of terms.  In this case, if
-              // the typed characters appear in any position in a term, then the
-              // term is included in the autocomplete list.
-              // The source option can also be a function that performs the search,
-              // and calls a response function with the matched entries.
-		  
+               
               source: function(req, responseFn) {
                  // addMessage("search on: '" + req.term + "'<br/>");
 		        $('#dl_btn').hide();
@@ -866,14 +869,44 @@ for (var i = 0, len = events.length; i < len; i++)
 	
 }		
 //****************************************************************//
+		
+		
 function init() {
     	document.addEventListener("deviceready", onDeviceReady, false);
+	
+
+
 	
 }
 var newUsr;
  
 function onDeviceReady(){
-	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
+	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait...!");
+	check();
+	checkConnection();
+	var fixed = document.getElementById('category');
+	
+	fixed.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+		var calendar = document.getElementById('calendar');
+	
+	calendar.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+	
+		var lstMnu = document.getElementById('lst_mnu');
+	
+	lstMnu.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+	
 	 document.getElementById("dl_btn").style.display="none";
 	document.getElementById("dl_btn").style.visibility="false";
 	//document.getElementById("defaultOpen").click();
@@ -882,12 +915,9 @@ function onDeviceReady(){
  	//chkFavorite();
 	
 	
-	checkConnection();
+	
 	document.addEventListener("backbutton", backButtonHandler, false);
-	//document.addEventListener("backbutton", function (e) {
-       // e.preventDefault(); 
-		
-	//navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music Fest", "Yes,No");    }, false );
+	
 }
 	
  
@@ -979,6 +1009,7 @@ function gotFileEntry(fileEntry) {
 function gotFile(file){
       readDataUrl(file);
         readAsText(file);
+	 
     }
 
 
@@ -999,7 +1030,8 @@ function gotFile(file){
             console.log(evt.target.result);
 	 //   alert(evt.target.result);
 	    document.getElementById('rest1').value=evt.target.result;	
-	   changedate('return');
+		// ajaxFunction();
+		 changedate('return');
 	//	 ajaxFunction();
         };
         reader.readAsText(file);
@@ -1043,6 +1075,7 @@ else{
 /* Preload images script */
 var myimages=new Array()
 function preloadimages(){
+	alert('prlaod');
 	for (i=0;i<preloadimages.arguments.length;i++){
 		myimages[i]=new Image();
 		myimages[i].src=preloadimages.arguments[i];
@@ -1077,7 +1110,12 @@ function changedate(buttonpressed) {
 	ajaxFunction();
 	//alert('optsel'+optSel);	
 	//buttonpressed='return';
- 
+ if(pth==111)
+ {
+ alert('cel');
+	 preloadimages()
+ }
+	
 	if (buttonpressed == "return") { 
 		monthNum = todaysMonth;
 		yearNum = todaysYear;
@@ -1110,7 +1148,7 @@ function changedate(buttonpressed) {
 	firstDate = new Date(String(monthNum)+"/1/"+String(yearNum));
 	firstDay = firstDate.getDay() + 1;
 	
-	
+	//alert('to create');
 	createCalendar();
 	return;
 	
@@ -1138,7 +1176,7 @@ easterday = day;
 function createCalendar() {
 	//window.plugins.spinnerDialog.hide();	
 	
-	
+	//alert('create');
 	
 	
 	calendarString = '';
@@ -1222,7 +1260,8 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
-	
+//	alert('in');
+	//alert(events.length);
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
 	document.getElementById("xPort").style.display="block";
@@ -1236,7 +1275,17 @@ function showevents(day,month,year,week,dayofweek) {
 var theevent = "";
 var floater = 0;
 		var kkkk=0;
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkVal1 ='1' ;
+//	 alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+  //...
+}
+	else
+	{
 	var favS= window.localStorage.getItem("favShows");
+	//chkValue1=stringIsEmpty(favS);
+	  	chkVal1 ='2' ;
+	}
 	document.getElementById('xPort').innerHTML='' ;
 	//document.getElementById("xPort").innerHTML='';
 	 
@@ -1270,13 +1319,30 @@ var floater = 0;
 			}
 			
 
-    
-
-	 
-			dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
-            var n = weekday[dayStr.getDay()];
-			var mNam= monthNames[dayStr.getMonth()];
+    var dat1 = new Date(events[i][3], events[i][1]-1, events[i][2]);
+			// alert(dat1);
+			 //alert(numbers);
+			var weekday1=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday");
+	                var n = weekday1[dat1.getDay()];
+	  	//alert('n'+n);
 			
+			 var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+			
+			
+			var mNam= month[dat1.getMonth()];
+		 //	 alert('nam+'+mNam) ;
 			
 			
 			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
@@ -1295,42 +1361,44 @@ var floater = 0;
 		eName=events[i][8].replace(/\s/g, "_");
 		
 		
+ 
 		
-		chkValue1=stringIsEmpty(favS);
-		
-		if(chkValue1 ==true )
+		if(chkVal1 =='1')
 			
 		{
 		clsName='chartme-btn-main';
-			
+		 	alert('true');	
 		}
 	 
-		else  
-		{
-		
-			if(favS.indexOf(aName) !== -1)
-		   {
-		   clsName='arrowdown';
-		   
-		   }
-			else
+		else
 			{
-			clsName='chartme-btn-main';
-			}
-		}	
+				if(favS.indexOf(aName) !== -1)
+		   		{
+		   			clsName='arrowdown';
+			 	//alert('false exists');	
+		   
+		         	}
+				else
+				{
+				clsName='chartme-btn-main';
+				 	//alert('false not  exists');	
+		 
+				}
+			 	
+			}	
 		 
 		while(kkkk<1)
 		{
-		theevent+="<br><table class=ven1><tr height='40px'><td colspan=3><center><b>"+n+", " +events[i][2]+" "+mNam+" "+events[i][3]+"</b></center></td></tr>";
+		theevent+="<br><table class=ven1><tr height='40px'><td colspan=3><center><b>"+n+", " +events[i][2]+" "+mNam+" "+events[i][3]+"</b></center></td></tr></table>";
 			kkkk++;
 		}
-		
-		 
+		//alert(theevent);	
 //	<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
 //<tr><td>row 2 col2</td> </tr>
- // <tr><td>row 2 col2</td> </tr>	
-theevent+="<tr ><td rowspan=3>"+events[i][5]+" at "+jj+"</td><td >"+events[i][6]+" - <b>"+events[i][8]+"</b></td><td  rowspan=3 width='10px'>"+"<button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";	theevent+="<tr><td>"+events[i][7]+"</td> </tr>";
-		theevent+="<tr><td>&nbsp;</font></td> </tr>";
+ // <tr><td>row 2 col2</td> </tr>
+		theevent+="<table class=testven>";
+theevent+="<tr ><td rowspan=3 width='30%'>"+events[i][5]+" at "+jj+"</td><td>"+events[i][6]+" - <b>"+events[i][8]+"</b></td><td  rowspan=3 width='10px'>"+"<button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";	theevent+="<tr><td>"+events[i][7]+"</td> </tr>";
+		theevent+="<tr><td>&nbsp;</font></td> </tr><tr><td colspan=3><hr></td></tr></table>";
 		 
 	
 		//theevent+="<div id='wrapper' style='background:white'><div id='left' style='background:white;padding-left:8px;'>"+events[i][5]+" at "+jj+"<br></div><div id='right' style='background:white;'>"+events[i][6]+" - <b>"+events[i][8]+"</b><br><br>"+events[i][7]+	"<br><br></div></div> "	; 	
@@ -1351,7 +1419,7 @@ theevent+="<tr ><td rowspan=3>"+events[i][5]+" at "+jj+"</td><td >"+events[i][6]
 		
 	}
 	 document.getElementById('dl_btn1').innerHTML=theevent;
-	 document.getElementById('xPort').innerHTML=theevent+"</table>";
+	 document.getElementById('xPort').innerHTML=theevent;
 	 
 }
 	
@@ -1420,7 +1488,7 @@ var venue_arr = new Array();
 	
 function procVal(pVar)
 {
-//multiArr=[];
+ //alert(connSel+'----'+pVar);
 	 if (pVar!='')
 	 {
 	  window.plugins.spinnerDialog.hide();
@@ -1434,6 +1502,7 @@ function procVal(pVar)
 	events=[];
 	venue_arr=[];
 	artistArr=new Array();
+	//alert('locarr'+locArr);
 	for (var i = 0; i<locArr.length; i++) {
 		delimiter = ',';
 		start = 6;
@@ -1467,7 +1536,7 @@ function procVal(pVar)
 	//testing();
 	uniq = remove_duplicates_safe(venue_arr);
 //	uniq = uniq.map(function(e) {  var result = {};    result['text'] =e[0];  result['value'] =e[0];   return result;});
- //alert(events);
+ //alert('array len'+events.length);
 }
 	
 
@@ -1485,7 +1554,6 @@ function procVal(pVar)
 		$('#lst_mnu').show('slide', 400);
 		//document.getElementById("lst_mnu").style.display="block";
 		//document.getElementById("lst_mnu").style.visibility="true";
-		 
 		 
 		
 		document.getElementById("calendar").style.display="none";
@@ -1551,7 +1619,7 @@ im_htm+="<tr height='120px'> <td style='width: 50%; height: 50px; border: 0px so
 	}
 	
 document.getElementById('lst_mnu').innerHTML=im_htm+"</table>" ;
-	
+		 
 }
 
 function login()
@@ -1655,13 +1723,16 @@ function openCity(evt, cityName) {
 	}
 }	
 
-function category()
+
+		
+		function category()
 {
 	  
  
 		$('#category').show('slide', 400);
 		$('#xPort').hide();
-	  activePg=1;
+	  	activePg=1;
+	 		 
 		document.getElementById("xPort").style.visibility="false";
 		//document.getElementById("category").style.display="block";
 		//document.getElementById("category").style.visibility="true";
@@ -1702,23 +1773,14 @@ function category()
 		document.getElementById("route_canvas").style.visibility="false"
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
-		 
-	 
-		 
+		  
 		
 }
 function storeLocal(un,pd) {
-//    window.localStorage.setItem('key', un);
+ 
 	 
   window.localStorage.setItem('key', un);
-//alert(un);
- // window.localStorage.setItem("key", 'siva');
-//cordova.plugins.SecureLocalStorage.setItem("key" , un);
-	//window.localStorage.key = un;
-  //  window.localStorage.setItem('pw', pd);
-//window.localStorage["key"] =un;
-//window.localStorage["pw"] = pd;
-	//alert(window.localStorage.getItem('pw'));
+ 
 }
  
 		
@@ -1726,16 +1788,16 @@ function storeLocal(un,pd) {
 		
 function check() {
 
-    // stored data from the register-form
+     
      var storedName = window.localStorage.getItem("key");
-//   var storedName =cordova.plugins.SecureLocalStorage.getItem("key")
-//alert('s'+storedName);
-	 
+// alert(storedName);
       // check if stored data from register-form is equal to data from login form
-    if(storedName == null   ) {
+    if(window.localStorage.getItem("key")== null  || typeof(window.localStorage.getItem("key")) == "undefined" || window.localStorage.getItem("key")== ''  ) {
          $('nav[role="main"]').slideAndSwipe();
+	//    alert('null'+window.localStorage.getItem("key"));
     }else {
            $('nav[role="sub"]').slideAndSwipe();
+	//     alert('data'+window.localStorage.getItem("key"));
     }
 	 
 }		
@@ -1981,17 +2043,20 @@ function alertDismissed() {
 	
 function calClick()
 	{
-		//alert('optsel'+optSel);
+		 alert(events.length);
 		optSel=2;
 		 activePg=1;
 		active_page=1; 
+		//  document.getElementById("calendar").style.display="block";
+		//  document.getElementById("calendar").style.visibility="true";
 		document.getElementById("archive").style.display="none";
 		document.getElementById("archive").style.visibility="false"; 
-		$('#calendar').show('slide', 400);
+	 	$('#calendar').show('slide', 400);
 		// $("#calendar").slideToggle("slow");
 		//	  $('#calendar').toggle('slide','right',500);	 
-		//document.getElementById("calendar").style.display="block";
-		//document.getElementById("calendar").style.visibility="true";
+		
+	//	
+		 
 		document.getElementById("category").style.display="none";
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("login").style.display="none";
@@ -2014,8 +2079,13 @@ function calClick()
 		document.getElementById("panel").style.visibility="false";
 		document.getElementById("archive").style.visibility="false";
 		document.getElementById("archive").style.display="none";
-	
-		checkConnection();
+			pth=111;
+		   changedate('return');
+		//  checkConnection();
+			 
+
+
+
 }
 
 		
@@ -2082,7 +2152,7 @@ function ven_det(v)
 		if(k==0)
 		{
 			 
-			ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+v+"</font></td></tr> ";
+			ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+v+"</font></td></tr> </table>";
 		}
 		k++;
 		hours=String(events[i][4]);
@@ -2094,9 +2164,30 @@ function ven_det(v)
 		calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
 		storeDate=events[i][2]+"/"+events[i][1]+"/"+events[i][3];
-		dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
-	                var n = weekday[dayStr.getDay()];
-			var mNam= monthNames[dayStr.getMonth()];
+		var dat1 = new Date(events[i][3], events[i][1]-1, events[i][2]);
+			//alert(dat1);
+			//alert(numbers);
+			var weekday1=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday");
+	                var n = weekday1[dat1.getDay()];
+		 	//alert('n'+n);
+			
+			 var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+			
+			
+			var mNam= month[dat1.getMonth()];
+			// alert('nam+'+mNam) ;
 			
 		//	events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);	
 			
@@ -2119,66 +2210,56 @@ function ven_det(v)
 		
 		
 		
-		chkValue1=stringIsEmpty(favS);
-	//	chkValue2=stringIsEmpty(NotfavS);
- //	 if ( !favS ) {
-  // some_variable is either null, undefined, 0, NaN, false, or an empty string
-//}
-//	if(favS ===null && NotfavS === null)
-//	{
-//			clsName='chartme-btn-main';
-//	}
-//	else if(typeof(favS)  ==='undefined' && typeof(NotfavS)  === 'undefined')
-//	{
-//	clsName='chartme-btn-main';
-//	}
-//	else if(typeof(NotfavS)  ==='undefined' && favS  === null)
-//	{
-//	clsName='chartme-btn-main';
-//	}
-//	else if(typeof(favS)  ==='undefined' && NotfavS  === null)
-//	{
-//	clsName='chartme-btn-main';
-//	}
-		
-		 
- //alert(chkValue1);
-//	 alert(chkValue2);	
+		//chkValue1=stringIsEmpty(favS);
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkVal1 ='1' ;
+	//  alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+  //...
+}
+	else
+	{
+	var favS= window.localStorage.getItem("favShows");
+	//chkValue1=stringIsEmpty(favS);
+	  	chkVal1 ='2' ;
+	}
+	 
 	
 		
-		
-		if(chkValue1 ==true )
+	if(chkVal1 =='1')
 			
 		{
 		clsName='chartme-btn-main';
-			
+		//	alert('true');	
 		}
 	 
-		else  
-		{
-		
-			if(favS.indexOf(aName) !== -1)
-		   {
-		   clsName='arrowdown';
-		   
-		   }
-			else
+		else
 			{
-			clsName='chartme-btn-main';
-			}
-		}	
+				if(favS.indexOf(aName) !== -1)
+		   		{
+		   			clsName='arrowdown';
+				//	alert('false exists');	
+		   
+		         	}
+				else
+				{
+				clsName='chartme-btn-main';
+				//	alert('false not  exists');	
+		   //
+				}
+			 	
+			}	
 		 
 		 
 		
 			
 			
-			
+	ev_lst+="<table border='0' id='test' class='testven' cellpadding='0' cellspacing='0'>";		
 			
 			
 		
 		 
 //alert(favS+'-'+NotfavS+'-'+clsName);
-  ev_lst+="<tr><td width='40%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2 width='59%'>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr>"; 
+  ev_lst+="<tr><td width='35%'>"+n+", " +events[i][2]+" "+mNam+"</td><td rowspan=2>"+events[i][6]+" - <b>"+events[i][8]+"</b>"+"<br> "+events[i][7]+"</td><td rowspan=2 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr><tr><td>"+jj+"</td></tr> <tr><td colspan=3><hr></td></tr></table>"; 
 		}
 		
 	 
@@ -2187,7 +2268,7 @@ function ven_det(v)
 	 
 	 calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
- document.getElementById('xPort').innerHTML=ev_lst+"</table>" ;
+ document.getElementById('xPort').innerHTML=ev_lst ;
 	
  
 	v1=v.replace(/ /g, "+");
@@ -2217,8 +2298,10 @@ var NotfavArr = [];
 		
 		function favAddShows11(fav,el)
 		{
+			
 		if($(el).hasClass("arrowdown"))
 	{
+		alert('1');
 	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
 		var favHst=window.localStorage.getItem("favShows");
 		// var pattern = /\bproprietary\b/ig;
@@ -2229,7 +2312,7 @@ var NotfavArr = [];
 	}	
 			else
 			{
-			
+			alert('2');
 			 $(el).addClass('arrowdown').removeClass('chartme-btn-main'); 
 		
 	  
@@ -2240,10 +2323,10 @@ var NotfavArr = [];
 			//	alert('favarr'+favArr);
 		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
 		{
-		//	 alert('in');
+		 	 alert('3');
 			favArr.push(favHst);
 		}
-	
+	alert('4');
 	    
  		favArr.push([fav]);
 	      window.localStorage.setItem('favShows',favArr);
@@ -2316,7 +2399,7 @@ document.getElementById("dl_btn").style.display="block";
 document.getElementById("dl_btn").style.visibility="true";
 document.getElementById("category").style.display="none";
 document.getElementById("category").style.visibility="false";
-document.getElementById('xPort').innerHTML='' ;
+//document.getElementById('xPort').innerHTML='' ;
 var catSel;
 
 if(eVal=='1' || eVal==1)
@@ -2341,20 +2424,41 @@ catSel='Meetup';
 }
 calEvt ='';
 	calEvtDetails='';
-//alert(catSel);
+	//alert(catSel);
+	// alert(events.length);
+	//alert(window.localStorage.getItem("favShows").indexOf(','));
 	var ev_lst='';
+	//   if(window.localStorage.getItem("key")== null  || typeof(window.localStorage.getItem("key")) == "undefined" || window.localStorage.getItem("key")== '') {
+
+	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
+		chkVal1 ='1' ;
+	//  alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+  //...
+}
+	else
+	{
 	var favS= window.localStorage.getItem("favShows");
+	//chkValue1=stringIsEmpty(favS);
+	  	chkVal1 ='2' ;
+	}
+	
 //var ev_lst="<br><center><b>"+  catSel +"</center></b><br>";
-	var ev_lst="<table border='0' id='test' class='ven1' cellpadding='0' cellspacing='0'>";
-	ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+catSel+"</font></td></tr> ";
+	var ev_lst="<table border='1' id='test'  class='ven1' cellpadding='0' cellspacing='0'>";
+	ev_lst+="<tr height='50px'><td colspan=3 align='center'><font size=3 face=arial>"+catSel+"</font></td></tr></table> ";
 	var heading1=ev_lst;
 for (var i = 0, len = events.length; i < len; i++)
 {
+	
+
 	cat1=events[i][6];
 	if(catSel==cat1)
 		{
-			
+			//alert(ev_lst);
+			//alert(events[i][3]);
+			//alert(events[i][1]);
+			//alert(events[i][2]);
 			hours=String(events[i][4]);
+			
 			var timeString = hours;
 			var H = +timeString.substr(0, 2);
 			var h = H % 12 || 12;
@@ -2362,12 +2466,33 @@ for (var i = 0, len = events.length; i < len; i++)
 			timeString = h + timeString.substr(2, 3)  ;
 			calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
-			dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
-	                var n = weekday[dayStr.getDay()];
-			var mNam= monthNames[dayStr.getMonth()];
+			//dayStr=stringToDate(events[i][2]+"/"+events[i][1]+"/"+events[i][3],"dd/MM/yyyy","/");
+			//var from = events[i][2]+'-'+events[i][1]+'-'+events[i][3]; 
+			//var numbers = from.match(/\d+/g); 
+			var dat1 = new Date(events[i][3], events[i][1]-1, events[i][2]);
+			//alert(dat1);
+			//alert(numbers);
+			var weekday1=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday");
+	                var n = weekday1[dat1.getDay()];
+		 //	alert('n'+n);
+			
+			 var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
 			
 			
-			
+			var mNam= month[dat1.getMonth()];
+			// alert('nam+'+mNam) ;
 			 var chkStr = hours.substring( hours.indexOf(':') + 1 ) ;
 
 				if(chkStr =='00')
@@ -2385,53 +2510,45 @@ for (var i = 0, len = events.length; i < len; i++)
 		eName=events[i][8].replace(/\s/g, "_");
 		
 		
-		
-		chkValue1=stringIsEmpty(favS);
+		// alert(chkVal1+'--  '+aName+'--'+eName);	
+ 
 			
-		if(chkValue1 ==true )
+		if(chkVal1 =='1')
 			
 		{
 		clsName='chartme-btn-main';
-			
+		//	alert('true');	
 		}
 	 
-		else  
-		{
-		
-			if(favS.indexOf(aName) !== -1)
-		   {
-		   clsName='arrowdown';
-		   
-		   }
-			else
+		else
 			{
-			clsName='chartme-btn-main';
-			}
-		}	
+				if(favS.indexOf(aName) !== -1)
+		   		{
+		   			clsName='arrowdown';
+				//	alert('false exists');	
+		   
+		         	}
+				else
+				{
+				clsName='chartme-btn-main';
+				//	alert('false not  exists');	
+		   //
+				}
+			 	
+			}	
 		 
-			//alert(n);
-			//var result = parseFloat(4.00);
-		//	alert(hours);
-//<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
-//<tr><td>row 2 col2</td> </tr>
- // <tr><td>row 2 col2</td> </tr>
-	  
-	  
-//	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
-//		ev_lst+="<tr align='center' ><td>"+n+", " +events[i][2]+" "+mNam+" "+timeString+"<br>";
-			
-//	ev_lst+=events[i][5]+'<br>'+'<br>';
-//	ev_lst+=events[i][8]+'<br>';
-//	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
-//ev_lst="<div id='wrapper'><div id='left'>"+events[i][5]+"</div><div id='right'>"+n+"," +events[i][2]+" "+mNam+" "+timeString+"<br>"+events[i][8]+"<br>"+events[i][7]+"</div>"
-//</div> 
-	 
-		
-ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
-		
-	ev_lst+="<tr><td>"+events[i][8]+"</td> </tr>";
-	ev_lst+="<tr><td>"+events[i][7]+"</td> </tr>";
-	ev_lst+="<tr height='8px'><td>&nbsp;</td> </tr>";
+		 
+//alert(chkVal1+'-'+clsName);
+	dayStr1=String(events[i][2])+"/"+String(events[i][1])+"/"+String(events[i][3]);
+			 ev_lst+="<table border='1' id='test'  class='testven' cellpadding='0' cellspacing='0'>";
+  ev_lst+="<tr ><td rowspan=3  width='35%'> &nbsp;&nbsp;"+events[i][5]+"</td><td ><b>"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></td><td  rowspan=3 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";
+ //ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b><button id=bookRef1 class='btn btn-default active' onclick='bookTkt1(this.value)' value="+dayStr1+">"+n+", " +events[i][2]+" "+mNam+" "+' '+jj+"</b></button></td><td  rowspan=4 width='10px'><button id='favID'  class="+clsName +"  onclick= 'favAddShows11(this.value,this)'; value="+eName+'^'+aName+"!"+"> </button></td></tr>";		
+ 	ev_lst+="<tr ><td>"+events[i][8]+"</td> </tr>";
+ //		ev_lst+="<tr><td><button id=bookRef2  class='btn btn-default active'  onclick='bookTkt2(this.value)' value="+eName+">"+events[i][8]+"</button></td> </tr>";	
+	
+	 		ev_lst+="<tr ><td>"+events[i][7]+"</td> </tr>";
+	 //		ev_lst+="<tr><td><button id=bookRef3  class='btn btn-default active'  onclick='bookTkt3(this.value)' value="+aName+">"+events[i][7]+"</button></td> </tr>";	
+	ev_lst+="<tr><td colspan=3><hr></td></tr></table>";
 //	ev_lst+="<div id='wrapper'><div id='left'>"+events[i][5]+"</div><div id='right'><b>" +n+", " +events[i][2]+" "+mNam+" "+' '+jj+'</b><br><font color=#6a737d>'+'<br>'+events[i][8]+'<br><br>'+events[i][7]+"</font><br><br></div></div> "	;		
 	 
 	 
@@ -2443,15 +2560,38 @@ ev_lst+="<tr><td rowspan=4>&nbsp;&nbsp;"+events[i][5]+"</td><td><b>"+n+", " +eve
 	ev_lst = ev_lst.replace('undefined','');
 	calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
+ 
 	if(heading1==ev_lst)
 	{
-		ev_lst=heading1+'<tr><td>No events to show ...</td><tr>';
+		ev_lst=heading1+'<tr><td>No events to show ...</td><tr></table>';
 	}
-	document.getElementById('xPort').innerHTML=ev_lst+"</table>";
+	document.getElementById('xPort').innerHTML=ev_lst;
 	 
  
 }
-	
+
+		function bookTkt1(bookID1)
+		{
+		alert(bookID1);
+		}
+		
+		
+		
+		function bookTkt2(bookID2)
+		{
+		alert(bookID2);
+		}
+		function bookTkt3(bookID3)
+		{
+		alert(bookID3);
+		}
+function passBookIDInf()
+{
+		
+		
+}
+		
+		
 function calAdd()
 	
 {
@@ -2461,21 +2601,34 @@ function calAdd()
 	 
 	 
 	for (var i = 0; i <calEvt1.length-1; i++) {
-	//	alert(calEvt1[i]);
-	// Start date and time of the event
+ 
   var startDate = new Date(calEvt1[i]);
-  // End date and time of the event 
+  
   var endDate = new Date(calEvt1[i]);
-  // Title of the event 
-  var title = "Madras Music Miscellany";
-  // Location of the event 
+   
+  var title = "Madras Music & Miscellany";
+  
   var location = "Chennai";
-  // Description about the event 
+  
   var notes = calEvtDetails1[i];
-   var calsuccess = function(message) { navigator.notification.alert('Scehdule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');};
-  var calerror = function(message) { alert("Error: " + message); };
-// window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
-		window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,calsuccess,calerror);
+		 
+ var success = function(message) { 
+     alert("Success: " + JSON.stringify(message)); 
+  };
+  var error = function(message) { 
+     alert("Error: " + message); 
+  };
+
+  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+
+	//	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror);
+   //var calsuccess = function(message) { navigator.notification.alert('Schedule added Successfully...',  alertDismissed,   'Madras Music & Miscellany',   'OK');
+	//			       alert("Event added successfully.");
+	//			      };
+  //var calerror = function(message) { alert("Error: " + message); };
+ 
+// window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,calsuccess,calerror);
+
 	}
   
  
@@ -2504,9 +2657,7 @@ function share()
    message = message.replace(/&nbsp;/g,'');
 	
 	
-//	window.plugins.socialsharing.share('MMM','Madras Music & Miscellany','Testing',null);
-//setTimeout(function(){ navigator.notification.alert('Image Shared Successfully...',  alertDismissed,   'DigiGraph',   'OK'); },8000);
-//window.plugins.socialsharing.share('Optional message',  'Optional title','default.pdf',null);	
+ 
 window.plugins.socialsharing.share(message); 
 }
 	
@@ -2556,18 +2707,14 @@ function procValArc(pVar)
 		events1.push(["",String(eMon),String(eDat1),String(eYr),pTim,venue,pnam,Pdeta,art]);
 			 
 		}
-//	 events1 = events1.sort(function(a,b) {
-  //    return a[1] - b[1];
-//    });
+ 
 	
 	
-//	events1=events1.sort(function(b,a) {
-//  return b[1] - a[1] || a[3] - b[3];
-//});
+ 
 	
 	
 	 
-	//alert('len '+events1.length);
+	 
 	displayArchive();
 }	
 
@@ -2645,9 +2792,7 @@ weekday[4] = "Thu";
 weekday[5] = "Fri";
 weekday[6] = "Sat";
 		
-var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-];
+var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function rateApp()
 {
@@ -2659,40 +2804,7 @@ LaunchReview.launch(appId, function(){
 });
 	
 }
-function chkFavorite()
-	{
-	var favS= window.localStorage.getItem("favShows");
-	var NotfavS= window.localStorage.getItem("NotfavShows");
-//		 favS= favS.replace(/undefined/g, "");
-//		  favS= favS.replace(/null/g, "");
-//		 NotfavS= NotfavS.replace(/undefined/g, "");
-//		  NotfavS= NotfavS.replace(/null/g, "");
-		alert('fav'+favS);	
-		alert('not fav'+NotfavS);	
-//		favS = favS.substring(0, favS.length-1 );
-//	favS=favS.split('!');
-		
-//		fArr=[];
-//		ori=[];
-//	for (var i = 0, len = favS.length; i < len; i++) {
-//	 	latR1= favS[i].split('^');
-//	 	//alert('latr1'+latR1);
-//		pDat1=latR1[0];
-//		pnam1=latR1[1];
-//		fArr.push([pDat1,pnam1]);
-		  
-//	}
-//		 alert('far'+fArr);
-//var ori=multiDimensionalUnique(fArr);
-//for (var i = 0, len =ori.length; i < len; i++) {
-	 //	alert(ori[i][0]);
  
-		  
-//	}
-		
-		
-		
-		}
 function profile()
 	{
 		 
@@ -2712,23 +2824,11 @@ function profile()
 document.getElementById("archive").style.visibility="true";
 document.getElementById("archive").style.display="block";
  	
-	// setFav();
-	//  window.localStorage.setItem('favShows',favAddStr);
+	 
  var favS= window.localStorage.getItem("favShows");
-//	var NotfavS= window.localStorage.getItem("NotfavShows");	
-	//alert( favS);	
-//		alert( NotfavS);	
-	//	  favS= favS.replace(/undefined/g, "");
-	//	  favS= favS.replace(/null/g, "");
-//		 NotfavS= NotfavS.replace(/undefined/g, "");
-//		  NotfavS= NotfavS.replace(/null/g, "");
-//	 	 alert( favS);
-		
-	//	favS1=favS.split('!');
-//		NotfavS1=NotfavS.split('!');
-		 //alert( favS);
+ 
 		fArr=[];
-//	ori=[];
+ 
 		
 	if(favS !=null && typeof(favS) !='undefined')
 	{
@@ -2855,13 +2955,7 @@ document.getElementById("archive").style.display="block";
 		</div>
         <!-- jQuery library (served from Google) -->
          <div class="ssm-overlay ssm-toggle-nav"></div>
-	<!--<div id="autocomplete-container">  
-  <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input>
-  <ul id="autocomplete-results">
-  </ul>
-</div>
-  
-    <script  src="index.js"></script>-->
+	 
 
 	<div id='searchmenu' class='searchmenu' >
 	 
@@ -2872,14 +2966,12 @@ document.getElementById("archive").style.display="block";
 	  <div id='inputDiv' class='inputDiv'>
       
       <form id="form1">
-         <input type="text" id="input1"  class='deletable'  style='color :black;width :300px;left: 10px;height: 40px;' placeholder="Search Artist" />
+         <input type="text" id="input1"  class='deletable'  style='color :black;width :97%;left: 10px;right: 0px;height: 50px;' placeholder="Search Artist" />
 
       </form>
     </div>
 
- <!--<div id='msgs' class="inputDiv" style='color:red;font-size:10pt;font-weight:normal;'>
-    </div> -->
-<!--<input id='reslt' style='color :red;' >-->
+  
 	 
 		</div>
 	
@@ -2900,17 +2992,16 @@ document.getElementById("archive").style.display="block";
 		</td></tr></table>
 </div>
 <div id="London" class="tabcontent">
-<!--  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
-   
+ 
 </div>
 
 <div id="Paris" class="tabcontent">
-<!--   <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
+ 
   
 </div>
 
 <div id="Tokyo" class="tabcontent">
- <!--  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
+ 
  
 </div>
 
@@ -2918,13 +3009,7 @@ document.getElementById("archive").style.display="block";
 	
 	
 	<div id='category' class='category'>
-         <!--                   <div class = "ui-widget">
-          
-         <input id = "automplete-1" placeholder="Artist" >
-      </div> -->
-		<!--<font size=1 face='arial'>Browse by Category</font><br><br>-->
-		<!-- <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input><br><br>-->
-		 
+       
 	   <table id='cat_tbl' width='100%' border=0 cellpadding=0 cellpadding=0 >
 		   <tr><td onclick='eventList(1);'><button onclick='eventList(1);' class='btn2'><img src='concert.png'  style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td><td width='7%'><button onclick='eventList(1);' class='btn2'><img src='arrow.png'  width=10px height=10px style="vertical-align:middle"></button><font color='white'>&nbsp;&nbsp;&nbsp;&nbsp;11</font></td></tr>
 		   <tr valign="top"><td colspan=2><hr size=1 color='#ececec'></td></tr>
@@ -2949,8 +3034,7 @@ document.getElementById("archive").style.display="block";
 				
 			</td></tr></table>
 <div id='lst_mnu' align='left'> 	</div>
-	<!--<div id="previewImage">
-    </div>-->
+	 
     <div id='archive'></div>  
 	<div id='calEvent'>
 			 
@@ -3001,9 +3085,9 @@ document.getElementById("archive").style.display="block";
 	
 			<div id='det' align='center' style="background-color:white">
 				 
-				<form id="eventform" name="eventform" action="#" method="get">
+			<!--	<form id="eventform" name="eventform" action="#" method="get">
 					<textarea name="eventlist"  style="border: none" cols="40" rows="20" wrap="soft" readonly>					</textarea>
-				</form>
+				</form>-->
 			</div>
 	 
  <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea> 
@@ -3014,8 +3098,8 @@ document.getElementById("archive").style.display="block";
 	  
       </div>
 
- <textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
-<textarea id="storge" class="hideDontTakeUpSpace"  rows=1 cols=2 readonly></textarea> 
+ <textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 ></textarea> 
+<textarea id="storge" class="hideDontTakeUpSpace"  rows=1 cols=2 ></textarea> 
 </body>
 </html>
 
