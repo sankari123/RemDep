@@ -1073,9 +1073,9 @@ else{
 	   
 
 /* Preload images script */
-var myimages=new Array()
+var myimages=new Array("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 function preloadimages(){
-	alert('prlaod');
+	alert('prload');
 	for (i=0;i<preloadimages.arguments.length;i++){
 		myimages[i]=new Image();
 		myimages[i].src=preloadimages.arguments[i];
@@ -1084,10 +1084,8 @@ function preloadimages(){
 }
 
 
-/* The path of images to be preloaded inside parenthesis: (Extend 
-
-list as desired.) */
-preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
+/* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
+//preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 
 var thisDate = 1;							// Tracks current date being written in calendar
 var wordMonth = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
@@ -2081,7 +2079,8 @@ function calClick()
 		document.getElementById("archive").style.display="none";
 			pth=111;
 		//   changedate('return'); 
-		  checkConnection();
+		 preloadimages();
+changedate('return');
 			 
 
 
