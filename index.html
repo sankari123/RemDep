@@ -774,7 +774,7 @@ $(document).ready(function(){
               select: function(value, data){
                   if (typeof data == "undefined") {
                   //    addMessage('You selected: ' + value + "<br/>");
-			  alert('out');
+		//	  alert('out');
 				//	  document.getElementById('reslt').value=data.item.value;
                   }else {
                    //   addMessage('You selected: ' + data.item.value + "<br/>");
@@ -1077,7 +1077,7 @@ var myimages=new Array()
 function preload()
 {
 	
-	alert('inn');
+	//alert('inn');
 	myimages[0]=new Image();
 	myimages[0].src="images/PrevYrOff40x40.png";
 		myimages[1]=new Image();
@@ -1120,10 +1120,10 @@ var eastermonth = 0;
 var easterday = 0;
 var flg=1;
 function changedate(buttonpressed) {
-	alert('in');
+//	alert('in');
 //	alert(pth);
 	ajaxFunction();
-	  alert('optsel'+optSel);	
+	//  alert('optsel'+optSel);	
 	//buttonpressed='return';
  
 	if (buttonpressed == "return") { 
@@ -1158,7 +1158,7 @@ function changedate(buttonpressed) {
 	firstDate = new Date(String(monthNum)+"/1/"+String(yearNum));
 	firstDay = firstDate.getDay() + 1;
 	
-	alert('to create');
+	//alert('to create');
 	createCalendar();
 	return;
 	
@@ -1186,7 +1186,7 @@ easterday = day;
 function createCalendar() {
 	//window.plugins.spinnerDialog.hide();	
 	
-	alert('create');
+	//alert('create');
 	
 	
 	calendarString = '';
