@@ -322,11 +322,11 @@ text-align:center;
 		
 .btnSrch {  display:inline-block;   text-decoration:none;}	
 .btn2 {  background-color: transparent; border:none; padding: 0;   color: black;font-weight: bold;  }
- 
-#evtcal a:link {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		  
-#evtcal a:visited {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}	   
-#evtcal a:hover {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: underline;}	 mouse over link  
-#evtcal a:active {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		 
+button:focus {outline:none;} ::-moz-focus-inner {border:0;}
+#evtcal a:link {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		/* unvisited link */
+#evtcal a:visited {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}	/* visited link */
+#evtcal a:hover {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: underline;}	/* mouse over link */
+#evtcal a:active {font: normal 12pt "Arial", "Helvetica", "Sans Serif"; color: #004400; text-decoration: none;}		/* selected link */
 #lst_mnu
 	{
 		display:none;
@@ -543,7 +543,7 @@ display	: none;
 #calendar
 		{
 		 
- 
+		display	: none;
 		width: 100vw;	
    
 }		
@@ -736,7 +736,7 @@ $(document).ready(function(){
 		  $('#category').hide(); 
 			$('#archive').hide();
 			$('#map').hide();
- 	  $('#calendar').hide();
+		 $('#calendar').hide();
 		  $('#dl_btn').hide();
 		  $('#lst_mnu').hide();
 			$('#backmenu').show();	
@@ -774,7 +774,7 @@ $(document).ready(function(){
               select: function(value, data){
                   if (typeof data == "undefined") {
                   //    addMessage('You selected: ' + value + "<br/>");
-		//	  alert('out');
+			  alert('out');
 				//	  document.getElementById('reslt').value=data.item.value;
                   }else {
                    //   addMessage('You selected: ' + data.item.value + "<br/>");
@@ -891,13 +891,13 @@ function onDeviceReady(){
         e.preventDefault();
 
 }, false);
-//		var calendar = document.getElementById('calendar');
+		var calendar = document.getElementById('calendar');
 	
-//	calendar.addEventListener('touchmove', function(e) {
+	calendar.addEventListener('touchmove', function(e) {
 
-  //      e.preventDefault();
+        e.preventDefault();
 
-//}, false);
+}, false);
 	
 		var lstMnu = document.getElementById('lst_mnu');
 	
@@ -958,7 +958,7 @@ function checkConnection() {
      var networkState = navigator.connection.type;
      if(navigator.connection.type == Connection.NONE) {        
         connSel='N';
-	   alert(connSel);
+	   //  alert(connSel);
 	     
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, RgotFS, fail);
     }
@@ -1074,33 +1074,18 @@ else{
 
 /* Preload images script */
 var myimages=new Array() 
-function preload()
-{
+function preloadimages(){
+	//alert('prload');
+	for (i=0;i<preloadimages.arguments.length;i++){
+		myimages[i]=new Image();
+		myimages[i].src=preloadimages.arguments[i];
+	}
 	
-	//alert('inn');
-	myimages[0]=new Image();
-	myimages[0].src="images/PrevYrOff40x40.png";
-		myimages[1]=new Image();
-	myimages[1].src="images/PrevMoOff40x40.png";
-		myimages[2]=new Image();
-	myimages[2].src="images/NextYrOff40x40.png";
-		myimages[3]=new Image();
-	myimages[3].src="images/NextMoOff40x40.png";
-	 
-
- alert(events.length);
-	  changedate('return');
-
-	 
- 
 }
 
- 
-// preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 
-/* The path of images to be preloaded inside parenthesis: (Extend 
-
-list as desired.) */
+/* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
+preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 
 var thisDate = 1;							// Tracks current date being written in calendar
 var wordMonth = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
@@ -1120,12 +1105,15 @@ var eastermonth = 0;
 var easterday = 0;
 var flg=1;
 function changedate(buttonpressed) {
-//	alert('in');
-//	alert(pth);
 	ajaxFunction();
-	//  alert('optsel'+optSel);	
+	//alert('optsel'+optSel);	
 	//buttonpressed='return';
- 
+ if(pth==111)
+ {
+ alert(pth);
+	buttonpressed='return';
+ }
+	
 	if (buttonpressed == "return") { 
 		monthNum = todaysMonth;
 		yearNum = todaysYear;
@@ -1271,7 +1259,7 @@ var floater = 0;
 }
 function showevents(day,month,year,week,dayofweek) {
 //	alert('in');
-	alert(events.length);
+	//alert(events.length);
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
 	document.getElementById("xPort").style.display="block";
@@ -2053,26 +2041,43 @@ function alertDismissed() {
 	
 function calClick()
 	{
-	//	  alert('optsel');
+	//	 alert(events.length);
 		optSel=2;
 		 activePg=1;
 		active_page=1; 
-		   document.getElementById("calendar").style.display="block";
- 	  document.getElementById("calendar").style.visibility="true";
-		document.getElementById("archive").style.display="none";
-		document.getElementById("archive").style.visibility="false"; 
- //	$('#calendar').show('slide', 400);
+	  document.getElementById("calendar").style.display="block";
+		   document.getElementById("calendar").style.visibility="true";
+		
+	 //	$('#calendar').show('slide', 400);
 		// $("#calendar").slideToggle("slow");
 		//	  $('#calendar').toggle('slide','right',500);	 
 		
-	//	
+		document.getElementById("archive").style.display="none";
+		document.getElementById("archive").style.visibility="false"; 
 		 
+		document.getElementById("category").style.display="none";
+		document.getElementById("category").style.visibility="false";
+		document.getElementById("login").style.display="none";
+		document.getElementById("login").style.visibility="false";
+		document.getElementById("xPort").style.display="none";
+		document.getElementById("xPort").style.visibility="false";
+		document.getElementById("map").style.display="none";
+		document.getElementById("map").style.visibility="false";
+		document.getElementById("xPort1").style.display="none";
+		document.getElementById("xPort1").style.visibility="false";
+		document.getElementById("lst_mnu").style.display="none";
+		document.getElementById("lst_mnu").style.visibility="false";
+		document.getElementById("dl_btn").style.display="none";
+		document.getElementById("dl_btn").style.visibility="false";
+		document.getElementById("dl_btn1").style.visibility="false";
+		document.getElementById("route_canvas").style.display="none";
+		document.getElementById("panel").style.display="none";
+		document.getElementById("panel").style.visibility="false";
+		document.getElementById("archive").style.visibility="false";
+		document.getElementById("archive").style.display="none";
 		 
-	 
-	//	  checkConnection();
-	  preload();
 			 
-
+changedate('return')
 
 
 }
@@ -2973,8 +2978,8 @@ document.getElementById("archive").style.display="block";
 	<tr height='25px'  bgcolor='#0c9db7'><td align=center>
 	<div class="tab">
  
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')" >Events</button>
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Calendar</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')" id="defaultOpen">Events</button>
+  <button class="tablinks" onclick="openCity(event, 'London')">Calendar</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">Venue</button>
 		
 </div>
