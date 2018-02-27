@@ -1030,8 +1030,8 @@ function gotFile(file){
             console.log(evt.target.result);
 	 //   alert(evt.target.result);
 	    document.getElementById('rest1').value=evt.target.result;	
-		// ajaxFunction();
-		 changedate('return');
+		  ajaxFunction();
+		// changedate('return');
 	//	 ajaxFunction();
         };
         reader.readAsText(file);
@@ -1089,7 +1089,7 @@ else{
 
 		function loadImg()
 {
-myimages[0]=new Image();
+	myimages[0]=new Image();
 	myimages[0].src="images/PrevYrOff40x40.jpg";
 	myimages[1]=new Image();
 	myimages[1].src="images/PrevYrOn40x40.jpg";
@@ -1127,7 +1127,7 @@ var eastermonth = 0;
 var easterday = 0;
 var flg=1;
 function changedate(buttonpressed) {
-	ajaxFunction();
+	//ajaxFunction();
 	//alert('optsel'+optSel);	
 	//buttonpressed='return';
  if(pth==111)
@@ -2096,7 +2096,7 @@ function calClick()
 	 	document.getElementById("route_canvas").style.display="none";
 	 	document.getElementById("panel").style.display="none";
 	 	document.getElementById("panel").style.visibility="false";
-	 	 
+	 	 checkConnection();
 		loadImg();	 
 
 
