@@ -540,7 +540,7 @@ display	: none;
 			overflow: hidden;
 			overflow-y: hidden;
 }
-#calendar
+#main_cal
 		{
 		 
 		/*display	: none;*/
@@ -736,7 +736,7 @@ $(document).ready(function(){
 		  $('#category').hide(); 
 			$('#archive').hide();
 			$('#map').hide();
-		 $('#calendar').hide();
+		 $('#main_cal').hide();
 		  $('#dl_btn').hide();
 		  $('#lst_mnu').hide();
 			$('#backmenu').show();	
@@ -822,7 +822,7 @@ $('#xPort').show();
 $('#map-container').hide();
 $('#map').hide();
 $('#det').hide();
-$('#calendar').hide();
+$('#main_cal').hide();
 $('#dl_btn').show();		
 // document.getElementById('map').setAttribute("class","wide");
 document.getElementById('xPort').innerHTML='' ;
@@ -1074,14 +1074,14 @@ else{
 
 /* Preload images script */
  var myimages=new Array() 
-//function preloadimages(){
-//	//alert('prload');
-//	for (i=0;i<preloadimages.arguments.length;i++){
-//		myimages[i]=new Image();
-//		myimages[i].src=preloadimages.arguments[i];
-//	}
+ function preloadimages(){
+ 	//alert('prload');
+ 	for (i=0;i<preloadimages.arguments.length;i++){
+ 		myimages[i]=new Image();
+ 		myimages[i].src=preloadimages.arguments[i];
+ 	}
 	
-//}
+ }
 
 
 /* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
@@ -1091,10 +1091,7 @@ preloadimages("images/PrevYrOff40x40.jpg","images/PrevYrOn40x40.jpg","images/Pre
 function loadImg()
 {
 	 
-	for (i=0;i<preloadimages.arguments.length;i++){
-		myimages[i]=new Image();
-		myimages[i].src=preloadimages.arguments[i];
-	}
+	 
 	
 	changedate('return');
 	}
@@ -1562,8 +1559,8 @@ function procVal(pVar)
 		//document.getElementById("lst_mnu").style.visibility="true";
 		 
 		
-		document.getElementById("calendar").style.display="none";
-		document.getElementById("calendar").style.visibility="false";
+		document.getElementById("main_cal").style.display="none";
+		document.getElementById("main_cal").style.visibility="false";
 		document.getElementById("category").style.display="none";
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("det").style.display="none";
@@ -1641,8 +1638,8 @@ function login()
 	document.getElementById("mainMenu").style.display="none";
 	document.getElementById("map").style.display="none";
 document.getElementById("map").style.visibility="false";
-document.getElementById("calendar").style.display="none";
-document.getElementById("calendar").style.visibility="false"; 
+document.getElementById("main_cal").style.display="none";
+document.getElementById("main_cal").style.visibility="false"; 
 document.getElementById("login").style.visibility="true";
 document.getElementById("login").style.display="block";
 document.getElementById("archive").style.visibility="false";
@@ -1761,8 +1758,8 @@ function openCity(evt, cityName) {
 		document.getElementById("dl_btn1").style.visibility="false";
 		document.getElementById("dl_btn").style.display="none";
 		document.getElementById("dl_btn").style.visibility="false";
-		document.getElementById("calendar").style.display="none";
-		document.getElementById("calendar").style.visibility="false";
+		document.getElementById("main_cal").style.display="none";
+		document.getElementById("main_cal").style.visibility="false";
 		document.getElementById("lst_mnu").style.display="none";
 		document.getElementById("lst_mnu").style.visibility="false";
 		
@@ -2053,10 +2050,10 @@ function calClick()
 		optSel=2;
 		 activePg=1;
 		active_page=1; 
- 	  document.getElementById("calendar").style.display="block";
-	 	   document.getElementById("calendar").style.visibility="true";
+ 	  document.getElementById("main_cal").style.display="block";
+	 	   document.getElementById("main_cal").style.visibility="true";
 		
-	 	$('#calendar').show('slide', 400);
+	 	$('#main_cal').show('slide', 400);
 		
 		// $("#calendar").slideToggle("slow");
 		//	  $('#calendar').toggle('slide','right',500);	 
@@ -2735,8 +2732,8 @@ document.getElementById("mainMenu").style.visibility="false";
 document.getElementById("mainMenu").style.display="none";
 document.getElementById("dl_btn").style.display="none";
 document.getElementById("dl_btn").style.visibility="false";
-document.getElementById("calendar").style.display="none";
-document.getElementById("calendar").style.visibility="false"; 
+document.getElementById("main_cal").style.display="none";
+document.getElementById("main_cal").style.visibility="false"; 
 document.getElementById("archive").style.visibility="true";
 document.getElementById("archive").style.display="block";
 document.getElementById("xPort").style.display="none";
@@ -2817,7 +2814,7 @@ function profile()
 		 
 		  $('#category').hide();
 			$('#map').hide();
-		 $('#calendar').hide();
+		 $('#main_cal').hide();
 		  $('#dl_btn').hide();
 		  $('#lst_mnu').hide();
 		 
@@ -3031,13 +3028,14 @@ document.getElementById("archive").style.display="block";
 		   
 		</table>
 		</div>	
-	 
+<div id='main_cal'>
 	
-	<table id="evtcal" border="1" cellpadding="1" cellspacing="1" width="100%"><tr>
+	<table id="evtcal" border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
 			<td style="padding: 3px;" align="center" valign="top" width="314">
 				<div id="calendar"> <!--  Dynamically Filled --></div> 
 				
 			</td></tr></table>
+	</div>
 <div id='lst_mnu' align='left'> 	</div>
 	 
     <div id='archive'></div>  
