@@ -1085,26 +1085,27 @@ else{
 
 
 /* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
-//preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
+preloadimages("images/PrevYrOff40x40.jpg","images/PrevYrOn40x40.jpg","images/PrevMoOff40x40.jpg","images/PrevMoOn40x40.jpg","images/NextYrOff40x40.jpg","images/NextYrOn40x40.jpg","images/NextMoOff40x40.jpg","images/NextMoOn40x40.jpg");
+
 
 		function loadImg()
 {
 	myimages[0]=new Image();
-	myimages[0].src="images/PrevYrOff40x40.jpg";
+	myimages[0].src=preloadimages.arguments[0];
 	myimages[1]=new Image();
-	myimages[1].src="images/PrevYrOn40x40.jpg";
+	myimages[1].src=preloadimages.arguments[1]";
 	myimages[2]=new Image();
-	myimages[2].src="images/PrevMoOff40x40.jpg";
+	myimages[2].src=preloadimages.arguments[2]";
 	myimages[3]=new Image();
-	myimages[3].src="images/PrevMoOn40x40.jpg";
+	myimages[3].src=preloadimages.arguments[3];
 	myimages[4]=new Image();
-	myimages[4].src="images/NextYrOff40x40.jpg";
+	myimages[4].src=preloadimages.arguments[4];
 	myimages[5]=new Image();
-	myimages[5].src="images/NextYrOn40x40.jpg";
+	myimages[5].src=preloadimages.arguments[5];
 	myimages[6]=new Image();
-	myimages[6].src="images/NextMoOff40x40.jpg";
+	myimages[6].src=preloadimages.arguments[6];
 	myimages[7]=new Image();
-	myimages[7].src="images/NextMoOn40x40.jpg";
+	myimages[7].src=preloadimages.arguments[7];
 	
 	changedate('return');
 	}
