@@ -1226,6 +1226,7 @@ function createCalendar() {
 	var object=document.getElementById('calendar');
 	object.innerHTML= calendarString;
 	thisDate = 1;
+	alert(calenderString);
 	
 }
 function checkevents(day,month,year,week,dayofweek) {
@@ -1281,7 +1282,7 @@ var floater = 0;
 		var kkkk=0;
 	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
 		chkVal1 ='1' ;
-//	 alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+ 	 alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
   //...
 }
 	else
