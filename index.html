@@ -2055,10 +2055,7 @@ function calClick()
 		optSel=2;
 		 activePg=1;
 		active_page=1; 
- 	  document.getElementById("main_cal").style.display="block";
-	 	   document.getElementById("main_cal").style.visibility="true";
-		
-	 	$('#main_cal').show('slide', 400);
+ 	  
 	//	
 		// $("#calendar").slideToggle("slow");
 		//	  $('#calendar').toggle('slide','right',500);	 
@@ -2070,8 +2067,11 @@ function calClick()
 	 	 
 		loadImg();	 
 		//changedate('return');
-
-document.getElementById("category").style.display="none";
+		document.getElementById("main_cal").style.display="block";
+	 	   document.getElementById("main_cal").style.visibility="true";
+		
+	 	$('#main_cal').show('slide', 400);
+		document.getElementById("category").style.display="none";
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("login").style.display="none";
 		document.getElementById("login").style.visibility="false";
@@ -3034,14 +3034,7 @@ document.getElementById("archive").style.display="block";
 		   
 		</table>
 		</div>	
-<div id='main_cal'>
-	
-	<table id="evtcal" border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
-			<td style="padding: 3px;" align="center" valign="top" width="314">
-				<div id="calendar"> <!--  Dynamically Filled --></div> 
-				
-			</td></tr></table>
-	</div>
+
 <div id='lst_mnu' align='left'> 	</div>
 	 
     <div id='archive'></div>  
@@ -3100,7 +3093,14 @@ document.getElementById("archive").style.display="block";
 			</div>
 	 
  <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea> 
-
+<div id='main_cal'>
+	
+	<table id="evtcal" border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+			<td style="padding: 3px;" align="center" valign="top" width="314">
+				<div id="calendar"> <!--  Dynamically Filled --></div> 
+				
+			</td></tr></table>
+	</div>
 <div id='xPort1'>     </div>
  <div id='csv' class='csv'>
   
