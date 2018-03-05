@@ -1095,6 +1095,7 @@ function loadImg()
 	 
 	 
 	preloadimages() ;
+	clearDivs();
 	changedate('return');
 	}
 		
@@ -2044,28 +2045,10 @@ function alertDismissed() {
             alert('Invalid');
         }	
 
- 
-
-	
-function calClick()
-	{
- 	  alert(events.length);
-		optSel=2;
-		 activePg=1;
-		active_page=1; 
- 	  	document.getElementById("main_cal").style.display="block";
-	 	   document.getElementById("main_cal").style.visibility="true";
-		
-	 	$('#main_cal').show('slide', 400);
-	 	document.getElementById("category").style.display="none";
+ function clearDivs()
+		{
+		document.getElementById("category").style.display="none";
 	 	document.getElementById("category").style.visibility="false"; 
-		document.getElementById('xPort').innerHTML='' ;
-		loadImg();
-		// $("#calendar").slideToggle("slow");
-		//	  $('#calendar').toggle('slide','right',500);	 
-		
-	//	document.getElementById("archive").style.display="none";
-	//	document.getElementById("archive").style.visibility="false"; 
 		 document.getElementById("map").style.display="none";
 		document.getElementById("map").style.visibility="false";
 		document.getElementById("route_canvas").style.display="none";
@@ -2074,8 +2057,8 @@ function calClick()
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("login").style.display="none";
 		document.getElementById("login").style.visibility="false";
-	//	document.getElementById("xPort").style.display="none";
-	//	document.getElementById("xPort").style.visibility="false";
+	 	document.getElementById("xPort").style.display="none";
+	 	document.getElementById("xPort").style.visibility="false";
 		
 		document.getElementById("xPort1").style.display="none";
 		document.getElementById("xPort1").style.visibility="false";
@@ -2091,7 +2074,22 @@ function calClick()
 		document.getElementById("archive").style.visibility="false";
 		document.getElementById("archive").style.display="none";
 	 	 
-		//changedate('return');	 
+		}
+	
+function calClick()
+	{
+ 	  alert(events.length);
+		optSel=2;
+		 activePg=1;
+		active_page=1; 
+ 	  	document.getElementById("main_cal").style.display="block";
+	 	   document.getElementById("main_cal").style.visibility="true";
+		
+	 	$('#main_cal').show('slide', 400);
+	 	
+		 
+		loadImg();
+		 
 
 
 
