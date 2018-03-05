@@ -3,7 +3,7 @@
 <title>Madras Music & Miscellany</title>
  
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<script type="text/javascript" src="cordova.js"></script'>
+<script type="text/javascript" src="cordova.js"></script>
 	 
 	<link class="jsbin" href="css/jquery-ui.css" rel="stylesheet" type="text/css"></link>
 <link rel="stylesheet" href="css/styles.css"></link>
@@ -543,7 +543,7 @@ display	: none;
 #main_cal
 		{
 		 
-		 display	: none; 
+		/*display	: none;*/
 		width: 100vw;	
    
 }		
@@ -882,8 +882,10 @@ var newUsr;
  
 function onDeviceReady(){
 	 window.plugins.spinnerDialog.show(null, "Loading Events... Please wait...!");
-	check();
-	checkConnection();
+	//check();
+	//checkConnection();
+	
+
 	var fixed = document.getElementById('category');
 	
 	fixed.addEventListener('touchmove', function(e) {
@@ -1085,17 +1087,14 @@ else{
 
 
 /* The path of images to be preloaded inside parenthesis: (Extend list as desired.) */
-//preloadimages("images/PrevYrOff40x40.jpg","images/PrevYrOn40x40.jpg","images/PrevMoOff40x40.jpg","images/PrevMoOn40x40.jpg","images/NextYrOff40x40.jpg","images/NextYrOn40x40.jpg","images/NextMoOff40x40.jpg","images/NextMoOn40x40.jpg");
-//preloadimages("images/PrevYrOff40x40.png","images/PrevMoOff40x40.png","images/NextYrOff40x40.png","images/NextMoOff40x40.png");
 preloadimages("images/PrevYrOff40x40.jpg","images/PrevYrOn40x40.jpg","images/PrevMoOff40x40.jpg","images/PrevMoOn40x40.jpg","images/NextYrOff40x40.jpg","images/NextYrOn40x40.jpg","images/NextMoOff40x40.jpg","images/NextMoOn40x40.jpg");
-
 
 function loadImg()
 {
- 
-	preloadimages() ;
-	changedate('return');
 	 
+  	preloadimages() ;
+	changedate('return');
+
 	}
 		
 var thisDate = 1;							// Tracks current date being written in calendar
@@ -1117,7 +1116,7 @@ var easterday = 0;
 var flg=1;
 function changedate(buttonpressed) {
 	//ajaxFunction();
-	//alert('optsel'+optSel);	
+	 //alert('optsel' );	
 	//buttonpressed='return';
  
 	
@@ -1227,7 +1226,6 @@ function createCalendar() {
 	var object=document.getElementById('calendar');
 	object.innerHTML= calendarString;
 	thisDate = 1;
-	alert(calenderString);
 	
 }
 function checkevents(day,month,year,week,dayofweek) {
@@ -1283,7 +1281,7 @@ var floater = 0;
 		var kkkk=0;
 	if (window.localStorage.getItem("favShows") === null || typeof(window.localStorage.getItem("favShows")) ==='undefined' || window.localStorage.getItem("favShows") ==''  ) {
 		chkVal1 ='1' ;
- 	 alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
+//	 alert(chkVal1+'-a-'+window.localStorage.getItem("favShows"));
   //...
 }
 	else
@@ -1494,10 +1492,10 @@ var venue_arr = new Array();
 	
 function procVal(pVar)
 {
- //alert(connSel+'----'+pVar);
+  //alert('connSel'+'----'+pVar);
 	 if (pVar!='')
 	 {
-	  window.plugins.spinnerDialog.hide();
+	//  window.plugins.spinnerDialog.hide();
 	 }
 	//alert('Ajax Resp'+pVar);
 	locArr = pVar;
@@ -1533,7 +1531,7 @@ function procVal(pVar)
 		events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);
 		venue_arr.push([venue]);
 		artistArr.push(art);
-		//alert(events.length);
+		// alert(events.length);
 		//write ajax response to text file
 		
 		//break;
@@ -2044,49 +2042,43 @@ function alertDismissed() {
             alert('Invalid');
         }	
 
- function clearDivs()
-		{
-		document.getElementById("category").style.display="none";
-	 	document.getElementById("category").style.visibility="false"; 
-		 document.getElementById("map").style.display="none";
-		document.getElementById("map").style.visibility="false";
-		document.getElementById("route_canvas").style.display="none";
-		document.getElementById("route_canvas").style.visibility="false"
-	 	document.getElementById("category").style.display="none";
-		document.getElementById("category").style.visibility="false";
-		document.getElementById("login").style.display="none";
-		document.getElementById("login").style.visibility="false";
-	 	document.getElementById("xPort").style.display="none";
-	 	document.getElementById("xPort").style.visibility="false";
-		
-		document.getElementById("xPort1").style.display="none";
-		document.getElementById("xPort1").style.visibility="false";
-		document.getElementById("lst_mnu").style.display="none";
-		document.getElementById("lst_mnu").style.visibility="false";
-		document.getElementById("dl_btn").style.display="none";
-		document.getElementById("dl_btn").style.visibility="false";
-		document.getElementById("dl_btn1").style.display="none";
-		document.getElementById("dl_btn1").style.visibility="false";
-		
-		document.getElementById("panel").style.display="none";
-		document.getElementById("panel").style.visibility="false";
-		document.getElementById("archive").style.visibility="false";
-		document.getElementById("archive").style.display="none";
-	 	 
-		}
+ 
+function onlyCal()
+{
+
+	 ajaxResponseCal="Dance,NGS,Shobana,Violin Raghuram Mridangam Rama,2018-08-10,10:00,#Dance,Mudhra,Radhika Surjit,Violin Dhruv Mridangam Siva,2018-10-09,18:00,#Concert,Vani Mahal,N Kannan,Light Music By N Kannan- Retro To Metro Melodies,2018-10-22,18:30,#Drama,Vani Mahal,Shraddha Troupe,Ramanujar,2018-10-22,18:30,#Drama,Vani Mahal,S Ve Shekar,Thathupillai,2018-10-22,19:00,#Drama,Vani Mahal,S Ve Shekar,Thathupillai,2018-10-29,19:00,#Concert,NGS,Nisha Rajagopal,Violin Skkk Mridangam Rama,2018-11-12,18:00,#";
+	 alert('incal');
+procVal(ajaxResponseCal);
+}
 	
 function calClick()
 	{
- 	  alert(events.length);
+ //	ajaxResponseCal="Dance,NGS,Shobana,Violin Raghuram Mridangam Rama,2018-08-10,10:00,#Dance,Mudhra,Radhika Surjit,Violin Dhruv Mridangam Siva,2018-10-09,18:00,#Concert,Vani Mahal,N Kannan,Light Music By N Kannan- Retro To Metro Melodies,2018-10-22,18:30,#Drama,Vani Mahal,Shraddha Troupe,Ramanujar,2018-10-22,18:30,#Drama,Vani Mahal,S Ve Shekar,Thathupillai,2018-10-22,19:00,#Drama,Vani Mahal,S Ve Shekar,Thathupillai,2018-10-29,19:00,#Concert,NGS,Nisha Rajagopal,Violin Skkk Mridangam Rama,2018-11-12,18:00,#";
+//	  alert('incal');
+//procVal(ajaxResponseCal);
+	// onlyCal();
+//	alert('incal11');
+	  alert(events.length);
 		optSel=2;
 		 activePg=1;
 		active_page=1; 
-		loadImg();	
- 	  	//document.getElementById("main_cal").style.display="block";
-	 	//   document.getElementById("main_cal").style.visibility="true";
-		// $('#main_cal').show();
+ 	  document.getElementById("main_cal").style.display="block";
+	 	   document.getElementById("main_cal").style.visibility="true";
+		
 	 	$('#main_cal').show('slide', 400);
-	 	document.getElementById("category").style.display="none";
+	//	
+		// $("#calendar").slideToggle("slow");
+		//	  $('#calendar').toggle('slide','right',500);	 
+		
+	//	document.getElementById("archive").style.display="none";
+	//	document.getElementById("archive").style.visibility="false"; 
+		 
+	 	 
+	 	 
+		loadImg();	 
+		//changedate('return');
+
+document.getElementById("category").style.display="none";
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("login").style.display="none";
 		document.getElementById("login").style.visibility="false";
@@ -2108,17 +2100,6 @@ function calClick()
 		document.getElementById("panel").style.visibility="false";
 		document.getElementById("archive").style.visibility="false";
 		document.getElementById("archive").style.display="none";
-			 
-		//changedate('return');
-
-		  
-		 
-		 
-		 
-		  
-		 
-
-
 
 }
 
@@ -2426,8 +2407,7 @@ document.getElementById("xPort").style.display="block";
 document.getElementById("xPort").style.visibility="true";
 	document.getElementById("xPort1").style.display="block";
 	document.getElementById("xPort1").style.visibility="true";
-document.getElementById("main_cal").style.display="none";
-document.getElementById("main_cal").style.visibility="false";	
+	
 document.getElementById("lst_mnu").style.display="none";
 document.getElementById("lst_mnu").style.visibility="false";
 document.getElementById("dl_btn").style.display="block";
