@@ -976,7 +976,7 @@ function checkConnection() {
 	      else
 	      {
 	      ajaxFunction();
-	 changedate('return');
+	// changedate('return');
 	      }
 	// ajaxFunction();
 	 
@@ -1444,7 +1444,7 @@ var ajaxResponse;
 var arr_store;
   function ajaxFunction()
 {
-
+window.plugins.spinnerDialog.hide();	
 	if(connSel=='Y')
 	{	
 	var xhr = new XMLHttpRequest();
@@ -1492,7 +1492,7 @@ var venue_arr = new Array();
 	
 function procVal(pVar)
 {
-	window.plugins.spinnerDialog.hide();
+//	window.plugins.spinnerDialog.hide();
   //alert('connSel'+'----'+pVar);
 	 if (pVar!='')
 	 {
