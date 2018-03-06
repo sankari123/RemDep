@@ -1109,7 +1109,7 @@ var easterday = 0;
 var flg=1;
 function changedate(buttonpressed) {
 	//ajaxFunction();
-	 alert('optsel' );	
+	 alert('inside changedate' );	
 	//buttonpressed='return';
  
 	
@@ -1705,7 +1705,10 @@ function openCity(evt, cityName) {
 	optSel=2;
 	active_page=1;
 	calClick();
-	loadImg();
+	alert('return to 1');
+	preloadimages() ;
+	alert('return to 2');	
+	changedate('return');
 	}
 	else if(cityName=='Paris')
 	{
@@ -2049,7 +2052,7 @@ procVal(ajaxResponseCal);
 function calClick()
 	{
  //	ajaxResponseCal="Dance,NGS,Shobana,Violin Raghuram Mridangam Rama,2018-08-10,10:00,#Dance,Mudhra,Radhika Surjit,Violin Dhruv Mridangam Siva,2018-10-09,18:00,#Concert,Vani Mahal,N Kannan,Light Music By N Kannan- Retro To Metro Melodies,2018-10-22,18:30,#Drama,Vani Mahal,Shraddha Troupe,Ramanujar,2018-10-22,18:30,#Drama,Vani Mahal,S Ve Shekar,Thathupillai,2018-10-22,19:00,#Drama,Vani Mahal,S Ve Shekar,Thathupillai,2018-10-29,19:00,#Concert,NGS,Nisha Rajagopal,Violin Skkk Mridangam Rama,2018-11-12,18:00,#";
-//	  alert('incal');
+   alert('incal');
 //procVal(ajaxResponseCal);
 	// onlyCal();
 //	alert('incal11');
@@ -2118,8 +2121,7 @@ function calClick()
 		$('#main_cal').show('slide', 400);
 		}
 		 
-	 	
-		 return;
+	 	 
 }
 
 		
