@@ -644,6 +644,25 @@ display	: none;
 	    }
     </style>
 	<script>
+		
+		var thisDate = 1;							// Tracks current date being written in calendar
+var wordMonth = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+var today = new Date();							// Date object to store the current date
+var todaysDay = today.getDay() + 1;					// Stores the current day number 1-7
+var todaysDate = today.getDate();					// Stores the current numeric date within the month
+var todaysMonth = today.getUTCMonth() + 1;				// Stores the current month 1-12
+var todaysYear = today.getFullYear();					// Stores the current year
+var monthNum = todaysMonth;						// Tracks the current month being displayed
+var yearNum = todaysYear;						// Tracks the current year being displayed
+var firstDate = new Date(String(monthNum)+"/1/"+String(yearNum));	// Object Storing the first day of the current month
+var firstDay = firstDate.getUTCDay();					// Tracks the day number 1-7 of the first day of the current month
+var lastDate = new Date(String(monthNum+1)+"/0/"+String(yearNum));	// Tracks the last date of the current month
+var numbDays = 0;
+var calendarString = "";
+var eastermonth = 0;
+var easterday = 0;
+var flg=1;
+		
 		var  pth=0;
 		  $(document).ready(function() {
                 $('input.deletable').wrap('<span class="deleteicon" />').after($('<span/>').click(function() {
@@ -1090,23 +1109,7 @@ function loadImg()
  
 	}
 		
-var thisDate = 1;							// Tracks current date being written in calendar
-var wordMonth = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-var today = new Date();							// Date object to store the current date
-var todaysDay = today.getDay() + 1;					// Stores the current day number 1-7
-var todaysDate = today.getDate();					// Stores the current numeric date within the month
-var todaysMonth = today.getUTCMonth() + 1;				// Stores the current month 1-12
-var todaysYear = today.getFullYear();					// Stores the current year
-var monthNum = todaysMonth;						// Tracks the current month being displayed
-var yearNum = todaysYear;						// Tracks the current year being displayed
-var firstDate = new Date(String(monthNum)+"/1/"+String(yearNum));	// Object Storing the first day of the current month
-var firstDay = firstDate.getUTCDay();					// Tracks the day number 1-7 of the first day of the current month
-var lastDate = new Date(String(monthNum+1)+"/0/"+String(yearNum));	// Tracks the last date of the current month
-var numbDays = 0;
-var calendarString = "";
-var eastermonth = 0;
-var easterday = 0;
-var flg=1;
+
 function changedate(buttonpressed) {
 	//ajaxFunction();
 	 alert('inside changedate' );	
