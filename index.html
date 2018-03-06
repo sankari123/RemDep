@@ -1110,11 +1110,12 @@ var flg=1;
 function changedate(buttonpressed) {
 	//ajaxFunction();
 	 alert('inside changedate' );	
-	//buttonpressed='return';
-  if($("#main_cal").is(':hidden'))
-		{
+	 document.getElementById("main_cal").style.display="block";
+  document.getElementById("main_cal").style.visibility="true";
+//  if($("#main_cal").is(':hidden'))
+//		{
 		$('#main_cal').show('slide', 400);
-		}
+	//	}
 		 
 	
 	if (buttonpressed == "return") { 
@@ -1177,7 +1178,7 @@ easterday = day;
 function createCalendar() {
 	// window.plugins.spinnerDialog.hide();	
 	
-	//alert('create');
+	 alert('create');
 	
 	
 	calendarString = '';
@@ -1226,7 +1227,7 @@ function createCalendar() {
 	
 }
 function checkevents(day,month,year,week,dayofweek) {
-
+alert('checkevents');
 var numevents = 0;
 var floater = 0;
 	for (var i = 0; i < events.length; i++) {
@@ -1261,7 +1262,7 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
-//	alert('in');
+ 	alert('showin');
 	//alert(events.length);
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
@@ -1393,7 +1394,7 @@ var floater = 0;
 		theevent+="<br><table class=ven1><tr height='40px'><td colspan=3><center><b>"+n+", " +events[i][2]+" "+mNam+" "+events[i][3]+"</b></center></td></tr></table>";
 			kkkk++;
 		}
-		//alert(theevent);	
+		 alert(theevent);	
 //	<tr><td rowspan=3>rowspan</td><td >row1 col2</td><td  rowspan=3><img src='fav.png'></td></tr>
 //<tr><td>row 2 col2</td> </tr>
  // <tr><td>row 2 col2</td> </tr>
