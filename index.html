@@ -1109,7 +1109,7 @@ var easterday = 0;
 var flg=1;
 function changedate(buttonpressed) {
 	//ajaxFunction();
-	 //alert('optsel' );	
+	 alert('optsel' );	
 	//buttonpressed='return';
  
 	
@@ -1705,6 +1705,7 @@ function openCity(evt, cityName) {
 	optSel=2;
 	active_page=1;
 	calClick();
+	loadImg();
 	}
 	else if(cityName=='Paris')
 	{
@@ -2052,10 +2053,10 @@ function calClick()
 //procVal(ajaxResponseCal);
 	// onlyCal();
 //	alert('incal11');
-	  alert(events.length);
-		optSel=2;
-		 activePg=1;
-		active_page=1; 
+//	  alert(events.length);
+	//	optSel=2;
+	//	 activePg=1;
+	//	active_page=1; 
  	  
 	//	
 		// $("#calendar").slideToggle("slow");
@@ -2068,35 +2069,57 @@ function calClick()
 	 	 
 		
 		//changedate('return');
-		
-		document.getElementById("category").style.display="none";
-		document.getElementById("category").style.visibility="false";
-		document.getElementById("login").style.display="none";
-		document.getElementById("login").style.visibility="false";
-		document.getElementById("xPort").style.display="none";
-		document.getElementById("xPort").style.visibility="false";
-		document.getElementById("map").style.display="none";
-		document.getElementById("map").style.visibility="false";
-		document.getElementById("xPort1").style.display="none";
-		document.getElementById("xPort1").style.visibility="false";
-		document.getElementById("lst_mnu").style.display="none";
-		document.getElementById("lst_mnu").style.visibility="false";
-		document.getElementById("dl_btn").style.display="none";
-		document.getElementById("dl_btn").style.visibility="false";
-		document.getElementById("dl_btn1").style.display="none";
-		document.getElementById("dl_btn1").style.visibility="false";
-		document.getElementById("route_canvas").style.display="none";
-		document.getElementById("route_canvas").style.visibility="false"
-		document.getElementById("panel").style.display="none";
-		document.getElementById("panel").style.visibility="false";
-		document.getElementById("archive").style.visibility="false";
-		document.getElementById("archive").style.display="none";
-
-		document.getElementById("main_cal").style.display="block";
-	 	document.getElementById("main_cal").style.visibility="true";
-		
-	 	$('#main_cal').show('slide', 400);
-		loadImg();
+		if($("#category").is(':visible'))
+		{
+		$("#category").hide();
+		}
+		if($("#login").is(':visible'))
+		{
+		$("#login").hide();
+		}
+		if($("#xPort").is(':visible'))
+		{
+		$("#xPort").hide();
+		}
+		if($("#map").is(':visible'))
+		{
+		$("#map").hide();
+		}
+		if($("#xPort1").is(':visible'))
+		{
+		$("#xPort1").hide();
+		}
+		if($("#lst_mnu").is(':visible'))
+		{
+		$("#lst_mnu").hide();
+		}
+		if($("#dl_btn").is(':visible'))
+		{
+		$("#dl_btn").hide();
+		}
+		if($("#dl_btn1").is(':visible'))
+		{
+		$("#dl_btn1").hide();
+		}
+		if($("#route_canvas").is(':visible'))
+		{
+		$("#route_canvas").hide();
+		}
+		if($("#panel").is(':visible'))
+		{
+		$("#panel").hide();
+		}
+		if($("#archive").is(':visible'))
+		{
+		$("#archive").hide();
+		}
+		 if($("#main_cal").is(':hidden'))
+		{
+		$('#main_cal').show('slide', 400);
+		}
+		 
+	 	
+		 return;
 }
 
 		
