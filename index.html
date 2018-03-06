@@ -1110,8 +1110,10 @@ var flg=1;
 function changedate(buttonpressed) {
 	//ajaxFunction();
 	 alert('inside changedate' );	
-	 document.getElementById("main_cal").style.display="block";
+ document.getElementById("main_cal").style.display="block";
   document.getElementById("main_cal").style.visibility="true";
+	document.getElementById("calendar").style.display="block";
+  document.getElementById("calendar").style.visibility="true";
 //  if($("#main_cal").is(':hidden'))
 //		{
 		$('#main_cal').show('slide', 400);
@@ -1119,6 +1121,7 @@ function changedate(buttonpressed) {
 		 
 	
 	if (buttonpressed == "return") { 
+		alert('inside loop');
 		monthNum = todaysMonth;
 		yearNum = todaysYear;
 	} else if (buttonpressed == "prevyr") yearNum--;
@@ -1179,7 +1182,7 @@ function createCalendar() {
 	// window.plugins.spinnerDialog.hide();	
 	
 	 alert('create');
-	
+	 alert(events.length);
 	
 	calendarString = '';
 	var daycounter = 0;
