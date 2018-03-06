@@ -1086,7 +1086,7 @@ function loadImg()
 	 
   	preloadimages() ;
 	
-	changedate('return');
+	
 return;
 	}
 		
@@ -2066,12 +2066,9 @@ function calClick()
 		 
 	 	 
 	 	 
-		loadImg();	 
-		//changedate('return');
-		document.getElementById("main_cal").style.display="block";
-	 	   document.getElementById("main_cal").style.visibility="true";
 		
-	 	$('#main_cal').show('slide', 400);
+		//changedate('return');
+		
 		document.getElementById("category").style.display="none";
 		document.getElementById("category").style.visibility="false";
 		document.getElementById("login").style.display="none";
@@ -2094,7 +2091,12 @@ function calClick()
 		document.getElementById("panel").style.visibility="false";
 		document.getElementById("archive").style.visibility="false";
 		document.getElementById("archive").style.display="none";
-
+loadImg();
+		document.getElementById("main_cal").style.display="block";
+	 	document.getElementById("main_cal").style.visibility="true";
+		
+	 	$('#main_cal').show('slide', 400);
+		changedate('return');
 }
 
 		
