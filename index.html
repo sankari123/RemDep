@@ -543,7 +543,7 @@ display	: none;
 #main_cal
 		{
 		 
-		/*display	: none;*/
+		 display	: none; 
 		width: 100vw;	
    
 }		
@@ -1084,8 +1084,8 @@ preloadimages("images/PrevYrOff40x40.jpg","images/PrevYrOn40x40.jpg","images/Pre
 function loadImg()
 {
 	 
-  	preloadimages() ;
-	changedate('return');
+  //	preloadimages() ;
+//	changedate('return');
 	
  
 	}
@@ -1111,7 +1111,11 @@ function changedate(buttonpressed) {
 	//ajaxFunction();
 	 alert('inside changedate' );	
 	//buttonpressed='return';
- 
+  if($("#main_cal").is(':hidden'))
+		{
+		$('#main_cal').show('slide', 400);
+		}
+		 
 	
 	if (buttonpressed == "return") { 
 		monthNum = todaysMonth;
@@ -2116,11 +2120,7 @@ function calClick()
 		{
 		$("#archive").hide();
 		}
-		 if($("#main_cal").is(':hidden'))
-		{
-		$('#main_cal').show('slide', 400);
-		}
-		 
+		
 	 	 
 }
 
