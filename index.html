@@ -1088,7 +1088,7 @@ else{
 /* Preload images script */
  var myimages=new Array() 
  function preloadimages(){
- 	 alert('prload');
+ //	 alert('prload');
  	for (i=0;i<preloadimages.arguments.length;i++){
  		myimages[i]=new Image();
  		myimages[i].src=preloadimages.arguments[i];
@@ -1112,7 +1112,7 @@ function loadImg()
 
 function changedate(buttonpressed) {
 	//ajaxFunction();
-	 alert('inside changedate' );	
+	// alert('inside changedate' );	
  document.getElementById("main_cal").style.display="block";
   document.getElementById("main_cal").style.visibility="true";
 	document.getElementById("calendar").style.display="block";
@@ -1124,7 +1124,7 @@ function changedate(buttonpressed) {
 		 
 	
 	if (buttonpressed == "return") { 
-		alert('inside loop');
+		//alert('inside loop');
 		monthNum = todaysMonth;
 		yearNum = todaysYear;
 	} else if (buttonpressed == "prevyr") yearNum--;
@@ -1184,7 +1184,7 @@ easterday = day;
 function createCalendar() {
 	// window.plugins.spinnerDialog.hide();	
 	
-	 alert('create');
+	// alert('create');
 	 alert(events.length);
 	
 	calendarString = '';
@@ -1233,7 +1233,7 @@ function createCalendar() {
 	
 }
 function checkevents(day,month,year,week,dayofweek) {
-alert('checkevents');
+//alert('checkevents');
 var numevents = 0;
 var floater = 0;
 	for (var i = 0; i < events.length; i++) {
@@ -1268,7 +1268,7 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
- 	alert('showin');
+ //	alert('showin');
 	//alert(events.length);
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
@@ -1716,9 +1716,9 @@ function openCity(evt, cityName) {
 	optSel=2;
 	active_page=1;
 	calClick();
-	alert('return to 1');
+	//alert('return to 1');
 	preloadimages() ;
-	alert('return to 2');	
+	//alert('return to 2');	
 	changedate('return');
 	}
 	else if(cityName=='Paris')
@@ -2063,7 +2063,7 @@ procVal(ajaxResponseCal);
 function calClick()
 	{
  //	ajaxResponseCal="Dance,NGS,Shobana,Violin Raghuram Mridangam Rama,2018-08-10,10:00,#Dance,Mudhra,Radhika Surjit,Violin Dhruv Mridangam Siva,2018-10-09,18:00,#Concert,Vani Mahal,N Kannan,Light Music By N Kannan- Retro To Metro Melodies,2018-10-22,18:30,#Drama,Vani Mahal,Shraddha Troupe,Ramanujar,2018-10-22,18:30,#Drama,Vani Mahal,S Ve Shekar,Thathupillai,2018-10-22,19:00,#Drama,Vani Mahal,S Ve Shekar,Thathupillai,2018-10-29,19:00,#Concert,NGS,Nisha Rajagopal,Violin Skkk Mridangam Rama,2018-11-12,18:00,#";
-   alert('incal');
+  // alert('incal');
 //procVal(ajaxResponseCal);
 	// onlyCal();
 //	alert('incal11');
