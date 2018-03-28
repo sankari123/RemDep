@@ -2327,7 +2327,7 @@ var NotfavArr = [];
 			
 		if($(el).hasClass("arrowdown"))
 	{
-		alert('1');
+		//alert('1');
 	 $(el).addClass('chartme-btn-main').removeClass('arrowdown');
 		var favHst=window.localStorage.getItem("favShows");
 		// var pattern = /\bproprietary\b/ig;
@@ -2338,7 +2338,7 @@ var NotfavArr = [];
 	}	
 			else
 			{
-			alert('2');
+			//alert('2');
 			 $(el).addClass('arrowdown').removeClass('chartme-btn-main'); 
 		
 	  
@@ -2349,10 +2349,10 @@ var NotfavArr = [];
 			//	alert('favarr'+favArr);
 		if(favHst!='' || favHst!=null || typeof(favHst)!='undefined')
 		{
-		 	 alert('3');
+		 	// alert('3');
 			favArr.push(favHst);
 		}
-	alert('4');
+	//alert('4');
 	    
  		favArr.push([fav]);
 	      window.localStorage.setItem('favShows',favArr);
